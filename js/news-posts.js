@@ -12,7 +12,7 @@ window.THE303_PUBLIC_NOTICES = [
     "title": "11월 플라잉요가·바레 그룹 클래스 시간표",
     "summary": "11월 플라잉요가와 바레 그룹 수업의 시간표를 안내합니다.",
     "date": "2026-10-26",
-    "url": "https://blog.naver.com/flyingthe303/22445425032",
+    "url": "https://blog.naver.com/flyingthe303/224454252032",
     "pinned": true
   },
   {
@@ -20,7 +20,7 @@ window.THE303_PUBLIC_NOTICES = [
     "title": "11월 토요 바레 클래스 안내 (선착순 7명)",
     "summary": "11월 토요일 바레 클래스 소식입니다. 신청 가능 여부와 세부 사항은 원문 연결 후 확인해 주세요.",
     "date": "2026-10-15",
-    "url": "https://blog.naver.com/flyingthe303/22442541461",
+    "url": "https://blog.naver.com/flyingthe303/224442541461",
     "pinned": true
   },
   {
@@ -36,7 +36,7 @@ window.THE303_PUBLIC_NOTICES = [
     "title": "THE303만의 정교한 움직임",
     "summary": "THE303 바레 수업에서 중요하게 생각하는 정교한 움직임을 소개합니다.",
     "date": "2026-10-18",
-    "url": "https://blog.naver.com/flyingthe303/22445611333",
+    "url": "https://blog.naver.com/flyingthe303/224445611333",
     "pinned": false
   },
   {
