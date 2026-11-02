@@ -1,0 +1,119 @@
+/* THE303 STUDIO | Subpage grid & breadcrumb design system | 2026-10-31
+   Scope: 11 public subpages only. Hero composition, typography and media stay page-specific.
+   Common left edge follows the fixed-header THE303 STUDIO brand at every breakpoint.
+*/
+body.the303-subpage {
+  --the303-content-width: min(1280px, calc(100% - 56px));
+  --the303-breadcrumb-height: 54px;
+  --the303-breadcrumb-rule: #ded6ce;
+  --the303-breadcrumb-ink: #81756e;
+  --the303-breadcrumb-wine: #794344;
+}
+/* Match the header brand's x-coordinate, rather than mixing 1180/1190/1200/1280px grids.
+   Using one shared width for all chapter containers also keeps later section rules aligned. */
+body.the303-subpage main :is(.container,.ct-wrap,.d-wrap) {
+  width: var(--the303-content-width) !important;
+  max-width: 1280px !important;
+  margin-inline: auto;
+}
+/* No separate floating padding above the breadcrumb. Fixed header already sets the y origin. */
+body[data-page="about-studio"] .ae-intro,
+body[data-page="program-flying"] .fly16 .fly16-hero,
+body[data-page="ttc-workshop"] .workshop-main .ws-hero,
+body[data-page="media-portfolio"] .media-portfolio-main .mp-hero,
+body[data-page="media-rental"] .media-rental-main .mr-hero,
+body[data-page="news-notice"] .news-page .nn-hero,
+body[data-page="news-gallery"] .ng .ng-hero {padding-top:0;}
+body[data-page="ttc-cert"] .ttc-hero-shell {padding-top:0;}
+/* One full-width editorial ribbon with a consistent lower 1px rule. */
+body[data-page="about-studio"] .ae-intro-top,
+body[data-page="contact"] .ct-main .ct-breadcrumb,
+body[data-page="program-flying"] .fly16 .fly16-breadcrumb,
+body[data-page="program-barre"] .bar17 .b-breadcrumb,
+body[data-page="program-dance"] .dance18 .d-breadcrumb,
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-ribbon,
+body[data-page="ttc-workshop"] .workshop-main .ws-topline,
+body[data-page="media-portfolio"] .media-portfolio-main .m-breadcrumb-row,
+body[data-page="media-rental"] .media-rental-main .m-breadcrumb-row,
+body[data-page="news-notice"] .news-page .news-breadcrumb,
+body[data-page="news-gallery"] .ng .news-breadcrumb {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  box-sizing:border-box;
+  width:100%;
+  min-height:var(--the303-breadcrumb-height);
+  height:var(--the303-breadcrumb-height);
+  padding:0;
+  margin-top:0;
+  margin-bottom:0;
+  border-bottom:1px solid var(--the303-breadcrumb-rule);
+}
+/* The breadcrumb's typographic identity must not change from one program to another. */
+body.the303-subpage main :is(
+  .ae-breadcrumb,.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,
+  .ttc-hero-ribbon .page-breadcrumb,.ws-breadcrumb,.m-breadcrumb,.news-breadcrumb
+) {
+  color:var(--the303-breadcrumb-ink);
+  font-family:'Montserrat','Noto Sans KR',sans-serif;
+  font-size:10px;
+  font-weight:600;
+  line-height:1.5;
+  letter-spacing:.09em;
+  gap:11px;
+  text-transform:uppercase;
+  white-space:nowrap;
+  flex-wrap:nowrap;
+  min-width:0;
+}
+/* Avoid borders applying to nested breadcrumb when its containing row already has the rule. */
+body[data-page="about-studio"] .ae-intro-top .ae-breadcrumb,
+body[data-page="ttc-cert"] .ttc-hero-ribbon .page-breadcrumb,
+body[data-page="ttc-workshop"] .ws-topline .ws-breadcrumb,
+body[data-page="media-portfolio"] .m-breadcrumb-row .m-breadcrumb,
+body[data-page="media-rental"] .m-breadcrumb-row .m-breadcrumb {
+  width:auto;height:auto;min-height:0;
+  padding:0;margin:0;border:0;
+  display:flex;align-items:center;justify-content:flex-start;
+}
+/* Current breadcrumb step and editorial right note have consistent emphasis. */
+body.the303-subpage main :is(
+ .ae-breadcrumb-current,.ct-current,.fly16-breadcrumb .is-current,.b-breadcrumb strong,
+ .d-breadcrumb .current,.ttc-breadcrumb-current,.ws-current,.m-breadcrumb strong,.news-breadcrumb strong
+) {color:var(--the303-breadcrumb-wine);font-weight:800;letter-spacing:.09em;}
+body.the303-subpage main :is(
+ .ae-intro-top>.ae-overline,.ct-breadcrumb .ct-right,.ttc-chapter,
+ .ws-topline-code,.m-topnote
+){color:#a18a7c; font:500 9px/1.4 'Montserrat',sans-serif;letter-spacing:.12em;white-space:nowrap;flex-shrink:0;}
+body.the303-subpage main :is(
+  .ae-breadcrumb a,.ct-breadcrumb a,.fly16-breadcrumb a,.b-breadcrumb a,
+  .d-breadcrumb a,.ttc-hero-ribbon a,.ws-breadcrumb a,.m-breadcrumb a,.news-breadcrumb a
+):hover {color:var(--the303-breadcrumb-wine);}
+@media (max-width:1024px){
+  body.the303-subpage {--the303-content-width:calc(100% - 40px);--the303-breadcrumb-height:48px;}
+}
+@media (max-width:600px){
+  body.the303-subpage {--the303-breadcrumb-height:46px;}
+  body.the303-subpage main :is(
+    .ae-breadcrumb,.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,
+    .ttc-hero-ribbon .page-breadcrumb,.ws-breadcrumb,.m-breadcrumb,.news-breadcrumb
+  ){font-size:9px;letter-spacing:.045em;gap:7px;}
+  body.the303-subpage main :is(
+    .ae-intro-top>.ae-overline,.ct-breadcrumb .ct-right,.ttc-chapter,
+    .ws-topline-code,.m-topnote
+  ){display:none;}
+}
+@media (max-width:400px){
+ body.the303-subpage {--the303-content-width:calc(100% - 36px);}
+ body.the303-subpage main :is(
+    .ae-breadcrumb,.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,
+    .ttc-hero-ribbon .page-breadcrumb,.ws-breadcrumb,.m-breadcrumb,.news-breadcrumb
+  ){font-size:8.8px;gap:6px;letter-spacing:.025em;}
+}
+/* Direct breadcrumbs are horizontal text runs, not distributed navigation tabs. */
+body.the303-subpage main :is(.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,.news-breadcrumb){
+  justify-content:flex-start !important;
+}
+/* Keep the small right-hand editorial note at the far edge when present. */
+body[data-page="contact"] .ct-breadcrumb .ct-right{margin-left:auto;}

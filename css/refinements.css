@@ -1,0 +1,321 @@
+/* THE303 site upgrade / shared UI refinements */
+.skip-link{position:fixed;top:-90px;left:12px;z-index:4000;padding:12px 18px;background:var(--ink);color:#fff;border-radius:4px}
+.skip-link:focus{top:12px}
+/* Visible and operable on both dark and bright hero photos. */
+@media(max-width:1024px){
+  .site-header:not(.scrolled):not(.menu-expanded) .menu-toggle{
+    color:var(--ink);background:rgba(250,248,245,.96);border-radius:50%;
+    box-shadow:0 3px 18px rgba(0,0,0,.12);
+  }
+  .site-header.menu-expanded .menu-toggle{background:rgba(250,248,245,.96);border-radius:50%;}
+  .mobile-menu-social a:focus-visible,.submenu-toggle:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--brick-wine);outline-offset:2px}
+}
+/* Color-safe fallbacks while future media are being organized. */
+.hero-slide:nth-child(1){background:linear-gradient(125deg,#55403d,#ab846e)}
+.hero-slide:nth-child(2){background:linear-gradient(125deg,#463b38,#947a6d)}
+.hero-slide:nth-child(3){background:linear-gradient(125deg,#5d3f40,#ae907e)}
+.hero-bg.image-unavailable{opacity:0}
+.hero-slide:has(.hero-bg.image-unavailable)::before{content:'THE303 STUDIO';position:absolute;right:6%;bottom:12%;z-index:1;font:600 clamp(14px,2.4vw,27px)/1.2 'Montserrat',sans-serif;color:rgba(255,255,255,.16);letter-spacing:.15em}
+/* Native hash scrolling uses html scroll-padding-top exclusively.
+   Do not apply scroll-margin-top to anchor targets: the two offsets add up. */
+section[id],footer[id]{scroll-margin-top:0}
+/* A missing SNS destination should remain visible without a pointless jump. */
+a[aria-disabled="true"]{cursor:default;opacity:.48}
+/* Editor button active semantics / close accessibility */
+.editor.open{visibility:visible}
+.editor:not(.open){visibility:hidden;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.hero-bg{transition:none!important;transform:none!important}.hero-slide.active .hero-bg{transform:none!important}}
+
+/* ========================================================================
+   Shared footer navigation / restrained editorial layout
+   ======================================================================== */
+.footer-links.footer-primary-links {
+  display:grid;
+  grid-template-columns:repeat(5,max-content);
+  align-items:center;
+  justify-content:end;
+  column-gap:clamp(12px,1.65vw,26px);
+  row-gap:12px;
+  margin-left:auto;
+  font-size:clamp(11px,.87vw,13px);
+  font-weight:500;
+  letter-spacing:-.015em;
+}
+.footer-primary-links a {
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  white-space:nowrap;
+  border-bottom:1px solid transparent;
+  transition:color .25s ease,border-color .25s ease;
+}
+.footer-primary-links a:hover,
+.footer-primary-links a:focus-visible {color:var(--brick-wine);border-bottom-color:var(--brick-wine)}
+/* Prevent desktop INFO and navigation collisions on smaller PC screens. */
+@media (min-width:1025px) and (max-width:1130px) {
+  .site-footer .footer-top {gap:20px}
+  .footer-primary-links.footer-links {width:100%;margin-left:0;justify-content:start}
+}
+/* NEWS: preserve the wide editorial grid on PC, but tighten empty space. */
+.news-inline-more {display:none}
+.news-section .news-more-wrap {margin-top:34px}
+@media (max-width:850px) {
+  #news {padding-top:52px;padding-bottom:42px}
+  #news .section-head {align-items:flex-end;gap:12px}
+  #news .section-title {font-size:clamp(26px,7vw,36px);line-height:1.18}
+  .news-inline-more {
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    flex:0 0 auto;
+    padding:8px 0;
+    color:var(--brick-wine);
+    font-size:12px;
+    font-weight:600;
+    white-space:nowrap;
+    border-bottom:1px solid rgba(138,63,67,.28);
+    transition:border-color .25s ease;
+  }
+  .news-inline-more:hover {border-color:currentColor}
+  #news .news-grid {margin-top:25px;row-gap:15px}
+  #news .news-info {padding:14px 0 5px}
+  #news .news-info h3 {margin-bottom:6px}
+  #news .news-more-wrap {display:none}
+  .site-footer {padding-top:44px}
+  .site-footer .footer-top {gap:24px;margin-bottom:18px}
+  .site-footer .footer-bottom {padding-top:20px}
+  .footer-links.footer-primary-links {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:100%;margin:0;
+    gap:0 24px;
+    justify-content:stretch;
+    font-size:13px;
+    border-top:1px solid var(--line);
+  }
+  .footer-primary-links a {
+    min-height:49px;
+    padding:8px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13px;
+  }
+  .footer-primary-links a:last-child {grid-column:1 / -1}
+}
+@media (max-width:350px) {
+  #news .section-title {font-size:24px}
+  .news-inline-more {font-size:11px}
+  .footer-links.footer-primary-links {column-gap:14px}
+}
+
+/* ========================================================================
+   v4 / 2026-10-27 — Anchor landing visual rhythm
+   Hash anchors already align below the fixed header via html scroll-padding.
+   The former 96–132px SECTION INTERNAL top padding was creating a blank band
+   under the header even when the section top itself was correctly positioned.
+   Keep cinematic full-bleed Philosophy and Certificate sections unchanged.
+   ======================================================================== */
+@media (min-width: 851px) {
+  #program,
+  #space,
+  #news {
+    padding-top: clamp(28px, 2.5vw, 40px);
+    padding-bottom: clamp(56px, 5.2vw, 76px);
+  }
+}
+@media (max-width: 850px) {
+  #program,
+  #space {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+  #news {
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+}
+
+/* 1024px tablet navigation: avoid squeezed desktop header. */
+@media (min-width:851px) and (max-width:1024px){
+  .site-header:not(.scrolled):not(.menu-expanded) .menu-toggle{color:var(--ink);background:rgba(250,248,245,.96);border-radius:50%;}
+}
+
+/* Tablet: drawer navigation without phone-style bottom CTA strip. */
+@media (min-width:851px) and (max-width:1024px){
+ .mobile-bottom-bar{display:none!important}
+ body{padding-bottom:0}
+ .to-top{bottom:40px}
+ .site-header .brand{flex-shrink:0;white-space:nowrap}
+ #program,#space,#news{padding-top:clamp(28px,3vw,38px);padding-bottom:clamp(48px,5vw,70px)}
+}
+
+/* ======================================================================
+   v12 — Consistent HOME navigation across 12 pages (2026-10-28)
+   1) Six-link footer with HOME first
+   2) Mobile drawer brand acts as a prominent HOME link
+   Does not affect existing menu/SNS/editor/booking behavior.
+   ====================================================================== */
+.footer-links.footer-primary-links {
+  grid-template-columns: repeat(6,max-content);
+  column-gap: clamp(12px,1.55vw,25px);
+}
+.footer-primary-links .footer-home-link {
+  color: var(--brick-wine);
+  font-weight: 700;
+  letter-spacing: .055em;
+}
+.footer-primary-links .footer-home-link:focus-visible {
+  outline: 2px solid var(--brick-wine);
+  outline-offset: 4px;
+}
+@media (min-width:851px) and (max-width:1140px) {
+  .footer-links.footer-primary-links {
+    width: 100%;
+    margin-left: 0;
+    grid-template-columns: repeat(3,max-content);
+    justify-content: start;
+    column-gap: 32px;
+  }
+}
+@media (max-width:850px) {
+  .footer-links.footer-primary-links {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    width: 100%;
+    margin-left: 0;
+  }
+  .footer-primary-links a:last-child { grid-column: auto; }
+}
+@media (max-width:1024px) {
+  #navPanel .mobile-panel-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    position: absolute;
+    top: 11px;
+    left: 24px;
+    right: 62px;
+    min-height: 53px;
+    overflow: visible;
+    text-overflow: clip;
+    white-space: nowrap;
+    text-decoration: none;
+    color: var(--ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+  #navPanel .mobile-panel-brand > span {
+    display: block;
+    font: 700 clamp(15px,4vw,17px)/1.18 'Montserrat',sans-serif;
+    letter-spacing: .08em;
+  }
+  #navPanel .mobile-panel-brand > small {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--brick-wine);
+    font: 600 10px/1.15 'Montserrat',sans-serif;
+    letter-spacing: .14em;
+  }
+  #navPanel .mobile-panel-brand:focus-visible {
+    outline: 2px solid var(--brick-wine);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+}
+
+/* ==========================================================================
+   THE303 v13 · SUBPAGE NAVIGATION
+   Shared compact editorial navigation for all 11 subpages, PC and mobile.
+   Uses the existing refinements.css to avoid missing extra asset files.
+   ========================================================================== */
+.the303-subpage .the303-page-nav {
+  display:block;
+  position:relative;
+  width:100%;
+  background:#FAF8F5;
+  border-top:1px solid rgba(88,67,58,.18);
+  border-bottom:1px solid rgba(88,67,58,.15);
+  padding:0;
+  margin:0;
+  isolation:isolate;
+}
+.the303-subpage .the303-page-nav__inner {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:stretch;
+  gap:0;
+  min-height:78px;
+}
+.the303-subpage .the303-page-nav__link {
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:7px;
+  padding:14px 20px 14px 0;
+  color:#302824;
+  background:transparent;
+  transition:color .2s ease,background-color .2s ease;
+  text-decoration:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.the303-subpage .the303-page-nav__link--next {
+  border-left:1px solid rgba(88,67,58,.15);
+  align-items:flex-end;
+  text-align:right;
+  padding:14px 0 14px 20px;
+}
+.the303-subpage .the303-page-nav__eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font:600 9px/1.3 'Montserrat','Noto Sans KR',sans-serif;
+  letter-spacing:.16em;
+  color:#9A7467;
+  white-space:nowrap;
+}
+.the303-subpage .the303-page-nav__eyebrow span {
+  font-size:14px;
+  font-weight:400;
+  line-height:1;
+  letter-spacing:0;
+}
+.the303-subpage .the303-page-nav__title {
+  display:block;
+  max-width:100%;
+  font:600 14px/1.4 'Montserrat','Noto Sans KR',sans-serif;
+  letter-spacing:-.015em;
+  overflow-wrap:anywhere;
+  word-break:keep-all;
+}
+.the303-subpage .the303-page-nav__link:hover {color:#8A3F43;}
+.the303-subpage .the303-page-nav__link:focus-visible {
+  outline:2px solid #8A3F43;
+  outline-offset:-5px;
+  border-radius:2px;
+}
+@media(max-width:1024px) {
+  .the303-subpage .the303-page-nav__inner {min-height:76px;}
+  .the303-subpage .the303-page-nav__link {min-height:76px;padding-block:13px;gap:6px;}
+  .the303-subpage .the303-page-nav__link--prev {padding-right:12px;}
+  .the303-subpage .the303-page-nav__link--next {padding-left:12px;}
+  .the303-subpage .the303-page-nav__title {font-size:14px;line-height:1.35;}
+  .the303-subpage .the303-page-nav__eyebrow {font-size:9px;letter-spacing:.09em;}
+}
+@media(max-width:400px) {
+  .the303-subpage .the303-page-nav__inner {min-height:72px;}
+  .the303-subpage .the303-page-nav__link {min-height:72px;}
+  .the303-subpage .the303-page-nav__title {font-size:13px;}
+  .the303-subpage .the303-page-nav__eyebrow {font-size:8px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .the303-subpage .the303-page-nav__link {transition:none;}
+}
+
+/* Final conversion UX: visible route from programs to actual public schedule notices. */
+.the303-schedule-link{display:inline-flex;align-items:center;gap:18px;max-width:100%;min-height:44px;margin:14px 0 12px;padding:8px 0;border-bottom:1px solid #9a776c;color:#794344;font-size:14px;font-weight:600;line-height:1.65;letter-spacing:-.02em;text-decoration:none;white-space:normal}
+.the303-schedule-link:focus-visible{outline:2px solid #794344;outline-offset:4px}
+.the303-schedule-link span{font-size:18px;font-weight:300}
+a[data-link="socialYt"][aria-disabled="true"]{opacity:.4;cursor:default;pointer-events:none}
+@media(max-width:600px){.the303-schedule-link{font-size:13.5px;margin:10px 0 14px}}

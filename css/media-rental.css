@@ -1,0 +1,128 @@
+/* THE303 MEDIA STUDIO | page-local shared design tokens, never loaded on other pages */
+:where(.media-portfolio-main,.media-rental-main){--media-ink:#302a27;--media-soft:#72645d;--media-wine:#794344;--media-line:#d9cdc3;--media-cream:#faf8f5;background:#faf8f5;color:var(--media-ink)}
+:where(.media-portfolio-main,.media-rental-main) *{min-width:0}
+:where(.media-portfolio-main,.media-rental-main) h1,:where(.media-portfolio-main,.media-rental-main) h2,:where(.media-portfolio-main,.media-rental-main) h3{color:inherit;word-break:keep-all}
+:where(.media-portfolio-main,.media-rental-main) p{word-break:keep-all}
+:where(.media-portfolio-main,.media-rental-main) .m-eyebrow{display:block;font:600 10px/1.7 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.19em;color:#996057}
+:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 0 28px;border-bottom:1px solid #e1d7cf}
+:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb{display:flex;align-items:center;gap:13px;white-space:nowrap;font:500 10px/1.5 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.055em;color:#857971}
+:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb strong{color:#894649;font-weight:800}
+:where(.media-portfolio-main,.media-rental-main) .m-topnote{font:500 9px/1.4 'Montserrat',sans-serif;letter-spacing:.13em;color:#a18a7c;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-signature{display:flex;align-items:center;justify-content:space-between;gap:15px;border-top:1px solid #ddcfc3;padding:17px 0 0;color:#9b897d;font:500 9px/1.35 'Montserrat',sans-serif;letter-spacing:.17em;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;padding:11px 0;border-bottom:1px solid #a17b6b;color:#854747;font-size:12px;font-weight:600;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-text-link span{font-size:18px;font-weight:300}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-top{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #b88b87;padding-bottom:20px;color:#f2c6bd;font:500 10px/1.5 'Montserrat',sans-serif;letter-spacing:.15em}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:38px;padding-top:48px}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-grid h2{font:600 clamp(32px,3.45vw,49px)/1.53 'Nanum Myeongjo',serif;letter-spacing:-.069em;max-width:920px;text-wrap:balance}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-grid p{margin-top:17px;color:#f0d3cd;font-size:13px;line-height:1.85;text-wrap:pretty}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-link{min-width:195px;display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:15px 0;border-bottom:1px solid #e4c4bb;font-size:13px;font-weight:500;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-link span{font-size:22px;font-weight:300}
+:where(.media-portfolio-main,.media-rental-main) .photo-frame{border-radius:0;min-height:0;overflow:hidden}
+:where(.media-portfolio-main,.media-rental-main) .photo-frame img{object-fit:cover}
+:where(.media-portfolio-main,.media-rental-main) .photo-fallback{background:linear-gradient(142deg,#ac9c90,#d0c2b7 47%,#ad968b)}
+:where(.media-portfolio-main,.media-rental-main) .m-fallback-outline{position:absolute;left:7%;top:-50%;width:100%;aspect-ratio:1;border:1px solid rgba(255,255,255,.3);border-radius:50%}
+:where(.media-portfolio-main,.media-rental-main) .m-fallback-label{position:absolute;left:7%;bottom:7%;font:600 clamp(8px,.95vw,12px)/1.5 'Montserrat',sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.55)}
+:where(.media-portfolio-main,.media-rental-main) .m-frame-marker{position:absolute;right:6%;top:6%;z-index:3;color:rgba(255,255,255,.56);font:500 clamp(11px,1.3vw,18px)/1.3 'Montserrat',sans-serif;letter-spacing:.12em}
+:where(.media-portfolio-main,.media-rental-main) a:focus-visible{outline:2px solid #974b51;outline-offset:4px}
+@media(max-width:850px){:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb-row{padding-bottom:21px}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid{grid-template-columns:1fr;gap:23px;padding-top:32px}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid h2{font-size:clamp(31px,5.2vw,43px)}:where(.media-portfolio-main,.media-rental-main) .m-cta-link{width:max-content;min-width:194px}:where(.media-portfolio-main,.media-rental-main) .m-signature{font-size:8px;letter-spacing:.1em;padding-top:14px}}
+@media(max-width:600px){:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb{gap:7px;font-size:9px;letter-spacing:0}:where(.media-portfolio-main,.media-rental-main) .m-topnote{font-size:8px;letter-spacing:.03em}:where(.media-portfolio-main,.media-rental-main) .m-cta-top{font-size:9px;letter-spacing:.055em}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid h2{font-size:clamp(31px,8.2vw,38px);line-height:1.58}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid p{font-size:12px}:where(.media-portfolio-main,.media-rental-main) .m-signature{font-size:7px;letter-spacing:.045em}}
+@media(max-width:360px){:where(.media-portfolio-main,.media-rental-main) .m-topnote{display:none}:where(.media-portfolio-main,.media-rental-main) .m-cta-top{font-size:8px}:where(.media-portfolio-main,.media-rental-main) .m-signature{font-size:7px;letter-spacing:0}}
+/* SPACE GUIDE: architectural information design, distinct from portfolio photo journal */
+.media-rental-main .mr-hero{background:#eee8e1;padding-top:clamp(28px,3vw,45px)}
+.mr-heading{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(220px,.55fr);gap:clamp(35px,7vw,107px);align-items:end;padding:clamp(63px,7vw,101px) 0 clamp(39px,5vw,71px)}
+.mr-heading h1{font:600 clamp(43px,4.35vw,66px)/1.55 'Nanum Myeongjo',serif;white-space:pre-line;letter-spacing:-.075em;margin-top:22px}
+.mr-heading-aside{padding-bottom:10px}
+.mr-aside-rule{display:block;width:48px;height:1px;background:#9b776b;margin-bottom:24px}
+.mr-heading-aside>p:first-of-type{font-size:17px;font-weight:500;line-height:1.75;letter-spacing:-.045em}
+.mr-heading-aside>p:nth-of-type(2){font-size:13px;color:#72655c;line-height:1.98;margin-top:15px;text-wrap:pretty}
+.mr-heading-aside .m-text-link{margin-top:23px}
+.mr-hero-figure{margin:0}
+.media-rental-main .mr-hero-photo{aspect-ratio:2.48/1}
+.media-rental-main .mr-hero-photo .photo-fallback{background:linear-gradient(102deg,#99857b 0%,#c9b6a7 50%,#e0d2c6 100%)}
+.mr-hero-figure figcaption{display:flex;justify-content:space-between;gap:14px;padding:15px 0 22px;color:#a38a7e;font:500 9px/1.4 'Montserrat',sans-serif;letter-spacing:.13em}
+.mr-possibility{background:#faf8f5;padding:clamp(70px,7.2vw,106px) 0 0}
+.mr-possibility-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(55px,7.2vw,112px);align-items:start;padding-bottom:clamp(64px,6.7vw,94px)}
+.mr-possibility-copy h2,.mr-guide-head h2,.mr-details-grid h2{font:600 clamp(35px,4vw,57px)/1.55 'Nanum Myeongjo',serif;letter-spacing:-.075em;margin:19px 0 24px}
+.mr-possibility-copy h2{white-space:pre-line}
+.mr-possibility-copy>p{font-size:14px;line-height:2;color:#786960;max-width:480px;text-wrap:pretty}
+.mr-use-list{margin-top:clamp(34px,4vw,60px);border-top:1px solid #cfc2b6}
+.mr-use-list>div{display:grid;grid-template-columns:30px minmax(0,1fr);gap:5px 17px;padding:22px 0;border-bottom:1px solid #ded3c8}
+.mr-use-list>div span{grid-row:span 2;font:500 10px/1.5 'Montserrat',sans-serif;color:#ac8070;padding-top:6px}
+.mr-use-list h3{font-size:17px;font-weight:600;letter-spacing:-.045em;line-height:1.5}
+.mr-use-list p{font-size:13px;line-height:1.8;color:#786960}
+.mr-possibility-figure{margin:44px 0 0}
+.media-rental-main .mr-detail-photo{aspect-ratio:.78/1}
+.media-rental-main .mr-detail-photo .photo-fallback{background:linear-gradient(135deg,#b5a294,#dfcdbf 44%,#a89386)}
+.mr-possibility-figure figcaption{display:flex;justify-content:space-between;gap:20px;padding-top:17px;font:500 9px/1.5 'Montserrat',sans-serif;letter-spacing:.13em;color:#a28879}
+.mr-guide{background:#302e2c;color:#f5f0eb;padding:clamp(58px,6vw,86px) 0 0}
+.mr-guide .m-eyebrow{color:#d5a99a}
+.mr-guide-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.55fr);gap:clamp(40px,7vw,94px);align-items:end;padding-bottom:clamp(28px,3.2vw,42px)}
+.mr-guide-head h2{margin-bottom:0}
+.mr-guide-head p{color:#c9bbb0;font-size:14px;line-height:1.96;text-wrap:pretty}
+.mr-steps{border-top:1px solid #73635b}
+.mr-steps article{display:grid;grid-template-columns:minmax(130px,.36fr) minmax(0,1fr);align-items:start;gap:24px;padding:clamp(19px,1.9vw,27px) 0;border-bottom:1px solid #574e48}
+.mr-step-id{font:500 10px/1.5 'Montserrat',sans-serif;letter-spacing:.12em;color:#d2aa96;padding-top:7px}
+.mr-steps h3{font:600 clamp(22px,2.2vw,31px)/1.48 'Nanum Myeongjo',serif;letter-spacing:-.06em}
+.mr-steps p{color:#c3b7ae;font-size:13px;line-height:1.9;margin-top:10px}
+
+.mr-guide .m-signature{color:#baaba0;border-color:#655b54;margin-top:clamp(30px,3.2vw,46px);padding-bottom:20px}
+.mr-details{background:#efe9e2;padding:clamp(65px,6.2vw,88px) 0 0}
+.mr-details-grid{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(48px,6.5vw,94px);padding-bottom:clamp(44px,4vw,58px)}
+.mr-details-grid h2{margin-bottom:20px}
+.mr-details-grid>div:first-child>p{font-size:14px;line-height:1.95;color:#786a62;max-width:350px;text-wrap:pretty}
+.mr-details-table{border-top:1px solid #ae9c8e}
+.mr-details-table>div{display:grid;grid-template-columns:minmax(110px,.46fr) minmax(0,1fr);gap:20px;padding:18px 0;border-bottom:1px solid #d2c5ba;align-items:start;font-size:13px;line-height:1.75}
+.mr-details-table span{color:#9b6a5c}.mr-details-table strong{font-size:13px;font-weight:500;color:#493d36}
+.mr-details .m-signature{padding-bottom:20px}
+.mr-cta{background:#794344;color:#fff8f0;padding:clamp(65px,6vw,90px) 0 clamp(73px,7vw,103px)}
+@media(max-width:1024px){.mr-heading{gap:40px}.mr-heading h1{font-size:clamp(40px,4.5vw,54px)}.mr-possibility-grid{gap:50px}.mr-guide-head{gap:42px}.mr-details-grid{gap:55px}}
+@media(max-width:850px){.mr-heading{grid-template-columns:1fr;gap:26px;padding:60px 0 37px}.mr-heading h1{font-size:clamp(40px,6.4vw,59px)}.mr-heading-aside{max-width:550px}.media-rental-main .mr-hero-photo{aspect-ratio:1.8/1}.mr-possibility-grid{grid-template-columns:1fr;gap:39px}.mr-possibility-figure{margin:0}.media-rental-main .mr-detail-photo{aspect-ratio:1.65/1}.mr-guide-head{grid-template-columns:1fr;gap:15px}.mr-guide-head h2{margin:14px 0 0}.mr-guide-head p{max-width:570px}.mr-details-grid{grid-template-columns:1fr;gap:33px}}
+@media(max-width:600px){.media-rental-main .mr-hero{padding-top:22px}.mr-heading{padding:47px 0 30px;gap:23px}.mr-heading h1{font-size:clamp(32px,8.1vw,40px);line-height:1.63;letter-spacing:-.075em;margin-top:13px}.mr-aside-rule{margin-bottom:15px}.mr-heading-aside>p:first-of-type{font-size:14px}.mr-heading-aside>p:nth-of-type(2){font-size:13px;margin-top:9px}.mr-heading-aside .m-text-link{margin-top:13px}.media-rental-main .mr-hero-photo{aspect-ratio:1.22/1}.mr-hero-figure figcaption{font-size:8px;letter-spacing:.04em}.mr-possibility{padding-top:75px}.mr-possibility-grid{padding-bottom:80px;gap:32px}.mr-possibility-copy h2,.mr-guide-head h2,.mr-details-grid h2{font-size:clamp(31px,8vw,38px);line-height:1.66;margin:14px 0 19px}.mr-possibility-copy>p{font-size:13px;line-height:1.96}.mr-use-list{margin-top:26px}.mr-use-list>div{padding:18px 0}.mr-use-list h3{font-size:16px}.mr-use-list p{font-size:12px}.media-rental-main .mr-detail-photo{aspect-ratio:1.07/1}.mr-guide{padding-top:54px}.mr-guide-head{padding-bottom:24px}.mr-guide-head p{font-size:13px}.mr-steps article{grid-template-columns:1fr;gap:7px;padding:18px 0}.mr-step-id{grid-column:1;grid-row:1;font-size:9px;padding:0}.mr-steps article>div{grid-column:1;grid-row:2}.mr-steps h3{font-size:23px}.mr-steps p{font-size:12px;margin-top:7px}.mr-guide .m-signature{margin-top:34px}.mr-details{padding-top:54px}.mr-details-grid{gap:25px;padding-bottom:45px}.mr-details-grid>div:first-child>p{font-size:13px}.mr-details-table>div{grid-template-columns:minmax(90px,.48fr) minmax(0,1fr);gap:12px;padding:16px 0}.mr-details-table>div span,.mr-details-table>div strong{font-size:12px}.mr-cta{padding:65px 0 76px}}
+@media(max-width:360px){.mr-heading h1{font-size:31px}.mr-steps h3{font-size:22px}.mr-details-table>div{gap:9px}}
+
+/* Final copy-fit and compact CTA balance */
+@media(max-width:600px){.mr-cta{padding:51px 0 58px} .m-cta-grid{padding-top:26px}}
+
+@media(max-width:600px){.m-cta-grid h2{white-space:pre-line}}
+
+
+/* v1.1 | In-studio production equipment: editorial specification, not cards. */
+.mr-equipment{background:#e5dcd3;color:#302a27;padding:clamp(66px,6vw,90px) 0 0}
+.mr-equipment-grid{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);column-gap:clamp(45px,8vw,125px);align-items:start}
+.mr-equipment-copy{max-width:450px}
+.mr-equipment-copy h2{font:600 clamp(35px,3.8vw,53px)/1.53 'Nanum Myeongjo',serif;letter-spacing:-.078em;white-space:pre-line;word-break:keep-all;margin:22px 0 23px}
+.mr-equipment-copy p{max-width:450px;color:#6b5f56;font-size:14px;line-height:1.98;word-break:keep-all;text-wrap:pretty}
+.mr-equipment-spec{border-top:1px solid #b4a79b}
+.mr-eq-row{display:grid;grid-template-columns:27px minmax(130px,.8fr) minmax(0,1.1fr);column-gap:18px;align-items:center;min-height:82px;padding:19px 0;border-bottom:1px solid #c7b9ad}
+.mr-eq-number{font:500 10px/1.6 'Montserrat',sans-serif;color:#9c786c}
+.mr-eq-label{font:600 10px/1.6 'Montserrat',sans-serif;color:#85534f;letter-spacing:.12em;white-space:nowrap}
+.mr-eq-row strong{font-size:16px;line-height:1.55;font-weight:600;letter-spacing:-.04em;word-break:keep-all}
+
+.mr-eq-note span{font:600 9px/1.8 'Montserrat',sans-serif;color:#8c776b;letter-spacing:.09em}
+.mr-eq-note p{color:#76675c;font-size:12px;line-height:1.85;word-break:keep-all;text-wrap:pretty}
+.mr-eq-end{display:flex;justify-content:space-between;align-items:center;gap:22px;margin-top:clamp(38px,5vw,66px);padding-bottom:26px}
+.mr-eq-end>span{font:500 10px/1.5 'Montserrat',sans-serif;letter-spacing:.18em;color:#9a776c}
+.mr-eq-end a{font-size:12px;font-weight:600;color:#7e4242;display:inline-flex;align-items:center;gap:26px;white-space:nowrap;border-bottom:1px solid #a07b70;padding:10px 0}
+.mr-equipment .m-signature{padding-bottom:20px}
+@media(max-width:1024px){.mr-equipment-grid{column-gap:42px}.mr-eq-row{grid-template-columns:25px minmax(100px,.7fr) minmax(0,1.3fr);gap:13px}.mr-eq-label{font-size:9px}}
+@media(max-width:850px){.mr-equipment-grid{grid-template-columns:1fr;gap:38px}.mr-equipment-copy{max-width:590px}.mr-equipment-copy h2{font-size:clamp(34px,5.2vw,47px)}.mr-equipment-spec{max-width:100%}.mr-eq-row{grid-template-columns:32px minmax(150px,.85fr) minmax(0,1.15fr);gap:16px}}
+@media(max-width:600px){.mr-equipment{padding-top:59px}.mr-equipment-grid{gap:32px}.mr-equipment-copy h2{font-size:clamp(31px,8vw,38px);line-height:1.59;margin:13px 0 17px}.mr-equipment-copy p{font-size:13px;line-height:1.93}.mr-eq-row{grid-template-columns:23px minmax(91px,.76fr) minmax(0,1.24fr);gap:9px;min-height:75px;padding:15px 0}.mr-eq-label{font-size:8px;letter-spacing:.045em}.mr-eq-row strong{font-size:13px;line-height:1.55}.mr-eq-note span{font-size:8px;line-height:1.5}.mr-eq-note p{font-size:12px;line-height:1.75;margin-top:7px}.mr-eq-end{margin-top:38px;align-items:flex-end;gap:12px;padding-bottom:22px}.mr-eq-end>span{font-size:8px;letter-spacing:.03em}.mr-eq-end a{font-size:11px;gap:10px;flex-shrink:0}}
+@media(max-width:360px){.mr-equipment-copy h2{font-size:30px}.mr-eq-row{grid-template-columns:21px 90px minmax(0,1fr);gap:7px}.mr-eq-row strong{font-size:12px}.mr-eq-label{font-size:7.6px}.mr-eq-end>span{font-size:7.5px}}
+
+/* v1.1 refined: keep equipment inquiry adjacent to the explanation; avoid overlap with floating top control. */
+.mr-eq-inquiry{display:inline-flex;align-items:center;gap:26px;border-bottom:1px solid #9c746b;color:#804646;padding:10px 0;margin-top:22px;font-size:12px;font-weight:600;white-space:nowrap}
+.mr-eq-inquiry span{font-size:19px;font-weight:300}
+.mr-equipment .m-signature{margin-top:clamp(37px,4vw,55px)}
+@media(max-width:600px){.mr-eq-inquiry{margin-top:12px;font-size:11px;gap:18px}.mr-equipment .m-signature{margin-top:26px}}
+
+/* v2.0 professional photo shooting + rental studio: localized editorial copy fit */
+.media-rental-main .mr-heading h1{font-size:clamp(41px,4.12vw,59px);line-height:1.56;letter-spacing:-.079em}
+.media-rental-main .mr-heading-aside>p:first-of-type{font-size:16px;line-height:1.75}
+.media-rental-main .mr-heading-aside>p:nth-of-type(2){line-height:1.87;margin-top:12px}
+.media-rental-main .mr-possibility-copy h2{font-size:clamp(33px,3.6vw,51px);line-height:1.57}
+.media-rental-main .mr-use-list h3{font-size:16px}
+.media-rental-main .mr-equipment-copy h2{font-size:clamp(35px,3.8vw,53px)}
+@media(max-width:1024px){.media-rental-main .mr-heading h1{font-size:clamp(35px,4.25vw,50px)}}
+@media(max-width:850px){.media-rental-main .mr-heading h1{font-size:clamp(39px,5.75vw,52px)}}
+@media(max-width:600px){.media-rental-main .mr-heading h1{font-size:clamp(27px,7.55vw,35px);line-height:1.63}.media-rental-main .mr-possibility-copy h2{font-size:clamp(27px,7.35vw,35px);line-height:1.64}.media-rental-main .mr-heading-aside>p:first-of-type{font-size:13.5px;line-height:1.7}.media-rental-main .mr-heading-aside>p:nth-of-type(2){font-size:12.5px;line-height:1.82}.media-rental-main .mr-use-list h3{font-size:15px}.media-rental-main .mr-use-list p{font-size:12px}.media-rental-main .mr-guide-head h2,.media-rental-main .mr-details-grid h2{font-size:clamp(30px,7.7vw,37px)}.media-rental-main .mr-cta .m-cta-grid h2{font-size:clamp(29px,7.7vw,37px)}}
+@media(max-width:360px){.media-rental-main .mr-heading h1{font-size:26px}.media-rental-main .mr-possibility-copy h2{font-size:26px}}

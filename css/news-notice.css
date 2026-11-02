@@ -1,0 +1,345 @@
+/* THE303 STUDIO / NOTICE v2.0 — concise editorial notice list, no clamped summaries */
+.news-page{--n-ink:#2f2a27;--n-muted:#796d65;--n-rule:#d9d0c8;--n-bg:#faf8f5;--n-soft:#f3eee9;color:var(--n-ink)}
+.news-page *{box-sizing:border-box}
+.news-page h1,.news-page h2,.news-page h3{word-break:keep-all;overflow-wrap:normal}
+.news-page .news-eyebrow{font:600 10px/1.4 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.16em;color:#975d52}
+.news-page .news-breadcrumb{display:flex;align-items:center;gap:12px;white-space:nowrap;min-height:20px;font:500 10px/1.6 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.1em;color:#897870}
+.news-page .news-breadcrumb strong{color:#754747;font-weight:700}
+.news-page .news-sign{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--n-rule);padding:13px 0 0;font:500 9px/1.5 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.12em;color:#9d8579}
+.news-page .nn-hero{background:#faf8f5;padding:31px 0 0}
+.news-page .nn-hero-grid{display:grid;grid-template-columns:minmax(0,1.26fr) minmax(0,.74fr);align-items:end;gap:clamp(36px,6vw,90px);padding:clamp(62px,6vw,94px) 0 68px}
+.news-page .nn-headline h1{white-space:pre-line;font:600 clamp(40px,4.35vw,63px)/1.35 'Nanum Myeongjo',serif;letter-spacing:-.061em;margin:22px 0 0}
+.news-page .nn-hero-side{justify-self:end;width:100%;max-width:360px;padding-bottom:8px}
+.news-page .nn-side-index{display:block;font:500 10px/1.5 'Montserrat',sans-serif;letter-spacing:.11em;color:#aa9086;border-bottom:1px solid var(--n-rule);padding-bottom:13px;margin-bottom:20px}
+.news-page .nn-hero-side h2{font:600 clamp(17px,1.6vw,21px)/1.5 'Noto Sans KR',sans-serif;letter-spacing:-.045em;margin:0 0 9px}
+.news-page .nn-hero-side p{font:400 13px/1.85 'Noto Sans KR',sans-serif;color:#766d66;word-break:keep-all;letter-spacing:-.02em}
+.news-page .nn-board-section{background:#f2ede8;padding:clamp(54px,5.3vw,76px) 0 48px}
+.news-page .nn-board-top{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:30px}
+.news-page .nn-board-top h2{font:600 clamp(31px,3vw,42px)/1.35 'Nanum Myeongjo',serif;letter-spacing:-.045em;margin:14px 0 0}
+.news-page .nn-board-top>p{max-width:410px;color:#766c65;font:400 13px/1.85 'Noto Sans KR',sans-serif;text-align:right;word-break:keep-all}
+.news-page .nn-board-controls{display:flex;align-items:center;justify-content:space-between;gap:26px;min-height:48px;margin:0 0 23px}
+.news-page .nn-filters{display:flex;gap:7px 23px;flex-wrap:wrap;align-items:center}
+.news-page .nn-filters[hidden],.news-page .nn-search-wrap[hidden],.news-page .nn-preview-note[hidden],.news-page .nn-no-results[hidden],.news-page .nn-entry[hidden]{display:none!important}
+.news-page .nn-filter{appearance:none;background:transparent;border:0;border-bottom:1px solid transparent;color:#89766a;font:500 12px/1.65 'Noto Sans KR',sans-serif;letter-spacing:-.025em;padding:7px 0 9px;cursor:pointer;white-space:nowrap}
+.news-page .nn-filter:is(:hover,:focus-visible),.news-page .nn-filter.is-active{color:#754747;border-bottom-color:#754747}
+.news-page .nn-filter.is-active{font-weight:700}
+.news-page .nn-search-wrap{position:relative;display:block;width:200px;flex:0 0 auto}
+.news-page .nn-search-wrap input{width:100%;border:0;border-bottom:1px solid #b9a9a1;background:transparent;border-radius:0;padding:9px 27px 9px 4px;font:400 12px/1.5 'Noto Sans KR',sans-serif;color:#342e2a}
+.news-page .nn-search-wrap svg{position:absolute;right:2px;top:50%;transform:translateY(-50%);pointer-events:none;color:#988175}
+.news-page .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.news-page .nn-preview-note{margin:0 0 14px;padding:10px 13px;background:#f4e1d5;border-left:2px solid #9a6157;font:500 12px/1.5 'Noto Sans KR',sans-serif;color:#754747}
+.news-page .nn-board-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #493e38;padding:0 0 11px;font:600 10px/1.5 'Montserrat',sans-serif;letter-spacing:.13em;color:#846d62}
+.news-page .nn-board-hint{font-size:9px;color:#a48f84;font-weight:500}
+.news-page .nn-notice-list{min-height:0}
+.news-page .notice-empty{min-height:182px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px 12px 29px}
+.news-page .notice-empty-line{height:1px;width:32px;background:#aa8c80;margin:0 0 17px}
+.news-page .notice-empty p{font:500 16px/1.5 'Noto Sans KR',sans-serif;margin:0 0 7px}
+.news-page .notice-empty small{font:400 12px/1.6 'Noto Sans KR',sans-serif;color:#8c7b70}
+.news-page .nn-empty-link{display:inline-block;margin-top:16px;border-bottom:1px solid #a98b7c;padding-bottom:4px;color:#864f4d;font:500 11px 'Noto Sans KR',sans-serif}
+.news-page .nn-entry{border-bottom:1px solid #d5c9c0}
+.news-page .nn-entry-inner{color:inherit;position:relative;display:grid;grid-template-columns:155px minmax(0,1fr) 29px;gap:clamp(22px,4vw,56px);align-items:start;padding:29px 9px 31px;transition:background-color .18s;}
+.news-page a.nn-entry-inner:hover{background:rgba(255,255,255,.36)}
+.news-page a.nn-entry-inner:focus-visible{outline:2px solid #87504d;outline-offset:-2px}
+.news-page .nn-entry--first .nn-entry-inner{padding-top:37px;padding-bottom:37px}
+.news-page .nn-entry-meta{display:flex;flex-direction:column;align-items:start;gap:11px;padding-top:5px}
+.news-page .nn-entry-kind{font:600 11px/1.4 'Noto Sans KR',sans-serif;color:#955e55;white-space:nowrap}
+.news-page .nn-entry-date{font:400 11px/1.6 'Montserrat','Noto Sans KR',sans-serif;color:#96877c;white-space:nowrap}
+.news-page .nn-entry-title{font:600 clamp(19px,1.75vw,25px)/1.45 'Nanum Myeongjo',serif;letter-spacing:-.04em;margin:0 0 12px;word-break:keep-all}
+.news-page .nn-entry--first .nn-entry-title{font-size:clamp(22px,2.15vw,31px)}
+.news-page .nn-entry-desc{font:400 13px/1.85 'Noto Sans KR',sans-serif;color:#72655e;word-break:keep-all;letter-spacing:-.022em;max-width:685px;margin:0 0 18px}
+.news-page .nn-entry-more{display:inline-flex;align-items:center;gap:16px;font:500 11px/1.4 'Noto Sans KR',sans-serif;color:#8a514c;border-bottom:1px solid #ad8172;padding-bottom:6px}
+.news-page .nn-entry-more-icon{font:400 17px/1 'Montserrat',sans-serif;transition:transform .2s}
+.news-page a.nn-entry-inner:hover .nn-entry-more-icon{transform:translate(3px,-3px)}
+.news-page .nn-entry-side{font:400 20px/1.5 'Montserrat',sans-serif;color:#b38d7f;text-align:right}
+.news-page .nn-no-results{padding:30px 10px;text-align:center;border-bottom:1px solid #d5c9c0;font-size:13px;color:#786a62}
+.news-page .nn-board-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin:18px 0 28px;color:#a0897e;font:500 9px/1.5 'Montserrat',sans-serif;letter-spacing:.11em}
+.news-page .nn-board-bottom a{font:500 12px/1.5 'Noto Sans KR',sans-serif;letter-spacing:0;color:#854d49;border-bottom:1px solid #b69b91;padding-bottom:5px}
+.news-page .nn-board-bottom a span{margin-left:11px}
+.news-page .nn-quick{background:#faf8f5;padding:62px 0 0}
+.news-page .nn-quick-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:27px}
+.news-page .nn-quick-head h2{font:600 clamp(27px,2.8vw,38px)/1.35 'Nanum Myeongjo',serif;letter-spacing:-.045em;margin:13px 0 0}
+.news-page .nn-quick-head>p{max-width:375px;text-align:right;color:#81756e;font:400 12px/1.75 'Noto Sans KR',sans-serif;word-break:keep-all}
+.news-page .nn-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid #51443e;border-bottom:1px solid #d9cec6}
+.news-page .nn-link{position:relative;min-height:138px;padding:20px 38px 23px 2px;display:flex;flex-direction:column;align-items:start;gap:0}
+.news-page .nn-link+.nn-link{border-left:1px solid #e0d6ce;padding-left:22px}
+.news-page .nn-link-index{font:600 10px/1.5 'Montserrat',sans-serif;letter-spacing:.08em;color:#a77968;margin-bottom:13px}
+.news-page .nn-link strong{font:600 18px/1.45 'Noto Sans KR',sans-serif;letter-spacing:-.055em;color:#342d29;word-break:keep-all}
+.news-page .nn-link-caption{margin-top:6px;font:400 11px/1.7 'Noto Sans KR',sans-serif;color:#8b7a6e;word-break:keep-all}
+.news-page .nn-link-arrow{position:absolute;right:18px;top:22px;color:#a27061;transition:transform .2s}
+.news-page .nn-link:hover .nn-link-arrow{transform:translate(3px,-3px)}
+.news-page .nn-quick .news-sign{margin-top:29px}
+.news-page .news-cta{background:#754747;color:#fff;padding:69px 0}
+.news-page .news-cta-inner{display:flex;justify-content:space-between;align-items:end;gap:42px}
+.news-page .news-cta .news-eyebrow{color:#e5c5b9}
+.news-page .news-cta h2{font:600 clamp(26px,2.9vw,38px)/1.4 'Nanum Myeongjo',serif;letter-spacing:-.05em;margin:19px 0 11px;word-break:keep-all}
+.news-page .news-cta p{font:400 12px/1.8 'Noto Sans KR',sans-serif;color:#e5d1cc}
+.news-page .news-cta-link{display:flex;justify-content:space-between;align-items:center;gap:23px;min-width:184px;border-bottom:1px solid #c7a6a0;padding:12px 0;font:500 12px/1.5 'Noto Sans KR',sans-serif;white-space:nowrap;flex:0 0 auto}
+.news-page .news-cta-link span{font-size:18px}
+@media(max-width:850px){
+ .news-page .nn-hero{padding-top:24px}.news-page .nn-hero-grid{grid-template-columns:1fr;gap:24px;padding:49px 0 42px}.news-page .nn-headline h1{font-size:clamp(37px,6.3vw,52px);margin-top:17px}
+ .news-page .nn-hero-side{justify-self:start;max-width:600px;padding:0}.news-page .nn-side-index{margin-bottom:12px;padding-bottom:10px}.news-page .nn-hero-side h2{font-size:18px}
+ .news-page .nn-board-section{padding:54px 0 35px}.news-page .nn-board-top{margin-bottom:24px}.news-page .nn-quick{padding-top:50px}
+ .news-page .nn-entry-inner{grid-template-columns:116px minmax(0,1fr) 21px;gap:23px;padding:25px 4px}.news-page .nn-entry--first .nn-entry-inner{padding:28px 4px}
+ .news-page .nn-entry-title{font-size:21px}.news-page .nn-entry--first .nn-entry-title{font-size:24px}
+ .news-page .nn-quick-head{margin-bottom:22px}.news-page .nn-links{grid-template-columns:1fr}
+ .news-page .nn-link,.news-page .nn-link+.nn-link{min-height:103px;padding:17px 33px 17px 2px;border-left:0;border-bottom:1px solid #e1d5cb}
+ .news-page .nn-link:last-child{border-bottom:0}.news-page .nn-link-index{margin-bottom:6px}.news-page .nn-link-caption{margin-top:5px}.news-page .nn-link-arrow{top:29px;right:6px}
+ .news-page .news-cta{padding:54px 0}
+}
+@media(max-width:620px){
+ .news-page .nn-hero-grid{padding:39px 0 36px;gap:26px}.news-page .nn-headline h1{font-size:clamp(31px,7.8vw,39px);line-height:1.5;margin-top:14px;letter-spacing:-.066em}
+ .news-page .nn-hero-side h2{font-size:16px;margin-bottom:7px}.news-page .nn-hero-side p{font-size:12px;line-height:1.8}.news-page .nn-side-index{margin-bottom:10px}
+ .news-page .nn-board-section{padding:47px 0 29px}.news-page .nn-board-top{display:block;margin-bottom:20px}.news-page .nn-board-top>p{text-align:left;margin-top:11px;font-size:12px;line-height:1.85;max-width:320px}.news-page .nn-pc-only{display:none}
+ .news-page .nn-board-controls{display:block;margin-bottom:17px}.news-page .nn-filters{gap:4px 15px}.news-page .nn-filter{font-size:11px;padding:7px 0}
+ .news-page .nn-search-wrap{margin:8px 0 0;width:min(260px,100%)}.news-page .nn-board-meta{padding-bottom:10px}.news-page .nn-board-hint{font-size:8px;letter-spacing:.03em}
+ .news-page .nn-entry-inner{display:grid;grid-template-columns:minmax(0,1fr) 20px;gap:0 8px;padding:23px 1px 25px}.news-page .nn-entry--first .nn-entry-inner{padding:26px 1px 27px}
+ .news-page .nn-entry-meta{grid-column:1;grid-row:1;display:flex;flex-direction:row;align-items:center;gap:14px;padding:0 0 14px}
+ .news-page .nn-entry-kind{font-size:10px}.news-page .nn-entry-date{font-size:10px}.news-page .nn-entry-content{grid-column:1;grid-row:2}
+ .news-page .nn-entry-title{font-size:20px;line-height:1.45;margin:0 0 10px}.news-page .nn-entry--first .nn-entry-title{font-size:22px}
+ .news-page .nn-entry-desc{font-size:12px;line-height:1.85;margin-bottom:14px;max-width:100%}
+ .news-page .nn-entry-more{font-size:11px;padding-bottom:5px}.news-page .nn-entry-side{grid-column:2;grid-row:1/3;align-self:start;font-size:17px}
+ .news-page .nn-board-bottom{align-items:start;gap:12px;margin:17px 0 23px}.news-page .nn-board-bottom>span{font-size:8px}
+ .news-page .nn-board-bottom a{font-size:11px;white-space:nowrap}
+ .news-page .nn-quick{padding-top:44px}.news-page .nn-quick-head{display:block}.news-page .nn-quick-head>p{margin-top:9px;text-align:left;font-size:12px}
+ .news-page .news-sign{font-size:8px;letter-spacing:.07em}
+ .news-page .news-cta-inner{display:block}.news-page .news-cta h2{font-size:clamp(26px,6.3vw,33px);margin:14px 0 8px}.news-page .news-cta-link{margin-top:19px;max-width:210px}
+}
+@media(max-width:340px){.news-page .nn-filters{gap:3px 11px}.news-page .nn-entry-title{font-size:19px}.news-page .nn-entry--first .nn-entry-title{font-size:20px}.news-page .nn-board-bottom>span{display:none}}
+
+/* v2.1 · Six-entry first page. Four compact important notices + two editorial regular notices. */
+.news-page .nn-group-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 3px 10px;border-bottom:1px solid #8b786c}
+.news-page .nn-group-title{font:600 10px/1.5 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.12em;color:#76554b}
+.news-page .nn-group-note{font:500 10px/1.5 'Montserrat',sans-serif;color:#a48b7e}
+.news-page .nn-pinned-list + .nn-group-head{margin-top:21px}
+.news-page .nn-entry--pinned .nn-entry-inner{grid-template-columns:155px minmax(0,1fr) 20px;gap:clamp(22px,4vw,56px);padding:17px 9px 17px;align-items:center}
+.news-page .nn-entry--pinned .nn-entry-meta{gap:5px;padding:0}
+.news-page .nn-pin-label{font:700 10px/1.5 'Noto Sans KR',sans-serif;color:#754747;letter-spacing:.05em}
+.news-page .nn-entry--pinned .nn-entry-kind{font-size:10px;color:#977f73}
+.news-page .nn-entry--pinned .nn-entry-date{font-size:10px}
+.news-page .nn-entry--pinned .nn-entry-content{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:3px 20px;align-items:center}
+.news-page .nn-entry--pinned .nn-entry-title{font:600 clamp(16px,1.35vw,19px)/1.5 'Nanum Myeongjo',serif;letter-spacing:-.035em;margin:0;grid-column:1;word-break:keep-all}
+.news-page .nn-entry--pinned .nn-entry-desc{font-size:11px;line-height:1.75;color:#83746a;max-width:none;margin:0;grid-column:1}
+.news-page .nn-entry--pinned .nn-entry-more{font-size:10px;white-space:nowrap;grid-column:2;grid-row:1/3;align-self:center;padding-bottom:3px}
+.news-page .nn-entry--pinned .nn-entry-side{font-size:16px}
+.news-page .nn-pagination{display:flex;align-items:center;justify-content:center;gap:5px;margin:27px 0 6px}
+.news-page .nn-pagination[hidden]{display:none}
+.news-page .nn-page-button{appearance:none;border:1px solid transparent;background:transparent;color:#78685e;min-width:36px;height:37px;padding:0 8px;font:500 12px/1 'Montserrat','Noto Sans KR',sans-serif;cursor:pointer}
+.news-page .nn-page-button:hover:not(:disabled),.news-page .nn-page-button:focus-visible{border-color:#bca89e;color:#754747}
+.news-page .nn-page-button.is-active{border-color:#754747;background:#754747;color:#fff}
+.news-page .nn-page-button:disabled{cursor:default;opacity:.32}
+.news-page .nn-page-ellipsis{font:400 13px/1 'Montserrat',sans-serif;color:#97857a;padding:0 5px}
+@media(max-width:850px){
+ .news-page .nn-entry--pinned .nn-entry-inner{grid-template-columns:116px minmax(0,1fr) 18px;gap:23px;padding:17px 4px}
+ .news-page .nn-entry--pinned .nn-entry-content{grid-template-columns:1fr;gap:4px}
+ .news-page .nn-entry--pinned .nn-entry-more{grid-column:1;grid-row:auto;justify-self:start;margin-top:4px}
+}
+@media(max-width:620px){
+ .news-page .nn-group-head{padding:13px 1px 10px}
+ .news-page .nn-pinned-list + .nn-group-head{margin-top:14px}
+ .news-page .nn-entry--pinned .nn-entry-inner{grid-template-columns:minmax(0,1fr) 17px;gap:0 8px;padding:15px 1px 16px}
+ .news-page .nn-entry--pinned .nn-entry-meta{grid-row:1;grid-column:1;flex-direction:row;align-items:center;gap:9px;padding:0 0 9px;flex-wrap:wrap}
+ .news-page .nn-entry--pinned .nn-entry-content{grid-row:2;grid-column:1;gap:5px}
+ .news-page .nn-entry--pinned .nn-entry-title{font-size:17px;line-height:1.5}
+ .news-page .nn-entry--pinned .nn-entry-desc{font-size:11px;line-height:1.7}
+ .news-page .nn-entry--pinned .nn-entry-more{font-size:10px;margin-top:3px;padding-bottom:3px}
+ .news-page .nn-entry--pinned .nn-entry-side{grid-column:2;grid-row:1/3;align-self:start;font-size:16px}
+ .news-page .nn-pagination{margin:19px 0 5px;gap:2px}.news-page .nn-page-button{min-width:33px;height:35px}
+}
+@media(max-width:340px){.news-page .nn-entry--pinned .nn-entry-title{font-size:16px}.news-page .nn-entry--pinned .nn-entry-meta{gap:7px}.news-page .nn-page-button{min-width:31px}}
+
+.news-page #nnBoardTitle{scroll-margin-top:110px}
+
+
+/* v2.2 — Warmer voice, calibrated spacing, compact publication-empty state.
+   Scoped to NOTICE; all site-wide styles, other NEWS page, and fixed functions untouched. */
+.news-page .nn-hero{padding-top:22px}
+.news-page .nn-hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);align-items:center;gap:clamp(24px,4vw,58px);padding:clamp(38px,4.1vw,57px) 0 clamp(34px,3.9vw,54px)}
+.news-page .nn-headline h1{white-space:normal;font-size:clamp(36px,3.55vw,52px);line-height:1.36;letter-spacing:-.06em;margin-top:17px;word-break:keep-all;overflow-wrap:normal}
+.news-page .nn-hero-side{padding-bottom:0;max-width:365px}
+.news-page .nn-side-index{margin-bottom:13px;padding-bottom:10px}
+.news-page .nn-hero-side h2{font-size:clamp(16px,1.32vw,19px);line-height:1.45;margin-bottom:7px;word-break:keep-all}
+.news-page .nn-hero-side p{line-height:1.75;font-size:12px;word-break:keep-all}
+.news-page .nn-board-section{padding-top:clamp(35px,4vw,51px);padding-bottom:34px}
+.news-page .nn-board-top{margin-bottom:18px}
+.news-page .nn-board-top h2{margin-top:10px}
+.news-page .nn-board-top>p{max-width:345px;line-height:1.75}
+.news-page .nn-board-controls{min-height:36px;margin-bottom:16px}
+.news-page .nn-board-bottom{margin:15px 0 21px}
+.news-page .notice-empty{min-height:108px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;text-align:left;gap:18px;padding:24px 3px 23px;border-bottom:1px solid var(--n-rule)}
+.news-page .notice-empty-line{display:none}
+.news-page .notice-empty-copy p{font-size:14px;margin-bottom:4px}
+.news-page .notice-empty-copy small{font-size:12px;line-height:1.65;word-break:keep-all}
+.news-page .nn-empty-link{margin:0;white-space:nowrap;align-self:center}
+.news-page .nn-quick{padding-top:45px}
+.news-page .nn-quick .news-sign{margin-top:20px}
+@media(max-width:850px){
+ .news-page .nn-hero{padding-top:16px}
+ .news-page .nn-hero-grid{grid-template-columns:1fr;gap:18px;padding:36px 0 30px}
+ .news-page .nn-headline h1{font-size:clamp(35px,5vw,48px);margin-top:13px}
+ .news-page .nn-hero-side{max-width:580px}
+ .news-page .nn-side-index{padding-bottom:7px;margin-bottom:10px}
+ .news-page .nn-board-section{padding:40px 0 28px}
+ .news-page .nn-board-top{margin-bottom:17px}
+ .news-page .nn-quick{padding-top:38px}
+}
+@media(max-width:620px){
+ .news-page .nn-hero{padding-top:13px}
+ .news-page .nn-hero-grid{gap:16px;padding:25px 0 24px}
+ .news-page .nn-headline h1{font-size:clamp(30px,8.7vw,37px);line-height:1.42;margin-top:12px;letter-spacing:-.07em}
+ .news-page .nn-hero-side h2{font-size:15px;margin-bottom:5px}
+ .news-page .nn-hero-side p{font-size:12px;line-height:1.7}
+ .news-page .nn-board-section{padding:34px 0 24px}
+ .news-page .nn-board-top{margin-bottom:15px}
+ .news-page .nn-board-top h2{margin-top:8px}
+ .news-page .nn-board-top>p{margin-top:8px;max-width:350px;line-height:1.7}
+ .news-page .nn-board-controls{min-height:0;margin:0 0 12px}
+ .news-page .notice-empty{min-height:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:20px 1px}
+ .news-page .notice-empty-copy p{font-size:13px}
+ .news-page .nn-empty-link{align-self:flex-start;font-size:11px}
+ .news-page .nn-quick{padding-top:33px}
+}
+
+/* v2.2 final microtypography: keep compact 320px title and avoid empty double CTAs. */
+.news-page:not(.nn-has-posts) .nn-board-controls,.news-page:not(.nn-has-posts) .nn-board-bottom{display:none}
+@media(max-width:620px){.news-page .nn-headline h1{font-size:clamp(27px,7.95vw,35px)}}
+
+
+/* v2.3 · Approved final refinement: emphasize NOTICE/LATEST and align regular CTAs right.
+   All rules are scoped to the notice page; main/nav, pinned CTAs, and data are untouched. */
+.news-page .nn-board-meta #nnCount{
+  font:700 clamp(12px,.95vw,14px)/1.45 'Montserrat','Noto Sans KR',sans-serif;
+  letter-spacing:.09em;
+  color:#6c4c43;
+}
+.news-page .nn-group-head--latest .nn-group-title{
+  font:700 clamp(12px,.95vw,14px)/1.45 'Montserrat','Noto Sans KR',sans-serif;
+  letter-spacing:.08em;
+  color:#6c4c43;
+}
+/* Align the regular news call-to-action with the same right-hand column rhythm as pinned notices. */
+.news-page .nn-regular-list .nn-entry-content{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) max-content;
+  grid-template-rows:auto auto;
+  column-gap:clamp(18px,2.8vw,40px);
+  align-items:center;
+}
+.news-page .nn-regular-list .nn-entry-title{
+  grid-column:1;
+  grid-row:1;
+  margin-bottom:8px;
+}
+.news-page .nn-regular-list .nn-entry-desc{
+  grid-column:1;
+  grid-row:2;
+  margin-bottom:0;
+}
+.news-page .nn-regular-list .nn-entry-more{
+  grid-column:2;
+  grid-row:1/3;
+  align-self:center;
+  justify-self:end;
+  margin:0;
+  padding-bottom:4px;
+  white-space:nowrap;
+}
+@media(max-width:850px){
+  .news-page .nn-regular-list .nn-entry-content{column-gap:16px}
+  .news-page .nn-regular-list .nn-entry-more{font-size:10px}
+}
+@media(max-width:620px){
+  .news-page .nn-board-meta #nnCount{font-size:12px}
+  .news-page .nn-group-head--latest .nn-group-title{font-size:12px}
+  .news-page .nn-regular-list .nn-entry-content{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto auto auto;
+    row-gap:0;
+  }
+  .news-page .nn-regular-list .nn-entry-title{grid-column:1;grid-row:1;margin-bottom:8px}
+  .news-page .nn-regular-list .nn-entry-desc{grid-column:1;grid-row:2;margin-bottom:8px}
+  .news-page .nn-regular-list .nn-entry-more{
+    grid-column:1;
+    grid-row:3;
+    justify-self:end;
+    margin-top:3px;
+    font-size:10px;
+  }
+}
+
+/* THE303 / NOTICE v3.0 · editorial hierarchy and quiet tonal sectioning.
+   Notice page only. No navigation, post data, behaviour, or shared design tokens altered. */
+.news-page .nn-board-meta #nnCount{
+  font:700 15px/1.45 'Montserrat','Noto Sans KR',sans-serif;
+  letter-spacing:.065em;
+  color:#67493f;
+}
+.news-page .nn-group-head .nn-group-title{
+  font:700 14px/1.5 'Montserrat','Noto Sans KR',sans-serif;
+  letter-spacing:.065em;
+  color:#67493f;
+}
+.news-page .nn-group-head .nn-group-note{
+  font:600 11px/1.5 'Montserrat',sans-serif;
+  color:#705d54;
+}
+.news-page .nn-board-hint{color:#705d54;font-weight:600}
+
+/* Filters: larger labels, calm two-pixel active line, dependable touch target. */
+.news-page .nn-filters{gap:3px 23px}
+.news-page .nn-filter{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font:500 14px/1.55 'Noto Sans KR',sans-serif;
+  padding:9px 0 8px;
+  border-bottom-width:2px;
+  color:#705d54;
+}
+.news-page .nn-filter.is-active{font-weight:700;color:#754747;border-bottom-color:#754747}
+.news-page .nn-filter:focus-visible{outline:2px solid #754747;outline-offset:3px}
+
+/* Important notices read as one flat editorial section, not individual cards. */
+.news-page .nn-group-head:has(+ .nn-pinned-list){
+  margin-top:17px;
+  padding:17px 18px 12px;
+  background:#eae1d9;
+  border-bottom-color:#9c897e;
+}
+.news-page .nn-pinned-list{
+  background:#eae1d9;
+  padding:0 18px 9px;
+}
+.news-page .nn-pinned-list .nn-entry:last-child{border-bottom:0}
+.news-page .nn-pinned-list a.nn-entry-inner:hover{background:rgba(255,255,255,.2)}
+.news-page .nn-pinned-list + .nn-group-head{margin-top:26px}
+
+/* Small text contrast for both warm board surfaces. */
+.news-page .nn-entry-date,
+.news-page .nn-entry--pinned .nn-entry-date,
+.news-page .nn-entry--pinned .nn-entry-kind,
+.news-page .nn-entry--pinned .nn-entry-desc,
+.news-page .nn-entry-desc,
+.news-page .nn-group-note{color:#705d54}
+.news-page .nn-entry-kind{color:#754747}
+.news-page .nn-board-bottom{color:#705d54}
+.news-page .nn-search-wrap input::placeholder{color:#705d54;opacity:1}
+.news-page .nn-search-wrap input:focus-visible{outline:2px solid #754747;outline-offset:4px}
+
+@media(max-width:620px){
+  .news-page .nn-board-meta #nnCount{font-size:13px}
+  .news-page .nn-group-head .nn-group-title{font-size:13px;letter-spacing:.045em}
+  .news-page .nn-group-head .nn-group-note{font-size:11px}
+  .news-page .nn-filters{gap:2px 15px}
+  .news-page .nn-filter{font-size:13px;min-height:44px;padding:9px 0 8px}
+  .news-page .nn-group-head:has(+ .nn-pinned-list){
+    margin-top:14px;
+    padding:14px 12px 11px;
+  }
+  .news-page .nn-pinned-list{padding:0 12px 7px}
+  .news-page .nn-pinned-list + .nn-group-head{margin-top:20px}
+}
+@media(max-width:340px){
+  .news-page .nn-filters{gap:2px 11px}
+  .news-page .nn-filter{font-size:13px}
+}

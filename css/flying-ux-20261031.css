@@ -1,0 +1,109 @@
+/* 2026-10-31 THE303 Flying Yoga — page-scoped UX refinements.
+   Retain PC photo grid, visual system, editor data hooks and all other pages.
+   The existing level schedule note below the cards is the single public notice. */
+
+/* A single schedule/participation notice rather than identical captions on four cards.
+   Keep the four original data-edit fields accessible in the local administrator editor. */
+body[data-page="program-flying"] .fly16 .fly16-level-focus { display:none; }
+html.the303-admin-mode body[data-page="program-flying"] .fly16 .fly16-level-focus { display:block; }
+
+/* Tablet: four clearly comparable levels, two columns rather than one tall stack. */
+@media (min-width:601px) and (max-width:850px) {
+  body[data-page="program-flying"] .fly16 .fly16-level-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-level { padding:21px 19px 22px; }
+}
+
+/* Phone hero: photographs stay prominent; level-system caption moves below
+   rather than occupying an unreadable 90px-wide side box. */
+@media (max-width:600px) {
+  body[data-page="program-flying"] .fly16 .fly16-chips {display:none;}
+  body[data-page="program-flying"] .fly16 .fly16-art {
+    display:grid;
+    height:auto;
+    grid-template-columns:minmax(0,2.5fr) minmax(0,1fr);
+    grid-template-rows:clamp(245px,78vw,340px) auto;
+    gap:8px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-primary {grid-column:1;grid-row:1;}
+  body[data-page="program-flying"] .fly16 .fly16-art-detail {grid-column:2;grid-row:1;}
+  body[data-page="program-flying"] .fly16 .fly16-art-note {
+    grid-column:1/-1;grid-row:2;
+    display:grid;grid-template-columns:92px minmax(0,1fr);
+    align-items:center;column-gap:12px;
+    min-height:65px;padding:11px 15px;
+    box-shadow:none;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note .fly16-kicker {
+    font-size:9px;letter-spacing:.085em;line-height:1.4;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note strong {
+    font-size:12px;line-height:1.5;letter-spacing:-.01em;margin:0;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note p {display:none;}
+}
+@media (max-width:359px) {
+  body[data-page="program-flying"] .fly16 .fly16-art {grid-template-rows:245px auto;gap:7px;}
+  body[data-page="program-flying"] .fly16 .fly16-art-note {
+    grid-template-columns:83px minmax(0,1fr);column-gap:9px;padding:10px 12px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note strong {font-size:11px;}
+}
+/* Preserve the quiet underlined link; enlarge only the mobile touch area. */
+@media (max-width:850px) {
+  body[data-page="program-flying"] .fly16 .fly16-secondary {
+    min-height:44px;padding:9px 8px;
+  }
+}
+
+/* 2026-10-31: approved, mobile-only visual alignment corrections.
+   Keep the original two-line level wording, original photos and left-aligned
+   editorial reading hierarchy. No global/shared styles are changed. */
+@media (max-width:600px) {
+  /* A compact caption: balanced columns and truly centered two-line levels. */
+  body[data-page="program-flying"] .fly16 .fly16-art-note {
+    grid-template-columns:90px minmax(0,1fr);
+    column-gap:12px;
+    min-height:60px;
+    padding:9px 13px;
+    align-items:center;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note .fly16-kicker {
+    text-align:left;
+    font-size:10px;
+    line-height:1.4;
+    letter-spacing:.07em;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note strong {
+    display:block;
+    text-align:center;
+    justify-self:stretch;
+    font-size:12px;
+    line-height:1.45;
+    letter-spacing:-.01em;
+    margin:0;
+  }
+  /* A single left baseline through section label, headline and body copy. */
+  body[data-page="program-flying"] .fly16 .fly16-movement-copy > .fly16-kicker {
+    text-align:left;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-movement-copy > .fly16-title {
+    margin:9px 0 12px;
+  }
+}
+@media (max-width:359px) {
+  body[data-page="program-flying"] .fly16 .fly16-art-note {
+    grid-template-columns:80px minmax(0,1fr);
+    column-gap:8px;
+    padding:9px 10px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note strong {
+    font-size:11px;
+    line-height:1.45;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-art-note .fly16-kicker {
+    font-size:9px;
+  }
+}

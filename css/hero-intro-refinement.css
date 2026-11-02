@@ -1,0 +1,208 @@
+/* THE303 STUDIO | Hero introduction refinement | 2026-10-31
+   One intentional 36px accent rule for CERTIFICATE; clear separation of
+   centered masthead and left-aligned reading copy. Mobile PROGRAM paragraphs
+   use the real content grid instead of a narrow centered column.
+   Intentionally scoped: header, breadcrumb, admin, and photo components are unchanged.
+*/
+:root{--the303-hero-short-rule:#ac8173}
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-bottom{
+  border-top:0;padding-top:0;
+}
+body[data-page="ttc-cert"] .ttc-main .the303-hero-intro-rule,
+body[data-page="ttc-workshop"] .workshop-main .the303-hero-intro-rule{
+  display:block;flex:none;width:36px;height:1px;
+  border:0;background:var(--the303-hero-short-rule);
+  margin:0 0 15px;
+}
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-lead,
+body[data-page="ttc-workshop"] .workshop-main .ws-hero-lead{
+  text-wrap:pretty;word-break:keep-all;
+}
+body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro{
+  text-align:left;
+}
+/* Existing workshop tablet split-grid placed its former decorative divider in
+   the grid. The explanation block is now a single continuous reading group. */
+@media(min-width:601px) and (max-width:850px){
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro{
+    display:block;max-width:560px;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-text-link{
+    margin:19px 0 0;
+  }
+}
+@media(max-width:600px){
+  /* Let the short divider establish the left reading edge without a box or
+     a long line floating independently beneath the centered hero headline. */
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-bottom,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro{
+    box-sizing:border-box;width:100%;max-width:none;
+    margin:0;padding:0;text-align:left;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-bottom{
+    align-self:stretch;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro{
+    align-items:stretch;display:flex;flex-direction:column;
+  }
+  body[data-page="ttc-cert"] .ttc-main .the303-hero-intro-rule,
+  body[data-page="ttc-workshop"] .workshop-main .the303-hero-intro-rule{
+    margin:0 0 14px;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-tagline{
+    margin-bottom:24px;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-head{
+    gap:24px;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-lead,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-lead{
+    font-size:14px;line-height:1.65;letter-spacing:-.038em;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-summary,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-desc{
+    width:100%;max-width:none;margin:10px 0 0;
+    font-size:13px;line-height:1.77;letter-spacing:-.018em;
+    text-align:left;word-break:keep-all;overflow-wrap:break-word;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-text-link{
+    margin:18px 0 0;align-self:flex-start;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-underline-link{
+    margin-top:18px;
+  }
+  /* PROGRAM: center the sign and campaign message; paragraphs use the full
+     column width and the same left edge as the detail sections. */
+  body[data-page="program-flying"] .fly16 .fly16-hero-description,
+  body[data-page="program-barre"] .bar17 .b-hero-copy .b-copy,
+  body[data-page="program-dance"] .dance18 .d-hero-side .d-copy{
+    box-sizing:border-box;display:block;width:100%;max-width:none;
+    margin-left:0;margin-right:0;text-align:left;
+    font-size:13px;line-height:1.75;letter-spacing:-.017em;
+    word-break:keep-all;overflow-wrap:break-word;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-hero-title,
+  body[data-page="program-barre"] .bar17 .b-hero-title{
+    margin-bottom:10px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-hero-lead,
+  body[data-page="program-barre"] .bar17 .b-hero-lead,
+  body[data-page="program-dance"] .dance18 .d-lead{
+    margin-bottom:13px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-hero-grid,
+  body[data-page="program-barre"] .bar17 .b-hero-body{
+    row-gap:21px;
+  }
+}
+
+
+/* 2026-10-31 · minimal corrective pass (mobile PROGRAM intros only).
+   Preserve the previous approved hero proportions and two-line campaign copy.
+   Only tighten the title-to-copy distance and add one short left-aligned rule
+   immediately before the reading paragraph. No max-width/line-height/type changes.
+*/
+@media (max-width:600px) {
+  body[data-page="program-flying"] .fly16 .fly16-hero-title,
+  body[data-page="program-barre"] .bar17 .b-hero-title {
+    margin-bottom:6px;
+  }
+  body[data-page="program-dance"] .dance18 .d-hero-head {
+    gap:13px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-hero-description::before,
+  body[data-page="program-barre"] .bar17 .b-hero-copy .b-copy::before,
+  body[data-page="program-dance"] .dance18 .d-hero-side .d-copy::before {
+    content:"";
+    display:block;
+    width:34px;
+    height:1px;
+    background:#ac8173;
+    margin:0 0 12px;
+  }
+}
+
+/* 2026-10-31 / CERTIFICATE mobile first-screen balance correction.
+   Deliberately scoped to the two certificate HERO sections only.
+   Preserves layout, original typography families, content, images and PC styles.
+   Ensure headline/campaign copy do not disconnect and the short editorial
+   rule is the only divider before readable left-aligned explanation copy. */
+@media (max-width:600px) {
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-grid,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-head {
+    gap:18px;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-title,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-title {
+    margin-top:13px;
+    line-height:1.14;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-tagline,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-tagline {
+    display:block;
+    box-sizing:border-box;
+    width:100%;max-width:100%;
+    padding:0;
+    margin:10px auto 17px;
+    text-align:center;
+    line-height:1.5;
+    white-space:nowrap;
+    text-wrap:nowrap;
+    word-break:normal;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-tagline {
+    font-size:clamp(15px,4.05vw,18px);
+    letter-spacing:-.065em;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-tagline {
+    font-size:clamp(17px,4.4vw,20px);
+    letter-spacing:-.062em;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-bottom,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro {
+    width:100%;max-width:none;
+    margin:0;padding:0;
+    border:0!important;
+    box-sizing:border-box;
+    text-align:left;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro {
+    display:flex;flex-direction:column;align-items:stretch;
+  }
+  body[data-page="ttc-cert"] .ttc-main .the303-hero-intro-rule,
+  body[data-page="ttc-workshop"] .workshop-main .the303-hero-intro-rule {
+    display:block;width:34px;min-width:34px;max-width:34px;
+    height:1px;padding:0;border:0;
+    background:#ac8173;
+    margin:0 0 13px;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-lead,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-lead {
+    margin:0;text-align:left;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-summary,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-desc {
+    width:100%;max-width:none;
+    margin-top:9px;
+    text-align:left;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-underline-link,
+  body[data-page="ttc-workshop"] .workshop-main .ws-text-link {
+    margin-top:17px;
+  }
+}
+@media (max-width:360px) {
+  body[data-page="ttc-cert"] .ttc-main .ttc-hero-tagline,
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-tagline {
+    white-space:normal;
+    text-wrap:balance;
+    max-width:100%;
+  }
+}
+@media (max-width:600px) {
+  /* The workshop headline and its description occupy separate rows;
+     unlike the teacher-training flex stack, its grid gap is already counted. */
+  body[data-page="ttc-workshop"] .workshop-main .ws-hero-tagline {
+    margin-bottom:0;
+  }
+}

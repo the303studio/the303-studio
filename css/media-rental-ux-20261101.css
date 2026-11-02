@@ -1,0 +1,114 @@
+/* THE303 | MEDIA RENTAL page-only visual and UX refinement | 2026-11-01.
+   The photo source was updated after approval; editor bindings are preserved.
+   Do not apply these rules to other pages. */
+/* HERO: precise copy hierarchy and less nonfunctional vertical space */
+@media(min-width:901px){
+ .media-rental-main .mr-heading{grid-template-columns:minmax(0,1.16fr) minmax(260px,.72fr);gap:clamp(34px,5vw,82px);padding-top:clamp(57px,5.5vw,78px);padding-bottom:clamp(34px,3.5vw,53px)}
+ .media-rental-main .mr-heading h1{font-size:clamp(39px,3.68vw,53px);line-height:1.5;letter-spacing:-.072em}
+ .media-rental-main .mr-heading-aside{padding-bottom:5px}
+}
+/* SERVICES: let the editorial photo and the three service descriptions read as a balanced pair.
+   The original full-resolution image, responsive source data and editor bindings remain untouched. */
+@media(min-width:901px){
+ .media-rental-main .mr-possibility-grid{grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(42px,5.4vw,80px);align-items:start;padding-bottom:clamp(51px,5vw,72px)}
+ .media-rental-main .mr-possibility-figure{margin-top:9px}
+ .media-rental-main .mr-detail-photo{aspect-ratio:.96/1}
+ .media-rental-main .mr-detail-photo img{object-position:center 4%}
+ .media-rental-main .mr-use-list{margin-top:clamp(20px,2.6vw,36px)}
+ .media-rental-main .mr-use-list>div{padding:17px 0}
+ .media-rental-main .mr-possibility-copy h2{font-size:clamp(35px,3.25vw,47px);line-height:1.52}
+}
+.media-rental-main .mr-portfolio-link{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;max-width:100%;padding:12px 0;margin-top:20px;color:#804646;border-bottom:1px solid #a78378;font-size:13px;font-weight:600;text-decoration:none;min-height:44px}
+.media-rental-main .mr-portfolio-link span{font-size:19px;font-weight:300}
+/* Dedicated two-column tablet composition from 601px to prevent the original 850/851 hard jump. */
+@media(min-width:601px) and (max-width:900px){
+ .media-rental-main .mr-heading{grid-template-columns:minmax(0,1fr) minmax(0,.86fr);gap:30px;align-items:start;padding:46px 0 35px}
+ .media-rental-main .mr-heading h1{font-size:clamp(30px,4.0vw,38px);line-height:1.51;margin-top:17px}
+ .media-rental-main .mr-heading-aside{padding-top:37px}
+ .media-rental-main .mr-heading-aside>p:first-of-type{font-size:14px}
+ .media-rental-main .mr-heading-aside>p:nth-of-type(2){font-size:12.5px;line-height:1.82}
+ .media-rental-main .mr-possibility-grid{grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:28px;align-items:start;padding-bottom:52px}
+ .media-rental-main .mr-possibility-copy h2{font-size:clamp(31px,4vw,37px);line-height:1.49;margin:14px 0 14px}
+ .media-rental-main .mr-possibility-copy>p{font-size:12.5px;line-height:1.8}
+ .media-rental-main .mr-use-list{margin-top:19px}
+ .media-rental-main .mr-use-list>div{padding:13px 0}
+ .media-rental-main .mr-use-list h3{font-size:14px}
+ .media-rental-main .mr-use-list p{font-size:12px}
+ .media-rental-main .mr-possibility-figure{margin:9px 0 0}
+ .media-rental-main .mr-detail-photo{aspect-ratio:.86/1}
+ .media-rental-main .mr-detail-photo img{object-position:center 5%}
+ .media-rental-main .mr-portfolio-link{margin-top:12px;font-size:12px}
+ .media-rental-main .mr-equipment-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:30px}
+ .media-rental-main .mr-equipment-copy h2{font-size:clamp(32px,4vw,38px);line-height:1.47}
+ .media-rental-main .mr-equipment-copy p{font-size:13px}
+ .media-rental-main .mr-eq-row{grid-template-columns:24px minmax(90px,.88fr) minmax(0,1.12fr);gap:9px;min-height:75px;padding:13px 0}
+ .media-rental-main .mr-eq-label{font-size:9px;letter-spacing:.055em}
+ .media-rental-main .mr-eq-row strong{font-size:13px}
+ .media-rental-main .mr-guide-head{grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:30px;align-items:end}
+ .media-rental-main .mr-details-grid{grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);gap:35px}
+}
+/* Intermediate tablet photo crop; keep the complete upper body and reduce visual weight. */
+@media(min-width:601px) and (max-width:700px){
+ .media-rental-main .mr-detail-photo{max-width:470px;aspect-ratio:1.05/1;margin-inline:auto}
+ .media-rental-main .mr-detail-photo img{object-position:center 3%}
+ .media-rental-main .mr-possibility-figure figcaption{max-width:470px;margin-inline:auto}
+}
+/* Compact vertical flow on narrow screens, retain photography aspect ratio and crop. */
+@media(max-width:600px){
+ .media-rental-main .mr-heading{grid-template-columns:1fr;gap:21px;padding-top:clamp(43px,7vw,57px);padding-bottom:28px}
+ .media-rental-main .mr-heading-aside{padding-top:0}
+ .media-rental-main .mr-possibility-grid{grid-template-columns:1fr;gap:27px}
+ .media-rental-main .mr-possibility-figure{margin:0}
+ .media-rental-main .mr-guide-head{grid-template-columns:1fr}
+ .media-rental-main .mr-details-grid{grid-template-columns:1fr}
+ .media-rental-main .mr-equipment-grid{grid-template-columns:1fr;gap:29px}
+}
+@media(max-width:600px){
+ .media-rental-main .mr-heading{padding-top:42px}
+ .media-rental-main .mr-portfolio-link{font-size:12px;margin-top:13px}
+ .media-rental-main .mr-possibility{padding-top:59px}
+ .media-rental-main .mr-possibility-grid{padding-bottom:59px}
+ .media-rental-main .mr-eq-label{font-size:10px;letter-spacing:.012em}
+ .media-rental-main .mr-eq-note span,.media-rental-main .mr-eq-end>span{font-size:9px;letter-spacing:.035em}
+ .media-rental-main .mr-eq-inquiry{min-height:44px}
+ .media-rental-main .mr-heading .m-text-link{min-height:44px}
+}
+@media(max-width:360px){
+ .media-rental-main .mr-eq-row{grid-template-columns:21px minmax(98px,.85fr) minmax(0,1.15fr);gap:6px}
+ .media-rental-main .mr-eq-label{font-size:9.5px;letter-spacing:0}
+}
+/* Final CTA shares the site-wide compact editorial finish instead of a tall extra panel. */
+@media(min-width:901px){
+ .media-rental-main .mr-cta{padding:48px 0 57px}
+ .media-rental-main .mr-cta .m-cta-grid{grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end;padding-top:24px}
+ .media-rental-main .mr-cta .m-cta-grid h2{font-size:clamp(31px,3.2vw,44px);line-height:1.39;white-space:normal;letter-spacing:-.06em;max-width:none}
+ .media-rental-main .mr-cta .m-cta-grid p{margin-top:12px}
+}
+@media(min-width:601px) and (max-width:900px){
+ .media-rental-main .mr-cta{padding:47px 0 56px}
+ .media-rental-main .mr-cta .m-cta-grid{grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:end;padding-top:24px}
+ .media-rental-main .mr-cta .m-cta-grid h2{font-size:clamp(28px,3.6vw,34px);line-height:1.4;white-space:normal}
+ .media-rental-main .mr-cta .m-cta-link{min-width:160px;font-size:12px}
+}
+@media(max-width:600px){
+ .media-rental-main .mr-cta{padding:45px 0 55px}
+ .media-rental-main .mr-cta .m-cta-grid{grid-template-columns:1fr;gap:14px;padding-top:24px}
+ .media-rental-main .mr-cta .m-cta-grid h2{line-height:1.5;text-wrap:pretty}
+ .media-rental-main .mr-cta .m-cta-grid p{margin-top:12px}
+ .media-rental-main .mr-cta .m-cta-link{min-height:44px}
+}
+
+/* 2026-11-01 | Retouched real studio photo replacement.
+   Keep all original photo-editor bindings. Aspect adjustment is limited to the equipment image. */
+@media (min-width:901px) {
+  .media-rental-main .mr-detail-photo { aspect-ratio:1.16/1; }
+  .media-rental-main .mr-detail-photo img { object-position:center center; }
+}
+@media (min-width:601px) and (max-width:900px) {
+  .media-rental-main .mr-detail-photo { aspect-ratio:1.12/1; }
+  .media-rental-main .mr-detail-photo img { object-position:center center; }
+}
+@media (max-width:600px) {
+  .media-rental-main .mr-detail-photo { aspect-ratio:1.05/1; }
+  .media-rental-main .mr-detail-photo img { object-position:center center; }
+}

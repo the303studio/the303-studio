@@ -1,0 +1,381 @@
+/* THE303 STUDIO | Flying Yoga Teacher Training | Editorial v1.1
+   Intentionally scoped: no common header, footer, navigation or editor overrides.
+   Warm ivory / stone / wine from the master design system.
+*/
+.ttc-main { --ttc-ink:#302a26; --ttc-quiet:#6f635c; --ttc-rule:#d8cec4; --ttc-wine:#794344; --ttc-ivory:#faf8f5; background:var(--ttc-ivory); }
+.ttc-main .ttc-label { display:block; font:600 10px/1.5 'Montserrat','Noto Sans KR',sans-serif; letter-spacing:.21em; color:#98695d; }
+.ttc-main h1,.ttc-main h2,.ttc-main h3 { color:var(--ttc-ink); word-break:keep-all; }
+.ttc-main a:focus-visible {outline:2px solid var(--brick-wine);outline-offset:5px}
+.ttc-main .ttc-hero {position:relative; overflow:hidden; background:#faf8f5;}
+.ttc-hero-shell {padding-top:clamp(25px,3.3vw,48px);}
+.ttc-hero-ribbon {display:flex; justify-content:space-between; align-items:center; gap:24px; padding-bottom:clamp(26px,3.3vw,48px); border-bottom:1px solid rgba(70,55,48,.16)}
+.ttc-main .ttc-hero-ribbon .page-breadcrumb {margin:0; font-size:10px; letter-spacing:.09em; flex-wrap:nowrap; white-space:nowrap; gap:clamp(7px,1.1vw,13px); font-weight:600; color:#87756b}
+.ttc-main .ttc-hero-ribbon .page-breadcrumb a {color:inherit; text-decoration:none}
+.ttc-main .ttc-hero-ribbon .page-breadcrumb a:hover {color:var(--ttc-wine)}
+.ttc-main .ttc-hero-ribbon .ttc-breadcrumb-current {color:#794344;font-weight:800;letter-spacing:.09em}
+.ttc-chapter {flex:none;font:500 10px/1.4 'Montserrat',sans-serif;color:#9a8579;letter-spacing:.16em}
+.ttc-hero-grid {display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(42px,6.4vw,94px);align-items:center;padding:clamp(43px,5.5vw,84px) 0 clamp(32px,4.4vw,64px)}
+.ttc-hero-content {min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;}
+.ttc-main .ttc-hero-title {font-family:'Nanum Myeongjo','Noto Serif CJK KR',serif;font-size:clamp(36px,3.65vw,53px);font-weight:600;line-height:1.48;letter-spacing:-.075em;white-space:pre-line;overflow-wrap:normal;margin:clamp(24px,3vw,43px) 0 clamp(27px,4vw,59px)}
+.ttc-hero-bottom {max-width:500px;border-top:1px solid var(--ttc-rule);padding-top:clamp(22px,2.7vw,37px);}
+.ttc-hero-lead {font-size:clamp(16px,1.45vw,20px);font-weight:500;letter-spacing:-.05em;line-height:1.7;color:var(--ttc-ink);text-wrap:balance;word-break:keep-all}
+.ttc-hero-summary {font-size:14px;line-height:1.97;max-width:455px;font-weight:400;color:var(--ttc-quiet);margin-top:15px;word-break:keep-all;}
+.ttc-underline-link {display:inline-flex;align-items:center;gap:32px;min-height:43px;border-bottom:1px solid #907569;margin-top:clamp(25px,3.3vw,45px);font-size:12px;font-weight:600;letter-spacing:-.02em;color:var(--ttc-wine);transition:gap .2s ease}
+.ttc-underline-link:hover {gap:41px}
+.ttc-underline-link span {font-size:18px;font-weight:300}
+.ttc-hero-figure {position:relative;min-width:0;margin:0;padding-right:clamp(10px,1.7vw,28px)}
+.ttc-main .ttc-hero-photo {position:relative;aspect-ratio:4 / 5.05;min-height:0;background:#d0bdb0;border-radius:0;box-shadow:18px 18px 0 #e9e0d7}
+.ttc-hero-photo img {object-position:50% 42%}
+.ttc-hero-fallback {background:linear-gradient(140deg,#b5a395 0%,#d6c7b9 54%,#f0eae2 100%)}
+.ttc-main .ttc-fallback-mark {position:absolute;z-index:1;bottom:7%;right:7%;color:rgba(255,255,255,.43);font:500 clamp(28px,4vw,60px)/1 'Montserrat',sans-serif;letter-spacing:.15em}
+.ttc-figure-caption {display:flex;align-items:center;justify-content:space-between;gap:10px;color:#907e73;font:500 9px/1.5 'Montserrat',sans-serif;letter-spacing:.14em;padding-top:28px}
+.ttc-side-index {position:absolute;right:-15px;top:0;writing-mode:vertical-rl;color:#9d877a;font:500 9px/1 'Montserrat',sans-serif;letter-spacing:.2em;}
+.ttc-hero-foot {display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--ttc-rule);padding:20px 0 25px;color:#a28d7f;font:500 10px/1.5 'Montserrat',sans-serif;letter-spacing:.15em}
+.ttc-hero-foot span:last-child {white-space:nowrap}
+.ttc-hero-foot span span {font-size:15px;margin-left:9px}
+
+/* 02 / Spacious editorial manifesto; text is not a repeating card layout. */
+.ttc-statement {background:#efe9e1;padding:clamp(84px,9.5vw,150px) 0 clamp(88px,9vw,138px)}
+.ttc-statement-inner {display:grid;grid-template-columns:minmax(150px,.33fr) minmax(0,1fr);column-gap:clamp(40px,7vw,110px)}
+.ttc-statement-side {display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;padding:12px 0 16px;}
+.ttc-tiny-index {font:500 10px 'Montserrat',sans-serif;letter-spacing:.15em;color:#a59083;}
+.ttc-statement-main h2 {font-family:'Nanum Myeongjo','Noto Serif CJK KR',serif;font-size:clamp(35px,4.35vw,62px);font-weight:600;line-height:1.55;letter-spacing:-.07em;white-space:pre-line;max-width:910px;}
+.ttc-statement-bottom {margin-top:clamp(35px,5vw,80px);display:grid;grid-template-columns:minmax(70px,.3fr) minmax(0,1fr);gap:clamp(25px,5vw,65px);align-items:start;}
+.ttc-statement-rule {margin-top:11px;height:1px;background:#b29c8c;display:block}
+.ttc-statement-bottom p {font-size:15px;line-height:2.05;letter-spacing:-.015em;color:#685d55;max-width:540px;word-break:keep-all}
+
+/* 03 / A numbered editorial index — not cards. */
+.ttc-learning {padding:clamp(88px,9vw,145px) 0 clamp(70px,7vw,115px);background:#faf8f5}
+.ttc-learning-layout {display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(44px,9vw,145px);align-items:start}
+.ttc-learning-intro {position:sticky;top:calc(var(--nav-height) + 48px);padding-top:9px}
+.ttc-learning-intro h2 {font-family:'Nanum Myeongjo','Noto Serif CJK KR',serif;font-weight:600;line-height:1.48;font-size:clamp(37px,3.75vw,51px);white-space:normal;letter-spacing:-.075em;margin:25px 0 25px}
+.ttc-learning-intro>p {font-size:15px;line-height:2;color:var(--ttc-quiet);max-width:360px;word-break:keep-all}
+.ttc-learning-aside {display:inline-flex;align-items:center;gap:20px;margin-top:58px;color:#a5897c;font:500 10px 'Montserrat',sans-serif;letter-spacing:.1em;}
+.ttc-learning-aside span {font-size:17px}
+.ttc-learning-steps {border-top:1px solid #b9aca2}
+.ttc-learning-item {display:grid;grid-template-columns:52px minmax(0,1fr) 22px;gap:24px;padding:32px 0 37px;border-bottom:1px solid var(--ttc-rule);align-items:start}
+.ttc-step-num {font:400 28px/1.25 'Montserrat',sans-serif;letter-spacing:-.06em;color:#b69c8d}
+.ttc-step-en {display:block;font:600 10px/1.5 'Montserrat',sans-serif;letter-spacing:.18em;color:#956f60;margin-top:3px}
+.ttc-step-content h3 {font-size:clamp(21px,2.2vw,30px);font-weight:500;line-height:1.5;letter-spacing:-.055em;margin:12px 0 9px}
+.ttc-step-content p {font-size:14px;color:var(--ttc-quiet);line-height:1.95;max-width:430px;word-break:keep-all}
+.ttc-step-arrow {color:#b59c8f;font-size:21px;font-weight:300;margin-top:0;}
+.ttc-learning-note {font-size:12px;color:#9a877d;line-height:1.8;max-width:750px;margin-top:40px;letter-spacing:-.015em;word-break:keep-all}
+
+/* 04 / Photo essay: intentional off-centre image and text proportions. */
+.ttc-editorial {background:#eee7de;padding:clamp(82px,9vw,144px) 0}
+.ttc-editorial-grid {display:grid;grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr);gap:clamp(52px,9.4vw,147px);align-items:center}
+.ttc-editorial-figure {margin:0;min-width:0}
+.ttc-main .ttc-editorial-photo {aspect-ratio:4/4.8;min-height:0;border-radius:0;background:#c9b9ad;box-shadow:-17px 17px 0 #dfd3c7}
+.ttc-editorial-fallback {background:linear-gradient(150deg,#d8c3b1 0%,#ac9888 45%,#ddd1c2 100%)}
+.ttc-editorial-fallback .ttc-fallback-mark {left:7%;right:auto;bottom:8%;}
+.ttc-editorial-figure figcaption {display:flex;justify-content:space-between;gap:12px;margin:27px 0 0;font:500 10px/1.4 'Montserrat',sans-serif;color:#988477;letter-spacing:.11em}
+.ttc-editorial-copy {min-width:0;padding:18px 0}
+.ttc-editorial-copy h2 {font-family:'Nanum Myeongjo','Noto Serif CJK KR',serif;font-size:clamp(34px,3.7vw,52px);line-height:1.55;letter-spacing:-.075em;font-weight:600;white-space:pre-line;margin:28px 0 25px}
+.ttc-editorial-lead {font-size:15px;line-height:2.05;max-width:450px;color:#685c53;word-break:keep-all}
+.ttc-editorial-minilist {margin-top:clamp(37px,5vw,78px);border-top:1px solid #c6b8ac}
+.ttc-editorial-minilist>div {display:grid;grid-template-columns:152px minmax(0,1fr);gap:18px;border-bottom:1px solid #d4c7bc;padding:20px 0;align-items:start}
+.ttc-editorial-minilist span {font:600 10px/1.8 'Montserrat',sans-serif;color:#947767;letter-spacing:.1em}
+.ttc-editorial-minilist p {font-size:13px;line-height:1.85;color:#5f574f;word-break:keep-all}
+
+/* 05 / Transparent, non-committal course information. */
+.ttc-guidance {padding:clamp(84px,8.2vw,129px) 0 clamp(92px,9vw,144px);background:#faf8f5}
+.ttc-guidance-header {display:grid;grid-template-columns:minmax(0,.48fr) minmax(0,.78fr) minmax(0,.8fr);gap:clamp(20px,3vw,48px);align-items:end;padding-bottom:30px}
+.ttc-guidance-header>.ttc-label {align-self:start;padding-top:12px}
+.ttc-guidance-header h2 {font-family:'Nanum Myeongjo','Noto Serif CJK KR',serif;font-size:clamp(31px,3.3vw,47px);font-weight:600;line-height:1.45;letter-spacing:-.065em}
+.ttc-guidance-header p {font-size:14px;color:#71665d;line-height:1.85;max-width:300px;word-break:keep-all}
+.ttc-info-list {border-top:1px solid #a69486}
+.ttc-info-row {display:grid;grid-template-columns:minmax(0,.48fr) minmax(0,.78fr) minmax(0,.8fr);gap:clamp(20px,3vw,48px);align-items:center;border-bottom:1px solid var(--ttc-rule);padding:27px 0;min-height:101px}
+.ttc-info-row>span {font:500 15px 'Montserrat',sans-serif;color:#b39687}
+.ttc-info-row h3 {font-size:clamp(18px,1.55vw,21px);font-weight:500;letter-spacing:-.035em}
+.ttc-info-row p {font-size:13px;line-height:1.9;color:#766960;word-break:keep-all}
+
+/* 06 / Distinctive invitation without a card or gradient. */
+.ttc-cta {background:#754647;color:#f8f0e9;padding:clamp(61px,7vw,111px) 0 clamp(77px,8vw,125px)}
+.ttc-cta-top {display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.24);padding-bottom:28px}
+.ttc-cta .ttc-label,.ttc-cta-top>span:last-child {font:500 10px/1.4 'Montserrat',sans-serif;letter-spacing:.17em;color:#e1c7ba}
+.ttc-cta-main {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:50px;align-items:end;padding-top:clamp(45px,6vw,89px)}
+.ttc-cta-main h2 {font:600 clamp(37px,4.4vw,61px)/1.5 'Nanum Myeongjo','Noto Serif CJK KR',serif;color:#fff4ed;white-space:pre-line;letter-spacing:-.07em;word-break:keep-all}
+.ttc-cta-main p {font-size:14px;line-height:1.9;color:#e7d3c9;margin-top:25px;word-break:keep-all}
+.ttc-cta-link {display:inline-flex;align-items:center;justify-content:space-between;gap:34px;min-width:180px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.7);font-size:14px;font-weight:500;color:#fff4ed;white-space:nowrap;transition:gap .25s ease}
+.ttc-cta-link:hover {gap:45px}
+.ttc-cta-link span:last-child {font-size:24px;font-weight:300}
+
+/* Tablet: preserve deliberate layouts, avoid narrow left copy and orphan lines. */
+@media(max-width:1160px) and (min-width:851px) {
+  .ttc-hero-grid {gap:4vw;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr)}
+  .ttc-main .ttc-hero-title {font-size:clamp(33px,3.65vw,45px);letter-spacing:-.085em}
+  .ttc-editorial-grid {gap:5vw}
+  .ttc-editorial-minilist>div {grid-template-columns:122px minmax(0,1fr)}
+}
+@media(max-width:850px){
+  .ttc-main .ttc-label {font-size:9px;letter-spacing:.17em}
+  .ttc-hero-shell {padding-top:21px}
+  .ttc-hero-ribbon {padding-bottom:22px}
+  .ttc-chapter {font-size:9px;letter-spacing:.09em}
+  .ttc-hero-grid {grid-template-columns:minmax(0,1fr);gap:36px;padding:41px 0 34px}
+  .ttc-main .ttc-hero-title {font-size:clamp(32px,5.9vw,49px);margin:21px 0 30px;line-height:1.53;letter-spacing:-.075em}
+  .ttc-hero-bottom {padding-top:22px}
+  .ttc-hero-summary {font-size:13px;line-height:1.87;max-width:540px}
+  .ttc-hero-lead {font-size:17px}
+  .ttc-underline-link {margin-top:19px}
+  .ttc-hero-figure {width:min(100% - 16px,590px);margin-left:0;padding-right:9px}
+  .ttc-main .ttc-hero-photo {aspect-ratio:5/3.7;box-shadow:10px 10px 0 #e9e0d7}
+  .ttc-figure-caption {padding-top:20px}
+  .ttc-side-index {right:-15px}
+  .ttc-hero-foot {padding:19px 0 20px;font-size:9px}
+  .ttc-statement {padding:75px 0 78px}
+  .ttc-statement-inner {grid-template-columns:1fr;gap:26px}
+  .ttc-statement-side {flex-direction:row;align-items:center;padding:0}
+  .ttc-statement-main h2 {font-size:clamp(34px,5.8vw,51px)}
+  .ttc-statement-bottom {margin-top:27px;gap:18px;grid-template-columns:50px minmax(0,1fr)}
+  .ttc-statement-bottom p {font-size:14px;line-height:1.95}
+  .ttc-learning {padding:73px 0 79px}
+  .ttc-learning-layout {grid-template-columns:1fr;gap:37px}
+  .ttc-learning-intro {position:static;padding:0}
+  .ttc-learning-intro h2 {font-size:clamp(33px,6vw,48px);margin:19px 0 17px}
+  .ttc-learning-intro>p {max-width:530px;font-size:14px;line-height:1.9}
+  .ttc-learning-aside {display:none}
+  .ttc-learning-note {margin-top:25px;font-size:11px}
+  .ttc-editorial {padding:79px 0 84px}
+  .ttc-editorial-grid {grid-template-columns:1fr;gap:50px}
+  .ttc-editorial-figure {width:min(100% - 15px,580px)}
+  .ttc-main .ttc-editorial-photo {aspect-ratio:5/3.65;box-shadow:-10px 10px 0 #dfd3c7}
+  .ttc-editorial-figure figcaption {margin-top:19px}
+  .ttc-editorial-copy {padding:0}
+  .ttc-editorial-copy h2 {font-size:clamp(32px,6vw,48px);margin:20px 0 14px}
+  .ttc-editorial-minilist {margin-top:33px}
+  .ttc-guidance {padding:75px 0 80px}
+  .ttc-guidance-header {grid-template-columns:1fr 1fr;gap:13px 25px;align-items:end}
+  .ttc-guidance-header>.ttc-label {grid-column:1/-1}
+  .ttc-guidance-header h2 {font-size:clamp(30px,4.5vw,40px)}
+  .ttc-info-row {grid-template-columns:40px minmax(140px,.8fr) minmax(0,1.4fr);gap:18px}
+  .ttc-cta {padding:65px 0 86px}
+  .ttc-cta-main {gap:20px}
+  .ttc-cta-main h2 {font-size:clamp(37px,6vw,52px)}
+}
+@media(max-width:600px){
+  .ttc-hero-ribbon {gap:10px}
+  .ttc-chapter {font-size:8px}
+  .ttc-main .ttc-hero-title {font-size:clamp(28px,7.2vw,41px);line-height:1.55;letter-spacing:-.075em;margin-bottom:29px}
+  .ttc-hero-lead {font-size:16px}
+  .ttc-main .ttc-hero-photo {aspect-ratio:5/4.45}
+  .ttc-hero-foot {gap:8px;font-size:8px;letter-spacing:.07em}
+  .ttc-hero-foot>span:last-child {font-size:8px}
+  .ttc-statement-main h2 {font-size:clamp(29px,7.7vw,43px);line-height:1.65;letter-spacing:-.075em}
+  .ttc-statement-bottom {grid-template-columns:32px minmax(0,1fr);gap:15px}
+  .ttc-learning-intro h2 {font-size:clamp(34px,8vw,45px)}
+  .ttc-learning-item {grid-template-columns:37px minmax(0,1fr) 14px;gap:13px;padding:24px 0 27px}
+  .ttc-step-num {font-size:21px}
+  .ttc-step-en {font-size:9px}
+  .ttc-step-content h3 {font-size:21px;margin:9px 0 8px}
+  .ttc-step-content p {font-size:13px;line-height:1.85}
+  .ttc-step-arrow {font-size:16px}
+  .ttc-editorial-copy h2 {font-size:clamp(29px,7.5vw,43px);line-height:1.6}
+  .ttc-editorial-lead {font-size:14px}
+  .ttc-editorial-minilist>div {grid-template-columns:1fr;gap:5px;padding:15px 0}
+  .ttc-editorial-minilist p {font-size:13px}
+  .ttc-guidance-header {grid-template-columns:1fr;gap:13px;padding-bottom:25px}
+  .ttc-guidance-header>.ttc-label {grid-column:auto;padding:0}
+  .ttc-guidance-header p {font-size:13px}
+  .ttc-info-row {grid-template-columns:28px minmax(0,1fr);gap:8px 17px;align-items:baseline;padding:22px 0;}
+  .ttc-info-row>span {grid-column:1;grid-row:1;font-size:12px}
+  .ttc-info-row h3 {grid-column:2;grid-row:1;font-size:18px}
+  .ttc-info-row p {grid-column:2;grid-row:2;font-size:13px}
+  .ttc-cta-top {padding-bottom:21px}
+  .ttc-cta-top>span:last-child {font-size:8px;letter-spacing:.1em}
+  .ttc-cta-main {grid-template-columns:1fr;gap:28px;padding-top:39px}
+  .ttc-cta-main h2 {font-size:clamp(31px,8vw,44px);line-height:1.6}
+  .ttc-cta-main p {font-size:13px;margin-top:15px}
+  .ttc-cta-link {justify-self:start}
+}
+@media(max-width:375px){
+ .ttc-chapter {font-size:7px}
+ .ttc-main .ttc-hero-title {font-size:27px;letter-spacing:-.078em}
+ .ttc-hero-summary {font-size:12.5px}
+ .ttc-statement-main h2 {font-size:28px}
+ .ttc-editorial-copy h2 {font-size:28px}
+ .ttc-cta-main h2 {font-size:30px}
+ .ttc-figure-caption {font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){.ttc-underline-link,.ttc-cta-link{transition:none}}
+
+/* v1 typography audit: suppress isolated CTA link syllables at narrow widths. */
+.ttc-main .ttc-underline-link {white-space:nowrap; flex-shrink:0}
+@media(max-width:600px){.ttc-main .ttc-underline-link{gap:20px}}
+/* Manually set editorial hero line breaks stay intact; neither line exceeds 320px viewport. */
+.ttc-main .ttc-hero-title {width:100%;white-space:pre-line;overflow-wrap:anywhere}
+
+/* v1.1 / typography + breadcrumb QA: one cohesive heading, no accidental word stacking. */
+.ttc-learning-intro h2 {text-wrap:nowrap;max-width:100%}
+@media(max-width:850px){.ttc-learning-intro h2{font-size:clamp(32px,5.6vw,44px)}}
+@media(max-width:600px){
+ .ttc-learning-intro h2 {font-size:clamp(30px,8vw,36px);letter-spacing:-.075em;line-height:1.45;margin:15px 0 17px}
+ .ttc-main .ttc-hero-ribbon .page-breadcrumb {font-size:9px;letter-spacing:.06em;gap:8px}
+ .ttc-chapter {font-size:8px;letter-spacing:.06em}
+}
+@media(max-width:375px){
+ .ttc-learning-intro h2 {font-size:30px}
+ .ttc-main .ttc-hero-ribbon .page-breadcrumb {font-size:8.5px;gap:6px}
+ .ttc-chapter {font-size:7px}
+}
+
+/* Prevent tiny orphan words: balance short body copy within each text column. */
+.ttc-learning-intro > p,.ttc-step-content p{text-wrap:balance}
+
+/* v1.2 / Restore section-ending brand signature, only within TTC. */
+.ttc-main .ttc-section-sign{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid #cfc3b9;padding-top:13px;margin-top:clamp(38px,4vw,58px);color:#a48b7c;font:600 9px/1.45 'Montserrat',sans-serif;letter-spacing:.16em}
+.ttc-main .ttc-statement .ttc-section-sign{border-top-color:#c6b7a9}
+.ttc-main .ttc-editorial .ttc-section-sign{border-top-color:#c8b8aa}
+/* Add the editorial sign without growing already generous vertical whitespace. */
+.ttc-main .ttc-statement{padding-bottom:clamp(30px,3.2vw,48px)}
+.ttc-main .ttc-learning{padding-bottom:clamp(29px,3.2vw,49px)}
+.ttc-main .ttc-editorial{padding-bottom:clamp(30px,3.2vw,49px)}
+.ttc-main .ttc-guidance{padding-bottom:clamp(33px,3.2vw,48px)}
+.ttc-main .ttc-hero-foot{padding-top:13px;padding-bottom:25px;font-size:9px;letter-spacing:.16em}
+/* Restrained CTA: visual emphasis comes from typographic contrast, not empty height. */
+.ttc-main .ttc-cta{padding:clamp(47px,4vw,65px) 0 clamp(54px,4.6vw,71px)}
+.ttc-main .ttc-cta-top{padding-bottom:22px}
+.ttc-main .ttc-cta-main{padding-top:clamp(35px,3.6vw,53px);gap:35px}
+.ttc-main .ttc-cta-main h2{font-size:clamp(35px,3.6vw,50px);line-height:1.42}
+.ttc-main .ttc-cta-main p{margin-top:17px}
+@media(max-width:600px){
+ .ttc-main .ttc-section-sign{font-size:8px;letter-spacing:.07em;gap:8px;margin-top:31px;padding-top:11px}
+ .ttc-main .ttc-cta{padding:48px 0 61px}
+ .ttc-main .ttc-cta-main{padding-top:31px;gap:20px;grid-template-columns:1fr}
+ .ttc-main .ttc-cta-main h2{font-size:clamp(30px,8vw,40px);line-height:1.56}
+ .ttc-main .ttc-cta-main p{font-size:13px;margin-top:13px}
+}
+@media(max-width:359px){.ttc-main .ttc-section-sign{font-size:7px;letter-spacing:.045em}}
+
+/* Keep the original scroll cue while adding the requested brand sign beneath it. */
+.ttc-main .ttc-hero-foot{padding:18px 0 18px}
+.ttc-main .ttc-hero-sign{margin-top:0;margin-bottom:0;padding-bottom:25px}
+
+/* Final review: shorten editorial dead space, without redesigning layout. */
+@media(min-width:851px){
+ .ttc-main .ttc-statement{padding-top:clamp(76px,8.25vw,132px);padding-bottom:clamp(78px,7.9vw,123px)}
+ .ttc-main .ttc-learning{padding-top:clamp(80px,8.1vw,130px);padding-bottom:clamp(67px,6.3vw,105px)}
+ .ttc-main .ttc-editorial{padding-top:clamp(75px,8vw,129px);padding-bottom:clamp(75px,8vw,129px)}
+ .ttc-main .ttc-guidance{padding-top:clamp(77px,7.6vw,116px);padding-bottom:clamp(84px,8.1vw,128px)}
+}
+@media(max-width:600px){
+ .ttc-main .ttc-label{font-size:10px}
+ .ttc-main .ttc-tiny-index,.ttc-main .ttc-step-en{font-size:10px}
+ .ttc-main .ttc-hero-summary,.ttc-main .ttc-info-row p{font-size:14px}
+ .ttc-main .ttc-statement{padding-top:68px;padding-bottom:70px}
+ .ttc-main .ttc-editorial{padding-top:72px;padding-bottom:72px}
+ .ttc-main .ttc-hero-foot{font-size:10px}
+}
+
+/* THE303 / CERTIFICATE 2026.10.31 · Editorial spatial redesign.
+   Scoped to TTC. Existing hero, image-editor, navigation and CTA behavior preserved. */
+.ttc-main .ttc-statement{
+  padding:clamp(66px,6.5vw,96px) 0 clamp(35px,3.8vw,54px);
+  background:#eee8e0;
+}
+.ttc-main .ttc-statement-inner{
+  display:grid;grid-template-columns:minmax(0,1.28fr) minmax(270px,.72fr);
+  gap:16px clamp(38px,5.9vw,88px);align-items:center;
+}
+.ttc-main .ttc-statement-side{
+  grid-column:1;grid-row:1;align-self:end;
+  display:flex;flex-direction:row;align-items:center;justify-content:space-between;
+  gap:18px;padding:0;
+}
+.ttc-main .ttc-statement-main{grid-column:1;grid-row:2;min-width:0;align-self:start}
+.ttc-main .ttc-statement-main h2{
+  font-size:clamp(35px,3.7vw,54px);line-height:1.48;
+  letter-spacing:-.075em;max-width:710px;
+}
+.ttc-main .ttc-statement-bottom{
+  margin-top:clamp(20px,2.7vw,38px);
+  grid-template-columns:44px minmax(0,1fr);gap:clamp(18px,2vw,28px);
+}
+.ttc-main .ttc-statement-bottom p{font-size:14px;line-height:1.89;max-width:570px}
+.ttc-main .ttc-statement-figure{grid-column:2;grid-row:1/3;margin:0;min-width:0;align-self:center}
+.ttc-main .ttc-statement-photo{aspect-ratio:1.34;overflow:hidden;background:#c4bcb3}
+.ttc-main .ttc-statement-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 47%}
+.ttc-main .ttc-statement-figure figcaption{
+  display:flex;justify-content:space-between;gap:8px;margin-top:13px;
+  font:600 9px/1.5 'Montserrat',sans-serif;letter-spacing:.09em;color:#8c776b;
+}
+/* Learning: tighter vertical tempo, clear numbered structure. */
+.ttc-main .ttc-learning{padding:clamp(65px,6.5vw,99px) 0 clamp(35px,3.8vw,55px)}
+.ttc-main .ttc-learning-layout{gap:clamp(38px,6vw,85px);grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
+.ttc-main .ttc-learning-intro h2{margin:16px 0 15px;font-size:clamp(35px,3.6vw,48px)}
+.ttc-main .ttc-learning-intro>p{font-size:14px;line-height:1.87}
+.ttc-main .ttc-learning-aside{margin-top:30px}
+.ttc-main .ttc-learning-item{padding:23px 0 24px;gap:20px;grid-template-columns:46px minmax(0,1fr) 18px}
+.ttc-main .ttc-step-content h3{margin:8px 0 6px;font-size:clamp(21px,2vw,27px)}
+.ttc-main .ttc-step-content p{line-height:1.83}
+.ttc-main .ttc-learning-note{margin-top:23px;color:#74665e;font-size:12px}
+/* Photo-essay and information are already fully illustrated / designed; remove surplus air. */
+.ttc-main .ttc-editorial{padding:clamp(65px,6.7vw,102px) 0 clamp(35px,3.8vw,56px)}
+.ttc-main .ttc-editorial-grid{gap:clamp(37px,6.5vw,100px)}
+.ttc-main .ttc-editorial-copy h2{margin:18px 0 16px}
+.ttc-main .ttc-editorial-minilist{margin-top:clamp(25px,3vw,42px)}
+.ttc-main .ttc-editorial-minilist>div{padding:15px 0}
+.ttc-main .ttc-guidance{padding:clamp(61px,6vw,93px) 0 clamp(36px,4vw,62px)}
+.ttc-main .ttc-guidance-header{padding-bottom:23px}
+.ttc-main .ttc-info-row{padding-top:17px;padding-bottom:17px}
+/* Preserve the existing trademark section-signature without using extra scroll height. */
+.ttc-main .ttc-statement .ttc-section-sign,
+.ttc-main .ttc-learning .ttc-section-sign,
+.ttc-main .ttc-editorial .ttc-section-sign,
+.ttc-main .ttc-guidance .ttc-section-sign{margin-top:clamp(26px,2.9vw,42px)}
+@media(max-width:1060px) and (min-width:851px){
+ .ttc-main .ttc-statement-inner{grid-template-columns:minmax(0,1.23fr) minmax(250px,.77fr);gap:14px 35px}
+ .ttc-main .ttc-statement-main h2{font-size:clamp(32px,3.7vw,41px)}
+ .ttc-main .ttc-statement-bottom{grid-template-columns:24px minmax(0,1fr)}
+}
+@media(max-width:850px){
+ .ttc-main .ttc-statement{padding:56px 0 34px}
+ .ttc-main .ttc-statement-inner{grid-template-columns:1fr;gap:0}
+ .ttc-main .ttc-statement-side{grid-column:1;grid-row:auto;margin-bottom:17px}
+ .ttc-main .ttc-statement-main{grid-column:1;grid-row:auto}
+ .ttc-main .ttc-statement-main h2{font-size:clamp(32px,5.2vw,45px);line-height:1.56}
+ .ttc-main .ttc-statement-bottom{margin-top:19px;grid-template-columns:34px 1fr;gap:16px}
+ .ttc-main .ttc-statement-figure{grid-column:1;grid-row:auto;margin-top:29px}
+ .ttc-main .ttc-statement-photo{aspect-ratio:1.6}
+ .ttc-main .ttc-statement-figure figcaption{margin-top:10px}
+ .ttc-main .ttc-learning{padding:56px 0 32px}
+ .ttc-main .ttc-learning-layout{grid-template-columns:1fr;gap:24px}
+ .ttc-main .ttc-learning-intro h2{margin:13px 0 13px}
+ .ttc-main .ttc-learning-item{padding:21px 0;gap:16px}
+ .ttc-main .ttc-editorial{padding:58px 0 34px}
+ .ttc-main .ttc-editorial-grid{grid-template-columns:1fr;gap:30px}
+ .ttc-main .ttc-editorial-figure{width:min(100% - 10px,580px)}
+ .ttc-main .ttc-editorial-copy h2{margin:15px 0 14px}
+ .ttc-main .ttc-editorial-minilist{margin-top:23px}
+ .ttc-main .ttc-guidance{padding:56px 0 34px}
+}
+@media(max-width:600px){
+ .ttc-main .ttc-statement{padding-top:45px;padding-bottom:25px}
+ .ttc-main .ttc-statement-main h2{font-size:clamp(29px,7.5vw,37px);line-height:1.57}
+ .ttc-main .ttc-statement-bottom{grid-template-columns:26px 1fr;gap:12px}
+ .ttc-main .ttc-statement-bottom p{font-size:14px;line-height:1.85}
+ .ttc-main .ttc-statement-figure{margin-top:23px}
+ .ttc-main .ttc-statement-photo{aspect-ratio:1.3}
+ .ttc-main .ttc-statement-figure figcaption{font-size:8px;letter-spacing:.04em}
+ .ttc-main .ttc-learning{padding:48px 0 24px}
+ .ttc-main .ttc-learning-layout{gap:23px}
+ .ttc-main .ttc-learning-intro h2{font-size:clamp(30px,8vw,35px)}
+ .ttc-main .ttc-learning-intro>p{font-size:14px;line-height:1.83}
+ .ttc-main .ttc-learning-item{grid-template-columns:32px minmax(0,1fr) 12px;padding:18px 0 19px;gap:12px}
+ .ttc-main .ttc-step-num{font-size:19px}
+ .ttc-main .ttc-step-content h3{font-size:20px;margin:6px 0 5px}
+ .ttc-main .ttc-step-content p{font-size:14px;line-height:1.78}
+ .ttc-main .ttc-learning-note{font-size:12px;line-height:1.75;margin-top:19px}
+ .ttc-main .ttc-editorial{padding:52px 0 24px}
+ .ttc-main .ttc-editorial-grid{gap:25px}
+ .ttc-main .ttc-editorial-copy h2{font-size:clamp(29px,7.6vw,39px)}
+ .ttc-main .ttc-editorial-lead{font-size:14px;line-height:1.85}
+ .ttc-main .ttc-guidance{padding:53px 0 27px}
+ .ttc-main .ttc-guidance-header{padding-bottom:17px}
+ .ttc-main .ttc-info-row{padding:17px 0}
+ .ttc-main .ttc-info-row p{font-size:14px}
+ .ttc-main .ttc-statement .ttc-section-sign,
+ .ttc-main .ttc-learning .ttc-section-sign,
+ .ttc-main .ttc-editorial .ttc-section-sign,
+ .ttc-main .ttc-guidance .ttc-section-sign{margin-top:23px}
+}
