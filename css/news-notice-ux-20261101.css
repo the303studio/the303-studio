@@ -1,0 +1,79 @@
+/* THE303 STUDIO / NEWS NOTICE / 2026-11-01
+ * Scoped adjustments approved after page-by-page review.
+ * Does not affect gallery, main page, shared nav, or news data.
+ */
+body[data-page="news-notice"] .news-page .nn-entry-more--pending{
+  border-bottom:0;
+  padding-bottom:0;
+  color:#81746c;
+  font-weight:400;
+  cursor:default;
+  text-decoration:none;
+  white-space:nowrap;
+}
+body[data-page="news-notice"] .news-page .nn-entry-inner:not(a) .nn-entry-side{visibility:hidden}
+body[data-page="news-notice"] .news-page .nn-page-button{
+  min-width:44px;
+  height:44px;
+  padding:0 10px;
+}
+body[data-page="news-notice"] .news-page .nn-page-button:focus-visible,
+body[data-page="news-notice"] .news-page .nn-link:focus-visible{
+  outline:2px solid #754747;
+  outline-offset:3px;
+}
+@media (min-width:621px) and (max-width:850px){
+  body[data-page="news-notice"] .news-page .nn-quick .nn-link,
+  body[data-page="news-notice"] .news-page .nn-quick .nn-link+.nn-link{min-height:92px}
+}
+@media (max-width:620px){
+  /* Only the notice masthead: prioritize seeing actual news sooner. */
+  body[data-page="news-notice"] .news-page .nn-hero{padding-top:8px}
+  body[data-page="news-notice"] .news-page .news-hero-page-name{display:none}
+  body[data-page="news-notice"] .news-page .nn-hero-grid{
+    gap:11px;
+    padding:18px 0 20px;
+  }
+  body[data-page="news-notice"] .news-page .nn-headline h1{margin-top:9px}
+  body[data-page="news-notice"] .news-page .nn-hero-side .nn-side-index{display:none}
+  body[data-page="news-notice"] .news-page .nn-hero-side h2{font-size:14px;margin-bottom:4px}
+  body[data-page="news-notice"] .news-page .nn-hero-side p{font-size:12px;line-height:1.65}
+  body[data-page="news-notice"] .news-page .nn-board-section{padding-top:23px}
+  body[data-page="news-notice"] .news-page .nn-board-top{margin-bottom:10px}
+  body[data-page="news-notice"] .news-page .nn-board-top h2{font-size:28px;margin-top:6px}
+  body[data-page="news-notice"] .news-page .nn-board-top>p{margin-top:4px;line-height:1.65}
+  body[data-page="news-notice"] .news-page .nn-board-controls{margin-bottom:8px}
+  body[data-page="news-notice"] .news-page .nn-page-button{min-width:44px;height:44px}
+  /* Secondary paths are useful, but not another long editorial section. */
+  body[data-page="news-notice"] .news-page .nn-quick{padding-top:29px}
+  body[data-page="news-notice"] .news-page .nn-quick-head{margin-bottom:13px}
+  body[data-page="news-notice"] .news-page .nn-quick-head h2{margin-top:7px}
+  body[data-page="news-notice"] .news-page .nn-quick-head>p{margin-top:5px;line-height:1.55}
+  body[data-page="news-notice"] .news-page .nn-quick .nn-link,
+  body[data-page="news-notice"] .news-page .nn-quick .nn-link+.nn-link{
+    min-height:82px;
+    padding:12px 36px 12px 2px;
+  }
+  body[data-page="news-notice"] .news-page .nn-link-index{margin-bottom:4px}
+  body[data-page="news-notice"] .news-page .nn-link-caption{margin-top:3px}
+  body[data-page="news-notice"] .news-page .nn-link-arrow{top:24px}
+  body[data-page="news-notice"] .news-page .nn-quick .news-sign{margin-top:16px}
+}
+@media(max-width:340px){
+  body[data-page="news-notice"] .news-page .nn-board-top h2{font-size:26px}
+  body[data-page="news-notice"] .news-page .nn-hero-side h2{font-size:13px}
+}
+/* Keep the compact journal rhythm continuous across the 620/621px switch. */
+@media (min-width:621px) and (max-width:850px){
+  body[data-page="news-notice"] .news-page .nn-hero{padding-top:13px}
+  body[data-page="news-notice"] .news-page .news-hero-page-name{display:none}
+  body[data-page="news-notice"] .news-page .nn-hero-grid{gap:14px;padding:22px 0 25px}
+  body[data-page="news-notice"] .news-page .nn-headline h1{margin-top:12px}
+  body[data-page="news-notice"] .news-page .nn-hero-side .nn-side-index{display:none}
+  body[data-page="news-notice"] .news-page .nn-board-section{padding-top:29px}
+  body[data-page="news-notice"] .news-page .nn-board-top{margin-bottom:15px}
+  body[data-page="news-notice"] .news-page .nn-board-controls{margin-bottom:12px}
+  body[data-page="news-notice"] .news-page .nn-quick{padding-top:33px}
+  body[data-page="news-notice"] .news-page .nn-quick-head{margin-bottom:17px}
+  body[data-page="news-notice"] .news-page .nn-quick .news-sign{margin-top:18px}
+}

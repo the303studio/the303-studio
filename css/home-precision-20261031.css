@@ -1,0 +1,245 @@
+/* THE303 HOME / 2026-10-31 / four-section precision improvements.
+   Deliberately scoped to #philosophy, #ttc, #space and #news.
+   Shared header, menus, all subpages, and original design tokens unchanged. */
+
+/* 1. Turn the existing philosophy eyebrow into an elegant, discoverable link. */
+#philosophy .phil-label-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px; min-height: 44px; max-width: 100%;
+  margin-bottom: 24px; color: var(--bg-alt); text-decoration: none;
+}
+#philosophy .phil-label-link .eyebrow { margin-bottom: 0; color: inherit; }
+#philosophy .phil-link-arrow {
+  font: 400 16px/1 'Montserrat',sans-serif; opacity: .78;
+  transform: translate(0,0); transition: transform .25s ease, opacity .25s ease;
+}
+@media (hover:hover) {
+  #philosophy .phil-label-link:hover .phil-link-arrow { opacity: 1; transform: translate(3px,-3px); }
+}
+#philosophy .phil-label-link:focus-visible { outline:2px solid #fff; outline-offset:5px; }
+
+/* 2. Fix intrinsic 1200px image driving the CERTIFICATE grid's excessive height.
+   Portrait people are lifted in individually cropped desktop/mobile photos. */
+#ttc .ttc-grid { min-height: clamp(570px, 47vw, 730px); }
+#ttc .ttc-image-wrap { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+#ttc .ttc-picture { display: block; position: absolute; inset: 0; width:100%; height:100%; }
+#ttc .ttc-image { display:block; position:absolute; inset:0; width:100%; height:100%;
+  min-height:0; max-height:none; object-fit:cover; object-position:50% 50%; }
+
+/* CERTIFICATE editorial refinement (2026-10-31): scoped buttons and compact rhythm.
+   Keep cinnamon backdrop, left-aligned copy and the approved PC/mobile crop. */
+#ttc .ttc-actions {
+  display:flex;
+  align-items:stretch;
+  gap:14px;
+  margin-top:34px;
+  flex-wrap:wrap;
+}
+#ttc .ttc-action--primary {
+  background:var(--bg-light);
+  color:var(--ink);
+  border-color:var(--bg-light);
+}
+#ttc .ttc-action--primary:hover,
+#ttc .ttc-action--primary:focus-visible {
+  background:#fff;
+  color:var(--brick-wine);
+  border-color:#fff;
+}
+#ttc .ttc-action--secondary {
+  background:transparent;
+  color:#fff;
+  border-color:rgba(255,255,255,.72);
+}
+#ttc .ttc-action--secondary:hover,
+#ttc .ttc-action--secondary:focus-visible {
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  border-color:#fff;
+}
+#ttc .ttc-actions .btn { min-width:0; text-align:center; white-space:nowrap; }
+
+/* 3. Keep original two-column studio showcase, add a clear brand promise. */
+#space .mss-content > .eyebrow { margin-bottom:16px; }
+#space .mss-statement {
+  max-width:16em; margin:0 0 12px;
+  font:700 clamp(22px,2vw,29px)/1.45 'Nanum Myeongjo',serif;
+  letter-spacing:-.055em; color:var(--ink); word-break:keep-all;
+}
+#space .mss-description {
+  max-width:39ch; margin:0 0 21px;
+  font:400 14px/1.8 'Noto Sans KR',sans-serif; color:var(--ink-soft); word-break:keep-all;
+}
+#space .mss-features { margin-bottom:24px !important; }
+#space .mss-features li { align-items:flex-start !important; line-height:1.65; font-size:13px !important; }
+#space .mss-content .mss-features + div { margin-top:0 !important; }
+/* MEDIA STUDIO: one clear CTA hierarchy and consistent button geometry. */
+#space .mss-actions {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px; width:min(100%,414px); margin-top:0;
+}
+#space .mss-actions .mss-cta {
+  width:100%; min-width:0; min-height:52px; padding:11px 12px;
+  font:600 13px/1.45 'Noto Sans KR',sans-serif;
+  letter-spacing:-.025em; text-align:center; white-space:normal;
+}
+#space .mss-actions .mss-cta--primary {
+  color:#fff; background:var(--brick-wine); border-color:var(--brick-wine);
+}
+#space .mss-actions .mss-cta--secondary {
+  color:var(--ink); background:transparent; border-color:var(--cashmere);
+}
+@media (hover:hover) {
+  #space .mss-actions .mss-cta--primary:hover { color:#fff; background:var(--cinnamon); border-color:var(--cinnamon); }
+  #space .mss-actions .mss-cta--secondary:hover { color:#fff; background:var(--cashmere); border-color:var(--cashmere); }
+}
+#space .mss-actions .mss-cta:focus-visible { outline:2px solid var(--brick-wine); outline-offset:3px; }
+
+
+/* 4. Subtle editorial explanation inside original NOTICE graphic. */
+#news .journal-notice-message { display:flex; flex-direction:column; align-items:flex-start; gap:clamp(13px,1.45vw,20px); max-width:100%; }
+#news .journal-notice-description {
+  max-width:26em; color:rgba(255,255,255,.84);
+  font:400 clamp(11px,.9vw,13px)/1.65 'Noto Sans KR',sans-serif;
+  letter-spacing:-.015em; word-break:keep-all;
+}
+
+/* The original 1024px breakpoint already stacks TTC into one column.
+   Give its photo an intentional height rather than a collapsed automatic grid row. */
+@media (min-width:851px) and (max-width:1024px) {
+  #ttc .ttc-grid { min-height:0; }
+  #ttc .ttc-image-wrap { height:clamp(360px,44vw,480px); }
+}
+
+@media (max-width:850px) {
+  #philosophy .phil-label-link { margin-bottom:19px; gap:9px; }
+  #philosophy .phil-link-arrow { font-size:15px; }
+  #ttc .ttc-grid { min-height:0; grid-template-columns:minmax(0,1fr); }
+  #ttc .ttc-copy { padding-top:36px; padding-bottom:34px; }
+  #ttc .ttc-copy .section-title { margin-top:13px; margin-bottom:16px; line-height:1.38; }
+  #ttc .ttc-copy .section-copy { font-size:14px; line-height:1.75; font-weight:400; max-width:39ch; }
+  #ttc .ttc-actions { margin-top:26px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; width:100%; max-width:400px; }
+  #ttc .ttc-actions .btn { width:100%; height:50px; min-height:50px; padding-inline:9px; font-size:12px; letter-spacing:0; }
+  #ttc .ttc-image-wrap { height:clamp(280px,88vw,405px); min-height:0; }
+  #ttc .ttc-picture { position:absolute; }
+  #ttc .ttc-image { min-height:0; object-position:center 50%; }
+  #space .section-head,
+  #space .section-head .eyebrow,
+  #space .section-head .section-title {
+    text-align:center;
+    margin-inline:auto;
+  }
+  #space .mss-content {
+    align-items:center;
+    text-align:center;
+    padding-block:clamp(30px,8vw,38px);
+  }
+  #space .mss-content > .eyebrow {
+    margin-bottom:12px;
+    align-self:center;
+  }
+  #space .mss-statement {font-size:clamp(21px,5.8vw,26px); margin-bottom:9px;}
+  #space .mss-description {font-size:13px; line-height:1.75; margin-bottom:16px;}
+  /* Center the list as a group, but align its markers and copy on one reading axis. */
+  #space .mss-features {
+    width:fit-content;
+    max-width:100%;
+    margin-inline:auto !important;
+    margin-bottom:20px !important;
+    justify-items:stretch;
+    gap:10px !important;
+  }
+  #space .mss-features li {
+    justify-content:flex-start !important;
+    text-align:left;
+    align-items:flex-start !important;
+    font-size:12.5px !important;
+    width:100%;
+  }
+  #space .mss-features li span:first-child { flex:none; width:12px; text-align:center; }
+  #space .mss-features li span:last-child { flex:1; min-width:0; max-width:none; }
+  #space .mss-actions {
+    width:min(100%,340px);
+    gap:10px;
+    margin-inline:auto;
+  }
+  #space .mss-actions .mss-cta {
+    min-height:48px;
+    padding-inline:6px;
+    font-size:12px;
+    line-height:1.4;
+  }
+  #news .journal-notice-message { gap:11px; }
+  #news .journal-notice-description { font-size:11.5px; line-height:1.55; max-width:24em; }
+}
+/* On tablet-width stacked cards, the original 300px image crop hid the model's face.
+   Keep the source image untouched while framing the subject from the top. */
+@media (min-width:601px) and (max-width:850px) {
+  #space .mss-image { min-height:clamp(350px,50vw,420px); }
+  #space .mss-image img { object-position:center top; }
+}
+
+@media (max-width:359px) {
+  /* Narrow phones: equal, full-width buttons instead of cramped labels. */
+  #ttc .ttc-actions { grid-template-columns:minmax(0,1fr); gap:10px; max-width:240px; }
+  #philosophy .phil-label-link .eyebrow { letter-spacing:.14em; font-size:10px; }
+  #space .mss-statement {font-size:21px;}
+  #space .mss-actions {grid-template-columns:minmax(0,1fr); max-width:246px;}
+  #news .journal-notice-description {font-size:10.5px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  #philosophy .phil-link-arrow { transition:none; }
+}
+
+/* 2026-10-31 / final main-page visual audit / scoped refinements.
+   Keep PC/editorial grids, approved certificate layout and all subpages intact. */
+
+/* Brand promise: the latter words are stronger ONLY on compact mobile screens.
+   The wrapping span is rebuilt by editor-home.js, so custom titles remain editable. */
+#space .section-head .space-title-accent { display:inline-block; font-size:inherit; color:inherit; }
+@media (max-width:600px) {
+  #space .section-head .space-title-accent { display:block; font-size:36px; }
+  #space .section-head .section-title { line-height:1.42; }
+}
+
+/* Lift the portrait on 851-1024px, where mobile's top-focused crop stops applying. */
+@media (min-width:851px) and (max-width:1024px) {
+  #space .mss-image img { object-position:center top; }
+}
+
+/* Journal: two readable cards on intermediate tablet widths instead of an
+   excessively tall vertical stack. Phone remains one column; desktop unchanged. */
+@media (min-width:601px) and (max-width:850px) {
+  #news .journal-cards { grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(12px,2vw,18px); }
+  #news .journal-visual { aspect-ratio:1.32/1; }
+  #news .journal-visual--notice { padding:clamp(15px,2.5vw,22px); }
+  #news .journal-visual--notice::before { inset:12px; }
+  #news .journal-notice-overline { font-size:8px; gap:6px; letter-spacing:.055em; }
+  #news .journal-notice-rule { width:clamp(9px,1.5vw,14px); }
+  #news .journal-notice-type { font-size:clamp(37px,6vw,54px); }
+  #news .journal-notice-description { font-size:12px; line-height:1.58; max-width:23em; }
+  #news .journal-notice-index { font-size:9px; }
+  #news .journal-card-caption { gap:4px; }
+  #news .journal-card-label { font-size:14px; }
+  #news .journal-card-ko { font-size:11px; }
+}
+
+/* Minimum legible supporting copy in the NOTICE graphic on phones. */
+@media (max-width:600px) {
+  #news .journal-notice-description { font-size:12.5px; line-height:1.62; }
+}
+@media (max-width:359px) {
+  #news .journal-notice-description { font-size:12px; }
+}
+
+/* Improve HERO eyebrow contrast against high-key photography, not the layout. */
+#home .hero-content > .eyebrow {
+  color:#F8EBDD;
+  font-weight:600;
+  text-shadow:0 2px 12px rgba(28,20,16,.82);
+}
+/* Touch-size buttons without changing the visual language of the thin strokes. */
+@media (max-width:600px) {
+  #home .hero-dot { min-width:44px; width:44px; height:44px; }
+  #home .hero-dot[aria-pressed="true"] { width:60px; }
+}

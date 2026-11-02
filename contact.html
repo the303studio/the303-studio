@@ -1,0 +1,459 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FAF8F5">
+<title>오시는길 | THE303 STUDIO</title><meta name="description" content="THE303 STUDIO의 위치와 상담 정보를 안내합니다."><meta property="og:type" content="website"><meta property="og:title" content="오시는길 | THE303 STUDIO"><meta property="og:description" content="THE303 STUDIO의 위치와 상담 정보를 안내합니다."><meta property="og:image" content="./images/studio/hero-pc.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Noto+Sans+KR:wght@300;400;500;600;700&amp;family=Nanum+Myeongjo:wght@400;600;700&amp;family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/base.css"><link rel="stylesheet" href="./css/navigation.css"><link rel="stylesheet" href="./css/responsive.css"><link rel="stylesheet" href="./css/refinements.css"><link rel="stylesheet" href="./css/pages.css"><style id="the303-contact-v11-3-bundled">
+/* THE303 STUDIO / Contact v11.3 production integration.
+   Only contact page content. Existing header, menu, editor and footer are unchanged. */
+.the303-subpage .ct-main{--paper:#faf8f5;--cream:#f2ece3;--cream2:#e7dbce;--ink:#302927;--muted:#756b65;--line:#dbd0c7;--wine:#794344;--wineDark:#4c3635;--gold:#aa8067;--white:#fffdfb;background:#faf8f5;color:#302927;font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;}
+.the303-subpage .ct-main *{box-sizing:border-box;}
+.the303-subpage .ct-main a{text-decoration:none;color:inherit;}
+.the303-subpage .ct-main button{font:inherit;}
+.the303-subpage .ct-main a:focus-visible,.the303-subpage .ct-main button:focus-visible{outline:2px solid #794344;outline-offset:4px;}
+.the303-subpage .ct-main .ct-reserve-cta{color:#513837;}
+.the303-subpage .ct-main .ct-btn.ct-filled{color:#fff;}
+.the303-subpage .ct-main .ct-visit-cta .ct-reserve-cta{color:#513837;}
+.the303-subpage .ct-main .ct-map-panel{isolation:isolate;}
+.the303-subpage .ct-main .ct-map-panel::before,.the303-subpage .ct-main .ct-map-panel::after{z-index:-1;}
+.the303-subpage .ct-main #location,.the303-subpage .ct-main #beforeVisit{scroll-margin-top:calc(var(--nav-height,80px) + 8px);}
+@media(max-width:850px){.the303-subpage .ct-main .ct-next-nav{display:none}}
+@media(max-width:720px){.the303-subpage .ct-main .ct-visit-cta{padding-bottom:45px;}.the303-subpage .ct-main .ct-section{scroll-margin-top:calc(var(--nav-height,76px) + 8px);}}
+.the303-subpage .ct-main .ct-wrap {width:min(1190px,calc(100% - 88px));margin-inline:auto}
+.the303-subpage .ct-main .ct-header .ct-wrap {height:100%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.the303-subpage .ct-main .ct-desktop-nav a.ct-current {border-bottom:1px solid var(--wine);padding-bottom:7px;padding-top:8px}
+.the303-subpage .ct-main .ct-breadcrumb {display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:28px 0 20px;color:#997463;text-transform:uppercase;font:600 10px Montserrat,sans-serif;letter-spacing:.25em}
+.the303-subpage .ct-main .ct-breadcrumb .ct-current {color:var(--the303-breadcrumb-wine,#794344);font-weight:800}
+.the303-subpage .ct-main .ct-breadcrumb .ct-right {margin-left:auto;color:var(--wine);font-size:10px}
+.the303-subpage .ct-main .ct-hero {padding:65px 0 62px;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(320px,.94fr);gap:7%;align-items:center}
+.the303-subpage .ct-main .ct-eyebrow {display:flex;gap:14px;align-items:center;color:var(--wine);font:700 11px Montserrat,sans-serif;letter-spacing:.3em;text-transform:uppercase}
+.the303-subpage .ct-main .ct-eyebrow:before {content:"";display:block;width:40px;height:1px;background:#b78877}
+.the303-subpage .ct-main .ct-hero h1 {font:700 clamp(62px,6.7vw,102px)/.98 Montserrat,"DM Sans",sans-serif;letter-spacing:-.068em;margin:34px 0 28px}
+.the303-subpage .ct-main .ct-hero h1 .ct-line {display:block}
+.the303-subpage .ct-main .ct-hero h1 .ct-em {color:var(--wine);letter-spacing:-.075em}
+.the303-subpage .ct-main .ct-hero .ct-ko {font:400 clamp(29px,3vw,43px)/1.42 "Nanum Myeongjo",serif;letter-spacing:-.075em;word-break:keep-all;margin:0 0 18px}
+.the303-subpage .ct-main .ct-hero .ct-desc {font-size:15px;line-height:1.95;color:var(--muted);max-width:440px;margin:0}
+.the303-subpage .ct-main .ct-hero-actions {display:flex;flex-wrap:wrap;gap:18px;margin-top:32px}
+.the303-subpage .ct-main .ct-textlink {display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:700;padding-bottom:8px;border-bottom:1px solid #8d6656;transition:.2s}
+.the303-subpage .ct-main .ct-textlink:hover {color:var(--wine);gap:16px}
+.the303-subpage .ct-main .ct-number-panel {min-height:470px;display:flex;flex-direction:column;justify-content:space-between;position:relative;padding:32px 38px;overflow:hidden;background:linear-gradient(140deg,#e8ddd1,#d8bfac 65%,#ccb09e);isolation:isolate}
+.the303-subpage .ct-main .ct-number-panel:before {position:absolute;content:"";border:1px solid rgba(255,255,255,.5);width:530px;height:530px;right:-45%;top:-35%;border-radius:50%;z-index:-1}
+.the303-subpage .ct-main .ct-number-panel:after {position:absolute;content:"";width:310px;height:310px;border:1px solid rgba(255,255,255,.36);border-radius:50%;left:-140px;bottom:-170px;z-index:-1}
+.the303-subpage .ct-main .ct-panel-head {display:flex;align-items:center;justify-content:space-between;color:#775448;font:700 11px Montserrat,sans-serif;letter-spacing:.24em}
+.the303-subpage .ct-main .ct-floor {display:flex;align-items:baseline;gap:8px;color:#674b43}
+.the303-subpage .ct-main .ct-floor strong {font:700 clamp(126px,15vw,218px)/.8 Montserrat,sans-serif;letter-spacing:-.12em}
+.the303-subpage .ct-main .ct-floor em {font:600 clamp(35px,4vw,55px)/1 Montserrat,sans-serif;font-style:normal;letter-spacing:-.05em;margin-left:6px}
+.the303-subpage .ct-main .ct-panel-foot {display:flex;justify-content:space-between;align-items:end;gap:10px;border-top:1px solid rgba(109,73,60,.28);padding-top:16px;font:600 10px Montserrat,sans-serif;letter-spacing:.18em;color:#73594e}
+.the303-subpage .ct-main .ct-panel-foot span:last-child {letter-spacing:.08em}
+.the303-subpage .ct-main .ct-reserve {background:#513837;color:#f9f4ef}
+.the303-subpage .ct-main .ct-reserve-inner {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;padding:32px 0 36px}
+.the303-subpage .ct-main .ct-reserve-label {color:#dabaae;font:700 10px Montserrat,sans-serif;letter-spacing:.28em}
+.the303-subpage .ct-main .ct-reserve h2 {font:400 clamp(23px,2.8vw,34px)/1.5 "Nanum Myeongjo",serif;letter-spacing:-.045em;margin:9px 0 7px}
+.the303-subpage .ct-main .ct-reserve p {font-size:13px;color:#e0ceca;line-height:1.85;margin:0}
+.the303-subpage .ct-main .ct-reserve-cta {display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;background:#fcf6f0;color:#513837;padding:0 23px;font-size:13px;font-weight:700;white-space:nowrap;transition:.2s}
+.the303-subpage .ct-main .ct-reserve-cta:hover {background:#ebd7cb}
+.the303-subpage .ct-main .ct-section {padding:95px 0 102px}
+.the303-subpage .ct-main .ct-section.ct-alt {background:#f2ece4}
+.the303-subpage .ct-main .ct-section-head {display:flex;justify-content:space-between;align-items:end;gap:28px;border-bottom:1px solid var(--line);padding-bottom:24px;margin-bottom:36px}
+.the303-subpage .ct-main .ct-index {font:700 10px Montserrat,sans-serif;color:var(--wine);letter-spacing:.23em}
+.the303-subpage .ct-main .ct-section h2 {font:400 clamp(31px,3.5vw,48px)/1.35 "Nanum Myeongjo",serif;letter-spacing:-.055em;margin:12px 0 0}
+.the303-subpage .ct-main .ct-section-head p {font-size:13px;line-height:1.9;color:var(--muted);max-width:310px;margin:0}
+.the303-subpage .ct-main .ct-location-grid {display:grid;grid-template-columns:1fr 1.04fr;gap:70px;align-items:stretch}
+.the303-subpage .ct-main .ct-info {padding:12px 0}
+.the303-subpage .ct-main .ct-item {padding:24px 0;border-bottom:1px solid #dbd0c7}
+.the303-subpage .ct-main .ct-item:first-child {padding-top:0}
+.the303-subpage .ct-main .ct-item .ct-lab {font:700 10px Montserrat,sans-serif;letter-spacing:.25em;color:#986a57;margin-bottom:12px}
+.the303-subpage .ct-main .ct-address {font:400 clamp(24px,2.5vw,35px)/1.55 "Nanum Myeongjo",serif;letter-spacing:-.05em;word-break:keep-all}
+.the303-subpage .ct-main .ct-phone {font:600 clamp(25px,2.8vw,36px)/1.4 Montserrat,sans-serif;letter-spacing:-.045em}
+.the303-subpage .ct-main .ct-meta {font-size:13px;line-height:1.85;color:var(--muted)}
+.the303-subpage .ct-main .ct-location-actions {display:flex;gap:15px;flex-wrap:wrap;margin-top:28px}
+.the303-subpage .ct-main .ct-btn {display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:45px;border:1px solid #a98d7d;padding:0 18px;background:transparent;font-weight:600;font-size:13px;cursor:pointer}
+.the303-subpage .ct-main .ct-btn.ct-filled {background:var(--wine);border-color:var(--wine);color:white}
+.the303-subpage .ct-main .ct-btn:hover {filter:brightness(.95)}
+.the303-subpage .ct-main .ct-map-panel {display:flex;flex-direction:column;min-height:440px;background:#e6dbce;border:1px solid #d8c7b7;padding:34px;position:relative;justify-content:space-between;overflow:hidden}
+.the303-subpage .ct-main .ct-map-panel:before {content:"";width:450px;height:450px;border:1px solid rgba(137,102,82,.27);border-radius:50%;position:absolute;right:-170px;top:-135px}
+.the303-subpage .ct-main .ct-map-panel:after {content:"";height:1px;width:700px;background:rgba(137,102,82,.18);position:absolute;transform:rotate(-30deg);left:-90px;top:55%}
+.the303-subpage .ct-main .ct-map-panel .ct-tag {font:700 10px Montserrat,sans-serif;letter-spacing:.23em;color:#8e5c4c;position:relative;z-index:2}
+.the303-subpage .ct-main .ct-map-center {text-align:center;position:relative;z-index:2}
+.the303-subpage .ct-main .ct-map-center .ct-pin {font:700 63px/.95 Montserrat,sans-serif;letter-spacing:-.07em;color:#6e4a40}
+.the303-subpage .ct-main .ct-map-center .ct-line {height:1px;width:60px;background:#aa8a78;margin:24px auto}
+.the303-subpage .ct-main .ct-map-center p {font-size:13px;line-height:1.8;color:#745e54;margin:0}
+.the303-subpage .ct-main .ct-map-bottom {position:relative;z-index:2;display:flex;align-items:end;justify-content:space-between;gap:20px}
+.the303-subpage .ct-main .ct-map-bottom span {font:600 10px Montserrat,sans-serif;letter-spacing:.18em;color:#896858}
+.the303-subpage .ct-main .ct-map-bottom a {font-size:13px;border-bottom:1px solid #9b6b58;padding-bottom:5px;font-weight:600}
+.the303-subpage .ct-main .ct-map-notice {font-size:12px;color:#8b7769;margin-top:12px}
+.the303-subpage .ct-main .ct-visit-list {display:grid;grid-template-columns:1fr;}
+.the303-subpage .ct-main .ct-visit-item {display:grid;grid-template-columns:70px minmax(0,230px) minmax(0,1fr);align-items:baseline;gap:23px;border-bottom:1px solid var(--line);padding:28px 4px}
+.the303-subpage .ct-main .ct-visit-item .ct-num {font:700 11px Montserrat,sans-serif;letter-spacing:.19em;color:var(--gold)}
+.the303-subpage .ct-main .ct-visit-item strong {font-size:19px;font-weight:600}
+.the303-subpage .ct-main .ct-visit-item p {font-size:14px;color:#6b605a;line-height:1.85;margin:0}
+.the303-subpage .ct-main .ct-visit-item .ct-must {color:#8b4846;font-weight:700}
+.the303-subpage .ct-main .ct-visit-cta {background:#403231;color:#fffaf6;padding:69px 0}
+.the303-subpage .ct-main .ct-visit-cta .ct-wrap {display:flex;justify-content:space-between;align-items:center;gap:24px}
+.the303-subpage .ct-main .ct-visit-cta h2 {font:400 clamp(28px,3.4vw,48px)/1.35 "Nanum Myeongjo",serif;letter-spacing:-.06em;margin:14px 0 10px}
+.the303-subpage .ct-main .ct-visit-cta p {margin:0;font-size:14px;color:#dccdc7;line-height:1.8}
+.the303-subpage .ct-main .ct-visit-cta .ct-reserve-cta {background:#f4e8dd}
+.the303-subpage .ct-main .ct-signature {display:flex;justify-content:space-between;align-items:center;padding:18px 0;font:600 9px Montserrat,sans-serif;letter-spacing:.22em;color:#91786d}
+.the303-subpage .ct-main .ct-next-nav {border-top:1px solid #ded3cc}
+.the303-subpage .ct-main .ct-next-nav .ct-wrap {height:66px;display:flex;align-items:center;justify-content:space-between}
+.the303-subpage .ct-main .ct-next-nav a {font-size:12px;letter-spacing:.08em;font-weight:700}
+@media (max-width:1200px){
+.the303-subpage .ct-main .ct-header .ct-wrap {gap:17px}
+}
+@media (max-width:1024px){
+.the303-subpage .ct-main .ct-hero {grid-template-columns:1.05fr .95fr;gap:4%}
+.the303-subpage .ct-main .ct-number-panel {min-height:390px}
+.the303-subpage .ct-main .ct-floor strong {font-size:132px}
+.the303-subpage .ct-main .ct-hero h1 {font-size:70px}
+.the303-subpage .ct-main .ct-location-grid {gap:35px}
+.the303-subpage .ct-main .ct-wrap {width:min(1190px,calc(100% - 54px))}
+}
+@media (max-width:720px){
+.the303-subpage .ct-main .ct-wrap {width:calc(100% - 40px)}
+.the303-subpage .ct-main .ct-breadcrumb {padding:22px 0 15px;letter-spacing:.16em}
+.the303-subpage .ct-main .ct-breadcrumb .ct-right {display:none}
+.the303-subpage .ct-main .ct-hero {grid-template-columns:1fr;gap:30px;padding:44px 0 46px}
+.the303-subpage .ct-main .ct-hero h1 {font-size:clamp(53px,13vw,81px);margin:23px 0 28px}
+.the303-subpage .ct-main .ct-hero .ct-ko {font-size:30px;line-height:1.5}
+.the303-subpage .ct-main .ct-hero .ct-desc {font-size:14px;line-height:1.85}
+.the303-subpage .ct-main .ct-hero-actions {margin-top:26px}
+.the303-subpage .ct-main .ct-number-panel {min-height:240px;padding:23px 24px;display:grid;grid-template-columns:1fr auto;gap:15px;align-items:center}
+.the303-subpage .ct-main .ct-panel-head {align-self:start;font-size:9px}
+.the303-subpage .ct-main .ct-floor {grid-column:2;grid-row:1/3;align-self:center}
+.the303-subpage .ct-main .ct-floor strong {font-size:clamp(115px,25vw,170px)}
+.the303-subpage .ct-main .ct-floor em {font-size:40px}
+.the303-subpage .ct-main .ct-panel-foot {align-self:end;border-top:none;grid-column:1;display:block;font-size:9px;line-height:1.75}
+.the303-subpage .ct-main .ct-panel-foot span {display:block}
+.the303-subpage .ct-main .ct-reserve-inner {grid-template-columns:1fr;padding:29px 0;gap:20px}
+.the303-subpage .ct-main .ct-reserve h2 {font-size:25px}
+.the303-subpage .ct-main .ct-reserve-cta {width:100%;min-height:47px}
+.the303-subpage .ct-main .ct-section {padding:68px 0 73px}
+.the303-subpage .ct-main .ct-section-head {display:block;margin-bottom:30px;padding-bottom:17px}
+.the303-subpage .ct-main .ct-section h2 {font-size:33px}
+.the303-subpage .ct-main .ct-section-head p {margin-top:13px;max-width:none;font-size:13px}
+.the303-subpage .ct-main .ct-location-grid {grid-template-columns:1fr;gap:36px}
+.the303-subpage .ct-main .ct-map-panel {min-height:350px;padding:26px}
+.the303-subpage .ct-main .ct-address {font-size:26px}
+.the303-subpage .ct-main .ct-phone {font-size:26px}
+.the303-subpage .ct-main .ct-visit-item {grid-template-columns:40px 1fr;gap:10px 14px;padding:22px 0}
+.the303-subpage .ct-main .ct-visit-item p {grid-column:2;font-size:13px}
+.the303-subpage .ct-main .ct-visit-item strong {font-size:17px}
+.the303-subpage .ct-main .ct-visit-cta {padding:58px 0}
+.the303-subpage .ct-main .ct-visit-cta .ct-wrap {display:block}
+.the303-subpage .ct-main .ct-visit-cta .ct-reserve-cta {margin-top:24px}
+}
+@media (max-width:375px){
+.the303-subpage .ct-main .ct-wrap {width:calc(100% - 32px)}
+.the303-subpage .ct-main .ct-hero h1 {font-size:49px}
+.the303-subpage .ct-main .ct-number-panel {min-height:216px}
+.the303-subpage .ct-main .ct-floor strong {font-size:113px}
+.the303-subpage .ct-main .ct-floor em {font-size:35px}
+.the303-subpage .ct-main .ct-hero .ct-ko {font-size:27px}
+.the303-subpage .ct-main .ct-reserve h2 {font-size:22px}
+}
+@media  (max-width:720px) {
+.the303-subpage .ct-main .ct-breadcrumb { padding: 18px 0 13px; }
+.the303-subpage .ct-main .ct-hero { padding: 36px 0 35px; gap: 24px; }
+.the303-subpage .ct-main .ct-hero h1 { margin: 20px 0 21px; }
+.the303-subpage .ct-main .ct-hero .ct-ko { font-size: 29px; line-height: 1.38; }
+.the303-subpage .ct-main .ct-hero .ct-desc { font-size: 13px; line-height: 1.7; }
+.the303-subpage .ct-main .ct-hero-actions { margin-top: 21px; }
+.the303-subpage .ct-main .ct-number-panel { min-height: 220px; }
+.the303-subpage .ct-main .ct-signature { padding: 13px 0; }
+.the303-subpage .ct-main .ct-reserve-inner { padding: 25px 0 26px; gap: 15px; }
+.the303-subpage .ct-main .ct-reserve h2 { line-height: 1.4; margin: 8px 0 6px; }
+.the303-subpage .ct-main .ct-reserve p { line-height: 1.65; }
+.the303-subpage .ct-main .ct-section { padding: 51px 0 55px; }
+.the303-subpage .ct-main .ct-section-head { margin-bottom: 22px; padding-bottom: 16px; }
+.the303-subpage .ct-main .ct-section-head p { margin-top: 10px; font-size: 13px; line-height: 1.65; }
+.the303-subpage .ct-main .ct-section h2 { margin-top: 9px; font-size: 31px; line-height: 1.32; }
+.the303-subpage .ct-main .ct-location-grid { gap: 25px; }
+.the303-subpage .ct-main .ct-info { padding: 0; }
+.the303-subpage .ct-main .ct-item { padding: 17px 0; }
+.the303-subpage .ct-main .ct-item .ct-lab { margin-bottom: 8px; }
+.the303-subpage .ct-main .ct-address { font-size: 22px; line-height: 1.36; letter-spacing: -.055em; }
+.the303-subpage .ct-main .ct-address-building {
+    display: inline-block;
+    font: 400 16px/1.4 "Noto Sans KR", sans-serif;
+    letter-spacing: -.035em;
+    color: #736359;
+    margin-top: 4px;
+  }
+.the303-subpage .ct-main .ct-phone { font-size: 25px; line-height: 1.32; }
+.the303-subpage .ct-main .ct-meta { font-size: 13px; line-height: 1.65; }
+.the303-subpage .ct-main .ct-location-actions { margin-top: 18px; gap: 9px; }
+.the303-subpage .ct-main .ct-map-panel { min-height: 294px; padding: 21px; }
+.the303-subpage .ct-main .ct-map-center .ct-pin { font-size: 52px; }
+.the303-subpage .ct-main .ct-map-center .ct-line { margin: 16px auto; }
+.the303-subpage .ct-main .ct-map-center p { line-height: 1.6; }
+.the303-subpage .ct-main .ct-map-notice { margin-top: 9px; font-size: 11px; line-height: 1.5; }
+.the303-subpage .ct-main .ct-visit-item { padding: 17px 0; gap: 6px 13px; }
+.the303-subpage .ct-main .ct-visit-item strong { font-size: 17px; line-height: 1.4; }
+.the303-subpage .ct-main .ct-visit-item p { font-size: 13px; line-height: 1.65; }
+.the303-subpage .ct-main .ct-visit-cta { padding: 47px 0; }
+.the303-subpage .ct-main .ct-visit-cta h2 { margin: 10px 0 8px; line-height: 1.38; }
+.the303-subpage .ct-main .ct-visit-cta p { line-height: 1.65; }
+.the303-subpage .ct-main .ct-visit-cta .ct-reserve-cta { margin-top: 18px; }
+}
+@media  (max-width:375px) {
+.the303-subpage .ct-main .ct-hero .ct-ko { font-size: 27px; }
+.the303-subpage .ct-main .ct-section h2 { font-size: 29px; }
+.the303-subpage .ct-main .ct-address { font-size: 21px; line-height: 1.36; }
+.the303-subpage .ct-main .ct-location-actions .ct-btn { padding: 0 13px; font-size: 12px; }
+}
+@media  (min-width:721px) {
+.the303-subpage .ct-main .ct-section-head p {
+    max-width:none;
+    white-space:nowrap;
+    flex:0 0 auto;
+    font-size:12.5px;
+    line-height:1.6;
+  }
+.the303-subpage .ct-main .ct-section { padding-top:82px; padding-bottom:84px; }
+.the303-subpage .ct-main .ct-section-head { margin-bottom:30px; }
+.the303-subpage .ct-main .ct-visit-item {
+    align-items:center;
+    grid-template-columns:64px minmax(0,210px) minmax(0,1fr);
+    column-gap:18px;
+    min-height:96px;
+    padding:20px 4px;
+  }
+.the303-subpage .ct-main .ct-visit-item p { line-height:1.72; }
+}
+@media  (min-width:721px) and (max-width:900px) {
+.the303-subpage .ct-main .ct-section-head p { font-size:12px; }
+.the303-subpage .ct-main .ct-visit-item { grid-template-columns:42px minmax(0,150px) minmax(0,1fr); column-gap:14px; }
+}
+@media  (max-width:720px) {
+.the303-subpage .ct-main .ct-section-head p { white-space:normal; max-width:none; }
+.the303-subpage .ct-main .ct-visit-item { min-height:0; align-items:start; padding:18px 0; column-gap:14px; row-gap:7px; }
+.the303-subpage .ct-main .ct-visit-item .ct-num { padding-top:4px; }
+}
+@media  (min-width:721px) {
+.the303-subpage .ct-main #location .ct-address {
+    font: 400 clamp(23px, 1.85vw, 27px)/1.37 "Nanum Myeongjo", serif;
+    letter-spacing: -.035em;
+  }
+.the303-subpage .ct-main #location .ct-address-building {
+    display:inline-block;
+    margin-top: 3px;
+    color: #736359;
+    font: 400 clamp(16px, 1.22vw, 19px)/1.45 "Noto Sans KR", sans-serif;
+    letter-spacing: -.025em;
+  }
+.the303-subpage .ct-main #location .ct-phone {
+    font: 600 clamp(24px, 2.05vw, 29px)/1.35 Montserrat, sans-serif;
+    letter-spacing: -.04em;
+  }
+.the303-subpage .ct-main #location .ct-item { padding-block:19px; }
+.the303-subpage .ct-main #location .ct-item:first-child { padding-top:0; }
+.the303-subpage .ct-main #location .ct-item .ct-lab { margin-bottom:10px; }
+.the303-subpage .ct-main #beforeVisit .ct-visit-item {
+    grid-template-columns:64px minmax(0,200px) minmax(0,1fr);
+    gap: 18px;
+    min-height: 92px;
+    padding: 16px 4px;
+    align-items:center;
+  }
+.the303-subpage .ct-main #beforeVisit .ct-visit-item .ct-num, .the303-subpage .ct-main #beforeVisit .ct-visit-item strong, .the303-subpage .ct-main #beforeVisit .ct-visit-item p { margin:0; }
+.the303-subpage .ct-main #beforeVisit .ct-visit-item p { line-height:1.65; }
+}
+.the303-subpage .ct-main #beforeVisit .ct-section-head { margin-bottom:0; }
+.the303-subpage .ct-main #beforeVisit .ct-visit-list { margin:0; padding:0; }
+@media  (min-width:721px) and (max-width:900px) {
+.the303-subpage .ct-main #beforeVisit .ct-visit-item {
+    grid-template-columns: 44px minmax(0,155px) minmax(0,1fr);
+    column-gap:14px;
+    min-height:96px;
+  }
+}
+@media  (max-width:720px) {
+.the303-subpage .ct-main #location .ct-address {font-size:22px; line-height:1.37; letter-spacing:-.04em;}
+.the303-subpage .ct-main #location .ct-address-building {font-size:16px; line-height:1.4; margin-top:4px;}
+.the303-subpage .ct-main #location .ct-phone {font-size:25px; line-height:1.32;}
+.the303-subpage .ct-main #beforeVisit .ct-visit-item {
+    grid-template-columns:36px minmax(0,1fr);
+    column-gap:13px;
+    row-gap:5px;
+    align-items:start;
+    min-height:105px;
+    padding:17px 0;
+  }
+.the303-subpage .ct-main #beforeVisit .ct-visit-item .ct-num {padding-top:4px;}
+.the303-subpage .ct-main #beforeVisit .ct-visit-item strong {font-size:16px;line-height:1.4;}
+.the303-subpage .ct-main #beforeVisit .ct-visit-item p {grid-column:2;margin:0;font-size:13px;line-height:1.65;}
+}
+@media  (max-width:375px) {
+.the303-subpage .ct-main #location .ct-address {font-size:20px;}
+}
+
+</style><link rel="stylesheet" href="./css/subpage-image-motion.css?v=20261030"><link rel="stylesheet" href="./css/subpage-layout-grid.css?v=20261031a"><link rel="stylesheet" href="./css/editorial-quality-final.css?v=20261031b"><link rel="stylesheet" href="./css/mobile-art-direction.css?v=20261031m1">
+<link rel="stylesheet" href="./css/dynamic-hero-art-direction.css?v=20261031d2">
+
+<style id="the303-contact-approved-20261031">
+/* CONTACT: approved location UI refinements. No location snippet is added to the HERO. */
+.the303-subpage .ct-main .ct-location-actions .ct-btn {min-height:48px;}
+.the303-subpage .ct-main .ct-location-actions .ct-primary-map {padding-inline:21px;}
+.the303-subpage .ct-main .ct-location-actions .ct-secondary-copy {padding-inline:19px;white-space:nowrap;}
+@media (max-width:720px) {
+  .the303-subpage .ct-main .ct-hero-actions {margin-top:20px;gap:18px;}
+  .the303-subpage .ct-main .ct-textlink {min-height:44px;padding:9px 0 8px;line-height:1.5;}
+  .the303-subpage .ct-main .ct-number-panel {min-height:206px;}
+  .the303-subpage .ct-main .ct-location-actions {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;}
+  .the303-subpage .ct-main .ct-location-actions .ct-btn {width:100%;min-height:48px;padding-inline:12px;font-size:12px;white-space:nowrap;}
+  .the303-subpage .ct-main .ct-map-panel {min-height:245px;padding:19px 21px;}
+  .the303-subpage .ct-main .ct-map-center .ct-pin {font-size:47px;}
+  .the303-subpage .ct-main .ct-map-center .ct-line {margin:12px auto;}
+  .the303-subpage .ct-main .ct-map-center p {font-size:12px;}
+  .the303-subpage .ct-main .ct-map-bottom {gap:9px;}
+  .the303-subpage .ct-main .ct-map-bottom a {font-size:12px;}
+}
+@media (max-width:375px) {
+  .the303-subpage .ct-main .ct-panel-head {display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:7px;line-height:1.3;}
+  .the303-subpage .ct-main .ct-panel-head span {white-space:nowrap;font-size:8px;letter-spacing:.13em;}
+  .the303-subpage .ct-main .ct-number-panel {min-height:205px;}
+  .the303-subpage .ct-main .ct-location-actions .ct-btn {font-size:11.5px;padding-inline:9px;}
+  .the303-subpage .ct-main .ct-map-panel {min-height:237px;padding:18px;}
+}
+</style>
+
+</head><body class="the303-subpage" data-page="contact"><a class="skip-link" href="#mainContent">본문 바로가기</a><div class="mobile-nav-backdrop" id="navBackdrop"></div><header class="site-header" id="siteHeader">
+<div class="container nav-wrap">
+<a aria-label="THE303 STUDIO 홈으로 이동" class="brand" href="index.html#home">
+<span class="brand-main" data-text="brandEn">THE303 STUDIO</span>
+<span class="brand-sub" data-text="brandSub">FLYING YOGA &amp; BARRE</span>
+</a>
+<button aria-controls="navPanel" aria-expanded="false" aria-label="메뉴 열기" class="menu-toggle" id="menuToggle" type="button">
+<svg viewbox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"></path></svg>
+</button>
+<nav aria-label="주 메뉴" class="nav-panel" id="navPanel">
+<a class="mobile-panel-brand" href="index.html" aria-label="THE303 STUDIO 메인페이지로 이동"><span data-text="brandEn">THE303 STUDIO</span><small aria-hidden="true">HOME <span class="home-link-arrow">↗</span></small></a>
+<ul class="nav-list">
+<li class="nav-dropdown">
+<a class="nav-link active" data-text="nav1" href="index.html#philosophy">THE303</a>
+<button class="submenu-toggle" type="button"><svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+<ul class="dropdown-menu">
+<li><a data-text="navSub1_1" href="about-studio.html">스튜디오소개</a></li>
+<li><a aria-current="page" data-text="navSub1_2" href="contact.html">오시는길</a></li>
+</ul>
+</li>
+<li class="nav-dropdown">
+<a class="nav-link" data-text="nav2" href="index.html#program">PROGRAM</a>
+<button class="submenu-toggle" type="button"><svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+<ul class="dropdown-menu">
+<li><a data-text="navSub2_1" href="program-flying.html">플라잉요가</a></li>
+<li><a data-text="navSub2_2" href="program-barre.html">바레</a></li>
+<li><a data-text="navSub2_3" href="program-dance.html">에어리얼댄스</a></li>
+</ul>
+</li>
+<li class="nav-dropdown">
+<a class="nav-link" data-text="nav3" href="index.html#ttc">CERTIFICATE</a>
+<button class="submenu-toggle" type="button"><svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+<ul class="dropdown-menu">
+<li><a data-text="navSub3_1" href="ttc-cert.html">플라잉지도자</a></li>
+<li><a data-text="navSub3_2" href="ttc-workshop.html">워크샵</a></li>
+</ul>
+</li>
+<li class="nav-dropdown">
+<a class="nav-link" data-text="nav4" href="index.html#space">MEDIA STUDIO</a>
+<button class="submenu-toggle" type="button"><svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+<ul class="dropdown-menu">
+<li><a data-text="navSub4_1" href="media-portfolio.html">포트폴리오</a></li>
+<li><a data-text="navSub4_2" href="media-rental.html">촬영 및 대관 안내</a></li>
+</ul>
+</li>
+<li class="nav-dropdown">
+<a class="nav-link" data-text="nav5" href="index.html#news">NEWS</a>
+<button class="submenu-toggle" type="button"><svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button>
+<ul class="dropdown-menu">
+<li><a data-text="navSub5_1" href="news-notice.html">공지사항</a></li>
+<li><a data-text="navSub5_2" href="news-gallery.html">갤러리</a></li>
+</ul>
+</li>
+</ul>
+<div class="nav-social">
+<a aria-label="Facebook" data-link="socialFb" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+<a aria-label="Instagram" data-link="socialIg" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+<a aria-label="Naver Blog" data-link="socialBlog" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><polyline points="8 4 8 20 16 4 16 20"></polyline></svg></a>
+<a aria-label="YouTube" data-link="socialYt" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><rect height="12" rx="4" ry="4" width="20" x="2" y="6"></rect><polygon points="10 9 15 12 10 15 10 9"></polygon></svg></a>
+</div>
+<div class="mobile-menu-social">
+<a aria-label="Facebook" data-link="socialFb" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+<a aria-label="Instagram" data-link="socialIg" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+<a aria-label="Naver Blog" data-link="socialBlog" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><polyline points="8 4 8 20 16 4 16 20"></polyline></svg></a>
+<a aria-label="YouTube" data-link="socialYt" href="#" rel="noopener noreferrer" target="_blank"><svg viewbox="0 0 24 24"><rect height="12" rx="4" ry="4" width="20" x="2" y="6"></rect><polygon points="10 9 15 12 10 15 10 9"></polygon></svg></a>
+</div>
+<a class="nav-cta" data-link="booking" data-text="navCta" href="contact.html">수업 상담하기 ↗</a>
+</nav>
+</div>
+</header>
+ <main class="ct-main" id="mainContent">
+<div class="ct-wrap"><div aria-label="현재 위치" class="ct-breadcrumb"><a href="index.html">HOME</a><span>/</span><a href="about-studio.html">THE303</a><span>/</span><span aria-current="page" class="ct-current">CONTACT</span><span class="ct-right">THE303 / VISIT GUIDE</span></div>
+<section aria-label="오시는길 인트로" class="ct-hero"><div><div class="ct-eyebrow" data-edit="visit_kicker">LOCATION &amp; CONTACT</div><h1><span class="ct-line" data-edit="visit_title_1">VISIT</span><span class="ct-line ct-em" data-edit="visit_title_2">THE303</span></h1><p class="ct-ko" data-edit="visit_hero_lead">당신의 움직임이 시작되는 곳</p><p class="ct-desc" data-edit="visit_hero_desc">THE303 STUDIO를 찾아오시는 길. 위치와 연락처, 방문 전 안내를 확인해 주세요.</p><div class="ct-hero-actions"><a class="ct-textlink" href="#location">위치 안내 확인 <span aria-hidden="true">↗</span></a><a class="ct-textlink" href="#beforeVisit">방문 전 안내 <span aria-hidden="true">↗</span></a></div></div><div aria-label="THE303 STUDIO는 3층에 위치합니다" class="ct-number-panel"><div class="ct-panel-head"><span>THE303 STUDIO</span><span>DAEGU / KOREA</span></div><div class="ct-floor"><strong>03</strong><em>F</em></div><div class="ct-panel-foot"><span>J TOWER</span><span>3F · SUITE 301</span></div></div></section><div class="ct-signature"><span>THE303 STUDIO</span><span>FLYING YOGA &amp; BARRE</span></div></div>
+<section aria-labelledby="reserveTitle" class="ct-reserve"><div class="ct-wrap ct-reserve-inner"><div><span class="ct-reserve-label">IMPORTANT · BEFORE YOUR VISIT</span><h2 data-edit="visit_required_heading" id="reserveTitle">방문 전 예약이 필요합니다</h2><p data-edit="visit_required_description">편안하고 원활한 상담을 위해 방문 일정을 미리 예약해 주세요. 방문 문의는 전화로 안내해 드립니다.</p></div><a class="ct-reserve-cta" href="tel:053-568-3303">전화로 방문 예약 <span aria-hidden="true">↗</span></a></div></section>
+<section aria-labelledby="locationTitle" class="ct-section ct-alt" id="location"><div class="ct-wrap"><div class="ct-section-head"><div><div class="ct-index">01 / FIND US</div><h2 data-edit="sec_findus" id="locationTitle">오시는 길</h2></div><p data-edit="visit_findus_caption">주소·층수·연락처를 한눈에 확인하세요.</p></div><div class="ct-location-grid"><div class="ct-info"><div class="ct-item"><div class="ct-lab">ADDRESS</div><div class="ct-address" id="copyAddress"><span data-edit="visit_address_street">대구광역시 달서구 달구벌대로 1525</span><br/><span class="ct-address-building" data-edit="visit_address_building">J타워 3층 301호</span></div></div><div class="ct-item"><div class="ct-lab">TELEPHONE</div><a class="ct-phone" data-page-phone="" href="tel:053-568-3303">053-568-3303</a></div><div class="ct-item"><div class="ct-lab">YOUR DESTINATION</div><div class="ct-meta" data-edit="visit_destination_note">J타워 · 3층 · 301호. 정확한 층수와 호수를 확인해 주세요.</div></div><div class="ct-location-actions"><a class="ct-btn ct-filled ct-primary-map" data-contact-map="" aria-label="THE303 STUDIO 네이버 지도에서 확인 (새 탭)" href="https://map.naver.com/p/entry/place/1183204055" rel="noopener noreferrer" target="_blank">네이버 지도에서 확인 <span aria-hidden="true">↗</span></a><button class="ct-btn ct-secondary-copy" id="copyBtn" type="button" aria-label="주소 복사"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="1"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>주소 복사</button></div></div><div><div aria-label="스튜디오 위치를 설명하는 그래픽입니다. 정확한 길찾기는 네이버 지도 열기를 이용해 주세요." class="ct-map-panel"><span class="ct-tag">LOCATION / DAEGU</span><div class="ct-map-center"><div class="ct-pin">THE303</div><div class="ct-line"></div><p>달구벌대로 1525 · J타워 3층<br/>대구광역시 달서구</p></div><div class="ct-map-bottom"><span>LOCATION GUIDE</span><a data-contact-map="" aria-label="THE303 STUDIO 네이버 지도에서 확인 (새 탭)" href="https://map.naver.com/p/entry/place/1183204055" rel="noopener noreferrer" target="_blank">네이버 지도 열기 ↗</a></div></div></div></div><div class="ct-signature"><span>THE303 STUDIO</span><span>FLYING YOGA &amp; BARRE</span></div></div></section>
+<section aria-labelledby="beforeVisitTitle" class="ct-section" id="beforeVisit"><div class="ct-wrap"><div class="ct-section-head"><div><div class="ct-index">02 / BEFORE YOUR VISIT</div><h2 data-edit="sec_visitguide" id="beforeVisitTitle">방문 전 안내</h2></div><p data-edit="visit_guide_caption">방문 전 필요한 사항을 확인해 주세요.</p></div><div class="ct-visit-list"><div class="ct-visit-item"><span class="ct-num">01</span><strong data-edit="visit_item_1_title">방문 예약</strong><p><span class="ct-must">방문 전 예약은 필수입니다.</span> <span data-edit="visit_item_1_desc">방문을 원하실 때에는 전화로 먼저 일정을 확인해 주세요.</span></p></div><div class="ct-visit-item"><span class="ct-num">02</span><strong data-edit="visit_item_2_title">위치 확인</strong><p data-edit="visit_item_2_desc">스튜디오는 J타워 3층 301호에 있습니다.</p></div><div class="ct-visit-item"><span class="ct-num">03</span><strong data-edit="visit_item_3_title">교통 및 주차</strong><p data-edit="visit_item_3_desc">교통편과 주차 이용 방법은 방문 예약 시 문의해 주세요.</p></div></div><div class="ct-signature"><span>THE303 STUDIO</span><span>FLYING YOGA &amp; BARRE</span></div></div></section>
+<section class="ct-visit-cta"><div class="ct-wrap"><div><span class="ct-reserve-label">CONNECT WITH THE303</span><h2 data-edit="visit_cta_title">첫 방문을 위한 안내 편하게 문의해 주세요</h2><p data-edit="visit_cta_desc">전화로 방문 일정을 예약하실 수 있습니다.</p></div><a class="ct-reserve-cta" href="tel:053-568-3303">053-568-3303 <span aria-hidden="true">↗</span></a></div></section>
+<!-- THE303 v13: desktop/mobile related page navigation -->
+<nav class="the303-page-nav" aria-label="이전 및 다음 페이지 이동">
+  <div class="container the303-page-nav__inner">
+    <a class="the303-page-nav__link the303-page-nav__link--prev" href="about-studio.html" aria-label="스튜디오소개 페이지로 이동">
+      <span class="the303-page-nav__eyebrow">PREVIOUS PAGE <span aria-hidden="true">←</span></span>
+      <strong class="the303-page-nav__title">스튜디오소개</strong>
+    </a>
+    <a class="the303-page-nav__link the303-page-nav__link--next" href="index.html" aria-label="HOME 페이지로 이동">
+      <span class="the303-page-nav__eyebrow">BACK TO <span aria-hidden="true">→</span></span>
+      <strong class="the303-page-nav__title">HOME</strong>
+    </a>
+  </div>
+</nav>
+</main><footer class="site-footer" id="footer">
+    <div class="container">
+        <div class="footer-top reveal">
+            <div>
+                <div class="footer-brand" data-text="brandEn">THE303 STUDIO</div>
+                <div class="footer-info-text">
+                    <span><strong style="color:var(--ink);">주소 :</strong> <span data-text="address">대구광역시 달서구 달구벌대로 1525 J타워 3층 301호</span></span>
+                    <span><strong style="color:var(--ink);">전화상담 :</strong> <span data-text="phone">053-568-3303</span></span>
+                </div>
+            </div>
+            <nav class="footer-links footer-primary-links" aria-label="THE303 공통 하단 메뉴">
+                <a href="index.html" class="footer-home-link" aria-label="HOME 메인페이지">HOME</a>
+                <a href="about-studio.html">스튜디오소개</a>
+                <a href="index.html#program">프로그램</a>
+                <a href="index.html#ttc">자격증과정</a>
+                <a href="index.html#space">미디어스튜디오</a>
+                <a href="index.html#news">소식</a>
+            </nav>
+        </div>
+        <div class="footer-bottom reveal delay-1">
+            <div>COPYRIGHT <span id="currentYear"></span>. <span data-text="brandEn">THE303 STUDIO</span>. ALL RIGHTS RESERVED.</div>
+        </div>
+    </div>
+  </footer><div class="mobile-bottom-bar">
+    <a class="mobile-call" href="tel:053-568-3303" data-phone-link>전화 상담</a>
+    <a class="mobile-book" href="contact.html" data-link="booking">
+      <div style="display:flex; align-items:center; gap:8px; justify-content:center;">
+        <svg class="icon-kakao-outline" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4c5.5 0 10 3.58 10 8s-4.48 8-10 8c-1.2 0-2.36-.18-3.44-.5L4 21l1.5-3.66C4.05 15.65 3 13.93 3 12c0-4.42 4.48-8 9-8z"/></svg>
+        <span data-text="navCta">수업 상담하기</span>
+      </div>
+    </a>
+  </div><button class="to-top" id="toTop" type="button" aria-label="페이지 맨 위로 이동">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+ <script src="./js/common.js" defer></script><script src="./js/responsive-images.js?v=20261028" defer></script><script src="./js/pages-public.js" defer></script><script id="the303-contact-v11-3-bundled">
+/* THE303 Contact v11.3 — live map links and address copy. */
+(()=>{'use strict';
+ const street=document.querySelector('[data-edit="visit_address_street"]');
+ const building=document.querySelector('[data-edit="visit_address_building"]');
+ const btn=document.getElementById('copyBtn');
+ if(!street||!building||!btn)return;
+ const address=()=>[street.textContent.trim(),building.textContent.trim()].filter(Boolean).join(' ');
+ const update=()=>{const url='https://map.naver.com/p/entry/place/1183204055';document.querySelectorAll('[data-contact-map]').forEach(a=>a.href=url)};
+ update();new MutationObserver(update).observe(street,{childList:true,subtree:true,characterData:true});new MutationObserver(update).observe(building,{childList:true,subtree:true,characterData:true});
+ let notice=document.getElementById('ctCopyNotice');
+ if(!notice){notice=document.createElement('div');notice.id='ctCopyNotice';notice.setAttribute('role','status');notice.setAttribute('aria-live','polite');notice.style.cssText='position:fixed;left:50%;bottom:100px;transform:translateX(-50%);padding:12px 18px;background:#332d2a;color:#fff;z-index:1200;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:calc(100% - 24px);text-align:center';document.body.appendChild(notice)}
+ let n;
+ const show=(s)=>{notice.textContent=s;notice.style.opacity='1';clearTimeout(n);n=setTimeout(()=>notice.style.opacity='0',2400)};
+ btn.addEventListener('click',async()=>{const s=address();try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(s)}else{const el=document.createElement('textarea');el.value=s;el.style.cssText='position:fixed;left:-9999px;top:0';document.body.appendChild(el);el.select();const ok=document.execCommand('copy');el.remove();if(!ok)throw Error('copy unavailable')}show('주소를 복사했습니다.')}catch{show('복사 권한이 제한되어 있습니다. 주소를 직접 선택해 복사해 주세요.')}});
+})();
+
+</script></body></html>

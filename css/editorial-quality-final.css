@@ -1,0 +1,106 @@
+/* THE303 STUDIO | Editorial art direction / usability final pass | 2026-10-31
+   A single high-priority refinement layer, loaded last on the 12 public pages.
+   PRINCIPLE: Center only independent headlines above wide visual/collection areas;
+   retain editorial left alignment for split photography and information layouts.
+   This preserves existing HTML, page editors, images and JavaScript behaviors.
+*/
+:root {
+  --the303-quality-wine: #794344;
+  --the303-quality-muted-light: #6b6059;
+  --the303-quality-hairline: #ddd5cd;
+}
+/* Readable, stable large headlines without introducing forced line breaks. */
+main :is(h1,h2) { text-wrap: balance; word-break: keep-all; }
+main :is(p, figcaption) { text-wrap: pretty; }
+/* Shared navigation ribbon: unify contrast and reading size; keep identical geometry. */
+body.the303-subpage {
+  --the303-breadcrumb-ink: #655c55;
+  --the303-breadcrumb-wine: var(--the303-quality-wine);
+}
+body.the303-subpage main :is(
+ .ae-breadcrumb,.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,
+ .ttc-hero-ribbon .page-breadcrumb,.ws-breadcrumb,.m-breadcrumb,.news-breadcrumb
+) {font-size:10.5px;letter-spacing:.065em;}
+body.the303-subpage main :is(
+ .ae-intro-top>.ae-overline,.ct-breadcrumb .ct-right,.ttc-chapter,
+ .ws-topline-code,.m-topnote
+) {color:#76685f;font-size:10px;}
+/* Curated center composition: the visual media or series sits immediately below. */
+body[data-page="about-studio"] .ae-experience-heading-row,
+body[data-page="program-barre"] .bar17 .b-practice .b-section-head,
+body[data-page="program-flying"] .fly16 .fly16-section-head,
+body[data-page="media-rental"] .media-rental-main .mr-guide-head {
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:clamp(10px,1.5vw,20px);text-align:center;
+}
+body[data-page="about-studio"] .ae-experience-heading-row>div,
+body[data-page="program-barre"] .b-practice .b-section-head>div,
+body[data-page="program-flying"] .fly16-section-head>div,
+body[data-page="media-rental"] .mr-guide-head>div {width:100%;max-width:830px;min-width:0;text-align:center;}
+body[data-page="about-studio"] .ae-experience-heading-row :is(h2,p),
+body[data-page="program-barre"] .b-practice .b-section-head :is(h2,p),
+body[data-page="program-flying"] .fly16-section-head :is(h2,p),
+body[data-page="media-rental"] .mr-guide-head :is(h2,p) {
+  margin-left:auto;margin-right:auto;text-align:center;max-width:min(100%,690px);
+}
+body[data-page="about-studio"] .ae-experience-heading-row{margin-bottom:clamp(27px,3.1vw,42px);}
+body[data-page="program-barre"] .bar17 .b-practice .b-section-head{margin-bottom:clamp(25px,3vw,40px);}
+body[data-page="program-flying"] .fly16 .fly16-section-head{margin-bottom:clamp(23px,3vw,38px);}
+body[data-page="media-rental"] .media-rental-main .mr-guide-head{padding-bottom:clamp(24px,3vw,39px);}
+/* Workshop: the three experience chapters are a single series; center its prologue. */
+body[data-page="ttc-workshop"] .workshop-main .ws-approach-head{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:12px;padding-bottom:clamp(27px,3vw,39px);
+}
+body[data-page="ttc-workshop"] .ws-approach-head>div{width:100%;text-align:center;}
+body[data-page="ttc-workshop"] .ws-approach-head :is(h2,p){margin-left:auto;margin-right:auto;text-align:center;max-width:min(100%,600px);}
+/* The work itself becomes the focal point: captions remain editorial and left-aligned. */
+body[data-page="media-portfolio"] .media-portfolio-main .mp-archive-head,
+body[data-page="news-gallery"] .ng .ng-archive-head,
+body[data-page="news-notice"] .news-page .nn-quick-head {
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:clamp(10px,1.3vw,18px);
+}
+body[data-page="media-portfolio"] .mp-archive-head>div,
+body[data-page="news-gallery"] .ng-archive-head>div,
+body[data-page="news-notice"] .nn-quick-head>div {width:100%;text-align:center;}
+body[data-page="media-portfolio"] .mp-archive-head :is(h2,p),
+body[data-page="news-gallery"] .ng-archive-head :is(h2,p),
+body[data-page="news-notice"] .nn-quick-head :is(h2,p){margin-left:auto;margin-right:auto;text-align:center;max-width:min(100%,670px);}
+body[data-page="media-portfolio"] .media-portfolio-main .mp-archive-head{margin-bottom:clamp(34px,4vw,56px);}
+body[data-page="news-gallery"] .ng .ng-archive-head{margin-bottom:clamp(21px,2.8vw,33px);}
+body[data-page="news-gallery"] .ng-archive-head>p{font-size:13px;line-height:1.85;}
+body[data-page="news-notice"] .news-page .nn-quick-head{margin-bottom:clamp(24px,3vw,34px);}
+body[data-page="news-notice"] .nn-quick-head>p{max-width:530px;}
+/* Existing dance photo-story already has an intentional center composition. Preserve it.
+   Elsewhere, asymmetric image+copy, course details, access, and all CTAs stay aligned left. */
+/* Focus indication on controls, especially galleries and mobile navigation. */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible {
+ outline:2px solid var(--the303-quality-wine);outline-offset:3px;
+}
+:where(.ng-lightbox a,.ng-lightbox button,.mp-gallery button):focus-visible {outline-offset:4px;}
+@media (max-width:600px) {
+ body.the303-subpage main :is(
+  .ae-breadcrumb,.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,
+  .ttc-hero-ribbon .page-breadcrumb,.ws-breadcrumb,.m-breadcrumb,.news-breadcrumb
+ ){font-size:10px;letter-spacing:.025em;gap:5px;}
+ /* Control information must remain readable; decorative English micro labels may remain smaller. */
+ body[data-page="news-gallery"] .ng-archive-head>p{font-size:13px;line-height:1.75;}
+ body[data-page="media-portfolio"] .mp-archive-head>p{font-size:13px;line-height:1.8;}
+ body[data-page="ttc-workshop"] .ws-approach-head>p{font-size:13.5px;line-height:1.78;}
+ body[data-page="media-rental"] .mr-guide-head>p{font-size:13.5px;line-height:1.78;}
+ body[data-page="program-flying"] .fly16-section-head .fly16-title,
+ body[data-page="program-barre"] .b-practice .b-title,
+ body[data-page="media-portfolio"] .mp-archive-head h2 {text-wrap:balance;}
+}
+@media (max-width:360px) {
+ body.the303-subpage main :is(
+  .ae-breadcrumb,.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,
+  .ttc-hero-ribbon .page-breadcrumb,.ws-breadcrumb,.m-breadcrumb,.news-breadcrumb
+ ){font-size:9.6px;letter-spacing:0;gap:4px;}
+}
+/* Accessibility: respect reduced-motion user preference without changing normal interactions. */
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important;}
+ .photo-frame img,.ng-card img,.program-sub-img img{transition-duration:.01ms!important;}
+}

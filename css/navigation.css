@@ -1,0 +1,64 @@
+    /* ==========================================================================
+       2. 헤더 및 네비게이션
+       ========================================================================== */
+    .site-header { position: fixed; z-index: 1000; inset: 0 0 auto; color: white; transition: background .3s ease, border-color .3s ease, color .3s ease; border-bottom: 1px solid transparent; }
+    .site-header.scrolled { background: rgba(250, 248, 245, 0.98); color: var(--ink); border-bottom-color: var(--line); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);}
+    .nav-wrap { min-height: var(--nav-height); display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    
+    .brand { display: inline-flex; flex-direction: column; gap: 5px; color: inherit;}
+    .brand-main { font-size: 22px; line-height: 1; font-weight: 700; letter-spacing: .12em; font-family: 'Montserrat', sans-serif;}
+    .brand-sub { font-size: 9.5px; line-height: 1.4; letter-spacing: .15em; font-weight: 500; font-family: 'Montserrat', sans-serif; opacity: 0.8;}
+    
+    .nav-panel { display: flex; align-items: center; gap: clamp(18px, 2vw, 30px); }
+    .nav-list { list-style: none; display: flex; gap: clamp(18px, 2vw, 30px); }
+    .nav-list > li { position: relative; display: flex; align-items: center; }
+    .nav-link { position: relative; display: inline-flex; align-items: center; gap: 7px; min-height: 42px; font-size: 12px; font-weight: 600; letter-spacing: .08em; white-space: nowrap; font-family: 'Montserrat', sans-serif;}
+    .nav-link::after { position: absolute; content: ''; height: 2px; left: 0; right: 100%; bottom: 4px; background: var(--cinnamon); transition: right .3s ease; }
+    .nav-link:hover::after, .nav-link.active::after { right: 0; }
+    .nav-chevron { width: 10px; height: 10px; opacity: 0.6; transition: transform .3s ease;}
+    
+    .dropdown-menu { position: absolute; left: 50%; top: calc(100% + 5px); min-width: 180px; padding: 12px 0; list-style: none; background: #fff; color: var(--ink); border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translate(-50%, 8px); transition: all .3s ease; border-radius: 4px;}
+    .dropdown-menu a { display: block; padding: 12px 22px; font-size: 13px; font-weight: 400; color: var(--ink-soft);}
+    .dropdown-menu a:hover { background: var(--bg-alt); color: var(--brick-wine); }
+    .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); z-index: 100;}
+    
+    /* 🌟 고급스러운 반투명 흰색 서브메뉴 적용 (먹색 텍스트 반전) */
+    .site-header:not(.scrolled) .dropdown-menu { background: rgba(255, 255, 255, 0.94); border: 1px solid rgba(227, 221, 213, 0.3); color: var(--ink); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 18px 40px rgba(0,0,0,0.05);}
+    .site-header:not(.scrolled) .dropdown-menu a { color: var(--ink-soft); }
+    .site-header:not(.scrolled) .dropdown-menu a:hover { background: var(--bg-alt); color: var(--brick-wine);}
+    
+    .nav-social { display: flex; align-items: center; gap: 14px; padding-left: 20px; border-left: 1px solid currentColor; opacity: 0.8;}
+    .nav-social a { display: grid; place-items: center; transition: all .3s ease; }
+    .nav-social a:hover { transform: translateY(-2px); color: var(--cinnamon); opacity: 1;}
+    .nav-social svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    
+    .nav-cta { padding: 10px 18px; border: 1px solid currentColor; font-size: 11px; font-weight: 600; white-space: nowrap; transition: all .3s ease; letter-spacing: 0.04em; border-radius: 30px;}
+    .nav-cta:hover { color: #fff; background: var(--brick-wine); border-color: var(--brick-wine); transform: translateY(-2px);}
+    
+    .mobile-menu-social, .mobile-bottom-bar, .menu-toggle, .submenu-toggle { display: none !important; }
+
+    /* ==========================================================================
+       8. 미니멀 풋터
+       ========================================================================== */
+    .site-footer { border-top: 1px solid var(--line); padding: 60px 0 100px; background: var(--bg-light); font-family: 'Noto Sans KR', sans-serif; }
+    .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px;}
+    .footer-brand { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: var(--ink); letter-spacing: 0.1em; margin-bottom: 10px;}
+    
+    .footer-info-text { font-size: 13px; color: var(--ink-soft); line-height: 1.8; }
+    .footer-info-text span { display: inline-block; margin-right: 15px;}
+    
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-top: 30px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); font-family: 'Montserrat', sans-serif;}
+    .footer-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500;}
+    .footer-links a { color: var(--ink); transition: color 0.3s ease;}
+    .footer-links a:hover { color: var(--brick-wine); }
+    
+    .to-top { position: fixed; z-index: 790; right: 30px; bottom: 40px; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: #fff; color: var(--ink); opacity: 0; visibility: hidden; transform: translateY(12px); transition: all .4s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.05);}
+    .to-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.0; stroke-linecap: round; stroke-linejoin: round;}
+    .to-top.show { opacity: 1; visibility: visible; transform: none; }
+    .to-top:hover { background: var(--brick-wine); color: #fff; border-color: var(--brick-wine); transform: translateY(-4px);}
+
+    /* 모바일 네비 배경 */
+    .mobile-panel-brand { display: none; }
+    .mobile-nav-backdrop { display: none; position: fixed; inset: 0; top: 0; background: rgba(45,40,37,0.6); z-index: 998; opacity: 0; transition: opacity 0.4s ease; backdrop-filter: blur(4px);}
+    
+

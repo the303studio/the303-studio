@@ -1,0 +1,122 @@
+/* THE303 STUDIO / WORKSHOP | Editorial precision pass 2026-10-31
+   All selectors page-scoped to workshop. Preserves existing photo assets,
+   CTA destinations, editor keys, posted schedule status, and other pages. */
+
+/* Make non-interactive EXPLORE / EXPERIENCE / SHARE marker visibly decorative. */
+.workshop-main .ws-experience-glyph {
+  display:inline-block;flex:0 0 19px;width:19px;height:1px;
+  background:#b99585;font-size:0;line-height:0;
+}
+
+/* Small chapter captions are visual metadata, not numbered steps. */
+.workshop-main .ws-photo-meta,
+.workshop-main .ws-intro-figure figcaption,
+.workshop-main .ws-story-figure figcaption {align-items:center;}
+
+/* Give final invitation a discoverable tap area without adding a second CTA. */
+.workshop-main .ws-invitation-link {min-height:48px; padding-top:13px;padding-bottom:13px;}
+.workshop-main .ws-text-link {min-height:44px;}
+.workshop-main .ws-schedule-link {min-height:44px;}
+
+/* Tablet bridge: avoid gigantic single-column photographs at 740–850px.
+   Keep the original square-ish PEOPLE photo legible, including heads/hands. */
+@media (min-width:740px) and (max-width:850px) {
+  .workshop-main .ws-hero-head {padding-top:42px;padding-bottom:34px;}
+  .workshop-main .ws-hero-image {aspect-ratio:1.58/1;}
+  .workshop-main .ws-hero-image img {object-position:center 64%;}
+  .workshop-main .ws-intro-grid {
+    display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+    column-gap:clamp(24px,3.4vw,38px);row-gap:11px;align-items:center;
+  }
+  .workshop-main .ws-intro-side {grid-column:1;grid-row:1;align-self:end;margin-bottom:0;align-items:start;flex-wrap:wrap;gap:8px;}
+  .workshop-main .ws-intro-copy {grid-column:1;grid-row:2;align-self:start;min-width:0;}
+  .workshop-main .ws-intro-copy h2 {font-size:clamp(31px,4.15vw,36px);line-height:1.5;}
+  .workshop-main .ws-intro-copy p {font-size:13px;line-height:1.88;margin-top:16px;}
+  .workshop-main .ws-intro-figure {grid-column:2;grid-row:1/3;min-width:0;margin:0;align-self:center;}
+  .workshop-main .ws-intro-photo {aspect-ratio:800/760;}
+  .workshop-main .ws-intro-photo img {object-position:center top;}
+  .workshop-main .ws-introduction {padding-top:60px;}
+  .workshop-main .ws-story-grid {grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(23px,4vw,35px);align-items:center;}
+  .workshop-main .ws-story-left h2 {font-size:clamp(33px,4.25vw,38px);line-height:1.54;}
+  .workshop-main .ws-story-left>p {font-size:13px;line-height:1.87;}
+  .workshop-main .ws-story-foot {margin-top:23px;}
+  .workshop-main .ws-story-image {aspect-ratio:1.15/1;}
+  .workshop-main .ws-story-image img {object-position:center 36%;}
+  .workshop-main .ws-photo-story {padding-top:66px;}
+}
+
+/* Narrow tablet: allow photos to breathe, but avoid 810px-wide stretched image. */
+@media (min-width:601px) and (max-width:739px) {
+  .workshop-main .ws-hero-image {aspect-ratio:1.4/1;}
+  .workshop-main .ws-hero-image img {object-position:center 62%;}
+  .workshop-main .ws-intro-figure {width:100%;max-width:550px;margin:27px auto 0;}
+  .workshop-main .ws-intro-photo {aspect-ratio:800/760;}
+  .workshop-main .ws-intro-photo img {object-position:center top;}
+  .workshop-main .ws-story-figure {width:100%;max-width:600px;margin-inline:auto;}
+  .workshop-main .ws-story-image {aspect-ratio:1.3/1;}
+}
+
+/* Handheld: preserve the proven one-column layout and photo crop. */
+@media(max-width:600px) {
+  .workshop-main .ws-intro-side .ws-vertical-index {font-size:9px;letter-spacing:.05em;}
+  .workshop-main .ws-intro-figure figcaption {font-size:9px;letter-spacing:.03em;}
+  .workshop-main .ws-photo-meta {font-size:9px;letter-spacing:.035em;}
+  .workshop-main .ws-story-figure figcaption {font-size:9px;letter-spacing:.035em;}
+  .workshop-main .ws-experience-id {gap:12px;}
+  .workshop-main .ws-experience-glyph {flex-basis:18px;width:18px;}
+  .workshop-main .ws-invitation-link {min-height:48px;}
+}
+@media(max-width:359px) {
+  .workshop-main .ws-intro-figure figcaption,
+  .workshop-main .ws-photo-meta,
+  .workshop-main .ws-story-figure figcaption {font-size:8px;letter-spacing:0;}
+}
+
+/* Continuity across the entire tablet band: avoid a new abrupt 739/740 jump.
+   Portrait-oriented 601px tablets retain readable headings and uncropped faces. */
+@media (min-width:601px) and (max-width:739px) {
+  .workshop-main .ws-intro-grid {
+    display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+    column-gap:clamp(20px,3.2vw,27px);row-gap:10px;align-items:center;
+  }
+  .workshop-main .ws-intro-side {grid-column:1;grid-row:1;align-self:end;margin-bottom:0;flex-wrap:wrap;gap:6px;}
+  .workshop-main .ws-intro-copy {grid-column:1;grid-row:2;min-width:0;align-self:start;}
+  .workshop-main .ws-intro-copy h2 {font-size:clamp(28px,4.5vw,33px);line-height:1.51;}
+  .workshop-main .ws-intro-copy p {font-size:13px;line-height:1.82;margin-top:14px;}
+  .workshop-main .ws-intro-figure {grid-column:2;grid-row:1/3;width:100%;max-width:none;margin:0;align-self:center;}
+  .workshop-main .ws-intro-photo {aspect-ratio:800/760;}
+  .workshop-main .ws-intro-photo img {object-position:center top;}
+  .workshop-main .ws-story-grid {grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,3vw,27px);align-items:center;}
+  .workshop-main .ws-story-left h2 {font-size:clamp(30px,4.75vw,36px);line-height:1.54;}
+  .workshop-main .ws-story-left>p {font-size:13px;line-height:1.84;}
+  .workshop-main .ws-story-foot {margin-top:18px;}
+  .workshop-main .ws-story-figure {max-width:none;}
+  .workshop-main .ws-story-image {aspect-ratio:1.15/1;}
+}
+
+/* 2026-10-31 / final workshop desktop editorial rhythm
+   Scope: information-row reading order, and the single-line invitation title.
+   Preserve mobile, original copy, contact link and editable keys. */
+@media (min-width:851px) {
+  body[data-page="ttc-workshop"] .workshop-main .ws-experience {
+    grid-template-columns:154px minmax(205px,270px) minmax(0,1fr);
+    column-gap:clamp(22px,2.8vw,38px);
+    align-items:center;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-experience h3 {margin:0;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-experience p {max-width:560px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation {padding:clamp(42px,3.4vw,52px) 0 clamp(46px,3.8vw,58px);}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation-top {padding-bottom:19px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation-main {padding-top:clamp(25px,2.55vw,34px);column-gap:30px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation h2 {
+    font-size:clamp(29px,3.15vw,45px);
+    line-height:1.3;white-space:nowrap;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation p {margin-top:12px;}
+}
+@media (min-width:851px) and (max-width:1060px) {
+  body[data-page="ttc-workshop"] .workshop-main .ws-experience {
+    grid-template-columns:118px minmax(170px,230px) minmax(0,1fr);
+    column-gap:22px;
+  }
+}

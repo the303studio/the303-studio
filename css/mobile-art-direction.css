@@ -1,0 +1,185 @@
+/* THE303 STUDIO | Mobile art direction v1, 2026-10-31
+   Mobile-only editorial compositions, not a global text-align reset.
+   Photo-first headlines and short, independent conversion blocks are centered;
+   structured information, long-form copy and split-layout narratives stay left.
+   Fixed header, editor, image paths, galleries and original desktop rules untouched.
+*/
+@media (max-width:600px) {
+  /* Shared editorial spacing scale / more legible breadcrumb: no hero geometry changes. */
+  :root {
+    --m303-ink:#342d29;
+    --m303-wine:#794344;
+    --m303-reading-width:33ch;
+    --m303-label-space:.105em;
+  }
+  body.the303-subpage main :is(h1,h2){text-wrap:balance;word-break:keep-all;}
+  body.the303-subpage main p{overflow-wrap:break-word;}
+  body.the303-subpage main :is(
+    .ae-breadcrumb,.ct-breadcrumb,.fly16-breadcrumb,.b-breadcrumb,.d-breadcrumb,
+    .ttc-hero-ribbon .page-breadcrumb,.ws-breadcrumb,.m-breadcrumb,.news-breadcrumb
+  ){font-size:10px;gap:6px;letter-spacing:.02em;}
+
+  /* I. WORKSHOP: experiential photography becomes a single centered narrative. */
+  body[data-page="ttc-workshop"] .workshop-main .ws-photo-story{padding-top:clamp(48px,12vw,62px);padding-bottom:26px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-grid{
+    grid-template-columns:minmax(0,1fr);gap:clamp(23px,5vw,34px);
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-left{
+    display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-left .ws-eyebrow{
+    display:block;text-align:center;font-size:10px;letter-spacing:.14em;line-height:1.5;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-left h2{
+    width:100%;margin:20px auto 0;max-width:12.8em;
+    font-size:clamp(29px,7.6vw,35px);line-height:1.46;
+    letter-spacing:-.066em;text-align:center;white-space:pre-line;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-left>p{
+    max-width:31ch;margin:18px auto 0;color:#e3d7cc;
+    font-size:13.5px;line-height:1.84;text-align:center;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-foot{
+    flex-direction:column;align-items:center;justify-content:center;gap:11px;
+    margin-top:22px;font-size:9.5px;line-height:1.7;letter-spacing:.13em;text-align:center;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-foot .ws-rule{margin:0;width:34px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-image{aspect-ratio:1.13/1;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-figure figcaption{font-size:9px;}
+
+  /* II. Independent wine-colored invitation panels: center the complete call-to-action,
+     including the only button. Keep each section's top metadata aligned as on desktop. */
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation{padding:clamp(45px,12vw,58px) 0 clamp(52px,13vw,65px);}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation-main,
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-main,
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-cta .m-cta-grid,
+  body[data-page="media-rental"] .media-rental-main .mr-cta .m-cta-grid,
+  body[data-page="program-flying"] .fly16 .fly16-cta-grid,
+  body[data-page="program-barre"] .bar17 .b-reserve-inner,
+  body[data-page="program-dance"] .dance18 .d-cta-inner,
+  body[data-page="news-notice"] .news-page .news-cta-inner,
+  body[data-page="contact"] .ct-main .ct-visit-cta>.ct-wrap {
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:22px;text-align:center;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation-main>div,
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-main>div,
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-cta .m-cta-grid>div:first-child,
+  body[data-page="media-rental"] .media-rental-main .mr-cta .m-cta-grid>div:first-child,
+  body[data-page="program-flying"] .fly16 .fly16-cta-grid>div,
+  body[data-page="program-barre"] .bar17 .b-reserve-inner>div,
+  body[data-page="program-dance"] .dance18 .d-cta-inner>div,
+  body[data-page="news-notice"] .news-page .news-cta-inner>div,
+  body[data-page="contact"] .ct-main .ct-visit-cta>.ct-wrap>div {
+    min-width:0;width:100%;display:flex;flex-direction:column;align-items:center;
+    text-align:center;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation-main{padding-top:33px;gap:26px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation h2{
+    font-size:clamp(30px,7.8vw,37px);line-height:1.43;
+    letter-spacing:-.075em;max-width:11.5em;margin-inline:auto;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation p{
+    margin:17px auto 0;max-width:31ch;line-height:1.8;font-size:13.5px;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation-link{
+    width:max-content;min-width:190px;max-width:100%;margin-inline:auto;
+    justify-content:space-between;gap:30px;padding:12px 2px;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-main{gap:25px;padding-top:34px;}
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-main h2{
+    max-width:11.5em;margin-inline:auto;text-align:center;
+    font-size:clamp(29px,7.7vw,37px);line-height:1.48;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-main p{
+    margin:16px auto 0;max-width:31ch;text-align:center;line-height:1.85;
+  }
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-link{justify-self:center;margin-inline:auto;}
+
+  /* Responsive editorial CTAs outside CERTIFICATE use the same optical center. */
+  body[data-page="program-flying"] .fly16 .fly16-cta-grid,
+  body[data-page="program-barre"] .bar17 .b-reserve-inner,
+  body[data-page="program-dance"] .dance18 .d-cta-inner,
+  body[data-page="news-notice"] .news-page .news-cta-inner{gap:22px;}
+  body[data-page="program-flying"] .fly16 .fly16-cta :is(.fly16-kicker,.fly16-title,.fly16-copy),
+  body[data-page="program-barre"] .bar17 .b-reserve :is(.b-kicker,.b-title,.b-copy),
+  body[data-page="program-dance"] .dance18 .d-cta :is(.d-kicker,.d-heading,.d-copy),
+  body[data-page="news-notice"] .news-page .news-cta :is(.news-eyebrow,h2,p),
+  body[data-page="contact"] .ct-main .ct-visit-cta :is(.ct-reserve-label,h2,p) {
+    text-align:center;margin-inline:auto;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-cta .fly16-title,
+  body[data-page="program-barre"] .bar17 .b-reserve .b-title,
+  body[data-page="program-dance"] .dance18 .d-cta .d-heading,
+  body[data-page="contact"] .ct-main .ct-visit-cta h2{max-width:14em;line-height:1.48;}
+  body[data-page="program-flying"] .fly16 .fly16-cta .fly16-copy,
+  body[data-page="program-barre"] .bar17 .b-reserve .b-copy,
+  body[data-page="program-dance"] .dance18 .d-cta .d-copy,
+  body[data-page="contact"] .ct-main .ct-visit-cta p,
+  body[data-page="news-notice"] .news-page .news-cta p{max-width:34ch;line-height:1.8;}
+  body[data-page="program-flying"] .fly16 .fly16-cta-btn,
+  body[data-page="program-barre"] .bar17 .b-reserve .b-textlink,
+  body[data-page="program-dance"] .dance18 .d-cta a,
+  body[data-page="news-notice"] .news-page .news-cta-link,
+  body[data-page="contact"] .ct-main .ct-visit-cta .ct-reserve-cta {
+    margin-inline:auto;align-self:center;justify-self:center;
+  }
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-cta .m-cta-grid,
+  body[data-page="media-rental"] .media-rental-main .mr-cta .m-cta-grid{padding-top:30px;gap:20px;}
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-cta .m-cta-grid :is(h2,p),
+  body[data-page="media-rental"] .media-rental-main .mr-cta .m-cta-grid :is(h2,p){
+    text-align:center;margin-inline:auto;max-width:31ch;
+  }
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-cta .mp-cta-actions{
+    align-items:center;max-width:min(100%,280px);width:100%;min-width:0;gap:5px;
+  }
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-cta .mp-cta-actions .m-cta-link,
+  body[data-page="media-rental"] .media-rental-main .mr-cta .m-cta-link{
+    width:min(100%,260px);min-width:0;margin-inline:auto;
+  }
+
+  /* III. Light-toned invitation on gallery: a short, photo-led link rather than a long reading column. */
+  body[data-page="news-gallery"] .ng .ng-cross-inner{
+    display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;
+  }
+  body[data-page="news-gallery"] .ng .ng-cross-inner>div{width:100%;text-align:center;}
+  body[data-page="news-gallery"] .ng .ng-cross-inner :is(h2,p){text-align:center;margin-inline:auto;max-width:32ch;}
+  body[data-page="news-gallery"] .ng .ng-cross-link{margin:0 auto;min-width:177px;}
+
+  /* IV. Photo-led sections: heading and photograph share one center axis.
+     Keep informative numbered steps, body columns, addresses, nav and archives left-aligned. */
+  body[data-page="program-dance"] .dance18 .d-photo-story .d-section-head{
+    display:flex;flex-direction:column;align-items:center;text-align:center;gap:9px;
+  }
+  body[data-page="program-dance"] .dance18 .d-photo-story .d-section-head>div{width:100%;text-align:center;}
+  body[data-page="program-dance"] .dance18 .d-photo-story .d-section-head :is(.d-kicker,.d-heading,.d-copy){
+    margin-inline:auto;text-align:center;max-width:32ch;
+  }
+  /* Keep centered headers already composed on desktop centered when responsive changes flex to block. */
+  body[data-page="ttc-workshop"] .workshop-main .ws-approach-head,
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-archive-head,
+  body[data-page="news-gallery"] .ng .ng-archive-head{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  }
+  body[data-page="ttc-workshop"] .workshop-main .ws-approach-head :is(h2,p),
+  body[data-page="media-portfolio"] .media-portfolio-main .mp-archive-head :is(h2,p),
+  body[data-page="news-gallery"] .ng .ng-archive-head :is(h2,p){text-align:center;margin-inline:auto;}
+
+  /* V. Real mobile controls: predictable tap targets and floating button clearance. */
+  .mobile-bottom-bar a{min-height:60px;}
+  .to-top{right:15px;bottom:calc(78px + env(safe-area-inset-bottom,0px));width:42px;height:42px;
+    border-color:#e0d6ce;box-shadow:0 4px 14px rgba(43,31,25,.11);}
+  .the303-subpage .the303-page-nav__link{min-height:78px;}
+  .site-footer{padding-bottom:calc(55px + env(safe-area-inset-bottom,0px));}
+  :where(.ws-invitation-link,.ttc-cta-link,.fly16-cta-btn,.b-reserve .b-textlink,
+    .d-cta a,.m-cta-link,.news-cta-link,.ng-cross-link,.ct-visit-cta .ct-reserve-cta){
+    min-height:44px;
+  }
+}
+@media (max-width:359px) {
+  body[data-page="ttc-workshop"] .workshop-main .ws-story-left h2{font-size:28px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation h2,
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-main h2{font-size:28px;}
+  body[data-page="ttc-workshop"] .workshop-main .ws-invitation-top>span:last-child,
+  body[data-page="ttc-cert"] .ttc-main .ttc-cta-top>span:last-child{font-size:8px;letter-spacing:0;}
+}

@@ -1,758 +1,416 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f7f4ee">
-<!-- [SEO 최적화] 대구 지역 핵심 키워드 반영 -->
-<title>THE303 STUDIO | 대구 달서구 프리미엄 플라잉요가 & 바레</title>
-<meta name="description" content="대구 달서구 더303플라잉요가 & 바레 스튜디오. 체형 교정과 다이어트를 위한 원장님 직강 커리큘럼.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Nanum+Myeongjo:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-    --ink: #30362e; --muted: #777e73; --olive: #65745b; --cream: #f7f4ee;
-    --sand: #ece7dc; --white: #fff; --line: #dedfd5; --max: 1200px;
-    --program-bg: #efede6; --card-bg: #faf9f4; --contact-bg: #e7e7dd;
-    --kakao-yellow: #FEE500;
-    --logo-sub-size: 10px;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-    margin: 0; background: var(--cream); color: var(--ink);
-    font-family: 'DM Sans', 'Noto Sans KR', sans-serif; word-break: keep-all;
-}
-a { color: inherit; text-decoration: none; }
-button, input, textarea { font: inherit; }
-button { cursor: pointer; }
-img { display: block; width: 100%; object-fit: cover; }
-
-header { position: absolute; top: 0; left: 0; right: 0; z-index: 50; color: white; }
-nav {
-    max-width: var(--max); margin: auto; display: flex;
-    align-items: center; justify-content: space-between; padding: 31px 24px;
-}
-.logo { font-weight: 700; font-size: 22px; letter-spacing: .18em; }
-.logo small { display: block; font-size: var(--logo-sub-size); letter-spacing: .43em; margin-top: 4px; color: inherit; transition: font-size 0.2s; }
-.navlinks { display: flex; gap: 30px; align-items: center; font-size: 12px; letter-spacing: .03em; }
-.navlinks a:hover { opacity: .7; }
-.nav-book { border: 1px solid #ffffffa8; padding: 13px 20px; border-radius: 2px; transition: 0.3s; }
-.nav-book:hover { background: white; color: var(--ink); }
-
-.hero {
-    min-height: 760px; height: 93vh; max-height: 970px; position: relative;
-    color: white; 
-    /* background: var(--olive); <-- 사진을 가리던 주범! 완전히 삭제했습니다. */
-    display: flex; align-items: center;
-}
-.hero-img {
-    position: absolute; inset: 0;
-    /* 경로와 그라데이션 오버레이 강제 적용 */
-    background-image: linear-gradient(90deg, rgba(24,34,27,.85) 0%, rgba(24,34,27,.1) 70%), url('./images/hero-bg.jpg') !important;
-    background-size: cover; background-position: center right; 
-    z-index: 0; /* 지하(-2)에 묻혀있던 사진을 지상(0)으로 꺼냅니다 */
-}
-.hero-content {
-    position: relative; max-width: var(--max); width: 100%;
-    padding: 180px 24px 50px; margin: auto; 
-    z-index: 10; /* 흰색 글자들은 사진보다 맨 위(10)로 확실하게 올립니다 */
-}
-.eyebrow { font-size: 11px; letter-spacing: .28em; font-weight: 600; text-transform: uppercase; color: var(--sand); }
-.hero h1 { font-size: clamp(46px, 5.7vw, 86px); font-weight: 400; letter-spacing: -.065em; line-height: 1.23; margin: 24px 0 25px; text-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4); }
-.hero p { line-height: 1.95; font-size: 15px; font-weight: 300; color: #f2f2f2; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
-
-.btn {
-    display: inline-flex; gap: 24px; align-items: center; justify-content: space-between;
-    border: 1px solid var(--olive); background: var(--olive); color: white;
-    padding: 17px 23px; min-width: 182px; font-size: 12px; margin-top: 24px; transition: transform .2s, box-shadow .2s;
-}
-.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-.btn.outline { background: none; color: var(--ink); }
-.hero .btn { background: rgba(255,255,255,.96); color: var(--ink); border-color: white; }
-.scroll-text { position: absolute; bottom: 38px; left: max(24px, calc((100vw - var(--max))/2)); font-size: 10px; letter-spacing: .26em; opacity: .7; }
-
-.section { padding: 116px 24px; max-width: var(--max); margin: auto; }
-.section-label { color: var(--olive); font-size: 11px; letter-spacing: .22em; font-weight: 700; }
-.section h2 { font-size: clamp(32px, 3.2vw, 49px); font-weight: 400; letter-spacing: -.06em; line-height: 1.36; margin: 21px 0; }
-.section p { font-weight: 300; font-size: 15px; line-height: 1.8; color: #555c52; }
-
-.intro { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; align-items: center; }
-.intro-photo { height: 540px; border-radius: 4px; }
-.intro-copy { padding: 30px 0; }
-.quote { font-family: 'Nanum Myeongjo', serif; font-size: 22px; font-style: italic; color: var(--olive); margin-top: 40px; }
-
-.program-wrap { background: var(--program-bg); }
-.program-head { text-align: center; margin-bottom: 46px; }
-.program-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-.program-card { background: var(--card-bg); border-radius: 4px; overflow: hidden; transition: transform 0.3s; }
-.program-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-.program-card img { height: 300px; }
-.program-card-body { padding: 30px; }
-.program-card-body h3 { font-size: 22px; font-weight: 500; letter-spacing: -.05em; margin: 8px 0 10px; }
-.program-card-body p { margin: 0; line-height: 1.6; }
-.program-index { color: var(--olive); font-size: 12px; letter-spacing: .15em; font-weight: 600; }
-
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: center; }
-.split img { height: 540px; border-radius: 4px; }
-.feature-list { border-top: 1px solid var(--line); margin-top: 34px; }
-.feature-list div { padding: 19px 0; border-bottom: 1px solid var(--line); font-size: 14px; display: flex; justify-content: space-between; }
-.feature-list span { color: var(--olive); }
-.feature-list span[data-text] { color: inherit; }
-
-.gallery { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 14px; }
-.gallery img { height: 340px; border-radius: 4px; }
-
-.banner { background: var(--olive); color: white; text-align: center; padding: 104px 20px; }
-.banner h2 { font-size: clamp(32px, 4vw, 54px); font-weight: 400; letter-spacing: -.05em; margin: 17px 0; }
-.banner p { font-size: 14px; color: #e7eadf; line-height: 1.9; }
-.banner .btn { background: white; color: var(--ink); border: white; }
-
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; }
-.contact-details { display: grid; gap: 19px; margin-top: 38px; }
-.contact-details div { border-bottom: 1px solid var(--line); padding-bottom: 17px; font-size: 15px; display: flex; justify-content: space-between; }
-.contact-details strong { font-size: 12px; color: var(--olive); letter-spacing: .1em; width: 120px; }
-
-.contact-card { background: var(--contact-bg); padding: 54px; display: flex; flex-direction: column; justify-content: center; border-radius: 4px; }
-.contact-card h3 { font-weight: 400; font-size: 27px; line-height: 1.5; }
-
-.footer { border-top: 1px solid var(--line); padding: 40px 24px; font-size: 11px; color: #92978c; }
-.footer-inner { max-width: var(--max); margin: auto; display: flex; justify-content: space-between; gap: 20px; }
-.footer strong { font-size: 20px; color: var(--ink); letter-spacing: .15em; }
-
-.floating-kakao {
-    position: fixed; right: 24px; bottom: 30px; z-index: 40;
-    background-color: var(--kakao-yellow); color: #3A1D1D;
-    width: 60px; height: 60px; border-radius: 50%;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15); font-weight: 700; font-size: 11px;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: center; line-height: 1.2;
-}
-.floating-kakao:hover { transform: translateY(-6px) scale(1.05); }
-
-/* 편집기 스타일 */
-.palette-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 22px; }
-.palette-btn { border: 1px solid #d8ddd4; background: white; padding: 12px 8px; display: flex; flex-direction: column; align-items: center; gap: 8px; border-radius: 6px; font-size: 11px; color: #30362e; }
-.palette-btn:hover { border-color: #65745b; }
-.palette-dots { display: flex; gap: 5px; }
-.palette-dots i { width: 22px; height: 22px; border-radius: 50%; border: 1px solid #0002; }
-
-.edit-toggle { position: fixed; left: 24px; bottom: 30px; z-index: 40; border: 0; border-radius: 100px; background: #252f27; color: #fff; box-shadow: 0 8px 26px #0003; padding: 13px 18px; font-size: 12px; }
-.editor { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); z-index: 999; background: #fafaf7; box-shadow: -12px 0 50px #0003; transform: translateX(110%); transition: transform .3s ease; overflow: auto; color: var(--ink); }
-.editor.open { transform: translateX(0); }
-.editor-header { position: sticky; top: 0; background: #fafaf7; border-bottom: 1px solid var(--line); z-index: 2; padding: 22px; display: flex; justify-content: space-between; align-items: center; }
-.editor-header h3 { margin: 0; font-size: 18px; }
-.xbtn { border: 0; background: #e8eae3; border-radius: 50%; width: 34px; height: 34px; font-size: 16px; }
-.editor-body { padding: 20px 22px 90px; }
-.editor-note { font-size: 12px; line-height: 1.7; color: #7c8278; background: #eef0e9; padding: 14px; margin-bottom: 20px; border-radius:4px; }
-.field { margin-bottom: 18px; }
-.field label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 7px; color:#444; }
-.field input[type=text], .field textarea { width: 100%; border: 1px solid #d4d8cf; background: #fff; border-radius: 4px; padding: 12px; font-size: 13px; }
-.field textarea { height: 90px; resize: vertical; }
-.editor details { border-top: 1px solid #d9ddd4; padding: 18px 0; }
-.editor summary { cursor: pointer; font-size: 14px; font-weight: 700; }
-.editor details > .fields { padding-top: 20px; }
-.ed-actions { position: sticky; bottom: 0; background: #fafaf7; border-top: 1px solid var(--line); padding: 14px 22px; display: flex; gap: 8px; z-index:10; }
-.ed-actions button, .actionbtn { flex: 1; background: #617259; color: white; border: 0; padding: 12px 9px; font-size: 13px; border-radius:4px; font-weight:600;}
-.ed-actions button.alt, .actionbtn.alt { background: #e7eae1; color: #3c4a38; }
-.file-help { color: #8e9587; font-size: 11px; margin: 5px 0 0; }
-.status { font-size: 12px; color: #4d6a47; margin-top: 10px; font-weight:600; }
-.edit-open .edit-toggle { display: none; }
-
-/* 개별 스타일 컨트롤 바 */
-.style-control-bar {
-    display: flex; align-items: center; gap: 8px; flex-wrap: wrap; 
-    margin-top: 8px; padding: 10px; background: #f0f2ed; border-radius: 6px; border: 1px solid #dce1d8;
-}
-.style-item { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; color: #555; }
-.style-item input[type=color] { width: 34px; height: 26px; padding: 0; border: 1px solid #cbd1c7; border-radius: 4px; cursor: pointer; background: #fff; }
-.style-item input[type=number] { width: 50px; height: 26px; padding: 0 6px; border: 1px solid #cbd1c7; border-radius: 4px; font-size: 12px; }
-.style-item select { height: 26px; padding: 0 4px; border: 1px solid #cbd1c7; border-radius: 4px; font-size: 11px; max-width: 100px; }
-.reset-btn { padding: 4px 8px; background: #e0e5db; border: 0; border-radius: 4px; color: #333; font-size: 11px; cursor: pointer; height: 26px; font-weight: 600;}
-.reset-btn:hover { background: #d0d6cb; }
-
-@media(max-width: 850px) {
-    .navlinks { gap: 15px; }
-    .navlinks a:not(.nav-book) { display: none; }
-    .hero { min-height: 650px; height: 88svh; }
-    .hero h1 { font-size: 48px; }
-    .section { padding: 85px 22px; }
-    .intro, .split, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-    .intro-photo, .split img { height: 420px; }
-    .intro-copy { padding: 0; }
-    .program-grid { grid-template-columns: 1fr; max-width: 550px; margin: auto; }
-    .program-card img { height: 310px; }
-    .gallery { grid-template-columns: 1fr 1fr; }
-    .gallery img { height: 220px; }
-    .gallery img:first-child { grid-column: span 2; height: 290px; }
-    .footer-inner { flex-direction: column; }
-    .floating-kakao { bottom: 90px; width: 55px; height: 55px; right: 20px; }
-    .edit-toggle { bottom: 90px; left: 20px; }
-}
-@media(max-width: 440px) {
-    .hero h1 { font-size: 42px; }
-    .hero p { font-size: 13px; }
-    .intro-photo, .split img { height: 350px; }
-    .section h2 { font-size: 32px; }
-    .gallery img { height: 170px; }
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF8F5">
+  
+  <!-- [로컬 SEO 최적화] 타겟 고객층(체형교정, 다이어트) 및 지역(대구, 달서구) 키워드 세팅 -->
+  <meta name="description" content="대구 달서구 프리미엄 요가 스튜디오. 더303 플라잉요가 & 바레에서 체형교정과 다이어트, 내면의 건강을 위한 맞춤형 웰니스 프로그램을 경험하세요.">
+  <meta name="keywords" content="대구 플라잉요가, 대구 바레, 달서구 요가, 체형교정, 다이어트, 에어리얼댄스, 요가 지도자과정">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="THE303 STUDIO | 대구 플라잉요가 & 바레">
+  <meta property="og:description" content="가벼운 비상, 단단한 아름다움을 더303에서 만나보세요. 대구 프리미엄 웰니스 스튜디오.">
+  <meta property="og:image" content="./images/main/hero-01-pc.jpg">
+  
+  <title>THE303 STUDIO | 대구 달서구 플라잉요가 & 바레</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Nanum+Myeongjo:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Gowun+Dodum&family=Jua&display=swap" rel="stylesheet">
+  
+  <!-- CSS is shared with upcoming studio pages; images keep existing relative paths. -->
+  <link rel="stylesheet" href="./css/base.css?v=20261027">
+  <link rel="stylesheet" href="./css/navigation.css?v=20261027">
+  <link rel="stylesheet" href="./css/home.css?v=20261028-philfix2">
+  <link rel="stylesheet" href="./css/responsive.css?v=20261027">
+  <link rel="stylesheet" href="./css/refinements.css?v=20261027b">
+  <link rel="stylesheet" href="./css/journal.css?v=20261027">
+  
+<link rel="stylesheet" href="./css/editorial-quality-final.css?v=20261031b"><link rel="stylesheet" href="./css/mobile-art-direction.css?v=20261031m1">
+  <!-- Scoped changes for the four reviewed HOME sections only. -->
+  <link rel="stylesheet" href="./css/home-precision-20261031.css?v=20261031-final6">
 </head>
 <body>
+  <a href="#mainContent" class="skip-link">본문 바로가기</a>
 
-<header>
-    <nav>
-        <a class="logo" href="#home">
-            <span data-text="brandEn"></span>
-            <small data-text="brandSub"></small>
-        </a>
-        <div class="navlinks">
-            <a href="#about">DIRECTOR</a>
-            <a href="#program">PROGRAM</a>
-            <a href="#space">SPACE</a>
-            <a href="#contact">CONTACT</a>
-            <a class="nav-book" data-link="booking" href="#contact">
-                <span data-text="navButton"></span> ↗
-            </a>
+  <div class="mobile-nav-backdrop" id="navBackdrop"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="THE303 STUDIO 홈으로 이동">
+        <span class="brand-main" data-text="brandEn">THE303 STUDIO</span>
+        <span class="brand-sub" data-text="brandSub">FLYING YOGA &amp; BARRE</span>
+      </a>
+      
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기" aria-controls="navPanel" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+      
+      <nav class="nav-panel" id="navPanel" aria-label="주 메뉴">
+        <a class="mobile-panel-brand" href="index.html" aria-label="THE303 STUDIO 메인페이지로 이동"><span data-text="brandEn">THE303 STUDIO</span><small aria-hidden="true">HOME <span class="home-link-arrow">↗</span></small></a>
+        <ul class="nav-list">
+          <li class="nav-dropdown">
+            <a class="nav-link" href="#philosophy" data-text="nav1">THE303</a>
+            <button class="submenu-toggle" type="button"><svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <ul class="dropdown-menu">
+              <li><a href="about-studio.html" data-text="navSub1_1">스튜디오소개</a></li>
+              <li><a href="contact.html" data-text="navSub1_2">오시는길</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a class="nav-link" href="#program" data-text="nav2">PROGRAM</a>
+            <button class="submenu-toggle" type="button"><svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <ul class="dropdown-menu">
+              <li><a href="program-flying.html" data-text="navSub2_1">플라잉요가</a></li>
+              <li><a href="program-barre.html" data-text="navSub2_2">바레</a></li>
+              <li><a href="program-dance.html" data-text="navSub2_3">에어리얼댄스</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a class="nav-link" href="#ttc" data-text="nav3">CERTIFICATE</a>
+            <button class="submenu-toggle" type="button"><svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <ul class="dropdown-menu">
+              <li><a href="ttc-cert.html" data-text="navSub3_1">플라잉지도자</a></li>
+              <li><a href="ttc-workshop.html" data-text="navSub3_2">워크샵</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a class="nav-link" href="#space" data-text="nav4">MEDIA STUDIO</a>
+            <button class="submenu-toggle" type="button"><svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <ul class="dropdown-menu">
+              <li><a href="media-portfolio.html" data-text="navSub4_1">포트폴리오</a></li>
+              <li><a href="media-rental.html" data-text="navSub4_2">촬영 및 대관 안내</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a class="nav-link" href="#news" data-text="nav5">NEWS</a>
+            <button class="submenu-toggle" type="button"><svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+            <ul class="dropdown-menu">
+              <li><a href="news-notice.html" data-text="navSub5_1">공지사항</a></li>
+              <li><a href="news-gallery.html" data-text="navSub5_2">갤러리</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <div class="nav-social">
+          <a href="#" data-link="socialFb" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" data-link="socialIg" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" data-link="socialBlog" target="_blank" rel="noopener noreferrer" aria-label="Naver Blog"><svg viewBox="0 0 24 24"><polyline points="8 4 8 20 16 4 16 20"/></svg></a>
+          <a href="#" data-link="socialYt" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="4" ry="4"/><polygon points="10 9 15 12 10 15 10 9"/></svg></a>
         </div>
-    </nav>
-</header>
-
-<main>
-    <section class="hero" id="home">
-        <!-- 
-          * HTML 하드코딩 처리 완료 
-          * 자바스크립트에 의존하지 않으므로 화면 로딩 시 100% 노출됩니다. 
-        -->
-        <div class="hero-img"></div>
-        <div class="hero-content">
-            <div class="eyebrow" data-text="heroEyebrow"></div>
-            <h1 data-text="heroTitle"></h1>
-            <p data-text="heroDesc"></p>
-            <a class="btn" data-link="booking" href="#contact">
-                <span data-text="heroButton"></span> <span>↗</span>
-            </a>
+        
+        <div class="mobile-menu-social">
+          <a href="#" data-link="socialFb" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" data-link="socialIg" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" data-link="socialBlog" target="_blank" rel="noopener noreferrer" aria-label="Naver Blog"><svg viewBox="0 0 24 24"><polyline points="8 4 8 20 16 4 16 20"/></svg></a>
+          <a href="#" data-link="socialYt" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="4" ry="4"/><polygon points="10 9 15 12 10 15 10 9"/></svg></a>
         </div>
-    </section>
-
-    <!-- [SEO 최적화] 검색 봇이 이미지를 바로 수집하도록 src 속성에 로컬 경로 지정 -->
-    <section class="section intro" id="about">
-        <img class="intro-photo" alt="대구 달서구 더303플라잉요가 원장님 프로필" src="./images/director.jpg">
-        <div class="intro-copy">
-            <div class="section-label" data-text="aboutLabel"></div>
-            <h2 data-text="aboutTitle"></h2>
-            <p data-text="aboutDesc"></p>
-            <div class="quote" data-text="aboutQuote"></div>
-        </div>
-    </section>
-
-    <div class="program-wrap">
-        <section class="section" id="program">
-            <div class="program-head">
-                <div class="section-label" data-text="programLabel"></div>
-                <h2 data-text="programHeadline"></h2>
-                <p data-text="programSubtitle"></p>
-            </div>
-            <div class="program-grid">
-                <article class="program-card">
-                    <img alt="플라잉요가 클래스" src="./images/flying-yoga.jpg">
-                    <div class="program-card-body">
-                        <span class="program-index" data-text="program1Index"></span>
-                        <h3 data-text="program1Title"></h3>
-                        <p data-text="program1Desc"></p>
-                    </div>
-                </article>
-                <article class="program-card">
-                    <img alt="바레 클래스" src="./images/barre.jpg">
-                    <div class="program-card-body">
-                        <span class="program-index" data-text="program2Index"></span>
-                        <h3 data-text="program2Title"></h3>
-                        <p data-text="program2Desc"></p>
-                    </div>
-                </article>
-                <article class="program-card">
-                    <img alt="플라잉댄스 클래스" src="./images/flying-dance.jpg">
-                    <div class="program-card-body">
-                        <span class="program-index" data-text="program3Index"></span>
-                        <h3 data-text="program3Title"></h3>
-                        <p data-text="program3Desc"></p>
-                    </div>
-                </article>
-                <article class="program-card">
-                    <img alt="지도자과정 클래스" src="./images/instructor.jpg">
-                    <div class="program-card-body">
-                        <span class="program-index" data-text="program4Index"></span>
-                        <h3 data-text="program4Title"></h3>
-                        <p data-text="program4Desc"></p>
-                    </div>
-                </article>
-            </div>
-        </section>
+        
+        <a class="nav-cta" href="#footer" data-link="booking" data-text="navCta">수업 상담하기 ↗</a>
+      </nav>
     </div>
+  </header>
 
-    <section class="section split" id="space">
-        <div>
-            <div class="section-label" data-text="spaceLabel"></div>
-            <h2 data-text="spaceTitle"></h2>
-            <p data-text="spaceDesc"></p>
-            <div class="feature-list">
-                <div><span data-text="feature1"></span> <span>↗</span></div>
-                <div><span data-text="feature2"></span> <span>↗</span></div>
-                <div><span data-text="feature3"></span> <span>↗</span></div>
-            </div>
-        </div>
-        <img alt="스튜디오 메인 시설" src="./images/space-main.jpg">
-    </section>
+  <main id="mainContent">
+    <h1 style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(1px 1px 1px 1px);">대구 달서구 플라잉요가 및 바레 전문 더303 스튜디오</h1>
     
-    <section class="section" style="padding-top:0">
-        <div class="gallery">
-            <img alt="스튜디오 갤러리 이미지 1" src="./images/gallery1.jpg">
-            <img alt="스튜디오 갤러리 이미지 2" src="./images/gallery2.jpg">
-            <img alt="스튜디오 갤러리 이미지 3" src="./images/gallery3.jpg">
+    <section class="hero" id="home" aria-label="THE303 메인 비주얼">
+      <div class="hero-slider-wrap">
+        <div class="hero-slider" id="heroSlider">
+          
+          <div class="hero-slide active">
+            <div class="hero-bg" data-image-bg="hero1" data-image-bg-mobile="hero1Mobile" style="background-image: url('./images/main/hero-01-pc.jpg');"></div>
+            <div class="hero-content">
+              <div class="eyebrow" data-text="heroEyebrow1">WELLNESS STUDIO</div>
+              <h2 data-text="heroTitle1">MOVE BEYOND</h2>
+              <p class="hero-copy" data-text="heroCopy1">DISCOVER YOUR MOVEMENT</p>
+              <p class="hero-service" data-text="heroService1">대구 플라잉요가 · 바레 · 에어리얼댄스</p>
+              <div class="hero-actions">
+                <a class="btn" href="#footer" data-link="booking">
+                  <span class="btn-inner" data-text="heroBtn1">수업 상담하기</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-slide">
+            <div class="hero-bg" data-image-bg="hero2" data-image-bg-mobile="hero2Mobile" style="background-image: url('./images/main/hero-02-pc.jpg');"></div>
+            <div class="hero-content">
+              <div class="eyebrow" data-text="heroEyebrow2">WELLNESS STUDIO</div>
+              <h2 data-text="heroTitle2">FIND YOUR BALANCE</h2>
+              <p class="hero-copy" data-text="heroCopy2">DISCOVER YOUR MOVEMENT</p>
+              <p class="hero-service" data-text="heroService2">대구 플라잉요가 · 바레 · 에어리얼댄스</p>
+              <div class="hero-actions">
+                <a class="btn" href="#footer" data-link="booking">
+                  <span class="btn-inner" data-text="heroBtn2">수업 상담하기</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-slide">
+            <div class="hero-bg" data-image-bg="hero3" data-image-bg-mobile="hero3Mobile" style="background-image: url('./images/main/hero-03-pc.jpg');"></div>
+            <div class="hero-content">
+              <div class="eyebrow" data-text="heroEyebrow3">WELLNESS STUDIO</div>
+              <h2 data-text="heroTitle3">CAPTURE YOUR FLOW</h2>
+              <p class="hero-copy" data-text="heroCopy3">DISCOVER YOUR MOVEMENT</p>
+              <p class="hero-service" data-text="heroService3">대구 플라잉요가 · 바레 · 에어리얼댄스</p>
+              <div class="hero-actions">
+                <a class="btn" href="#footer" data-link="booking">
+                  <span class="btn-inner" data-text="heroBtn3">수업 상담하기</span>
+                  <span class="btn-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
+      
+      <div class="hero-scroll" aria-hidden="true">SCROLL TO EXPLORE</div>
+      
+      <div class="hero-controls" aria-label="메인 이미지 선택">
+        <button class="hero-dot" type="button" aria-label="메인 이미지 1" aria-pressed="true"></button>
+        <button class="hero-dot" type="button" aria-label="메인 이미지 2" aria-pressed="false"></button>
+        <button class="hero-dot" type="button" aria-label="메인 이미지 3" aria-pressed="false"></button>
+      </div>
     </section>
 
-    <section class="banner">
-        <div class="eyebrow" data-text="ctaEyebrow"></div>
-        <h2 data-text="ctaTitle"></h2>
-        <p data-text="ctaDesc"></p>
-        <a class="btn" data-link="booking" href="#contact">
-            <span data-text="ctaButton"></span> <span>↗</span>
+    <section class="section phil-wide-section" id="philosophy">
+      <picture class="phil-bg" id="philosophyPicture" aria-hidden="true">
+        <source id="philosophyMobileSource" media="(max-width: 850px)" srcset="./images/main/philosophy-mo.jpg">
+        <img id="philosophyBackgroundImage" class="phil-bg-image" src="./images/main/philosophy-pc.jpg" alt="" decoding="async" width="2000" height="833">
+      </picture>
+      <div class="container phil-content reveal">
+        <a class="phil-label-link" href="about-studio.html" aria-label="THE303 스튜디오 소개 페이지로 이동">
+          <span class="eyebrow" data-text="philLabel">THE303 PHILOSOPHY</span>
+          <span class="phil-link-arrow" aria-hidden="true">↗</span>
         </a>
-    </section>
-
-    <section class="section contact-grid" id="contact">
-        <div>
-            <div class="section-label" data-text="contactLabel"></div>
-            <h2 data-text="contactTitle"></h2>
-            <p data-text="contactDesc"></p>
-            <div class="contact-details">
-                <div><strong>ADDRESS</strong><span data-text="address"></span></div>
-                <div><strong>PHONE</strong><span data-text="phone"></span></div>
-                <div><strong>HOURS</strong><span data-text="hours"></span></div>
-                <div><strong>INSTAGRAM</strong><span data-text="instagram"></span></div>
+        <h2 class="section-title" data-text="philTitle" style="white-space: pre-line;">가벼운 비상
+단단한 아름다움</h2>
+        
+        <div class="phil-keywords">
+            <div class="phil-kw-item">
+                <strong><span data-text="philKw1">집중</span> <span data-text="philEn1">FOCUS</span></strong>
+                <p data-text="philDesc1">내면을 깊게 바라보고</p>
+            </div>
+            <div class="phil-kw-item">
+                <strong><span data-text="philKw2">균형</span> <span data-text="philEn2">BALANCE</span></strong>
+                <p data-text="philDesc2">몸의 균형을 정확히 맞추고</p>
+            </div>
+            <div class="phil-kw-item">
+                <strong><span data-text="philKw3">흐름</span> <span data-text="philEn3">FLOW</span></strong>
+                <p data-text="philDesc3">움직임 속에서 성장합니다.</p>
             </div>
         </div>
-        <div class="contact-card">
-            <div class="section-label" data-text="contactCardLabel"></div>
-            <h3 data-text="contactCardTitle"></h3>
-            <p data-text="contactCardDesc"></p>
-            <a class="btn" data-link="booking" href="#contact">
-                <span data-text="contactButton"></span> <span>↗</span>
-            </a>
-            <a class="btn outline" data-link="map" href="#contact">
-                <span data-text="mapButton"></span> <span>↗</span>
-            </a>
-        </div>
+      </div>
     </section>
-</main>
 
-<footer class="footer">
-    <div class="footer-inner">
-        <div>
-            <strong data-text="brandEn"></strong>
-            <p data-text="footerInfo"></p>
+    <section class="section program-section" id="program">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow" data-text="programLabel">THE303 PROGRAM</div>
+          <h2 class="section-title" data-text="programHeadline" style="white-space: pre-line;">PRECISION WORKOUTS</h2>
         </div>
-        <div>© <span id="year"></span> THE303 STUDIO. ALL RIGHTS RESERVED.</div>
-    </div>
-</footer>
-
-<a class="floating-kakao" data-link="booking" href="#contact" aria-label="카카오톡 상담">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="#3A1D1D" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:2px;">
-        <path d="M12 3C6.477 3 2 6.545 2 10.916c0 2.84 1.83 5.32 4.618 6.74-.216.79-1.002 3.66-1.028 3.86-.03.24.113.24.24.16.102-.06 3.23-2.14 4.54-3.03.53.07 1.07.11 1.63.11 5.523 0 10-3.545 10-7.916S17.523 3 12 3z"/>
-    </svg>
-    상담
-</a>
-
-<button class="edit-toggle" id="editToggle" type="button">✎ 홈페이지 편집</button>
-
-<aside class="editor" id="editor" aria-label="홈페이지 콘텐츠 편집">
-    <div class="editor-header">
-        <h3>홈페이지 콘텐츠 관리</h3>
-        <button class="xbtn" id="closeEditor" aria-label="닫기">✕</button>
-    </div>
-    <div class="editor-body">
-        <div class="editor-note">
-            <b>데모 편집 모드</b><br>카테고리별로 텍스트, 색상, <b>글자 크기 및 폰트</b>를 수정한 뒤 <b>저장</b>하세요.<br>
-            ※ 사진은 HTML 뼈대에 완전히 고정되어 있어 삭제되거나 에러가 나지 않습니다.
-        </div>
-        <div id="editFields"></div>
-        <details>
-            <summary>백업·복원·초기화</summary>
-            <div class="fields">
-                <p class="file-help">수정한 텍스트 및 디자인 설정을 JSON 파일로 내보내거나 가져옵니다.</p>
-                <button class="actionbtn alt" id="exportBtn">설정 JSON 내보내기</button>
-                <div class="field" style="margin-top:12px">
-                    <label for="importFile">설정 JSON 가져오기</label>
-                    <input id="importFile" type="file" accept="application/json,.json">
+        
+        <div class="program-layout reveal delay-1">
+            <div class="program-left">
+                <ul class="program-list">
+                    <li><a class="program-item" href="program-flying.html">
+                        <div class="program-item-info">
+                            <h3><span data-text="prog1Title" style="font-family:'Nanum Myeongjo', serif; font-size:inherit; font-weight:inherit; letter-spacing:0;">플라잉요가</span> <span data-text="prog1En">FLYING YOGA</span></h3>
+                            <p data-text="prog1Desc">해먹을 활용해 스트레칭과 신체 조절에 집중하는 클래스</p>
+                        </div>
+                        <div class="program-item-arrow"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    </a></li>
+                    <li><a class="program-item" href="program-barre.html">
+                        <div class="program-item-info">
+                            <h3><span data-text="prog2Title" style="font-family:'Nanum Myeongjo', serif; font-size:inherit; font-weight:inherit; letter-spacing:0;">바레</span> <span data-text="prog2En">BARRE</span></h3>
+                            <p data-text="prog2Desc">바를 활용한 섬세한 움직임으로 하체와 코어에 집중하는 클래스</p>
+                        </div>
+                        <div class="program-item-arrow"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    </a></li>
+                    <li><a class="program-item" href="program-dance.html">
+                        <div class="program-item-info">
+                            <h3><span data-text="prog3Title" style="font-family:'Nanum Myeongjo', serif; font-size:inherit; font-weight:inherit; letter-spacing:0;">에어리얼댄스</span> <span data-text="prog3En">AERIAL DANCE</span></h3>
+                            <p data-text="prog3Desc">음악과 공중 동작을 연결해 리듬과 표현을 즐기는 댄스</p>
+                        </div>
+                        <div class="program-item-arrow"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    </a></li>
+                </ul>
+                
+                <div class="program-sub-images">
+                    <div class="program-sub-img"><img src="./images/main/program-barre.jpg" data-image-path="barre" alt="바레 수업 스케치" loading="lazy" width="1400" height="1050" decoding="async"></div>
+                    <div class="program-sub-img"><img src="./images/main/program-dance.jpg" data-image-path="dance" alt="에어리얼댄스 스케치" loading="lazy" width="1200" height="900" decoding="async"></div>
                 </div>
-                <button class="actionbtn alt" id="resetBtn" style="margin-top:12px;">초기화 완료 (기본 템플릿 복구)</button>
             </div>
-        </details>
-        <div id="saveStatus" class="status" role="status"></div>
+            
+            <div class="program-right">
+                <div class="program-featured">
+                    <img src="./images/main/program-flying.jpg" data-image-path="flying" alt="프로그램 메인 화보" loading="lazy" width="1200" height="1600" decoding="async">
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ttc-section" id="ttc">
+      <div class="ttc-grid">
+        <div class="ttc-copy">
+          <div class="eyebrow reveal" data-text="ttcLabel">CERTIFICATE</div>
+          <h2 class="section-title reveal delay-1" data-text="ttcTitle" style="white-space: pre-line;">배움에서 지도까지
+움직임을 전하는 힘</h2>
+          <p class="section-copy reveal delay-2" data-text="ttcDesc">플라잉요가 지도자 과정과 워크샵을 통해 현장에서 필요한 지도 역량을 키웁니다.</p>
+          <div class="ttc-actions reveal delay-2">
+            <a class="btn btn-outline-dark ttc-action--primary" href="ttc-cert.html">
+                <span data-text="ttcBtn1">자격증 과정 안내</span>
+            </a>
+            <a class="btn btn-outline-dark ttc-action--secondary" href="ttc-workshop.html">
+                <span data-text="ttcBtn2">워크샵</span>
+            </a>
+          </div>
+        </div>
+        <div class="ttc-image-wrap">
+            <picture class="ttc-picture">
+              <source media="(max-width: 850px)" srcset="./images/main/certificate-mo.jpg" data-image-mobile="ttcMobile">
+              <img class="ttc-image" src="./images/main/certificate-pc.jpg" data-image-path="ttc" alt="플라잉요가 지도자 과정에서 강사와 수강생이 동작을 함께 살펴보는 교육 장면" loading="lazy" width="1300" height="960" decoding="async">
+            </picture>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="space">
+      <div class="container">
+        <div class="section-head center reveal">
+            <div class="eyebrow" data-text="spaceLabel">MEDIA STUDIO</div>
+            <h2 class="section-title" data-text="spaceTitle">아름다운 변화를 기록하는 미디어 스튜디오</h2>
+        </div>
+        <div class="media-studio-showcase reveal delay-1">
+            <div class="mss-content">
+                <span class="eyebrow" data-text="mssEyebrow">IN-HOUSE STUDIO</span>
+                <h3 class="mss-statement" data-text="mssStatement">움직임의 순간을 작품으로</h3>
+                <p class="mss-description" data-text="mssDescription">전문 촬영 환경에서 움직임의 아름다움과 자신만의 개성을 섬세하게 기록합니다.</p>
+                <ul class="mss-features" style="list-style: none; padding: 0; margin: 0; display: grid; gap: 12px;">
+                    <li style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:400; color:var(--ink);">
+                      <span style="color:var(--brick-wine);">✦</span> <span data-text="mssList1">카메라 및 촬영 장비를 갖춘 전용 공간</span>
+                    </li>
+                    <li style="display:flex; align-items:center; gap:10px; font-size:14px; font-weight:400; color:var(--ink);">
+                      <span style="color:var(--brick-wine);">✦</span> <span data-text="mssList2">지도자 과정 수료생 프로필·포트폴리오 촬영 지원</span>
+                    </li>
+                </ul>
+                <div class="mss-actions">
+                    <a href="media-portfolio.html" class="btn mss-cta mss-cta--primary">
+                        <span data-text="mssBtn1">포트폴리오</span>
+                    </a>
+                    <a href="media-rental.html" class="btn btn-outline mss-cta mss-cta--secondary">
+                        <span data-text="mssBtn2">촬영·대관 안내</span>
+                    </a>
+                </div>
+            </div>
+            <div class="mss-image">
+                <img src="./images/main/media-studio.jpg" data-image-path="media" alt="THE303 스튜디오에 설치된 반사판과 소프트박스, 전문 촬영 조명 장비" loading="lazy" width="1600" height="1066" decoding="async">
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news-section" id="news" aria-labelledby="journal-heading">
+      <div class="container">
+        <div class="section-head reveal journal-heading">
+          <div class="eyebrow" data-text="journalLabel">NEWS &amp; STORIES</div>
+          <h2 class="section-title" id="journal-heading" data-text="newsTitle">THE303 JOURNAL</h2>
+        </div>
+
+        <!-- Category navigation: these are NOT individual event/detail links. -->
+        <div class="journal-cards reveal delay-1">
+          <a class="journal-card journal-card--notice" href="news-notice.html" aria-label="공지사항 목록으로 이동">
+            <div class="journal-visual journal-visual--notice" aria-hidden="true">
+              <span class="journal-notice-overline">THE303 STUDIO <span class="journal-notice-rule"></span> INFORMATION</span>
+              <span class="journal-notice-message">
+                <span class="journal-notice-type" data-text="journalNoticeEn">NOTICE</span>
+                <span class="journal-notice-description" data-text="journalNoticeDescription">스튜디오의 새로운 소식과 주요 안내를 전합니다.</span>
+              </span>
+              <span class="journal-notice-index">01 / 02</span>
+            </div>
+            <div class="journal-card-caption">
+              <div class="journal-card-caption-text">
+                <span class="journal-card-label">NOTICE</span>
+                <span class="journal-card-ko" data-text="journalNoticeKo">공지사항</span>
+              </div>
+              <span class="journal-card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a class="journal-card journal-card--gallery" href="news-gallery.html" aria-label="갤러리로 이동">
+            <div class="journal-visual journal-visual--gallery">
+              <!-- A single composited cover photo can replace this neutral fallback collage. -->
+              <div class="journal-gallery-fallback" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <img src="./images/main/journal-gallery.jpg"
+                   data-image-path="galleryCover"
+                   class="journal-gallery-cover"
+                   alt="THE303 STUDIO 갤러리 대표 사진 모음"
+                   loading="lazy" decoding="async" width="1800" height="1200">
+            </div>
+            <div class="journal-card-caption">
+              <div class="journal-card-caption-text">
+                <span class="journal-card-label" data-text="journalGalleryEn">GALLERY</span>
+                <span class="journal-card-ko" data-text="journalGalleryKo">갤러리</span>
+              </div>
+              <span class="journal-card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container">
+        <div class="footer-top reveal">
+            <div>
+                <div class="footer-brand" data-text="brandEn">THE303 STUDIO</div>
+                <div class="footer-info-text">
+                    <span><strong style="color:var(--ink);">주소 :</strong> <span data-text="address">대구광역시 달서구 달구벌대로 1525 J타워 3층 301호</span></span>
+                    <span><strong style="color:var(--ink);">전화상담 :</strong> <span data-text="phone">053-568-3303</span></span>
+                </div>
+            </div>
+            <nav class="footer-links footer-primary-links" aria-label="THE303 공통 하단 메뉴">
+                <a href="index.html" class="footer-home-link" aria-label="HOME 메인페이지">HOME</a>
+                <a href="about-studio.html">스튜디오소개</a>
+                <a href="#program">프로그램</a>
+                <a href="#ttc">자격증과정</a>
+                <a href="#space">미디어스튜디오</a>
+                <a href="#news">소식</a>
+            </nav>
+        </div>
+        <div class="footer-bottom reveal delay-1">
+            <div>COPYRIGHT <span id="currentYear"></span>. <span data-text="brandEn">THE303 STUDIO</span>. ALL RIGHTS RESERVED.</div>
+        </div>
     </div>
-    <div class="ed-actions">
-        <button class="alt" id="cancelBtn">저장 전 변경 취소</button>
-        <button id="saveBtn">변경사항 저장</button>
-    </div>
-</aside>
+  </footer>
 
-<script>
-(()=>{'use strict';
-const STORE='the303-v12-final-html-images';
+  <div class="mobile-bottom-bar">
+    <a class="mobile-call" href="tel:053-568-3303" data-phone-link>전화 상담</a>
+    <a class="mobile-book" href="#footer" data-link="booking">
+      <div style="display:flex; align-items:center; gap:8px; justify-content:center;">
+        <svg class="icon-kakao-outline" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4c5.5 0 10 3.58 10 8s-4.48 8-10 8c-1.2 0-2.36-.18-3.44-.5L4 21l1.5-3.66C4.05 15.65 3 13.93 3 12c0-4.42 4.48-8 9-8z"/></svg>
+        <span data-text="navCta">수업 상담하기</span>
+      </div>
+    </a>
+  </div>
+  
+  <button class="to-top" id="toTop" type="button" aria-label="페이지 맨 위로 이동">
+    <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 
-const defaults={
-    text: {
-        "brandEn": "THE303 STUDIO",
-        "brandSub": "FLYING YOGA & BARRE",
-        "heroEyebrow": "PREMIUM FLYING YOGA & BARRE",
-        "heroTitle": "가벼운 비상\n단단한 아름다움",
-        "heroDesc": "바쁜 일상 속 잠시 나에게 집중하는 시간.\n더303에서 몸과 마음이 자연스럽게 균형을 찾는 여정을 시작하세요.",
-        "heroButton": "나만의 첫 비상 시작하기",
-        "scrollText": "SCROLL TO EXPLORE ↓",
-        "navButton": "상담 예약하기",
-        "aboutLabel": "01 / DIRECTOR",
-        "aboutTitle": "안전하고 우아하게,\n해부학 기반의 섬세한 티칭.",
-        "aboutDesc": "더303은 단순한 동작의 반복을 넘어, 내 몸을 바르게 이해하는 과정입니다. 원장님의 철저한 해부학적 지식과 디테일한 핸즈온이 매 수업 함께하여 척추의 압박을 풀고 근본적인 체형 교정을 돕습니다.",
-        "aboutQuote": "\"건강한 움직임이 가장 아름다운 나를 완성합니다.\"",
-        "programLabel": "02 / OUR PROGRAM",
-        "programHeadline": "당신의 몸이 가장 원하던 완벽한 시너지",
-        "programSubtitle": "해먹 위에서의 해방감부터 바(Bar) 앞에서의 우아한 몰입까지, 목적에 맞춰 선택하세요.",
-        "program1Index": "PROGRAM 01",
-        "program1Title": "플라잉요가(FLYING YOGA)",
-        "program1Desc": "척추 압박을 해소하고 림프 순환을 돕는 매혹적인 체형 교정 테라피",
-        "program2Index": "PROGRAM 02",
-        "program2Title": "바레(Barre)",
-        "program2Desc": "발레와 필라테스의 결합, 관절 무리 없이 매끄러운 하체와 코어 라인 조각",
-        "program3Index": "PROGRAM 03",
-        "program3Title": "플라잉댄스(FLYING DANCE)",
-        "program3Desc": "리듬에 맞춰 완성하는 나만의 안무, 유산소 효과와 성취감을 선사하는 다이나믹 클래스",
-        "program4Index": "PROGRAM 04",
-        "program4Title": "플라잉요가 지도자과정(INSTRUCTOR CORSE)",
-        "program4Desc": "해부학적 기초부터 실전 핸즈온까지, 원장님 직강으로 완성하는 프로 강사의 길",
-        "spaceLabel": "03 / THE SPACE",
-        "spaceTitle": "오직 당신의 움직임이\n가장 아름답게 빛나는 무대",
-        "spaceDesc": "움직임의 시작부터 끝까지 완벽한 대우를 받는 듯한 경험을 선사합니다. 탁 트이고 쾌적한 플라잉요가 및 바레 메인 홀은 물론, 온전히 나에게만 집중할 수 있는 프라이빗 개인 레슨실과 편안한 휴식을 배려한 넉넉한 탈의실을 갖추었습니다. 특히, 전문가급 조명과 촬영 설비가 스튜디오 내에 상시 세팅되어 있어, 땀 흘리며 변화하는 당신의 가장 아름다운 순간을 한 장의 완벽한 화보나 프로필 사진처럼 남겨드립니다.",
-        "feature1": "쾌적한 플라잉·바레 홀 및 프라이빗 개인 레슨실",
-        "feature2": "운동 전후의 힐링을 더하는 여유롭고 편안한 탈의실",
-        "feature3": "완벽한 인생샷을 위한 전문가용 프로필 촬영 설비",
-        "ctaEyebrow": "START YOUR JOURNEY",
-        "ctaTitle": "고민하는 지금도,\n몸은 새로운 변화를 기다립니다.",
-        "ctaDesc": "\"뻣뻣해서 해먹을 탈 수 있을까?\", \"근력이 부족해 바레를 할 수 있을까?\" 걱정은 내려놓으세요. 부드럽게 열어주고 단단하게 채워주는 더303만의 커리큘럼으로 첫 시작을 든든하게 잡아드립니다.",
-        "ctaButton": "내게 맞는 클래스 상담하기",
-        "contactLabel": "04 / VISIT US",
-        "contactTitle": "유연함과 단단함의 시너지,\n대구 더303에서 만나요.",
-        "contactDesc": "편하게 문의해 주세요. 회원님에게 가장 알맞은 수업을 안내해 드립니다.",
-        "address": "대구광역시 달서구 달구벌대로 1525 J타워 3층 301호",
-        "phone": "010-6667-2303",
-        "hours": "월–금 09:00–22:00",
-        "instagram": "@the303_flyingyoga_barre",
-        "contactCardLabel": "LET'S MOVE TOGETHER",
-        "contactCardTitle": "내 몸에 딱 맞는 운동 조합이 궁금하신가요?",
-        "contactCardDesc": "원장님의 세심한 상담으로 플라잉과 바레의 완벽한 밸런스를 찾아드립니다.",
-        "contactButton": "상담 문의하기",
-        "mapButton": "오시는 길 확인",
-        "footerInfo": "더303플라잉요가 & 바레 스튜디오"
-    },
-    link:{booking:'', map:''}, 
-    textColors:{}, textSizes:{}, textFonts:{}, navColors:{}, 
-    font:'기본 고딕', nav:['DIRECTOR','PROGRAM','SPACE','CONTACT'],
-    logoSubSize: '10px',
-    theme:{ ink:'#30362e', muted:'#777e73', olive:'#65745b', cream:'#f7f4ee', sand:'#ece7dc', programBg:'#efede6', cardBg:'#faf9f4', contactBg:'#e7e7dd' }
-};
-
-const groupedTextSections=[
-    ["01 · 브랜드와 메인", [["brandEn", "로고 이름"], ["brandSub", "로고 아래 작은 영문"], ["heroEyebrow", "메인 상단 작은 영문"], ["heroTitle", "메인 큰 제목"], ["heroDesc", "메인 설명"], ["heroButton", "메인 예약 버튼"], ["scrollText", "하단 스크롤 안내"], ["navButton", "상단 문의 버튼"]]], 
-    ["02 · 원장님 브랜딩", [["aboutLabel", "소개 카테고리 영문 · DIRECTOR"], ["aboutTitle", "소개 큰 제목"], ["aboutDesc", "소개 설명"], ["aboutQuote", "소개 하단 인용구"]]], 
-    ["03 · 프로그램", [["programLabel", "프로그램 카테고리 영문 · OUR PROGRAM"], ["programHeadline", "프로그램 영역 제목"], ["programSubtitle", "프로그램 영역 설명"], ["program1Index", "첫 번째 카드 영문 · PROGRAM 01"], ["program1Title", "첫 번째 프로그램 이름"], ["program1Desc", "첫 번째 프로그램 설명"], ["program2Index", "두 번째 카드 영문 · PROGRAM 02"], ["program2Title", "두 번째 프로그램 이름"], ["program2Desc", "두 번째 프로그램 설명"], ["program3Index", "세 번째 카드 영문 · PROGRAM 03"], ["program3Title", "세 번째 프로그램 이름"], ["program3Desc", "세 번째 프로그램 설명"], ["program4Index", "네 번째 카드 영문 · PROGRAM 04"], ["program4Title", "네 번째 프로그램 이름"], ["program4Desc", "네 번째 프로그램 설명"]]], 
-    ["04 · 시설 및 공간", [["spaceLabel", "공간 카테고리 영문 · THE SPACE"], ["spaceTitle", "공간 큰 제목"], ["spaceDesc", "공간 설명"], ["feature1", "시설 특징 1"], ["feature2", "시설 특징 2"], ["feature3", "시설 특징 3"]]], 
-    ["05 · 체험 예약 배너", [["ctaEyebrow", "배너 상단 작은 영문 · START YOUR JOURNEY"], ["ctaTitle", "배너 큰 제목"], ["ctaDesc", "배너 설명"], ["ctaButton", "배너 버튼 문구"]]], 
-    ["06 · 위치 및 문의", [["contactLabel", "위치 카테고리 영문 · VISIT US"], ["contactTitle", "오시는 길 큰 제목"], ["contactDesc", "오시는 길 설명"], ["address", "주소"], ["phone", "전화번호"], ["hours", "운영 시간"], ["instagram", "인스타그램"], ["contactCardLabel", "문의 카드 영문 · LET’S MOVE TOGETHER"], ["contactCardTitle", "문의 카드 제목"], ["contactCardDesc", "문의 카드 설명"], ["contactButton", "문의 버튼"], ["mapButton", "지도 버튼"], ["footerInfo", "홈페이지 하단 사업자 정보"]]]
-];
-
-const clone = o => JSON.parse(JSON.stringify(o));
-let saved; try { saved = JSON.parse(localStorage.getItem(STORE)||'null'); } catch(e) { saved = null; }
-const validate = o => o && typeof o === 'object' && o.text && typeof o.text === 'object';
-
-let persisted = validate(saved) ? {
-    text: {...defaults.text, ...saved.text}, link: {...defaults.link, ...saved.link},
-    theme: {...defaults.theme, ...saved.theme}, textColors: {...defaults.textColors, ...saved.textColors},
-    textSizes: {...(saved.textSizes||{})}, textFonts: {...(saved.textFonts||{})},
-    navColors: {...defaults.navColors, ...saved.navColors}, font: saved.font || defaults.font, nav: Array.isArray(saved.nav) ? saved.nav : defaults.nav.slice(),
-    logoSubSize: saved.logoSubSize || defaults.logoSubSize
-} : clone(defaults);
-let draft = clone(persisted);
-
-const $ = x => document.getElementById(x);
-const make = (tag, attrs={}, value='') => {
-    const e = document.createElement(tag);
-    for(const[k,v] of Object.entries(attrs)) e.setAttribute(k,v);
-    if(value) e.textContent = value;
-    return e;
-};
-function safeLink(raw) {
-    let v = String(raw||'').trim();
-    if(!v) return '#contact';
-    try {
-        const u = new URL(v);
-        if(['https:','http:','tel:','mailto:'].includes(u.protocol)) return v;
-    } catch(e) {}
-    return '#contact';
-}
-
-const FONT_MAP = {'기본 고딕': "'Noto Sans KR',sans-serif", '부드러운 고딕': "'Gowun Dodum',sans-serif", '감성 명조': "'Nanum Myeongjo',serif", '둥근 제목체': "'Jua',sans-serif", '모던 영문': "'Montserrat','Noto Sans KR',sans-serif"};
-
-function render(o) {
-    document.body.style.fontFamily = FONT_MAP[o.font] || FONT_MAP['기본 고딕'];
-    document.documentElement.style.setProperty('--logo-sub-size', o.logoSubSize || '10px');
-    
-    document.querySelectorAll('.navlinks a:not(.nav-book)').forEach((el,i) => {
-        el.textContent = (o.nav||defaults.nav)[i] ?? defaults.nav[i];
-        el.style.color = (o.navColors||{})[i] || '';
-    });
-    const theme = {...defaults.theme, ...o.theme};
-    for(const [key,cssvar] of Object.entries({ink:'--ink',muted:'--muted',olive:'--olive',cream:'--cream',sand:'--sand',programBg:'--program-bg',cardBg:'--card-bg',contactBg:'--contact-bg'})){
-        if(/^#[0-9a-fA-F]{6}$/.test(theme[key]||'')) document.documentElement.style.setProperty(cssvar, theme[key]);
-    }
-    document.querySelector('meta[name="theme-color"]').content = theme.cream;
-    
-    document.querySelectorAll('[data-text]').forEach(el => {
-        const k = el.dataset.text;
-        el.textContent = o.text[k] ?? '';
-        el.style.whiteSpace = 'pre-line';
-        
-        el.style.color = (o.textColors||{})[k] || '';
-        el.style.fontSize = (o.textSizes||{})[k] || '';
-        if ((o.textFonts||{})[k]) el.style.fontFamily = FONT_MAP[(o.textFonts||{})[k]];
-        else el.style.fontFamily = ''; 
-    });
-    
-    document.querySelectorAll('[data-link]').forEach(el => {
-        const target = safeLink(o.link[el.dataset.link]);
-        el.href = target;
-        if(target !== '#contact' && !target.startsWith('tel:') && !target.startsWith('mailto:')){
-            el.target = '_blank'; el.rel = 'noopener noreferrer';
-        } else {
-            el.removeAttribute('target'); el.removeAttribute('rel');
-        }
-    });
-    document.title = (o.text.brandEn||'THE303 STUDIO') + ' | 대구 달서구 프리미엄 플라잉요가 & 바레';
-}
-
-function build() {
-    const root = $('editFields'); root.textContent = '';
-    
-    const themes = make('details'); themes.open = true;
-    themes.append(make('summary',{},'🎨 전체 디자인 및 폰트 변경'));
-    const tf = make('div',{class:'fields'});
-    tf.append(make('p',{class:'file-help'},'전체 테마 색상과 기본 폰트를 변경합니다.'));
-    
-    const palettes = [
-        ['올리브 & 크림',{ink:'#30362e',muted:'#777e73',olive:'#65745b',cream:'#f7f4ee',sand:'#ece7dc',programBg:'#efede6',cardBg:'#faf9f4',contactBg:'#e7e7dd'}],
-        ['로즈 & 아이보리',{ink:'#49383c',muted:'#88777b',olive:'#a56d7a',cream:'#fcf7f5',sand:'#f4e7e8',programBg:'#f8eeed',cardBg:'#ffffff',contactBg:'#f1e1e3'}],
-        ['네이비 & 화이트',{ink:'#263448',muted:'#697587',olive:'#365776',cream:'#fafbfc',sand:'#e8edf2',programBg:'#edf2f6',cardBg:'#ffffff',contactBg:'#e5edf4'}],
-        ['테라코타 & 베이지',{ink:'#42352e',muted:'#81766c',olive:'#a86649',cream:'#fbf5eb',sand:'#efe3d2',programBg:'#f4eadd',cardBg:'#fffdf9',contactBg:'#e9dccc'}]
-    ];
-    const prow = make('div',{class:'palette-grid'});
-    for(const [name,palette] of palettes) {
-        const b = make('button',{type:'button',class:'palette-btn'});
-        const dots = make('span',{class:'palette-dots'});
-        for(const k of ['cream','olive','ink']){ const dot = make('i'); dot.style.background = palette[k]; dots.append(dot); }
-        b.append(dots, make('span',{},name));
-        b.addEventListener('click', () => { draft.theme = {...palette}; render(draft); build(); });
-        prow.append(b);
-    }
-    tf.append(prow);
-    
-    for(const [key,label] of [['olive','포인트·버튼 색상'],['cream','전체 배경색'],['ink','기본 글자 색상'],['programBg','프로그램 영역 배경'],['cardBg','프로그램 카드 배경'],['contactBg','문의 영역 배경']]) {
-        const f = make('div',{class:'field color-field'}), input = make('input',{type:'color',id:'theme-'+key});
-        input.value = draft.theme?.[key] || defaults.theme[key];
-        input.addEventListener('input', () => { draft.theme = {...defaults.theme, ...draft.theme, [key]:input.value}; render(draft); });
-        f.append(make('label',{for:'theme-'+key},label), input); tf.append(f);
-    }
-    
-    const fontSelect = make('select',{style:'width:100%;padding:12px;border:1px solid #d4d8cf;background:white;border-radius:4px;margin-top:10px;'});
-    Object.keys(FONT_MAP).forEach(name => {
-        const option = make('option',{value:name},name);
-        if(name === draft.font) option.selected = true;
-        fontSelect.append(option);
-    });
-    fontSelect.addEventListener('change', () => { draft.font = fontSelect.value; render(draft); });
-    tf.append(make('label',{style:'margin-top:10px;'},'전체 기본 폰트 변경'), fontSelect);
-
-    themes.append(tf); root.append(themes);
-    
-    const navSection = make('details'); navSection.append(make('summary',{},'☰ 상단 메뉴 수정'));
-    const navFields = make('div',{class:'fields'});
-    const targets = ['소개 #about','프로그램 #program','공간 #space','문의 #contact'];
-    targets.forEach((label,i) => {
-        const f = make('div',{class:'field'});
-        const input = make('input',{type:'text',maxlength:'30'});
-        input.value = (draft.nav||defaults.nav)[i] || '';
-        input.addEventListener('input', () => {
-            if(!Array.isArray(draft.nav)) draft.nav = defaults.nav.slice();
-            draft.nav[i] = input.value; render(draft);
-        });
-        f.append(make('label',{},label), input);
-        
-        const cr = make('div',{class:'text-color-row'});
-        const cp = make('input',{type:'color'});
-        cp.value = (draft.navColors||{})[i] || '#ffffff';
-        cp.addEventListener('input', () => { draft.navColors = draft.navColors||{}; draft.navColors[i] = cp.value; render(draft); });
-        const reset = make('button',{type:'button',class:'reset-color'},'기본색');
-        reset.addEventListener('click', () => { delete draft.navColors[i]; render(draft); });
-        cr.append(make('span',{},'메뉴 글자색'), cp, reset); f.append(cr); navFields.append(f);
-    });
-    navSection.append(navFields); root.append(navSection);
-
-    for(const [label,items] of groupedTextSections) {
-        const d = make('details'); if(label.startsWith('01')) d.open = true;
-        d.append(make('summary',{},'✎ '+label)); const fields = make('div',{class:'fields'});
-        
-        for(const [key,name] of items) {
-            const f = make('div',{class:'field'});
-            const longValue = String(draft.text[key]??'').length > 90 || String(draft.text[key]??'').includes('\n');
-            const inp = make(longValue?'textarea':'input', longValue?{}:{type:'text'});
-            inp.value = draft.text[key] ?? '';
-            inp.addEventListener('input', () => { draft.text[key] = inp.value; render(draft); });
-            f.append(make('label',{},name), inp);
-            
-            if (key === 'brandSub') {
-                const sizeWrapper = make('div', {style: 'display:flex; align-items:center; gap:10px; margin-top:8px;'});
-                const sizeInput = make('input', {type: 'range', min: '8', max: '24', value: parseInt(draft.logoSubSize || '10'), style: 'flex:1; cursor:pointer;'});
-                const sizeVal = make('span', {style: 'font-size:12px; font-weight:600; color:var(--olive); width:30px;'}, sizeInput.value + 'px');
-                sizeInput.addEventListener('input', () => { draft.logoSubSize = sizeInput.value + 'px'; sizeVal.textContent = sizeInput.value + 'px'; render(draft); });
-                sizeWrapper.append(make('span', {style:'font-size:11px; font-weight:500; color:#555;'}, '영문 크기 조절'), sizeInput, sizeVal);
-                f.append(sizeWrapper);
-            }
-            
-            const cr = make('div',{class:'style-control-bar'});
-            
-            const cWrap = make('div', {class:'style-item'});
-            const cp = make('input',{type:'color',title:'개별 색상'});
-            cp.value = (draft.textColors||{})[key] || '#65745b';
-            cp.addEventListener('input', () => { draft.textColors = draft.textColors||{}; draft.textColors[key] = cp.value; render(draft); });
-            const resetC = make('button',{type:'button',class:'reset-btn'},'기본색');
-            resetC.addEventListener('click', () => { if(draft.textColors) delete draft.textColors[key]; render(draft); build(); });
-            cWrap.append(make('span',{},'색상'), cp, resetC);
-            
-            const sWrap = make('div', {class:'style-item'});
-            const sInp = make('input', {type:'number', placeholder:'기본', value: parseInt((draft.textSizes||{})[key]) || ''});
-            sInp.addEventListener('input', () => {
-                draft.textSizes = draft.textSizes||{};
-                if(sInp.value) draft.textSizes[key] = sInp.value + 'px';
-                else delete draft.textSizes[key];
-                render(draft);
-            });
-            sWrap.append(make('span',{},'크기'), sInp, make('span',{style:'font-weight:400;'},'px'));
-            
-            const fWrap = make('div', {class:'style-item'});
-            const fSel = make('select', {});
-            fSel.append(make('option', {value:''}, '기본 폰트'));
-            Object.keys(FONT_MAP).forEach(fname => {
-                const opt = make('option', {value:fname}, fname);
-                if((draft.textFonts||{})[key] === fname) opt.selected = true;
-                fSel.append(opt);
-            });
-            fSel.addEventListener('change', () => {
-                draft.textFonts = draft.textFonts||{};
-                if(fSel.value) draft.textFonts[key] = fSel.value;
-                else delete draft.textFonts[key];
-                render(draft);
-            });
-            fWrap.append(make('span',{},'폰트'), fSel);
-            
-            cr.append(cWrap, sWrap, fWrap);
-            f.append(cr); fields.append(f);
-        }
-        d.append(fields); root.append(d);
-    }
-    
-    const links = make('details'); links.append(make('summary',{},'🔗 예약·지도 링크'));
-    const lf = make('div',{class:'fields'});
-    for(const [key,label] of [['booking','예약·카카오톡 URL (플로팅 버튼 동시적용)'],['map','네이버 지도 URL']]) {
-        const f = make('div',{class:'field'}), input = make('input',{type:'url', placeholder:'https://...', id:'url-'+key});
-        input.value = draft.link[key] || '';
-        input.addEventListener('input', () => { draft.link[key] = input.value; render(draft); });
-        f.append(make('label',{for:'url-'+key},label), input); lf.append(f);
-    }
-    links.append(lf); root.append(links);
-}
-
-function toggle(open) {
-    $('editor').classList.toggle('open', open);
-    document.body.classList.toggle('edit-open', open);
-}
-
-$('editToggle').onclick = () => toggle(true);
-$('closeEditor').onclick = () => toggle(false);
-
-$('saveBtn').onclick = () => {
-    try {
-        localStorage.setItem(STORE, JSON.stringify(draft));
-        persisted = clone(draft);
-        $('saveStatus').textContent = '✓ 이 브라우저에 저장했습니다.';
-    } catch(e) {
-        $('saveStatus').textContent = '⚠️ 저장 오류가 발생했습니다.';
-    }
-};
-
-$('cancelBtn').onclick = () => {
-    try {
-        const saved = JSON.parse(localStorage.getItem(STORE));
-        if (saved) draft = clone(saved);
-        else draft = clone(defaults);
-    } catch (e) { draft = clone(defaults); }
-    render(draft); build();
-    $('saveStatus').textContent = '저장되지 않은 변경사항을 취소했습니다.';
-};
-
-$('resetBtn').onclick = () => {
-    localStorage.removeItem(STORE);
-    draft = clone(defaults);
-    location.reload();
-};
-
-$('exportBtn').onclick = () => {
-    const blob = new Blob([JSON.stringify(draft, null, 2)], {type: 'application/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a'); a.href = url; a.download = 'the303-content-backup.json';
-    a.click(); setTimeout(() => URL.revokeObjectURL(url), 1500);
-};
-
-$('importFile').onchange = async e => {
-    const file = e.target.files?.[0]; if(!file) return;
-    try {
-        if(file.size > 20*1024*1024) throw Error('파일이 너무 큽니다.');
-        const data = JSON.parse(await file.text());
-        
-        draft = {
-            text: {...defaults.text, ...(data.text||{})}, 
-            link: {...defaults.link, ...(data.link||{})},
-            theme: {...defaults.theme, ...(data.theme||{})}, 
-            textColors: {...(data.textColors||{})},
-            textSizes: {...(data.textSizes||{})}, 
-            textFonts: {...(data.textFonts||{})},
-            navColors: {...defaults.navColors, ...(data.navColors||{})}, 
-            font: data.font || defaults.font,
-            nav: Array.isArray(data.nav) ? data.nav : defaults.nav.slice(),
-            logoSubSize: data.logoSubSize || defaults.logoSubSize
-        };
-        render(draft); build();
-        $('saveStatus').textContent = '백업 데이터를 성공적으로 불러왔습니다.';
-    } catch(err) {
-        $('saveStatus').textContent = '⚠️ 가져오기 실패: ' + err.message;
-    }
-    e.target.value = '';
-};
-
-document.getElementById('year').textContent = new Date().getFullYear();
-render(draft); build();
-
-})();
-</script>
+  <script src="./js/common.js?v=20261027" defer></script>
+  <script src="./js/responsive-images.js?v=20261028" defer></script>
+  <script src="./js/home.js?v=20261027" defer></script>
+  <script src="./js/home-public.js" defer></script>
 </body>
 </html>

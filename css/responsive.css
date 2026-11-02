@@ -1,0 +1,165 @@
+    /* ==========================================================================
+       9. 반응형 (모바일 UI 최적화)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      :root { --nav-height: 72px; --section-space: 62px; }
+      html { scroll-padding-top: 72px; }
+      .container { width: min(100% - 48px, var(--max)); }
+      
+      .nav-wrap { width: calc(100% - 40px); min-height: var(--nav-height); padding: 0; }
+      .brand-main { font-size: 19px; }
+      .brand-sub { font-size: 8.5px; }
+
+      .menu-toggle { display: inline-flex !important; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 10px; margin-right: -8px; background: transparent; border: none; color: var(--ink); -webkit-tap-highlight-color: transparent; z-index: 1001; }
+      .site-header:not(.scrolled):not(.menu-expanded) .menu-toggle { color: #fff; }
+      .site-header.menu-expanded .menu-toggle { color: var(--ink); }
+      .site-header.menu-expanded .brand { opacity: 0; }
+      .mobile-panel-brand { display: block; position: absolute; top: 25px; left: 24px; right: 64px; color: var(--ink); font: 700 13px/1.5 'Montserrat', sans-serif; letter-spacing: .1em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .menu-toggle svg { width: 27px; height: 27px; stroke-width: 1.8; stroke: currentColor; fill: none !important; }
+      .menu-toggle:focus, .menu-toggle:active { background: transparent; outline: none; }
+      
+      body.menu-open .mobile-nav-backdrop { display: block; opacity: 1; }
+      
+      .nav-panel { 
+        position: fixed; top: 0; right: 0; left: auto; bottom: auto; 
+        width: min(78%, 340px); height: 100vh; height: 100dvh; 
+        padding-top: var(--nav-height); 
+        padding-bottom: calc(22px + env(safe-area-inset-bottom, 0px)); 
+        background: #FAF8F5 !important; backdrop-filter: blur(20px); border-left: 1px solid var(--line); 
+        display: flex !important; flex-direction: column; align-items: center; 
+        transform: translateX(100%); opacity: 0; visibility: hidden; 
+        transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease; 
+        overflow-y: auto; z-index: 999; 
+      }
+      .nav-panel.open { transform: translateX(0); opacity: 1; visibility: visible; }
+      
+      .nav-list { width: 100%; display: flex; flex-direction: column; gap: 0; }
+      .nav-list > li { width: 100%; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; min-height: 54px; }
+      
+      .nav-link { flex: 1; min-height: 54px; font-size: 14px; padding: 0 24px; color: var(--ink); font-weight: 600; border: none; }
+      .nav-link::after { display: none; }
+      
+      .submenu-toggle { width: 52px; height: 52px; display: flex !important; color: var(--ink); background: transparent; align-items: center; justify-content: center; border: none; -webkit-tap-highlight-color: transparent; }
+      .submenu-toggle:focus, .submenu-toggle:active { background: transparent; outline: none; }
+      
+      .dropdown-menu { 
+        width: 100%; position: static; display: none; 
+        padding: 0 0 15px 15px; 
+        background: transparent !important; 
+        border: 0 !important; box-shadow: none !important; 
+        opacity: 1; visibility: visible; transform: none; transition: none; 
+      }
+      .nav-panel .nav-list > li.nav-dropdown > .dropdown-menu {
+        position: static;
+        flex: 0 0 100%;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        transform: none;
+      }
+      .nav-panel .nav-list > li.nav-dropdown.open > .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        position: static;
+        z-index: 1;
+      }
+      .nav-panel .nav-list > li.nav-dropdown.open > .submenu-toggle .nav-chevron {
+        transform: rotate(180deg);
+      }
+      .dropdown-menu a { padding: 12px 24px; font-size: 13px; color: var(--ink-soft) !important; background: transparent !important; border: 0; display: block;}
+      
+      .nav-social { display: none !important; }
+      
+      .mobile-menu-social { 
+        display: flex !important; align-items: center; justify-content: center; gap: 18px; 
+        margin-top: auto; margin-bottom: 15px; 
+        padding: 25px 24px 0; width: 100%; border-top: 1px solid rgba(0,0,0,0.05);
+      }
+      .mobile-menu-social a { width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+      .mobile-menu-social svg { width: 16px; height: 16px; fill: none !important; stroke: currentColor !important; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      
+      .nav-cta { 
+        display: inline-flex !important; align-items: center; justify-content: center;
+        margin: 0 auto 12px auto; padding: 12px 28px; 
+        font-size: 13px; background: var(--brick-wine); color: #fff; border: none; border-radius: 30px;
+      }
+      
+      .hero-actions .btn-light { display: none; }
+      .hero { min-height: 600px; height: 85svh; }
+      .hero-content { padding-top: 24px; }
+      
+      /* 🌟 H1 -> H2 폰트 누락 버그 해결 (모바일 버전 크기 복구) */
+      .hero-content h2 { font-size: clamp(36px, 8.8vw, 52px); margin: 10px 0 12px; }
+      
+      .hero-copy { font-size: 12.5px; margin-bottom: 9px; }
+      .hero-service { font-size: 12.5px; margin-bottom: 26px; letter-spacing: 0; line-height: 1.6; }
+      .hero-scroll { display: none; }
+      
+      .phil-content { padding: 70px 24px 80px; }
+      .phil-content .section-title { font-size: clamp(29px, 7vw, 36px); margin-bottom: 36px; }
+      .phil-keywords { flex-direction: column; gap: 30px; align-items: center; }
+      .phil-kw-item p { margin-top: 8px; font-size: 14px; line-height: 1.65; }
+      
+      .program-section .section-title { font-size: clamp(33px, 7.5vw, 40px); line-height: 1.18; }
+      .program-layout { grid-template-columns: 1fr; gap: 30px; margin-top: 42px; }
+      .program-list { gap: 14px; margin-bottom: 18px; }
+      .program-item { padding: 3px 0 20px; gap: 12px; min-height: 100px; }
+      .program-item-info h3 { font-size: 20px; margin-bottom: 8px; line-height: 1.5; font-weight: 700; }
+      .program-item-info h3 span[data-text$="Title"] { font-size: inherit; }
+      .program-item-info h3 span[data-text$="En"] { font-size: 12px; }
+      .program-item-info p { font-size: 14px; font-weight: 400; line-height: 1.65; }
+      .program-item-arrow svg { width: 22px; height: 22px; }
+      
+      .program-sub-images { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+      .program-sub-img { width: 100%; aspect-ratio: 4/3; }
+      .program-sub-img img { width: 100%; height: 100%; object-fit: cover; }
+      .program-featured { display: none; } 
+      
+      .ttc-copy { padding: 60px 24px; }
+      .ttc-grid { grid-template-columns: 1fr; }
+      .ttc-image { min-height: 380px; }
+      
+      .media-studio-showcase { grid-template-columns: 1fr; }
+      .mss-image { min-height: 300px; } 
+      .mss-content { padding: 40px 24px; }
+      
+      .news-grid { grid-template-columns: 1fr; gap: 20px;}
+      .news-card:nth-child(3) { display: block; }
+      
+      .footer-top { flex-direction: column; gap: 20px;}
+      .footer-info-text > span { display: block; margin-bottom: 10px; }
+      .footer-info-text > span > span { display: inline; }
+      
+      .mobile-bottom-bar { display: grid !important; grid-template-columns: 1fr 1.5fr; position: fixed; z-index: 900; bottom: 0; left: 0; width: 100%; box-shadow: 0 -10px 30px rgba(0,0,0,.15); }
+      .mobile-bottom-bar a { display: flex; align-items: center; justify-content: center; min-height: calc(64px + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); font-size: 15px; font-weight: 700; font-family: 'Noto Sans KR', sans-serif;}
+      .mobile-call { background: #fff; color: var(--ink); border-top: 1px solid var(--line); }
+      .mobile-book { background: var(--cinnamon); color: #fff; border-top: 1px solid var(--cinnamon);} 
+      .to-top { right: 18px; bottom: calc(84px + env(safe-area-inset-bottom, 0px)); width: 44px; height: 44px; }
+      body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+      .site-footer { padding-bottom: 52px; }
+      
+      .news-info { padding-top: 16px; }
+      .news-grid { margin-top: 32px; }
+      .mss-content .btn { min-height: 50px; padding-inline: 28px; }
+      .phil-wide-section .eyebrow { letter-spacing: .2em; }
+    }
+
+    @media (max-width: 400px) {
+      .container { width: calc(100% - 36px); }
+      .hero-content { width: calc(100% - 44px); }
+      
+      /* 🌟 H1 -> H2 폰트 누락 버그 해결 (초소형 모바일 버전 크기 복구) */
+      .hero-content h2 { font-size: clamp(34px, 9vw, 42px); }
+      
+      .hero-service { font-size: 12px; }
+      .program-item-info h3 { gap: 7px; }
+      .program-item-info h3 span[data-text$="En"] { font-size: 11px; }
+      .mobile-bottom-bar a { font-size: 14px; }
+      .mss-content { padding: 34px 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+    @media (max-width: 1024px) { .edit-toggle, .editor { display: none !important; } }
