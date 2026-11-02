@@ -1,0 +1,61 @@
+﻿페이지,사진 용도,정확한 파일 경로,코드 표시 비율/환경,권장 준비 크기,비고
+about-studio.html,에디토리얼 도입 대표,images/studio/hero-pc.jpg,4:5,1600×2000,PC 기본 경로
+about-studio.html,에디토리얼 도입 대표 / 모바일,images/studio/hero-mo.jpg,5:4,1600×1280,모바일용 (미등록 시 PC로 대체)
+about-studio.html,철학/움직임,images/studio/philosophy.jpg,1.31:1,1600×1220,PC 기본 경로
+about-studio.html,원장 프로필,images/studio/director.jpg,3:4,1200×1600,PC 기본 경로
+about-studio.html,RELEASE 감정/이완,images/studio/experience-release-pc.jpg,3:4,1200×1600,PC 기본 경로
+about-studio.html,RELEASE 감정/이완 / 모바일,images/studio/experience-release-mo.jpg,5:4,1600×1280,모바일용 (미등록 시 PC로 대체)
+about-studio.html,RECONNECT 집중,images/studio/experience-reconnect.jpg,가변,1200×1500,PC 기본 경로
+about-studio.html,RENEW 활력,images/studio/experience-renew.jpg,가변,1200×1500,PC 기본 경로
+contact.html,오시는길 대표,images/contact/hero-pc.jpg,가변,1600×1200,PC 기본 경로
+contact.html,오시는길 대표 / 모바일,images/contact/hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+contact.html,방문 안내 보조,images/contact/detail.jpg,5:3,1600×960,PC 기본 경로
+program-flying.html,플라잉요가 첫 화면,images/flying/hero-pc.jpg,가변,1600×1200,PC 기본 경로
+program-flying.html,플라잉요가 첫 화면 / 모바일,images/flying/hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+program-flying.html,플라잉요가 상세,images/flying/detail.jpg,4:5,1600×2000,PC 기본 경로
+program-barre.html,바레 첫 화면,images/barre/hero-pc.jpg,가변,1600×1200,PC 기본 경로
+program-barre.html,바레 첫 화면 / 모바일,images/barre/hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+program-barre.html,바레 상세,images/barre/detail.jpg,4:5,1600×2000,PC 기본 경로
+program-dance.html,에어리얼댄스 첫 화면,images/dance/hero-pc.jpg,가변,1600×1200,PC 기본 경로
+program-dance.html,에어리얼댄스 첫 화면 / 모바일,images/dance/hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+program-dance.html,에어리얼댄스 상세,images/dance/detail.jpg,4:5,1600×2000,PC 기본 경로
+ttc-cert.html,지도자 첫 화면,images/ttc/hero-pc.jpg,가변,1600×1200,PC 기본 경로
+ttc-cert.html,지도자 첫 화면 / 모바일,images/ttc/hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+ttc-cert.html,지도자 교육 상세,images/ttc/detail.jpg,4:5,1600×2000,PC 기본 경로
+ttc-workshop.html,워크샵 첫 화면,images/workshop/hero-pc.jpg,2.55:1,2400×950,PC 기본 경로
+ttc-workshop.html,워크샵 첫 화면 / 모바일,images/workshop/hero-mo.jpg,1.15:1,900×780,모바일용 (없으면 PC로 대체)
+ttc-workshop.html,워크샵 상세,images/workshop/detail.jpg,1.33:1,1600×1200,PC 기본 경로
+ttc-workshop.html,워크샵 상세 / 모바일,images/workshop/detail-mo.jpg,1.13:1,900×800,모바일용 (없으면 PC로 대체)
+media-portfolio.html,미디어 포트폴리오 대표,images/media/portfolio-hero-pc.jpg,가변,1600×1200,PC 기본 경로
+media-portfolio.html,미디어 포트폴리오 대표 / 모바일,images/media/portfolio-hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+media-portfolio.html,포트폴리오 01,images/media/portfolio-01.jpg,4:5,1200×1500,PC 기본 경로
+media-portfolio.html,포트폴리오 02,images/media/portfolio-02.jpg,4:5,1200×1500,PC 기본 경로
+media-portfolio.html,포트폴리오 03,images/media/portfolio-03.jpg,4:5,1200×1500,PC 기본 경로
+media-portfolio.html,포트폴리오 04,images/media/portfolio-04.jpg,4:5,1200×1500,PC 기본 경로
+media-portfolio.html,포트폴리오 05,images/media/portfolio-05.jpg,4:5,1200×1500,PC 기본 경로
+media-portfolio.html,포트폴리오 06,images/media/portfolio-06.jpg,4:5,1200×1500,PC 기본 경로
+media-rental.html,촬영·대관 대표,images/media/rental-hero-pc.jpg,가변,1600×1200,PC 기본 경로
+media-rental.html,촬영·대관 대표 / 모바일,images/media/rental-hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+media-rental.html,대관 안내 사진,images/media/rental-detail.jpg,4:5,1600×2000,PC 기본 경로
+news-gallery.html,갤러리 대표,images/gallery/hero-pc.jpg,가변,1600×1200,PC 기본 경로
+news-gallery.html,갤러리 대표 / 모바일,images/gallery/hero-mo.jpg,8:5,1600×1000,모바일용 (미등록 시 PC로 대체)
+news-gallery.html,갤러리 01,images/gallery/gallery-01.jpg,4:5,1200×1500,PC 기본 경로
+news-gallery.html,갤러리 02,images/gallery/gallery-02.jpg,4:5,1200×1500,PC 기본 경로
+news-gallery.html,갤러리 03,images/gallery/gallery-03.jpg,4:5,1200×1500,PC 기본 경로
+news-gallery.html,갤러리 04,images/gallery/gallery-04.jpg,4:5,1200×1500,PC 기본 경로
+news-gallery.html,갤러리 05,images/gallery/gallery-05.jpg,4:5,1200×1500,PC 기본 경로
+news-gallery.html,갤러리 06,images/gallery/gallery-06.jpg,4:5,1200×1500,PC 기본 경로
+index.html,메인 슬라이드 01,images/main/hero-01-pc.jpg,가변,2400×1600,메인 전용 PC
+index.html,메인 슬라이드 01 / 모바일,images/main/hero-01-mo.jpg,화면 가변,1200×1600,"메인 전용 모바일, 없으면 PC 자동 대체"
+index.html,메인 슬라이드 02,images/main/hero-02-pc.jpg,가변,2400×1600,메인 전용 PC
+index.html,메인 슬라이드 02 / 모바일,images/main/hero-02-mo.jpg,화면 가변,1200×1600,"메인 전용 모바일, 없으면 PC 자동 대체"
+index.html,메인 슬라이드 03,images/main/hero-03-pc.jpg,가변,2400×1600,메인 전용 PC
+index.html,메인 슬라이드 03 / 모바일,images/main/hero-03-mo.jpg,화면 가변,1200×1600,"메인 전용 모바일, 없으면 PC 자동 대체"
+index.html,메인 프로그램 플라잉,images/main/program-flying.jpg,3:4,1200×1600,메인 전용 PC
+index.html,메인 프로그램 바레,images/main/program-barre.jpg,4:3,1200×900,메인 전용 PC
+index.html,메인 프로그램 에어리얼댄스,images/main/program-dance.jpg,4:3,1200×900,메인 전용 PC
+index.html,메인 지도자 과정,images/main/certificate.jpg,가변,1600×1200,메인 전용 PC
+index.html,메인 미디어스튜디오,images/main/media-studio.jpg,가변,1600×1200,메인 전용 PC
+index.html,메인 JOURNAL 갤러리,images/main/journal-gallery.jpg,약 1.52:1,1800×1200,메인 전용 PC
+index.html,메인 철학 배경 / PC,images/main/philosophy-pc.jpg,배경 cover,2000×1400,PC 배경
+index.html,메인 철학 배경 / 모바일,images/main/philosophy-mo.jpg,배경 cover,1200×1600,"모바일 배경, 없으면 PC 자동 대체"

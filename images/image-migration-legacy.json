@@ -1,0 +1,56 @@
+{
+  "about-studio": {
+    "hero_photo": "./images/studio/hero.jpg",
+    "philosophy_photo": "./images/studio/philosophy.jpg",
+    "director_photo": "./images/studio/director.jpg",
+    "space_flying": "./images/studio/experience-release.jpg",
+    "space_barre": "./images/studio/experience-reconnect.jpg",
+    "space_media": "./images/studio/experience-renew.jpg"
+  },
+  "contact": {
+    "hero_photo": "./images/studio/space-main.jpg",
+    "contact_photo": "./images/studio/space-main.jpg"
+  },
+  "program-flying": {
+    "hero_photo": "./images/flying/hero.jpg",
+    "experience_photo": "./images/flying/hero.jpg"
+  },
+  "program-barre": {
+    "hero_photo": "./images/barre/hero.jpg",
+    "experience_photo": "./images/barre/hero.jpg"
+  },
+  "program-dance": {
+    "hero_photo": "./images/dance/hero.jpg",
+    "experience_photo": "./images/dance/hero.jpg"
+  },
+  "ttc-cert": {
+    "hero_photo": "./images/ttc/hero.jpg",
+    "cert_photo": "./images/ttc/hero.jpg"
+  },
+  "ttc-workshop": {
+    "hero_photo": "./images/workshop/hero.jpg",
+    "workshop_photo": "./images/workshop/workshop-01.jpg"
+  },
+  "media-portfolio": {
+    "hero_photo": "./images/media/portfolio-hero.jpg",
+    "portfolio_01": "./images/media/portfolio-01.jpg",
+    "portfolio_02": "./images/media/portfolio-02.jpg",
+    "portfolio_03": "./images/media/portfolio-03.jpg",
+    "portfolio_04": "./images/media/portfolio-04.jpg",
+    "portfolio_05": "./images/media/portfolio-05.jpg",
+    "portfolio_06": "./images/media/portfolio-06.jpg"
+  },
+  "media-rental": {
+    "hero_photo": "./images/media/rental-hero.jpg",
+    "rental_photo": "./images/media/rental-space.jpg"
+  },
+  "news-gallery": {
+    "hero_photo": "./images/gallery/gallery-cover.jpg",
+    "gallery_01": "./images/gallery/gallery-01.jpg",
+    "gallery_02": "./images/gallery/gallery-02.jpg",
+    "gallery_03": "./images/gallery/gallery-03.jpg",
+    "gallery_04": "./images/gallery/gallery-04.jpg",
+    "gallery_05": "./images/gallery/gallery-05.jpg",
+    "gallery_06": "./images/gallery/gallery-06.jpg"
+  }
+}
