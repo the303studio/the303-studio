@@ -1,0 +1,234 @@
+/* THE303 STUDIO / INDEX V06 — Editorial redesign, scoped to homepage only.
+   Creative direction: vivid photography, crisp type, asymmetric pace, room to breathe.
+   Preservation: header/nav/footer, submenu, edit UI and all subpages remain intact. */
+
+/* 01 Intro: restore progressive image zoom + text following after the photo arrives.
+   Photo filters/overlay deliberately not added: keep V05 vivid colors. */
+body.the303-index-v06 #home.the303-intro-v05 .hero-bg {
+  transform:scale(1.005)!important;
+  transition:transform 6.15s cubic-bezier(.14,.34,.26,1)!important;
+  will-change:transform;
+}
+body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-bg {
+  transform:scale(1.095)!important;
+}
+body.the303-index-v06 #home.the303-intro-v05 .hero-content,
+body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-content {
+  opacity:1!important;
+  transform:none!important;
+  transition:none!important;
+}
+body.the303-index-v06 #home.the303-intro-v05 .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions) {
+  opacity:0;
+  transform:translate3d(0,23px,0);
+  transition:opacity .66s ease,transform .82s cubic-bezier(.15,.85,.25,1);
+  transition-delay:0s;
+}
+body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions) {
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-editorial-index{transition-delay:.24s}
+body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-content h2{transition-delay:.39s}
+body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-editorial-caption{transition-delay:.52s}
+body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-actions{transition-delay:.65s}
+/* Preserve the V05 optical tracking correction; no arbitrary per-letter compression. */
+body.the303-index-v06 #home.the303-intro-v05 .hero-content h2 {letter-spacing:-.035em!important;font-kerning:normal}
+@media(max-width:850px){
+  body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-bg{transform:scale(1.065)!important}
+  body.the303-index-v06 #home.the303-intro-v05 .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions){transform:translate3d(0,16px,0)}
+  body.the303-index-v06 #home.the303-intro-v05 .hero-slide.active .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions){transform:translate3d(0,0,0)}
+}
+@media(prefers-reduced-motion: reduce){
+ body.the303-index-v06 #home.the303-intro-v05 .hero-bg,body.the303-index-v06 #home.the303-intro-v05 .hero-content > *{transition:none!important;transform:none!important;opacity:1!important}
+}
+
+/* Shared editorial vocabulary */
+body.the303-index-v06 :is(.v06-program,.v06-certificate,.v06-media,.v06-journal){font-family:'Noto Sans KR',sans-serif}
+body.the303-index-v06 .v06-section-eyebrow,
+body.the303-index-v06 .v06-chapter-label{display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:650;letter-spacing:.19em;line-height:1.35;text-transform:uppercase}
+body.the303-index-v06 .v06-section-count{font-size:10px;letter-spacing:.12em;opacity:.55}
+body.the303-index-v06 .v06-mini-arrow{font-family:'Montserrat',sans-serif;font-size:27px;font-weight:400;line-height:1;transition:transform .25s ease}
+body.the303-index-v06 .v06-program a,body.the303-index-v06 .v06-media a,body.the303-index-v06 .v06-journal a,body.the303-index-v06 .v06-certificate a{text-decoration:none}
+body.the303-index-v06 :is(.v06-program,.v06-certificate,.v06-media,.v06-journal) a:focus-visible{outline:2px solid #9b6864;outline-offset:5px}
+
+/* 02 Philosophy: KEEP the selected background image and atmosphere.
+   Refine only visual rhythm of overlaid content and the existing link. */
+body.the303-index-v06 #philosophy .phil-content{max-width:1000px;padding:clamp(86px,10vw,140px) 28px}
+body.the303-index-v06 #philosophy .phil-content .section-title{font-size:clamp(40px,5.2vw,72px);line-height:1.26;font-weight:600;letter-spacing:-.045em;margin:28px auto 64px;max-width:820px;text-wrap:balance}
+body.the303-index-v06 #philosophy .phil-keywords{gap:clamp(24px,5vw,76px)}
+body.the303-index-v06 #philosophy .phil-kw-item{position:relative;min-width:138px;gap:4px}
+body.the303-index-v06 #philosophy .phil-kw-item p{font-size:12.5px;letter-spacing:-.01em}
+body.the303-index-v06 #philosophy .phil-label-link{display:inline-flex;align-items:center;gap:16px}
+
+/* 03 PROGRAM — gallery-like photographic pairing, deliberately asymmetric */
+body.the303-index-v06 #program.v06-program{margin:0;padding:clamp(98px,11vw,176px) 0 clamp(98px,10vw,158px);background:#F4F1EC;overflow:hidden;color:#22211f}
+body.the303-index-v06 #program .v06-program-heading{max-width:1250px;margin:auto;padding:0 clamp(26px,5vw,76px)}
+body.the303-index-v06 #program .v06-section-eyebrow{color:#605650;border-bottom:1px solid #bfb8ad;padding-bottom:20px}
+body.the303-index-v06 #program .v06-program-display{font-family:'Montserrat',sans-serif;font-weight:750;font-size:clamp(44px,7.6vw,116px);line-height:1;letter-spacing:-.055em;margin:clamp(38px,4.5vw,68px) 0 34px;max-width:1040px;color:#242321;text-wrap:balance}
+body.the303-index-v06 #program .v06-program-intro{display:flex;align-items:center;gap:22px;justify-content:flex-end;margin-bottom:clamp(70px,8vw,135px)}
+body.the303-index-v06 #program .v06-program-intro .v06-hairline{width:clamp(60px,9vw,138px);height:1px;background:#958a82}
+body.the303-index-v06 #program .v06-program-intro p{font-size:14px;font-weight:400;margin:0;letter-spacing:-.01em;color:#5d5550}
+body.the303-index-v06 #program .v06-program-images{display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.9fr);align-items:start;gap:clamp(20px,5.2vw,92px);max-width:1440px;padding:0 clamp(20px,4.7vw,80px);margin:0 auto}
+body.the303-index-v06 #program .v06-program-feature{display:block;min-width:0;color:#24211f}
+body.the303-index-v06 #program .v06-feature-barre{padding-top:clamp(100px,13vw,224px)}
+body.the303-index-v06 #program .v06-program-photo{overflow:hidden;background:#dad6d0}
+body.the303-index-v06 #program .v06-feature-flying .v06-program-photo{height:clamp(510px,62vw,800px)}
+body.the303-index-v06 #program .v06-feature-barre .v06-program-photo{height:clamp(390px,45vw,610px)}
+body.the303-index-v06 #program .v06-program-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.05s cubic-bezier(.2,.7,.25,1)}
+body.the303-index-v06 #program .v06-feature-flying .v06-program-photo img{object-position:52% 48%}
+body.the303-index-v06 #program .v06-feature-barre .v06-program-photo img{object-position:68% 47%}
+body.the303-index-v06 #program .v06-program-feature:hover img{transform:scale(1.045)}
+body.the303-index-v06 #program .v06-program-meta{display:flex;justify-content:space-between;align-items:center;margin:21px 0 16px;font:650 11px/1.4 'Montserrat',sans-serif;letter-spacing:.19em;color:#766d66}
+body.the303-index-v06 #program .v06-program-feature:hover .v06-mini-arrow{transform:translate(4px,-4px)}
+body.the303-index-v06 #program .v06-program-feature h3{font:700 clamp(40px,5vw,76px)/1.04 'Montserrat',sans-serif;letter-spacing:-.05em;margin:0;color:#22211f}
+body.the303-index-v06 #program .v06-program-ko{font-size:16px;font-weight:500;margin:13px 0 10px;color:#3b3431}
+body.the303-index-v06 #program .v06-program-descr{max-width:430px;font-size:13px;line-height:1.75;margin:0;color:#81776f;letter-spacing:-.01em}
+body.the303-index-v06 #program .v06-dance{max-width:1240px;margin:clamp(98px,11vw,166px) auto 0;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);background:#ddd5cb;color:#24211f;min-height:330px}
+body.the303-index-v06 #program .v06-dance-text{padding:clamp(34px,5vw,70px);display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;min-width:0}
+body.the303-index-v06 #program .v06-dance-topline{width:100%;display:flex;justify-content:space-between;align-items:center;font:650 11px 'Montserrat',sans-serif;letter-spacing:.13em;color:#665e56}
+body.the303-index-v06 #program .v06-dance h3{font:750 clamp(34px,4.3vw,60px)/1.02 'Montserrat',sans-serif;letter-spacing:-.052em;margin:clamp(18px,4vw,50px) 0 6px;max-width:430px}
+body.the303-index-v06 #program .v06-dance-ko{font-size:16px;font-weight:550;margin-bottom:10px}
+body.the303-index-v06 #program .v06-dance-text p{font-size:13px;line-height:1.7;letter-spacing:-.01em;color:#756b63;margin:0}
+body.the303-index-v06 #program .v06-dance-image{min-height:320px;overflow:hidden}
+body.the303-index-v06 #program .v06-dance-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:53% 42%;transition:transform .8s ease}
+body.the303-index-v06 #program .v06-dance:hover img{transform:scale(1.04)}
+
+/* 04 CERTIFICATE — editorial education chapter, image left / copy right */
+body.the303-index-v06 #ttc.v06-certificate{position:relative;display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);min-height:670px;background:#E4D9CD;color:#25201e;overflow:hidden}
+body.the303-index-v06 #ttc .v06-cert-image{position:relative;overflow:hidden;min-height:670px;background:#c9b6a8}
+body.the303-index-v06 #ttc .ttc-picture,body.the303-index-v06 #ttc .ttc-image{display:block;width:100%;height:100%;min-height:670px}
+body.the303-index-v06 #ttc .ttc-image{object-fit:cover;object-position:48% 45%;opacity:1;filter:none}
+body.the303-index-v06 #ttc .v06-image-corner{position:absolute;bottom:34px;left:clamp(24px,4vw,66px);font:650 10px 'Montserrat',sans-serif;letter-spacing:.22em;color:white;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+body.the303-index-v06 #ttc .v06-cert-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(66px,7vw,118px) clamp(32px,6vw,100px)}
+body.the303-index-v06 #ttc .v06-chapter-label{width:100%;font-size:10px;letter-spacing:.18em;border-bottom:1px solid #b9aba0;padding-bottom:18px;margin-bottom:clamp(48px,6vw,90px);color:#64564d}
+body.the303-index-v06 #ttc .v06-chapter-label span:last-child{font-size:10px;opacity:.65}
+body.the303-index-v06 #ttc .v06-cert-english{font:750 clamp(40px,5.3vw,88px)/.99 'Montserrat',sans-serif;letter-spacing:-.06em;margin:0 0 34px;color:#24211e}
+body.the303-index-v06 #ttc .v06-cert-title{font-size:clamp(20px,2vw,30px);line-height:1.55;font-weight:550;letter-spacing:-.05em;margin:0 0 18px;color:#24211e}
+body.the303-index-v06 #ttc .v06-cert-desc{font-size:13px;line-height:1.8;color:#695d55;margin:0 0 42px;max-width:360px}
+body.the303-index-v06 #ttc .v06-cert-links{display:flex;flex-direction:column;width:100%;max-width:390px}
+body.the303-index-v06 #ttc .v06-cert-links a{display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid #b9a99d;min-height:66px;font-size:13px;font-weight:600;color:#2c2825}
+body.the303-index-v06 #ttc .v06-cert-links a:last-child{border-bottom:1px solid #b9a99d}
+body.the303-index-v06 #ttc .v06-cert-links a span:last-child{font-size:22px;font-weight:400;transition:transform .24s ease}
+body.the303-index-v06 #ttc .v06-cert-links a:hover span:last-child{transform:translate(4px,-3px)}
+
+/* 05 MEDIA STUDIO — portfolio image leads, services follow */
+body.the303-index-v06 #space.v06-media{background:#222120;color:#F2EDE5;padding:clamp(100px,10vw,164px) 0 clamp(110px,11vw,185px);overflow:hidden}
+body.the303-index-v06 #space .v06-media-heading{max-width:1300px}
+body.the303-index-v06 #space .v06-section-eyebrow{border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:19px;color:#C9BFB4}
+body.the303-index-v06 #space .v06-media-pretitle{font:650 11px 'Montserrat',sans-serif;letter-spacing:.23em;margin:clamp(40px,6vw,88px) 0 17px;color:#C0A9A0}
+body.the303-index-v06 #space .v06-media-heading h2{font-size:clamp(36px,5.6vw,82px);font-weight:600;letter-spacing:-.055em;line-height:1.17;max-width:1030px;margin:0 0 clamp(60px,8vw,112px);color:#FBF6EF;text-wrap:balance}
+body.the303-index-v06 #space .v06-media-layout{display:grid;grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);gap:clamp(42px,7vw,110px);align-items:end;max-width:1350px;margin:auto;padding:0 clamp(24px,5vw,78px)}
+body.the303-index-v06 #space .v06-media-photo{position:relative;min-width:0}
+body.the303-index-v06 #space .v06-media-photo img{display:block;width:100%;aspect-ratio:.91;object-fit:cover;object-position:55% 50%;filter:none}
+body.the303-index-v06 #space .v06-photo-caption{position:absolute;left:20px;bottom:18px;font:650 9px 'Montserrat',sans-serif;letter-spacing:.22em;color:white;text-shadow:0 2px 10px #000}
+body.the303-index-v06 #space .v06-media-copy{padding-bottom:20px;max-width:500px;min-width:0}
+body.the303-index-v06 #space .v06-media-overline{font:600 10px 'Montserrat',sans-serif;letter-spacing:.19em;color:#BAA89A}
+body.the303-index-v06 #space .v06-media-copy h3{font-size:clamp(28px,3.5vw,54px);font-weight:550;line-height:1.26;letter-spacing:-.055em;color:#F8F2EC;margin:28px 0 22px}
+body.the303-index-v06 #space .v06-media-description{color:#D0C6BD;font-size:14px;line-height:1.8;max-width:370px;margin:0 0 36px}
+body.the303-index-v06 #space .v06-media-services{display:grid;gap:12px;margin-bottom:52px;color:#B5A99E;font-size:12px;line-height:1.6}
+body.the303-index-v06 #space .v06-media-services span::before{content:'—';margin-right:10px;color:#96887D}
+body.the303-index-v06 #space .v06-media-actions{display:flex;flex-direction:column;max-width:400px}
+body.the303-index-v06 #space .v06-media-actions a{color:#F8F2EC;font-size:14px;font-weight:500;min-height:68px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.26)}
+body.the303-index-v06 #space .v06-media-actions a:last-child{border-bottom:1px solid rgba(255,255,255,.26)}
+body.the303-index-v06 #space .v06-media-actions a span:last-child{font-size:24px;font-weight:400;transition:transform .24s ease}
+body.the303-index-v06 #space .v06-media-actions a:hover span:last-child{transform:translate(4px,-3px)}
+
+/* 06 JOURNAL — typographic notice + single image; no repeated boxed cards */
+body.the303-index-v06 #news.v06-journal{background:#F4F1EC;color:#24211f;padding:clamp(98px,9vw,148px) 0 clamp(92px,10vw,160px)}
+body.the303-index-v06 #news .v06-journal-heading{max-width:1200px;margin:auto;border-bottom:1px solid #bcb5ae;padding-bottom:clamp(45px,5vw,78px)}
+body.the303-index-v06 #news .v06-journal-heading>span{display:block;font:650 10px 'Montserrat',sans-serif;letter-spacing:.22em;color:#6a5f59;margin-bottom:24px}
+body.the303-index-v06 #news .v06-journal-heading h2{font:750 clamp(43px,7.4vw,110px)/1.02 'Montserrat',sans-serif;letter-spacing:-.055em;margin:0 0 22px;color:#24211f}
+body.the303-index-v06 #news .v06-journal-heading>p{font-size:14px;line-height:1.5;color:#7d726a;margin:0}
+body.the303-index-v06 #news .v06-journal-body{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);gap:clamp(35px,6vw,95px);padding-top:clamp(54px,6.5vw,95px);align-items:start}
+body.the303-index-v06 #news .v06-journal-notice{position:relative;min-height:400px;color:#25221f;display:flex;flex-direction:column;padding-top:10px}
+body.the303-index-v06 #news .v06-journal-index{font:650 10px 'Montserrat',sans-serif;letter-spacing:.15em;color:#82766b;margin-bottom:clamp(65px,9vw,130px)}
+body.the303-index-v06 #news .v06-journal-notice-title{font:750 clamp(46px,5vw,77px)/1 'Montserrat',sans-serif;letter-spacing:-.05em;color:#24211f}
+body.the303-index-v06 #news .v06-journal-notice-desc{font-size:13px;line-height:1.65;color:#756a61;margin-top:18px;max-width:320px}
+body.the303-index-v06 #news .v06-journal-notice-ko{font-size:14px;margin-top:20px;color:#4a413c}
+body.the303-index-v06 #news .v06-journal-notice .v06-journal-arrow{margin-top:24px;width:100%;border-top:1px solid #b8afa6;padding-top:15px;text-align:right;font-size:27px}
+body.the303-index-v06 #news .v06-journal-gallery{display:block;min-width:0;color:#24211f}
+body.the303-index-v06 #news .v06-journal-gallery-photo{aspect-ratio:1.30;overflow:hidden;background:#ddd6cd}
+body.the303-index-v06 #news .v06-journal-gallery-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 45%;transition:transform .75s ease}
+body.the303-index-v06 #news .v06-journal-gallery:hover img{transform:scale(1.035)}
+body.the303-index-v06 #news .v06-journal-gallery-meta{display:flex;align-items:center;gap:16px;padding:22px 0;border-bottom:1px solid #b7aea5}
+body.the303-index-v06 #news .v06-journal-gallery-meta span:first-child{font:600 9px 'Montserrat',sans-serif;color:#867b71;letter-spacing:.1em}
+body.the303-index-v06 #news .v06-journal-gallery-meta span:nth-child(2){font:700 clamp(19px,2.1vw,28px) 'Montserrat',sans-serif;letter-spacing:-.04em;margin-left:auto}
+body.the303-index-v06 #news .v06-journal-gallery-meta span:nth-child(3){font-size:12px;color:#756c62}
+body.the303-index-v06 #news .v06-journal-gallery-meta .v06-journal-arrow{font-size:23px}
+
+/* Responsive refinements */
+@media(max-width:1000px){
+ body.the303-index-v06 #program .v06-program-images{gap:28px;padding-inline:26px}
+ body.the303-index-v06 #program .v06-feature-barre{padding-top:100px}
+ body.the303-index-v06 #program .v06-feature-flying .v06-program-photo{height:600px}
+ body.the303-index-v06 #program .v06-feature-barre .v06-program-photo{height:480px}
+ body.the303-index-v06 #program .v06-dance{margin-inline:26px}
+ body.the303-index-v06 #ttc.v06-certificate{grid-template-columns:1fr 1fr;min-height:600px}
+ body.the303-index-v06 #ttc .v06-cert-image,body.the303-index-v06 #ttc .ttc-picture,body.the303-index-v06 #ttc .ttc-image{min-height:600px}
+ body.the303-index-v06 #space .v06-media-layout{gap:35px;padding-inline:28px}
+ body.the303-index-v06 #news .v06-journal-body{gap:36px}
+}
+@media(max-width:850px){
+ body.the303-index-v06 #philosophy .phil-content{padding:88px 20px}
+ body.the303-index-v06 #philosophy .phil-content .section-title{font-size:clamp(35px,8.6vw,52px);line-height:1.28;margin:22px auto 40px}
+ body.the303-index-v06 #philosophy .phil-keywords{gap:19px;display:flex;justify-content:center}
+ body.the303-index-v06 #philosophy .phil-kw-item{min-width:0;flex:0 1 28%;gap:0}
+ body.the303-index-v06 #philosophy .phil-kw-item strong{display:flex;flex-direction:column;align-items:center;gap:4px}
+ body.the303-index-v06 #philosophy .phil-kw-item p{font-size:11px;line-height:1.55}
+ body.the303-index-v06 #program.v06-program{padding:100px 0 95px}
+ body.the303-index-v06 #program .v06-program-heading{padding-inline:24px}
+ body.the303-index-v06 #program .v06-program-display{font-size:clamp(40px,10.1vw,78px);margin:34px 0 22px;line-height:1.04}
+ body.the303-index-v06 #program .v06-program-intro{justify-content:flex-start;margin-bottom:54px;gap:13px}
+ body.the303-index-v06 #program .v06-program-intro p{font-size:12px}
+ body.the303-index-v06 #program .v06-program-images{grid-template-columns:1fr;gap:70px;padding-inline:0}
+ body.the303-index-v06 #program .v06-program-feature{padding:0 22px}
+ body.the303-index-v06 #program .v06-program-photo{margin:0 -22px}
+ body.the303-index-v06 #program .v06-feature-flying .v06-program-photo{height:clamp(460px,127vw,720px)}
+ body.the303-index-v06 #program .v06-feature-barre .v06-program-photo{height:clamp(380px,108vw,600px)}
+ body.the303-index-v06 #program .v06-feature-barre .v06-program-photo img{object-position:68% 48%}
+ body.the303-index-v06 #program .v06-program-meta{margin:19px 0 12px}
+ body.the303-index-v06 #program .v06-program-feature h3{font-size:clamp(39px,10.5vw,62px)}
+ body.the303-index-v06 #program .v06-program-ko{font-size:14px}
+ body.the303-index-v06 #program .v06-program-descr{font-size:12px}
+ body.the303-index-v06 #program .v06-dance{grid-template-columns:1fr;margin:88px 16px 0;min-height:0}
+ body.the303-index-v06 #program .v06-dance-text{min-height:290px;padding:29px}
+ body.the303-index-v06 #program .v06-dance h3{margin:24px 0 4px;font-size:clamp(34px,9vw,55px)}
+ body.the303-index-v06 #program .v06-dance-text p{font-size:12px}
+ body.the303-index-v06 #program .v06-dance-image{min-height:0;height:240px}
+ body.the303-index-v06 #ttc.v06-certificate{display:flex;flex-direction:column;min-height:0}
+ body.the303-index-v06 #ttc .v06-cert-image{order:1;min-height:0;height:390px}
+ body.the303-index-v06 #ttc .ttc-picture,body.the303-index-v06 #ttc .ttc-image{height:100%;min-height:0}
+ body.the303-index-v06 #ttc .ttc-image{object-position:52% 40%}
+ body.the303-index-v06 #ttc .v06-cert-copy{order:2;padding:60px 26px 75px}
+ body.the303-index-v06 #ttc .v06-chapter-label{margin-bottom:46px}
+ body.the303-index-v06 #ttc .v06-cert-english{font-size:clamp(45px,11.5vw,74px);margin-bottom:28px}
+ body.the303-index-v06 #ttc .v06-cert-title{font-size:23px;margin-bottom:15px}
+ body.the303-index-v06 #ttc .v06-cert-desc{margin-bottom:34px}
+ body.the303-index-v06 #space.v06-media{padding:92px 0 105px}
+ body.the303-index-v06 #space .v06-media-heading{padding-inline:24px}
+ body.the303-index-v06 #space .v06-media-pretitle{margin-top:55px}
+ body.the303-index-v06 #space .v06-media-heading h2{font-size:clamp(34px,8.6vw,54px);line-height:1.23;margin-bottom:54px}
+ body.the303-index-v06 #space .v06-media-layout{display:flex;flex-direction:column;align-items:stretch;gap:42px;padding-inline:0}
+ body.the303-index-v06 #space .v06-media-photo img{aspect-ratio:1.12;object-position:50% 40%}
+ body.the303-index-v06 #space .v06-media-copy{padding:0 24px}
+ body.the303-index-v06 #space .v06-media-copy h3{font-size:clamp(29px,7.2vw,42px);margin:18px 0}
+ body.the303-index-v06 #space .v06-media-description{font-size:13px}
+ body.the303-index-v06 #space .v06-media-services{font-size:11px;margin-bottom:34px}
+ body.the303-index-v06 #news.v06-journal{padding:90px 0 95px}
+ body.the303-index-v06 #news .v06-journal-heading h2{font-size:clamp(44px,10.5vw,70px)}
+ body.the303-index-v06 #news .v06-journal-body{grid-template-columns:1fr;gap:55px;padding-top:50px}
+ body.the303-index-v06 #news .v06-journal-notice{min-height:265px;padding:0}
+ body.the303-index-v06 #news .v06-journal-index{margin-bottom:48px}
+ body.the303-index-v06 #news .v06-journal-notice-title{font-size:clamp(44px,10vw,65px)}
+ body.the303-index-v06 #news .v06-journal-gallery-photo{aspect-ratio:1.4}
+ body.the303-index-v06 #news .v06-journal-gallery-meta{gap:12px}
+ body.the303-index-v06 #news .v06-journal-gallery-meta span:first-child{font-size:8px}
+}
+@media(max-width:385px){
+ body.the303-index-v06 #program .v06-program-display{font-size:clamp(38px,9.9vw,46px)}
+ body.the303-index-v06 #program .v06-dance h3{font-size:32px}
+ body.the303-index-v06 #news .v06-journal-heading h2{font-size:39px}
+ body.the303-index-v06 #news .v06-journal-gallery-meta{gap:8px}
+ body.the303-index-v06 #news .v06-journal-gallery-meta span:nth-child(2){font-size:18px}
+}

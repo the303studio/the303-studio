@@ -1,0 +1,98 @@
+/* THE303 INDEX V11.1 / HERO FINISHING — no effects outside homepage. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slider:not(.v111-loop-ready){visibility:hidden}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slider{
+  transition:transform .64s cubic-bezier(.68,.02,.22,1);
+}
+/* New PC imagery is genuinely image-filled, not composited with flat-side padding. */
+@media (min-width:851px){
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-bg,
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--flow .hero-bg{
+   background-size:cover;background-position:center center;filter:none!important;
+ }
+}
+/* Consistent hero keywords, calibrated to the compact CONTROL scene's optical size.
+   Exact brand cinnamon is shared with the mobile consultation button. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+ font-size:clamp(68px,9.2vw,142px)!important;
+ font-weight:700!important;
+ letter-spacing:-.055em!important;
+ line-height:.97!important;
+ color:var(--cinnamon)!important;
+ text-shadow:0 1px 2px rgba(255,255,255,.40)!important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content{
+  max-width:min(84vw,1120px);
+}
+/* Respect the white hero photos, but give brown captions a readable location. */
+@media(min-width:1101px){
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-content{
+   top:clamp(135px,17vh,200px);bottom:auto;left:clamp(44px,5.8vw,110px);
+ }
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--flow .hero-content{
+   top:auto;bottom:clamp(122px,17vh,192px);left:clamp(44px,5.8vw,110px);right:auto;
+ }
+}
+@media(min-width:851px) and (max-width:1100px){
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--flow .hero-content{
+   left:32px;right:auto;top:auto;bottom:150px;
+ }
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{font-size:clamp(63px,9.2vw,104px)!important}
+}
+@media(max-width:850px){
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+   font-size:clamp(35px,10.1vw,44px)!important;
+   font-weight:700!important;
+   letter-spacing:-.047em!important;
+   line-height:1.06!important;
+ }
+ /* First mobile photo: exact V11 crop, camera position and framing untouched. */
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--flow .hero-bg{
+   background-size:cover;background-position:50% 50%;
+ }
+ /* The V11.1 second slide is tighter in the image asset itself; use a gentle extra crop. */
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--flow .hero-bg{
+   background-size:auto 120%;background-position:92% 94%;
+ }
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--flow .hero-content{
+   top:clamp(103px,14vh,145px);bottom:auto;
+   left:clamp(24px,6vw,32px);right:16px;
+ }
+ /* Dark backgrounds cannot make the shared cinnamon headline disappear. */
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content{
+   left:clamp(90px,25vw,112px);right:14px;
+ }
+}
+/* Tiny corner marks echo the photography portfolio's hover affordance.
+   They never move with the interior still image. */
+body.the303-index-v111 #program [data-sequence] .v111-corner{
+ position:absolute;z-index:7;width:19px;height:19px;pointer-events:none;
+ opacity:0;box-sizing:border-box;filter:drop-shadow(0 1px 1px rgba(25,20,18,.35));
+}
+body.the303-index-v111 #program [data-sequence] .v111-corner--tl{
+ left:18px;top:18px;border-top:1px solid rgba(255,255,255,.96);border-left:1px solid rgba(255,255,255,.96);
+}
+body.the303-index-v111 #program [data-sequence] .v111-corner--br{
+ right:18px;bottom:18px;border-right:1px solid rgba(255,255,255,.96);border-bottom:1px solid rgba(255,255,255,.96);
+}
+body.the303-index-v111 #program [data-sequence].v111-corner-flash .v111-corner{
+ animation:v111-corner-glint .43s cubic-bezier(.24,.63,.2,1) both;
+}
+@keyframes v111-corner-glint{
+ 0%{opacity:0;filter:drop-shadow(0 0 0 rgba(255,255,255,0))}
+ 22%{opacity:.90;filter:drop-shadow(0 0 2px rgba(255,255,255,.55))}
+ 56%{opacity:1;filter:drop-shadow(0 0 4px rgba(255,255,255,.62))}
+ 100%{opacity:0;filter:drop-shadow(0 0 0 rgba(255,255,255,0))}
+}
+@media(max-width:850px){
+ body.the303-index-v111 #program [data-sequence] .v111-corner{width:15px;height:15px}
+ body.the303-index-v111 #program [data-sequence] .v111-corner--tl{left:13px;top:13px}
+ body.the303-index-v111 #program [data-sequence] .v111-corner--br{right:13px;bottom:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.the303-index-v111 #home.the303-intro-v05 .hero-slider{transition:none!important}
+ body.the303-index-v111 #program [data-sequence] .v111-corner{animation:none!important;opacity:0!important}
+}
+/* Keep the photo counter clear of the newly animated lower-right corner. */
+body.the303-index-v111 #program [data-sequence] .v07-sequence-count{
+ right:auto;left:13px;bottom:13px;
+}

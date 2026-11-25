@@ -125,3 +125,30 @@ html.the303-admin-mode .page-editor-toggle{display:block}
 }
 @media(max-width:400px){.page-hero-media{margin:0 -18px}.page-hero-title{font-size:33px}.page-hero-noimage{padding:18px}.gallery-photo{min-height:140px}}
 @media(prefers-reduced-motion:reduce){.page-editor,.link-card{transition:none}}
+
+
+/* V31 · Deliberate subpage editorial reveal.
+   Keep typography, image crops, card hover transforms and footer unchanged. */
+body.the303-subpage.the303-reveal-active .the303-reveal-item {
+  opacity: 0;
+  translate: 0 26px;
+  transition-property: opacity, translate;
+  transition-duration: .9s;
+  transition-timing-function: cubic-bezier(.22, 1, .36, 1);
+  transition-delay: var(--the303-reveal-delay, 0ms);
+}
+body.the303-subpage.the303-reveal-active .the303-reveal-item.the303-reveal-card {
+  transition-duration: 1s;
+}
+body.the303-subpage.the303-reveal-active .the303-reveal-item.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.the303-subpage.the303-reveal-active .the303-reveal-item,
+  body.the303-subpage.the303-reveal-active .the303-reveal-item.is-visible {
+    opacity: 1 !important;
+    translate: none !important;
+    transition: none !important;
+  }
+}

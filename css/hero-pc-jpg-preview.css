@@ -1,0 +1,11 @@
+/* THE303 STUDIO | 03.TEST | PC slide 02 RHYTHM only.
+   Display the owner's original JPG without forcing a wide-screen cover crop.
+   Leave existing 6.15s image zoom, navigation, typography and mobile intact. */
+@media (min-width: 851px) {
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--flow .hero-bg {
+    background-size: auto 100%;
+    background-position: 50% 100%;
+    background-color: #d2d2d2;
+    transform-origin: 50% 100%;
+  }
+}

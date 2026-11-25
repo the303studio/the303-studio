@@ -120,3 +120,9 @@
     column-gap:22px;
   }
 }
+
+/* V26 — keep existing photo dimensions; refine portrait crop without changing typography or layout. */
+body[data-page="ttc-workshop"] .workshop-main .ws-intro-photo img,
+body[data-page="ttc-workshop"] .workshop-main .ws-story-image img {
+  object-position: 50% 25%;
+}

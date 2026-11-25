@@ -1,0 +1,32 @@
+/* THE303 STUDIO | V57 — V56A editorial entry + original V55 cursor interaction.
+   Only homepage footer, PC >850px, motion enabled. No layout/palette/font changes. */
+@media (min-width:851px) and (prefers-reduced-motion:no-preference) {
+  /* Entrance belongs to the wordmark's outside layer. Its existing inner
+     text layer retains V55's --slide, easing, highlight and sizing. */
+  body.the303-footer-v57 .site-footer .footer-wordmark {
+    transform:translate3d(-88px,0,0);
+    transition:transform 6.6s cubic-bezier(.23,.62,.18,1);
+    will-change:transform;
+  }
+  body.the303-footer-v57 .site-footer.v57-started .footer-wordmark {
+    transform:translate3d(0,0,0);
+  }
+  /* No cursor tracking while the intro is progressing. The original
+     0.4s cursor response is restored only after the intro settles. */
+  body.the303-footer-v57 .site-footer:not(.v57-cursor-ready) .footer-wordmark-name {
+    transform:translateX(0px) !important;
+  }
+  body.the303-footer-v57 .site-footer:not(.v57-cursor-ready) .footer-wordmark-name::after {
+    opacity:0 !important;
+  }
+  body.the303-footer-v57 .site-footer:not(.v57-cursor-ready):hover .footer-wordmark {
+    color:rgba(68,54,46,.09);
+  }
+}
+@media (max-width:850px), (prefers-reduced-motion:reduce) {
+  body.the303-footer-v57 .site-footer .footer-wordmark {
+    transform:none !important;
+    transition:none !important;
+    will-change:auto;
+  }
+}

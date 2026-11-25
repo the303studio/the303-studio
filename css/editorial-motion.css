@@ -1,0 +1,192 @@
+body.the303-motion-test {
+  --wave-ease:cubic-bezier(.16,1,.3,1);
+  overflow-x:clip;
+  & .opening-scenes { isolation:isolate; overflow:clip; position:relative; }
+  & #home { z-index:0; }
+  & #philosophy { position:relative; z-index:1; background-color:#faf8f5; }
+  @media(max-width:850px) {
+    & #philosophy .phil-kw-item p { font-weight:500; }
+  }
+  & #philosophy .phil-content .section-title { color:#44362e; }
+  & #philosophy .phil-content { margin-inline:auto; text-align:center; }
+  & #philosophy .phil-keywords {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    width:fit-content;
+    max-width:100%;
+    margin-inline:auto;
+  }
+  & #philosophy .em-row { transition:transform 1.1s var(--wave-ease); }
+  & #philosophy .phil-kw-item { position:relative; }
+  & .em-owned { opacity:1!important; transform:none!important; visibility:visible!important; }
+  & .em-row { display:block; line-height:inherit; }
+  & .em-heading { white-space:normal!important; }
+  & .em-mask { display:inline-block; vertical-align:top; line-height:inherit; overflow:hidden; padding-bottom:.14em; margin-bottom:-.14em; }
+  & .em-unit { display:inline-block; transform-origin:left bottom; line-height:inherit; }
+  & .em-photo { overflow:hidden; }
+  & :is(.v06-cert-links,.v06-media-actions,.v07-journal-links,.phil-label-link) span[aria-hidden] { display:inline-block; transition:transform .4s var(--wave-ease); }
+  @media(hover:hover) {
+    & :is(.v06-cert-links a,.v06-media-actions a,.v07-journal-links a,.phil-label-link):hover span[aria-hidden] { transform:translate(3px,-3px); }
+  }
+  @media(min-width:851px) {
+    & #news { overflow:clip; }
+    & #news .v07-journal-copy { position:sticky; top:120px; align-self:start; }
+  }
+  @media(prefers-reduced-motion:no-preference) {
+    & .em-heading .em-unit { transition:transform 1.15s var(--wave-ease) var(--delay); }
+    & .em-heading:not(.em-open) .em-unit { transform:translateY(100%); }
+    & #philosophy .em-unit { transition-duration:1.1s; }
+    & #philosophy .em-heading:not(.em-open) .em-unit { transform:translateY(110%) rotate(4deg); }
+    & #philosophy .em-heading:not(.em-open) .em-row:nth-child(odd) { transform:translateX(var(--drift,0px)); }
+    & #philosophy .em-heading:not(.em-open) .em-row:nth-child(even) { transform:translateX(calc(-1 * var(--drift,0px))); }
+    & .em-group .phil-kw-item { transition:transform .9s var(--wave-ease) var(--delay),opacity .9s var(--wave-ease) var(--delay); }
+    & .em-group:not(.em-open) .phil-kw-item { transform:translateY(24px); opacity:0; }
+    & .em-photo { transition:clip-path 1.2s var(--wave-ease); clip-path:inset(0); }
+    & .em-photo:not(.em-open) { clip-path:inset(0); }
+    & #news .em-grid.em-open .v07-gallery-tile { animation:the303-tile-seat .76s cubic-bezier(.19,1,.22,1) var(--delay) both; }
+    & #news .em-grid .v07-gallery-tile:focus-visible { animation:none; opacity:1; }
+    & #news .em-grid:not(.em-open) .v07-gallery-tile:not(:focus-visible) { translate:0 24px; opacity:0; }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    & .reveal { transform:none!important; opacity:1!important; }
+    & *, & *::before { transition-duration:0s!important;animation-duration:0s!important; }
+  }
+}
+body.the303-motion-test {
+  @media(prefers-reduced-motion:no-preference) {
+    & .v06-media-photo.em-photo { transition-duration:1.2s; }
+    & .v06-media-photo.em-photo > .v07-media-sequence { scale:1; transition:scale 1.2s var(--wave-ease); }
+    & .v06-media-photo.em-photo:not(.em-open) > .v07-media-sequence { scale:1.08; }
+    & .v06-media-photo.em-photo:not(.em-open) { clip-path:inset(8% 0 0); }
+  }
+  @media(min-width:851px) and (prefers-reduced-motion:no-preference) {
+    & :is(#program .v06-dance-image,#ttc .v06-cert-image) img {
+      transform:translateY(var(--photo-offset,0px)) scale(var(--photo-scale,1.14));
+      transition:none;
+    }
+  }
+  @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+    & #news .v07-gallery-tile img { transition:transform .85s cubic-bezier(.22,1,.36,1); }
+    & #news .v07-gallery-tile:hover img { transform:scale(1.05); }
+  }
+  @media(prefers-reduced-motion:reduce) {
+    & .em-photo, & .em-photo img, & #news .v07-gallery-tile, & #news .v07-gallery-tile img,
+    & :is(.v06-feature-flying,.v06-feature-barre,.v07-gallery-frame) {
+      clip-path:none!important; transform:none!important; translate:none!important; scale:none!important;
+    }
+    & :is(.em-photo,.v06-feature-flying,.v06-feature-barre,.v07-gallery-frame,.v07-gallery-tile) { opacity:1!important; }
+  }
+}
+
+@keyframes the303-tile-seat {
+  from { transform:translateY(14px); opacity:0; }
+
+  to { transform:translateY(0) scale(1); opacity:1; }
+}
+@keyframes the303-tile-seat-mobile {
+  from { transform:translateY(12px); opacity:0; }
+  to { transform:translateY(0); opacity:1; }
+}
+body.the303-motion-test #program .em-program-name {
+  overflow:hidden;
+  overflow:clip;
+  overflow-clip-margin:0.045em;
+}
+body.the303-motion-test #program .em-program-name :is([data-text],.em-unit) {
+  display:inline-block;
+}
+@media(prefers-reduced-motion:no-preference) {
+  body.the303-motion-test #program {
+    & .em-lift > span { transition:transform 1.05s cubic-bezier(.16,1,.3,1); }
+    & .em-lift:not(.em-program-open) > span { transform:translateY(110%); }
+    & .em-glide > span { transition:transform .85s cubic-bezier(.22,1,.36,1); }
+    & .em-glide:not(.em-program-open) > span { transform:translate(-28px,80%); }
+    & .em-dance .em-unit { transition:transform 1.05s cubic-bezier(.16,1,.3,1) var(--dance-delay,0s); }
+    & .em-dance .em-mask:nth-of-type(2) { --dance-delay:.08s; }
+    & .em-dance:not(.em-program-open) .em-unit { transform:translateY(110%) rotate(2.5deg); }
+  }
+}
+@media(max-width:850px) and (prefers-reduced-motion:no-preference) {
+  body.the303-motion-test #news .em-grid.em-open .v07-gallery-tile {
+    animation-name:the303-tile-seat-mobile;
+    animation-duration:.55s;
+  }
+}
+
+/* THE303 V29 MOBILE OPENING OVERLAP — preserves desktop hero and footer. */
+@media (max-width: 850px) {
+  body.the303-motion-test .opening-scenes {
+    /* Clip only horizontal overflow; a scrolling/clipping parent breaks sticky. */
+    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  body.the303-motion-test #home.the303-intro-v05 {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    min-height: 0;
+    z-index: 0;
+  }
+  body.the303-motion-test #philosophy {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/* PROGRAM / editorial secondary journey below the AERIAL DANCE scene. */
+body.the303-motion-test #program .v06-program-guide-link {
+  max-width: 1240px;
+  margin: 28px auto 0;
+  display: flex;
+  justify-content: flex-end;
+}
+body.the303-motion-test #program .v06-program-guide-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 0 7px;
+  border-bottom: 1px solid rgba(100, 75, 68, .45);
+  color: #664e47;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -.015em;
+}
+body.the303-motion-test #program .v06-program-guide-link a span {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+@media (hover: hover) {
+  body.the303-motion-test #program .v06-program-guide-link a:hover span {
+    transform: translate(3px, -3px);
+  }
+}
+body.the303-motion-test #program .v06-program-guide-link a:focus-visible {
+  outline: 2px solid #9b6864;
+  outline-offset: 5px;
+}
+@media (max-width: 850px) {
+  body.the303-motion-test #program .v06-program-guide-link {
+    margin: 22px 16px 0;
+  }
+}
+
+
+/* V39 — PHILOSOPHY's slow, scroll-led editorial title; no change to photography. */
+@media (prefers-reduced-motion: no-preference) {
+  body.the303-motion-test #philosophy .section-title.em-phil-scroll .em-row {
+    transition: none;
+    transform: translateX(var(--phil-side-shift,0px));
+  }
+  body.the303-motion-test #philosophy .section-title.em-phil-scroll .em-unit {
+    transition: none;
+    transform: translateY(var(--phil-rise,0%)) rotate(var(--phil-turn,0deg));
+  }
+  body.the303-motion-test #philosophy .em-phil-keywords .phil-kw-item {
+    transition: none;
+    transform: translateY(var(--phil-keyword-rise,0px));
+    opacity: var(--phil-keyword-alpha,1);
+  }
+}

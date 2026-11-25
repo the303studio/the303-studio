@@ -343,3 +343,63 @@
   .news-page .nn-filters{gap:2px 11px}
   .news-page .nn-filter{font-size:13px}
 }
+
+/* v3.1 · Mobile pinned CTA alignment refinement.
+   Keep the evergreen schedule notice as-is; move non-schedule pinned blog links to the right edge.
+   Scoped to the notice page only. */
+@media(max-width:620px){
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-content{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) max-content;
+    grid-template-rows:auto auto;
+    column-gap:14px;
+    row-gap:5px;
+    align-items:end;
+  }
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-title{
+    grid-column:1;
+    grid-row:1;
+    margin-bottom:0;
+  }
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-desc{
+    grid-column:1;
+    grid-row:2;
+    margin-bottom:0;
+  }
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-more{
+    grid-column:2;
+    grid-row:1 / 3;
+    justify-self:end;
+    align-self:end;
+    margin-top:0;
+    margin-left:auto;
+    white-space:nowrap;
+    text-align:right;
+  }
+}
+
+/* V60 · Mobile important notices: keep the outward link right-aligned,
+   but give each headline and summary the full available width. */
+@media (max-width:620px) {
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-content {
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto auto auto;
+    row-gap:5px;
+  }
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-title {
+    grid-column:1;
+    grid-row:1;
+  }
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-desc {
+    grid-column:1;
+    grid-row:2;
+  }
+  .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-more {
+    grid-column:1;
+    grid-row:3;
+    justify-self:end;
+    align-self:start;
+    margin-top:8px;
+    margin-left:0;
+  }
+}

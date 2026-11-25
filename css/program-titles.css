@@ -1,0 +1,19 @@
+body[data-page="program-barre"] .bar17 .b-hero-title,
+body[data-page="program-dance"] .dance18 .d-title,
+.first-class-heading #guide-title {
+  font:600 clamp(48px,4.9vw,72px)/.98 'Montserrat',sans-serif;
+  letter-spacing:-.072em;
+}
+@media(max-width:850px) {
+  body[data-page="program-barre"] .bar17 .b-hero-title,
+  body[data-page="program-dance"] .dance18 .d-title,
+  .first-class-heading #guide-title {
+    font-size:clamp(38px,10.2vw,52px);
+    letter-spacing:-.066em;
+  }
+}
+@media(max-width:360px) {
+  body[data-page="program-barre"] .bar17 .b-hero-title,
+  body[data-page="program-dance"] .dance18 .d-title,
+  .first-class-heading #guide-title { font-size:38px; }
+}

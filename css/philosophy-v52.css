@@ -1,0 +1,393 @@
+/* THE303 V52 — PHILOSOPHY editorial hierarchy and one-shot reveal.
+   Scoped to the home philosophy section only. Existing background, opacity,
+   sticky opening scene, program and footer are intentionally untouched. */
+body.the303-motion-test.the303-index-v06 #philosophy .phil-content {
+  max-width: 1000px;
+  padding-block: clamp(82px, 9vw, 126px);
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link {
+  margin-bottom: 18px;
+  color: #765c52;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+  max-width: 860px;
+  margin: 18px auto 42px;
+  font-family: 'Nanum Myeongjo',serif;
+  font-size: clamp(45px, 5.15vw, 74px);
+  line-height: 1.18;
+  font-weight: 700;
+  letter-spacing: -.053em;
+  color: #44362e;
+  text-wrap: balance;
+  word-break: keep-all;
+}
+body.the303-motion-test #philosophy .phil-v52-line {
+  display: block;
+  white-space: normal;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-keywords {
+  width: min(100%, 760px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: clamp(14px, 3.1vw, 44px);
+  justify-content: center;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item {
+  min-width: 0;
+  gap: 0;
+  text-align: center;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  line-height: 1.18;
+  color: #44362e;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong span:first-child {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: clamp(23px, 2vw, 27px);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  color: #44362e;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong span:last-child {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: #836a5d;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item p {
+  margin: 11px auto 0;
+  font-family: 'Noto Sans KR',sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: -.02em;
+  color: #635850;
+  word-break: keep-all;
+}
+@media (max-width: 850px) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content {
+    padding: clamp(62px, 12vw, 88px) 20px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link { margin-bottom: 14px; }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+    font-size: clamp(34px, 8.6vw, 49px);
+    line-height: 1.21;
+    margin: 13px auto 34px;
+    letter-spacing: -.054em;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-keywords {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: clamp(8px, 2.4vw, 21px);
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong span:first-child {
+    font-size: clamp(19px, 4.9vw, 23px);
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong span:last-child {
+    font-size: 9px;
+    letter-spacing: .09em;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item p {
+    font-size: clamp(10px, 2.65vw, 11.5px);
+    line-height: 1.58;
+    margin-top: 9px;
+  }
+}
+@media (max-width: 360px) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+    font-size: 33px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item p {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  body.the303-motion-test #philosophy.phil-v52-ready .phil-v52-line {
+    transition: transform .82s cubic-bezier(.16,1,.3,1),
+                opacity .68s cubic-bezier(.16,1,.3,1);
+    transition-delay: calc(var(--phil-line-index,0) * 110ms + 50ms);
+  }
+  body.the303-motion-test #philosophy.phil-v52-ready:not(.phil-v52-visible) .phil-v52-line {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  body.the303-motion-test #philosophy.phil-v52-ready .phil-kw-item {
+    transition: transform .75s cubic-bezier(.16,1,.3,1),
+                opacity .7s cubic-bezier(.16,1,.3,1);
+    transition-delay: var(--delay,0s);
+  }
+  body.the303-motion-test #philosophy.phil-v52-ready:not(.phil-v52-visible) .phil-kw-item {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+
+/* V53 | PHILOSOPHY : photographic dark-warm editorial treatment.
+   All overrides are confined to #philosophy; the original PC/MO photograph
+   and its native <picture> paths are not altered. */
+body.the303-motion-test.the303-index-v06 #philosophy.phil-wide-section {
+  background-color: #2b2420;
+  isolation: isolate;
+}
+/* Unmask the source photograph so the warm overlay has real detail behind it;
+   a mild luminance reduction retains highlights without dimming silhouettes to black. */
+body.the303-motion-test.the303-index-v06 #philosophy .phil-bg {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  z-index: 0;
+}
+body.the303-motion-test.the303-index-v06 #philosophy:hover .phil-bg {
+  transform: none;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-bg-image {
+  filter: brightness(.76) saturate(.86);
+  transform: scale(1);
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+/* Exact requested warm-dark base plus a restrained centre-weighted vignette
+   to keep bright ring / hand contours from obscuring ivory letters. */
+body.the303-motion-test.the303-index-v06 #philosophy.phil-wide-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg,
+      rgba(32,24,22,.07) 0%,
+      rgba(32,24,22,.14) 36%,
+      rgba(32,24,22,.19) 52%,
+      rgba(32,24,22,.14) 68%,
+      rgba(32,24,22,.07) 100%),
+    rgba(32,24,22,.36);
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1060px;
+  color: #FAF8F5;
+  text-shadow: 0 1px 14px rgba(20, 14, 12, .18);
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link,
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link .eyebrow,
+body.the303-motion-test.the303-index-v06 #philosophy .phil-link-arrow {
+  color: #FAF8F5;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link .eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .145em;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-link-arrow { font-size: 17px; }
+body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+  max-width: 920px;
+  margin: 22px auto 40px;
+  font-size: clamp(42px, 4.6vw, 66px);
+  line-height: 1.17;
+  letter-spacing: -.046em;
+  font-weight: 700;
+  color: #FAF8F5;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-keywords {
+  width: min(100%, 860px);
+  gap: 0;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item {
+  position: relative;
+  padding: 3px clamp(12px, 2vw, 26px) 5px;
+  text-shadow: 0 1px 11px rgba(20,14,12,.15);
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item + .phil-kw-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(250,248,245,.28);
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong,
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong span:first-child,
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong span:last-child {
+  color: #FAF8F5;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item strong span:last-child {
+  opacity: .82;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item p {
+  max-width: 245px;
+  margin: 12px auto 0;
+  color: #FAF8F5;
+  font-size: clamp(14px, 1.05vw, 15px);
+  font-weight: 500;
+  line-height: 1.65;
+}
+@media (max-width:850px) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content {
+    padding-inline: 18px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link .eyebrow {
+    font-size: 11.5px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+    font-size: clamp(35px, 8.8vw, 50px);
+    line-height: 1.2;
+    margin: 16px auto 32px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item {
+    padding-inline: clamp(6px, 1.8vw, 16px);
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item p {
+    font-size: clamp(12.5px, 3.15vw, 14px);
+    margin-top: 9px;
+    line-height: 1.62;
+  }
+}
+@media (max-width:360px) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+    font-size: 34px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item p {
+    font-size: 12.5px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  /* Prime at 1.07 immediately while offscreen; otherwise an entrance observer
+     could interrupt the zoom-in before it ever reaches its intended start. */
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready .phil-bg-image {
+    transform: scale(1.07);
+    transition: none;
+    will-change: transform;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready.phil-v52-visible .phil-bg-image {
+    transform: scale(1);
+    transition: transform 5.6s cubic-bezier(.42, 0, .58, 1);
+  }
+  /* Do not animate the *hide* state on initial load: that would leave
+     keywords visible during the first ~0.4s and defeat the timed entrance. */
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready:not(.phil-v52-visible) .phil-kw-item {
+    opacity: 0;
+    transform: translateY(19px);
+    transition: none;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready.phil-v52-visible .phil-kw-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform .79s cubic-bezier(.16,1,.3,1) var(--delay, .39s),
+                opacity .74s cubic-bezier(.16,1,.3,1) var(--delay, .39s);
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready:not(.phil-v52-visible) .phil-v52-line {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: none;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready.phil-v52-visible .phil-v52-line {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform .82s cubic-bezier(.16,1,.3,1),
+                opacity .68s cubic-bezier(.16,1,.3,1);
+    transition-delay: calc(var(--phil-line-index,0) * 110ms + 50ms);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-bg-image {
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+}
+
+/* V54 — PHILOSOPHY micro-refinement (no new imagery or motion).
+   1. Balanced eyebrow hairlines replace the visible external-link glyph.
+   2. More breathing room between the two-line title and three keywords.
+   3. Clearer, slightly larger supporting copy on desktop only.
+   Keep the existing anchor itself, editor text bindings, and V53 entrance intact. */
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link {
+  gap: 13px;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link::before,
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link::after {
+  content: '';
+  display: block;
+  flex: 0 0 clamp(28px, 3vw, 38px);
+  height: 1px;
+  background-color: rgba(250, 248, 245, .74);
+  pointer-events: none;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link .phil-link-arrow {
+  display: none;
+}
+/* The shared .eyebrow already draws a left hairline: suppress only that
+   inherited pseudo-element so the new pair stays perfectly symmetrical. */
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link .eyebrow::before {
+  content: none;
+  display: none;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link:hover::before,
+body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link:hover::after {
+  background-color: #FAF8F5;
+}
+body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+  margin-bottom: 58px;
+}
+@media (min-width: 851px) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-kw-item p {
+    font-size: clamp(15.5px, 1.18vw, 17px);
+    font-weight: 500;
+    line-height: 1.65;
+    letter-spacing: -.01em;
+    color: #FAF8F5;
+    text-shadow: 0 1px 4px rgba(16, 10, 8, .55);
+  }
+}
+@media (max-width: 850px) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link {
+    gap: 10px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link::before,
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-label-link::after {
+    flex-basis: 24px;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+    margin-bottom: 46px;
+  }
+}
+@media (max-width: 360px) {
+  body.the303-motion-test.the303-index-v06 #philosophy .phil-content .section-title.phil-v52-title {
+    margin-bottom: 42px;
+  }
+}
+
+
+/* V55 — Title-visible entrance timing. No layout, palette, photo or copy changes.
+   Prepare both lines below the frame, then make them rise 0.15s apart.
+   Keywords follow the title (0.12s staggering from JS). */
+@media (prefers-reduced-motion: no-preference) {
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready:not(.phil-v52-visible) .phil-v52-line {
+    opacity: 0;
+    transform: translate3d(0, 29px, 0);
+    transition: none;
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready.phil-v52-visible .phil-v52-line {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: transform .96s cubic-bezier(.16, 1, .3, 1),
+                opacity .85s cubic-bezier(.16, 1, .3, 1);
+    transition-delay: calc(var(--phil-line-index, 0) * 150ms + 80ms);
+  }
+  body.the303-motion-test.the303-index-v06 #philosophy.phil-v52-ready.phil-v52-visible .phil-kw-item {
+    transition: transform .89s cubic-bezier(.16, 1, .3, 1) var(--delay, .83s),
+                opacity .82s cubic-bezier(.16, 1, .3, 1) var(--delay, .83s);
+  }
+}

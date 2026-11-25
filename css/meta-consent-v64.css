@@ -1,0 +1,16 @@
+/* V64 / THE303 Meta consent controls. Independent from existing homepage styles. */
+.the303-meta-consent,.the303-meta-consent *,.the303-meta-footer,.the303-meta-footer *{box-sizing:border-box}
+.the303-meta-consent{position:fixed;z-index:2200;left:clamp(12px,2vw,32px);bottom:clamp(12px,2vw,32px);width:min(540px,calc(100% - 24px));display:flex;align-items:center;gap:18px;padding:18px 20px;border:1px solid rgba(102,78,64,.19);border-radius:2px;background:#faf8f5;color:#3d332e;box-shadow:0 12px 32px rgba(48,32,25,.16);font-family:'Noto Sans KR',sans-serif;letter-spacing:-.015em}
+.the303-meta-consent-copy{min-width:0;flex:1}
+.the303-meta-consent-copy strong{display:block;font-size:13px;font-weight:700;line-height:1.5;color:#44362e}
+.the303-meta-consent-copy p{font-size:11px;line-height:1.65;margin:5px 0 6px;color:#66574f;word-break:keep-all}
+.the303-meta-consent-copy a{font-size:11px;color:#754747;border-bottom:1px solid rgba(117,71,71,.35);padding-bottom:2px;text-decoration:none}
+.the303-meta-consent-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.the303-meta-consent-actions button{appearance:none;min-width:65px;min-height:38px;padding:8px 11px;border:1px solid #754747;font:500 12px/1.35 'Noto Sans KR',sans-serif;cursor:pointer;border-radius:1px}
+.the303-meta-reject{background:#faf8f5;color:#754747}
+.the303-meta-accept{background:#754747;color:#faf8f5}
+.the303-meta-consent button:focus-visible,.the303-meta-footer :focus-visible{outline:2px solid #a56d61;outline-offset:3px}
+.the303-meta-footer{display:inline-flex;align-items:center;gap:12px;font:500 10px/1.4 'Noto Sans KR',sans-serif;letter-spacing:-.01em}
+.the303-meta-footer a,.the303-meta-footer button{color:inherit!important;font:inherit;text-decoration:underline;text-underline-offset:3px;opacity:.85;cursor:pointer;background:transparent;border:0;padding:0;white-space:nowrap}
+@media(max-width:850px){.the303-meta-consent{bottom:calc(72px + env(safe-area-inset-bottom,0px));left:12px;width:calc(100% - 24px);padding:16px;gap:12px;flex-direction:column;align-items:stretch}.the303-meta-consent-actions{justify-content:flex-end}.the303-meta-consent-actions button{min-width:92px;min-height:40px}.the303-meta-footer{gap:12px}}
+@media(max-width:350px){.the303-meta-consent{padding:13px}.the303-meta-consent-copy p{font-size:10.5px}}

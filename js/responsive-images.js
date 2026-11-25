@@ -19,10 +19,15 @@
   function choose(element,desktop,mobile,done){
     const ticket=(jobs.get(element)||0)+1;jobs.set(element,ticket);
     if(!mq.matches||!mobile||mobile===desktop){done(desktop);return;}
-    // Do not replace the desktop fallback until the mobile crop really exists.
-    probe(mobile).then(available=>{
+    // Only the factory STRENGTH mobile crop gets a versioned URL. This prevents
+    // older cached JPG bytes from masking the approved 10%-looser photograph.
+    // Keep every editor-supplied custom path unchanged.
+    const mobileUrl=(element.dataset.imageBgMobile==='hero3Mobile'
+      && /(?:^|\/)03-strength-mo\.jpg(?:\?.*)?$/i.test(mobile))
+      ? mobile.split('?')[0]+'?crop=10pct-20261115-r2' : mobile;
+    probe(mobileUrl).then(available=>{
       if(jobs.get(element)!==ticket)return;
-      done(available?mobile:desktop);
+      done(available?mobileUrl:desktop);
     });
   }
   function refreshOne(element){

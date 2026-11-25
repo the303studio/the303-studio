@@ -2,7 +2,7 @@
 (()=>{'use strict';
  const grid=document.getElementById('galleryGrid');if(!grid)return;
  // The sequence is an editorial display order. Photo IDs and edit keys remain stable.
- const displayOrder=[1,7,2,3,11,4,5,6,19,8,9,10,12,13,14,15,16,17,18,20];
+ const displayOrder=Array.from({length:25},(_,i)=>i+1);
  const byId=new Map(Array.from(grid.querySelectorAll('.ng-card')).map(card=>[Number((card.querySelector('img')?.dataset.editImage||'').match(/_(\d+)$/)?.[1]||0),card]));
  displayOrder.forEach(n=>{const card=byId.get(n);if(card)grid.appendChild(card)});
  const cards=Array.from(grid.querySelectorAll('.ng-card'));
@@ -19,7 +19,7 @@
  const more=document.getElementById('galleryMore');
  const total=document.getElementById('galleryCount');
  const note=document.getElementById('galleryPreviewNote');
- const preview=false; // Public gallery: no preview-only override
+ const preview=new URLSearchParams(location.search).get('gallery-preview')==='on';
  const pageSize=window.innerWidth>=1100?15:12;
  let shown=pageSize,active=-1,opener=null,bodyOverflow='';
  let startX=0,startY=0,touchStarted=false;
@@ -67,7 +67,7 @@
   image.onerror=()=>{image.onerror=null;if(image.src!==backup)image.src=backup;};
   image.src=original||backup;
   image.alt=thumb.alt||'갤러리 사진';
-  const memo=card.querySelector('[data-edit^="gallery_caption_"]')?.textContent?.trim()||'';
+  const memo=card.querySelector('figcaption [data-edit]')?.textContent?.trim()||'';
   title.textContent=/^PHOTO\s*\d+$/i.test(memo)?'':memo;
   title.hidden=!title.textContent;
   counter.textContent=`${String(active+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;

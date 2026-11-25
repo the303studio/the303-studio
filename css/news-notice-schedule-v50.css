@@ -1,0 +1,79 @@
+/* THE303 STUDIO / V50: one evergreen CLASS SCHEDULE priority notice only.
+   Do not restyle other notices or change the existing board layout. */
+body[data-page="news-notice"] .news-page .nn-entry--schedule{
+  position:relative;
+}
+body[data-page="news-notice"] .news-page .nn-entry--schedule::before{
+  content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;
+  border-radius:3px;background:#a56d61;pointer-events:none;
+}
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-inner{
+  padding-left:18px;padding-top:24px;padding-bottom:25px;
+}
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-meta{
+  align-self:start;padding-top:4px;
+}
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-kind{
+  color:#754747;font-weight:600;
+}
+/* V51: line up the schedule link with right-side links in ordinary notices.
+   Keep copy in the left column; only the CTA changes position. */
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-content{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) max-content;
+  grid-template-rows:auto auto auto;
+  column-gap:clamp(18px,2.8vw,40px);
+  row-gap:7px;
+  align-items:center;
+  /* The accent gutter is 9px wider than an ordinary row. Keep the right CTA edge aligned. */
+  margin-right:-9px;
+}
+body[data-page="news-notice"] .news-page .nn-schedule-eyebrow{
+  display:block;grid-column:1;grid-row:1;
+  font:600 10px/1.55 'Montserrat','Noto Sans KR',sans-serif;
+  letter-spacing:.10em;color:#a56d61;
+}
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-title{
+  grid-column:1;grid-row:2;margin:0;color:#754747;
+  font-size:clamp(21px,calc(1.75vw + 2px),27px);line-height:1.44;
+}
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-desc{
+  grid-column:1;grid-row:3;margin:0;font-size:12px;line-height:1.75;max-width:680px;
+}
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-more{
+  grid-column:2;grid-row:1 / 4;justify-self:end;align-self:center;
+  margin:0;font-size:11px;line-height:1.5;white-space:nowrap;
+  color:#754747;border-bottom-color:#a56d61;
+}
+@media(min-width:621px) and (max-width:850px){
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-content{
+    grid-template-columns:minmax(0,1fr) max-content;
+    column-gap:16px;
+    margin-right:-15px;
+  }
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-more{
+    grid-column:2;grid-row:1 / 4;justify-self:end;align-self:center;margin:0;
+  }
+}
+@media(max-width:620px){
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-inner{
+    padding-left:14px;padding-top:21px;padding-bottom:22px;
+  }
+  body[data-page="news-notice"] .news-page .nn-entry--schedule::before{top:12px;bottom:12px;}
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-meta{padding-bottom:7px;}
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-title{font-size:22px;}
+  body[data-page="news-notice"] .news-page .nn-schedule-eyebrow{font-size:9px;letter-spacing:.075em;}
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-content{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:auto auto auto auto;
+    row-gap:5px;
+    margin-right:-9px;
+  }
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-more{
+    grid-column:1;grid-row:4;justify-self:end;align-self:start;
+    margin-top:8px;font-size:10px;
+  }
+}
+@media(max-width:340px){
+  body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-title{font-size:21px;}
+}

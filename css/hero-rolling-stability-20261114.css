@@ -1,0 +1,51 @@
+/* THE303 STUDIO / 03.TEST / Home hero only.
+   One viewport-wide rail, rather than seven 100vw panels sharing a giant
+   700vw GPU layer. Actual slide animations are directed by js/home.js.
+   Photo crop, zoom, keywords, navigation and other sections are untouched. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slider{
+  position:relative;
+  display:block;
+  width:100% !important;
+  height:100%;
+  transform:none !important;
+  transition:none !important;
+  will-change:auto;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100% !important;
+  height:100%;
+  flex:none;
+  visibility:hidden;
+  overflow:hidden;
+  backface-visibility:hidden;
+}
+/* The fifth scene is now a bright, natural barre class photo.
+   Keep the already approved charcoal/Jost brand typography. */
+@media(max-width:850px){
+  /* No additional mobile crop or layout edits; use the supplied portrait asset. */
+}
+/* The new fifth mobile photograph places THE303 over the dark leggings.
+   Change only this scene's lettering/rail contrast, never the global palette. */
+@media(max-width:850px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--brand .hero-content h2{
+    color:#f2eee8 !important;
+    text-shadow:0 1px 3px rgba(24,22,21,.18) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-navigation .hero-dot,
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-navigation .hero-position,
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-navigation .hero-pause{
+    color:#f5f0eb !important;
+    text-shadow:0 1px 3px rgba(23,22,22,.38) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-navigation .hero-dot i{
+    background:#f5f0eb !important;
+    box-shadow:0 1px 2px rgba(0,0,0,.28) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-navigation .hero-pause{
+    border-color:rgba(245,240,235,.48) !important;
+    background:rgba(0,0,0,.13) !important;
+  }
+}

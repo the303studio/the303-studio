@@ -1,0 +1,31 @@
+/* THE303 INDEX V12 — BARRE section upgraded to match the FLYING five-frame editorial sequence. */
+body.the303-index-v10 #program .v06-feature-barre .v10-film-stage{
+  position:relative;isolation:isolate;min-width:0;
+  padding:clamp(11px,1.25vw,18px) clamp(11px,1.25vw,18px) 0;
+  background:var(--v10-mat);border:1px solid rgba(111,95,83,.15);
+  box-shadow:0 9px 27px rgba(55,45,38,.045);
+}
+body.the303-index-v10 #program .v06-feature-barre .v10-film-stage .v06-program-photo{
+  width:100%;margin:0;height:clamp(470px,51vw,720px);
+  border:0;box-shadow:none;background:#d6d0c9;
+}
+body.the303-index-v10 #program .v06-feature-barre:hover .v09-film-layer img{transition:opacity 140ms ease-out}
+@media(max-width:850px){
+  body.the303-index-v10 #program .v06-feature-barre{padding-inline:0}
+  body.the303-index-v10 #program .v06-feature-barre .v10-film-stage{
+    margin:0 clamp(17px,5.3vw,29px);
+    padding:9px 9px 0;
+    box-shadow:0 8px 25px rgba(55,45,38,.05);
+  }
+  body.the303-index-v10 #program .v06-feature-barre .v10-film-stage .v06-program-photo{
+    height:clamp(365px,108vw,590px);width:100%;margin:0;
+  }
+  body.the303-index-v10 #program .v06-feature-barre > :is(.v06-program-meta,h3,.v06-program-ko,.v06-program-descr){
+    margin-left:clamp(23px,6.5vw,36px);margin-right:clamp(23px,6.5vw,36px);
+  }
+  body.the303-index-v10 #program .v06-feature-barre .v06-program-meta{margin-top:17px;margin-bottom:13px}
+}
+@media(max-width:370px){
+  body.the303-index-v10 #program .v06-feature-barre .v10-film-stage{margin-inline:16px}
+  body.the303-index-v10 #program .v06-feature-barre .v10-film-stage .v06-program-photo{height:108vw}
+}

@@ -232,3 +232,9 @@ body[data-page="ttc-cert"] .ttc-main .ttc-guidance-header p {margin:0;}
   }
   body[data-page="ttc-cert"] .ttc-main .ttc-cta-main p {margin-top:12px;}
 }
+
+/* V26 — keep existing photo dimensions; refine portrait crop without changing typography or layout. */
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-photo img,
+body[data-page="ttc-cert"] .ttc-main .ttc-editorial-photo img {
+  object-position: 50% 25%;
+}

@@ -112,3 +112,9 @@
   .media-rental-main .mr-detail-photo { aspect-ratio:1.05/1; }
   .media-rental-main .mr-detail-photo img { object-position:center center; }
 }
+
+/* 2026-11-15 | Rental space: actual on-site photo hero and restored lighting-detail section.
+   Layout-only aspect adjustment; all editor bindings and photo paths remain intact. */
+@media (min-width:901px){ .media-rental-main .mr-hero-photo{aspect-ratio:2.15/1} }
+@media (min-width:601px) and (max-width:900px){ .media-rental-main .mr-hero-photo{aspect-ratio:1.8/1} }
+@media (max-width:600px){ .media-rental-main .mr-hero-photo{aspect-ratio:1.42/1} }

@@ -1,0 +1,159 @@
+/* THE303 STUDIO V13.3.3 — unified hero keyword and navigation refinement.
+   Purpose:
+   1) Keep only STRENGTH high on mobile and settle the other four keywords lower.
+   2) Unify keyword colour / scale behaviour so SCULPT and THE303 do not drift.
+   3) Apply one consistent navigation rail style to every scene, including the last slide.
+*/
+
+/* --- HERO NAVIGATION: use the scene-01 dark translucent pill on every slide --- */
+body.the303-index-v111 #home.the303-intro-v05 .hero-navigation,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-navigation{
+  z-index:8 !important;
+  color:#fffdf8 !important;
+  background:rgba(0,0,0,.42) !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  border-radius:999px !important;
+  padding:0 10px !important;
+  margin-left:-10px !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.12) !important;
+  -webkit-backdrop-filter:blur(6px) !important;
+  backdrop-filter:blur(6px) !important;
+  mix-blend-mode:normal !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-navigation .hero-dot,
+body.the303-index-v111 #home.the303-intro-v05 .hero-navigation .hero-position{
+  color:#fffdf8 !important;
+  text-shadow:none !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-navigation .hero-dot::after,
+body.the303-index-v111 #home.the303-intro-v05 .hero-navigation .hero-dot i{
+  background:currentColor !important;
+  opacity:.38 !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-navigation .hero-dot[aria-pressed="true"]::after,
+body.the303-index-v111 #home.the303-intro-v05 .hero-navigation .hero-dot[aria-pressed="true"] i{
+  opacity:.96 !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-pause,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-pause,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-pause,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-pause{
+  color:#fffdf8 !important;
+  border:1px solid rgba(255,255,255,.46) !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+@media(hover:hover){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-pause:hover{
+    background:rgba(255,255,255,.12) !important;
+  }
+}
+
+/* --- KEYWORD TYPOGRAPHY: keep the approved V13.3.1 Jost system, remove slide-specific drift --- */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+  font-family:'Jost','Montserrat','Arial',sans-serif !important;
+  font-weight:600 !important;
+  font-size:clamp(60px,8.1vw,125px) !important;
+  letter-spacing:-.035em !important;
+  line-height:1.02 !important;
+  text-transform:uppercase !important;
+  color:#484440 !important;
+  -webkit-text-stroke:0 transparent !important;
+  text-shadow:none !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--brand .hero-content h2{
+  color:#484440 !important;
+  font-weight:600 !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-editorial-link{
+  color:#2f2b29 !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content h2,
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content .hero-editorial-link{
+  color:#484440 !important;
+}
+
+/* Hide the old supporting copy beneath the keywords, keeping only STUDIO above THE303. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide:not(.hero-slide--brand) .hero-editorial-index,
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-editorial-caption{
+  display:none !important;
+}
+
+/* --- DESKTOP / TABLET PLACEMENT --- */
+@media(min-width:1101px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    top:auto !important;
+    bottom:clamp(122px,17vh,192px) !important;
+    left:clamp(44px,5.8vw,110px) !important;
+    right:auto !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content{
+    top:clamp(110px,13.5vh,168px) !important;
+    bottom:auto !important;
+    left:clamp(36px,5.8vw,108px) !important;
+    right:auto !important;
+  }
+}
+@media(min-width:851px) and (max-width:1100px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+    font-size:clamp(55px,7.3vw,90px) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    top:auto !important;
+    bottom:150px !important;
+    left:32px !important;
+    right:auto !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content{
+    top:15vh !important;
+    bottom:auto !important;
+    left:32px !important;
+    right:auto !important;
+  }
+}
+
+/* --- MOBILE: STRENGTH stays high; the other four settle lower --- */
+@media(max-width:850px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+    font-size:clamp(31px,8.56vw,40px) !important;
+    line-height:1.06 !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    top:auto !important;
+    bottom:calc(162px + env(safe-area-inset-bottom,0px)) !important;
+    left:clamp(22px,5.7vw,30px) !important;
+    right:16px !important;
+    width:auto !important;
+    max-width:none !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-content{
+    bottom:calc(145px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content{
+    top:clamp(105px,14vh,140px) !important;
+    bottom:auto !important;
+    left:16px !important;
+    right:16px !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-navigation,
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation,
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation,
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="brand"] .hero-navigation{
+    margin-left:-8px !important;
+    right:14px !important;
+    padding:0 8px !important;
+  }
+}
+@media(max-width:850px) and (max-height:720px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    bottom:calc(147px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-content{
+    bottom:calc(127px + env(safe-area-inset-bottom,0px)) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content{
+    top:98px !important;
+  }
+}

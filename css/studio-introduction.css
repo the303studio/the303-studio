@@ -1,0 +1,137 @@
+/* THE303 STUDIO / V19 INTRODUCTION PHOTO-LED EDITORIAL STUDY
+   Scoped to about-studio INTRODUCTION. Other sections and editor JS unchanged.
+   Gallery 07 high-res original is copied, not altered or AI-generated.
+*/
+body[data-page="about-studio"] .ae-intro.ae-v19-intro{
+  position:relative;
+  padding:0;
+  min-height:clamp(570px,77svh,770px);
+  display:block;
+  isolation:isolate;
+  overflow:hidden;
+  background:#a78d76;
+}
+body[data-page="about-studio"] .ae-v19-hero-photo{
+  position:absolute;inset:0;z-index:0;
+  width:100%;height:100%;aspect-ratio:auto;max-height:none;
+  background:#98836d;
+}
+body[data-page="about-studio"] .ae-v19-hero-photo img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  object-position: 54% 51%;transform:scale(1.005);
+  animation:ae-v19-hero-settle 16s ease-out both;
+}
+body[data-page="about-studio"] .ae-v19-hero-photo:hover img{transform:none}
+@keyframes ae-v19-hero-settle{from{transform:scale(1.035)}to{transform:scale(1.005)}}
+body[data-page="about-studio"] .ae-v19-photo-shade{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(35,27,22,.53) 0%,rgba(35,27,22,.34) 29%,transparent 60%),
+             linear-gradient(0deg,rgba(35,27,22,.16) 0%,transparent 32%);
+}
+body[data-page="about-studio"] .ae-v19-intro-content{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:clamp(570px,77svh,770px);padding-top:23px;padding-bottom:19px;
+}
+body[data-page="about-studio"] .ae-v19-intro-top,
+body[data-page="about-studio"] .ae-v19-intro-signature{display:flex;align-items:center;justify-content:space-between;gap:18px}
+body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb,
+body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb-current,
+body[data-page="about-studio"] .ae-v19-intro-top .ae-overline{color:rgba(255,250,246,.88)}
+body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb a:hover{color:white}
+body[data-page="about-studio"] .ae-v19-intro-message{
+  max-width:min(830px,72%);padding:0 0 14px;
+  color:#f9f6f2;
+}
+body[data-page="about-studio"] .ae-v19-intro-message .ae-small-index{
+  display:block;margin-bottom:18px;padding:0;
+  font:600 10px/1.5 'Montserrat',sans-serif;
+  letter-spacing:.22em;color:#f3d6c2;
+}
+body[data-page="about-studio"] .ae-v19-intro-message .ae-brand-heading{
+  margin:0 0 9px;color:#fff6ec;font:600 11px/1.45 'Montserrat',sans-serif;letter-spacing:.18em;
+}
+body[data-page="about-studio"] .ae-v19-intro-message .ae-display{
+  max-width:800px;margin:0 0 24px;color:#fffaf5;
+  font:600 clamp(51px,6.7vw,96px)/.98 'Montserrat',sans-serif;
+  letter-spacing:-.07em;overflow-wrap:normal;text-wrap:balance;
+  text-shadow:0 2px 18px rgba(23,21,18,.14);
+}
+body[data-page="about-studio"] .ae-v19-intro-message .ae-korean-lead{
+  color:#fff9f2;font:600 clamp(18px,1.9vw,25px)/1.47 'Nanum Myeongjo',serif;
+  letter-spacing:-.05em;margin:0 0 11px;max-width:630px;
+}
+body[data-page="about-studio"] .ae-v19-intro-message .ae-body{
+  max-width:560px;color:rgba(255,250,246,.9);
+  font:400 clamp(12px,.95vw,14px)/1.85 'Noto Sans KR',sans-serif;
+  letter-spacing:-.015em;
+}
+body[data-page="about-studio"] .ae-v19-intro-signature{
+  padding-top:12px;border-top:1px solid rgba(250,243,232,.42);
+  color:rgba(255,249,242,.85);font:500 9px/1.3 'Montserrat',sans-serif;
+  letter-spacing:.14em;
+}
+@media(max-width:1120px){
+ body[data-page="about-studio"] .ae-v19-intro-message{max-width:80%}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-display{font-size:clamp(54px,7.1vw,82px)}
+}
+@media(max-width:850px){
+ body[data-page="about-studio"] .ae-intro.ae-v19-intro{min-height:clamp(575px,77svh,720px);padding:0}
+ body[data-page="about-studio"] .ae-v19-intro-content{min-height:clamp(575px,77svh,720px);padding-top:18px;padding-bottom:17px}
+ body[data-page="about-studio"] .ae-v19-hero-photo img{object-position:56% 48%}
+ body[data-page="about-studio"] .ae-v19-photo-shade{
+  background:linear-gradient(0deg,rgba(25,24,22,.40) 0%,rgba(25,24,22,.52) 18%,rgba(25,24,22,.34) 37%,transparent 69%,rgba(25,24,22,.07) 100%);
+ }
+ body[data-page="about-studio"] .ae-v19-intro-top{gap:8px;flex-wrap:wrap}
+ body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb{font-size:9px}
+ body[data-page="about-studio"] .ae-v19-intro-top>.ae-overline{font-size:9px}
+ body[data-page="about-studio"] .ae-v19-intro-message{max-width:100%;padding-bottom:17px}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-small-index{margin-bottom:13px}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-brand-heading{font-size:10px}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-display{font-size:clamp(40px,8.9vw,65px);margin-bottom:18px;letter-spacing:-.065em;max-width:680px}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-korean-lead{font-size:clamp(17px,3.7vw,24px);max-width:510px}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-body{font-size:12px;max-width:550px;line-height:1.7}
+ body[data-page="about-studio"] .ae-v19-intro-signature{font-size:8px;letter-spacing:.07em;flex-wrap:wrap}
+}
+@media(max-width:480px){
+ body[data-page="about-studio"] .ae-intro.ae-v19-intro{min-height:clamp(570px,74svh,680px)}
+ body[data-page="about-studio"] .ae-v19-intro-content{min-height:clamp(570px,74svh,680px)}
+ body[data-page="about-studio"] .ae-v19-hero-photo img{object-position:55% 47%}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-display{font-size:clamp(39px,11.3vw,54px);line-height:1.05;margin-bottom:16px;letter-spacing:-.071em}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-korean-lead{font-size:18px;line-height:1.48}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-body{font-size:11.5px;max-width:330px}
+ body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb{gap:8px;font-size:8px}
+ body[data-page="about-studio"] .ae-v19-intro-top .ae-overline{font-size:8px;letter-spacing:.07em}
+}
+@media(prefers-reduced-motion:reduce){body[data-page="about-studio"] .ae-v19-hero-photo img{animation:none!important;transform:none!important;transition:none!important}}
+/* Mobile editorial refinement: keep face and upper body separate from primary headline. */
+@media (max-width:480px){
+ body[data-page="about-studio"] .ae-v19-intro-content{justify-content:flex-start}
+ body[data-page="about-studio"] .ae-v19-intro-message{margin-top:auto;margin-bottom:19px;padding-bottom:0}
+ body[data-page="about-studio"] .ae-v19-hero-photo img{object-position:43% 47%}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-display{font-size:clamp(35px,9.8vw,47px);max-width:320px}
+ body[data-page="about-studio"] .ae-v19-intro-message .ae-body{font-size:11px;line-height:1.66}
+}
+@media (max-width:850px){body[data-page="about-studio"] .ae-v19-hero-photo img{object-position:50% 50%}}
+body[data-page="about-studio"] .ae-v19-intro-message .ae-display{max-width:10.5ch} @media(max-width:850px){body[data-page="about-studio"] .ae-v19-intro-message{margin-top:auto;margin-bottom:18px}}
+
+body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb {
+  background: transparent;
+  padding: 0;
+  text-shadow: 0 1px 3px rgba(29, 23, 19, .70);
+  font-size: 10px;
+}
+body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb > :is(a, span) {
+  color: #fffaf5 !important;
+  opacity: 1;
+}
+body[data-page="about-studio"] .ae-v19-intro-top .ae-breadcrumb a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
+body[data-page="about-studio"] .ae-v19-photo-shade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 85% 32% at 0 0, rgba(30,24,20,.43), transparent);
+}

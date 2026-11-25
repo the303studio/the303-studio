@@ -7,7 +7,7 @@
 (()=>{'use strict';
  const root=document.querySelector('.news-page'), list=document.getElementById('noticeList');if(!root||!list)return;
  const count=document.getElementById('nnCount'), filters=document.getElementById('nnCategories'), search=document.getElementById('nnSearch'), searchWrap=document.getElementById('nnSearchWrap'), noResults=document.getElementById('nnNoResults'), previewLabel=document.getElementById('nnPreviewLabel'), pager=document.getElementById('nnPagination');
- const demo=false; // Public-only notices: no draft or demo entry
+ const params=new URLSearchParams(location.search),editor=params.get('editor')==='on',demo=params.get('demo')==='1';
  const categories=['전체','운영 안내','클래스','지도자 과정','워크샵','촬영·대관'];
  const demoPosts=[
   {pinned:true,category:'클래스',title:'플라잉요가·바레 월간 시간표 안내',summary:'수업 시간표와 운영 관련 주요 변경 사항을 안내합니다.',date:'2026-10-26'},
@@ -26,9 +26,10 @@
  const validURL=(value)=>{if(typeof value!=='string'||!value.trim())return '';try{const u=new URL(value,location.href);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}};
  const fmtDate=s=>/^\d{4}-\d{2}-\d{2}$/.test(String(s||''))?s:'';
  const normalize=(input,kind)=>Array.isArray(input)?input.filter(p=>p&&typeof p.title==='string'&&p.title.trim()).map((p,i)=>({
-  title:p.title.trim(),summary:String(p.summary||p.description||p.body||'').trim(),category:String(p.category||'운영 안내').trim(),date:fmtDate(p.date),url:validURL(p.url||p.link||''),pinned:p.pinned===true,id:String(p.id||i),kind
+  title:p.title.trim(),summary:String(p.summary||p.description||p.body||'').trim(),category:String(p.category||'운영 안내').trim(),date:fmtDate(p.date),url:validURL(p.url||p.link||''),pinned:p.pinned===true,priority:(kind==='public'&&p.priority==='schedule')?'schedule':'',id:String(p.id||i),kind
  })):[];
  let posts=normalize(window.THE303_PUBLIC_NOTICES,'public');
+ if(editor){try{const save=JSON.parse(localStorage.getItem('the303-page-news-notice-v1')||'null');const drafts=normalize(save?.notices,'draft'),seen=new Set(posts.map(p=>p.title+'|'+p.date));posts.push(...drafts.filter(p=>!seen.has(p.title+'|'+p.date)))}catch{}}
  if(demo){posts=normalize(demoPosts,'demo');previewLabel.hidden=false}
  root.classList.toggle('nn-has-posts',posts.length>0);
  const byDate=(a,b)=>b.date.localeCompare(a.date);
@@ -37,13 +38,19 @@
  const node=(tag,cls,txt)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(txt!==undefined)el.textContent=txt;return el};
  function showEmpty(){const empty=node('div','notice-empty'),copy=node('div','notice-empty-copy');copy.append(node('p',null,'현재 게시된 공지가 없습니다.'),node('small',null,'블로그에서 최근 소식을 만나보세요.'));const a=node('a','nn-empty-link','블로그 소식 확인하기 ↗');a.href='https://blog.naver.com/flyingthe303';a.target='_blank';a.rel='noopener noreferrer';empty.append(copy,a);list.append(empty)}
  function createItem(p,compact){
-  const article=node('article','nn-entry'+(compact?' nn-entry--pinned':''));
+  const isSchedule=p.kind==='public'&&p.priority==='schedule';
+  const article=node('article','nn-entry'+(compact?' nn-entry--pinned':'')+(isSchedule?' nn-entry--schedule':''));
   const canOpen=p.url&&p.kind==='public';
   const card=node(canOpen?'a':'div','nn-entry-inner');
-  if(canOpen){card.href=p.url;card.target='_blank';card.rel='noopener noreferrer';card.setAttribute('aria-label',p.title+' — 네이버 블로그 원문 보기 (새 탭)')}
-  const meta=node('div','nn-entry-meta');if(compact)meta.append(node('span','nn-pin-label','중요'));meta.append(node('span','nn-entry-kind',p.category),node('time','nn-entry-date',p.date?p.date.replace(/-/g,'. ')+'.':''));
-  const body=node('div','nn-entry-content');body.append(node('h3','nn-entry-title',p.title));if(p.summary)body.append(node('p','nn-entry-desc',p.summary));
-  const label=p.kind==='demo'?'디자인 확인용 예시':p.kind==='draft'?'로컬 미리보기 · 미게시':p.url?'블로그 원문 보기':'원문 연결 준비 중';
+  if(canOpen){card.href=p.url;card.target='_blank';card.rel='noopener noreferrer';card.setAttribute('aria-label',p.title+(isSchedule?' — 네이버 블로그 수업시간표 메뉴 열기 (새 탭)':' — 네이버 블로그 원문 보기 (새 탭)'))}
+  const meta=node('div','nn-entry-meta');
+  if(compact&&!isSchedule)meta.append(node('span','nn-pin-label','중요'));
+  meta.append(node('span','nn-entry-kind',p.category));
+  if(!isSchedule)meta.append(node('time','nn-entry-date',p.date?p.date.replace(/-/g,'. ')+'.':''));
+  const body=node('div','nn-entry-content');
+  if(isSchedule)body.append(node('span','nn-schedule-eyebrow','상시 안내 · CLASS SCHEDULE'));
+  body.append(node('h3','nn-entry-title',p.title));if(p.summary)body.append(node('p','nn-entry-desc',p.summary));
+  const label=isSchedule?'시간표 확인하기':p.kind==='demo'?'디자인 확인용 예시':p.kind==='draft'?'로컬 미리보기 · 미게시':p.url?'블로그 원문 보기':'원문 연결 준비 중';
   const more=node('span','nn-entry-more'+(!canOpen&&p.kind==='public'?' nn-entry-more--pending':''),label);if(canOpen)more.append(node('span','nn-entry-more-icon','↗'));body.append(more);
   // The inline '블로그 원문 보기 ↗' is the sole outbound-link indicator.
   // Keep the entire notice row clickable without a second arrow at its far edge.
@@ -62,7 +69,7 @@
  function drawPage(){
   const q=(search?.value||'').trim().toLocaleLowerCase('ko');
   const matched=posts.filter(p=>(category==='전체'||p.category===category)&&(!q||(p.category+' '+p.title+' '+p.summary).toLocaleLowerCase('ko').includes(q)));
-  const pinned=matched.filter(p=>p.pinned).sort(byDate).slice(0,4);
+  const pinned=matched.filter(p=>p.pinned).sort((a,b)=>(b.priority==='schedule')-(a.priority==='schedule')||byDate(a,b)).slice(0,4);
   const pinnedIds=new Set(pinned);
   const regular=matched.filter(p=>!pinnedIds.has(p)).sort(byDate);
   const firstRegularSlots=Math.max(0,6-pinned.length);

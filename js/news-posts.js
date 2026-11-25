@@ -1,18 +1,29 @@
-/* THE303 STUDIO | 공지사항 공개 데이터 (2026-10-31 구성)
+/* THE303 STUDIO | 공지사항 공개 데이터 (2026-11-24 V60 갱신)
  * 출처: THE303 네이버 블로그 글 목록 화면에서 확인한 제목·날짜.
  * 상세 본문은 확인하지 않았으므로 아래 설명은 제목 기반의 짧은 소개입니다.
  * 2026-11-01 업데이트: 사용자가 제공한 8개 개별 네이버 블로그 URL을 게시 순서대로 연결했습니다.
  * 블로그 본문은 외부 조회 제한으로 확인하지 못했습니다. 요약문은 기존 내용을 유지했습니다.
  * 공지 제목/원문 매칭은 운영자의 최종 육안 확인을 권장합니다.
  * 2026-05-30 종료된 스터디 클래스 모집 공고는 포함하지 않았습니다.
+ * 2026-11-24: 12월 플라잉댄스 모집글을 중요 공지에 추가. 출처 URL은 사용자 제공.
+ * 2026-11-08 등록일은 사용자 제공 블로그 목록 캡처 기준이며 상세 모집 내용은 미확인.
  */
 window.THE303_PUBLIC_NOTICES = [
   {
     "category": "클래스",
-    "title": "11월 플라잉요가·바레 그룹 클래스 시간표",
-    "summary": "11월 플라잉요가와 바레 그룹 수업의 시간표를 안내합니다.",
+    "title": "최신 그룹 클래스 시간표",
+    "summary": "플라잉요가·바레의 최신 그룹 수업 일정을 확인하세요.",
     "date": "2026-10-26",
-    "url": "https://blog.naver.com/flyingthe303/224454252032",
+    "url": "https://blog.naver.com/PostList.naver?blogId=flyingthe303&from=postList&categoryNo=6",
+    "pinned": true,
+    "priority": "schedule"
+  },
+  {
+    "category": "클래스",
+    "title": "12월 플라잉댄스 모집 안내",
+    "summary": "12월 플라잉댄스 모집 소식입니다. 일정과 참여 방법은 공식 네이버 블로그에서 확인해 주세요.",
+    "date": "2026-11-08",
+    "url": "https://blog.naver.com/flyingthe303/224469172597",
     "pinned": true
   },
   {
@@ -21,7 +32,7 @@ window.THE303_PUBLIC_NOTICES = [
     "summary": "11월 토요일 바레 클래스 소식입니다. 신청 가능 여부와 세부 사항은 원문 연결 후 확인해 주세요.",
     "date": "2026-10-15",
     "url": "https://blog.naver.com/flyingthe303/224442541461",
-    "pinned": true
+    "pinned": false
   },
   {
     "category": "클래스",
