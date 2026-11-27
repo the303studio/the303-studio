@@ -1,0 +1,38 @@
+/* THE303 V65 TEST 04 — numbered text optical alignment.
+   Keep original type scale, photography, responsive grids and editor bindings.
+   Baseline-align only the number and its first title line; descriptions stay independent. */
+body[data-page="program-flying"] .fly16 .fly16-visit-row > :is(.fly16-kicker,h3),
+body[data-page="program-flying"] .fly16 .fly16-principle > :is(.number,div),
+body[data-page="program-barre"] .bar17 .b-principle > :is(.b-number,h3),
+body[data-page="program-dance"] .dance18 .d-info-row > :is(span,h3),
+body[data-page="program-dance"] .dance18 .d-rhythm-row > :is(.num,h3),
+body[data-page="contact"] .ct-main #beforeVisit .ct-visit-item > :is(.ct-num,strong),
+body[data-page="ttc-cert"] .ttc-main .ttc-info-row > :is(span,h3),
+body[data-page="media-rental"] .media-rental-main .mr-use-list > div > :is(span,h3),
+body[data-page="media-rental"] .media-rental-main .mr-eq-row > :is(.mr-eq-number,.mr-eq-label,strong),
+body[data-page="program-guide"] .guide-page .guide-membership-row > :is(.guide-membership-num,.guide-membership-copy),
+body[data-page="program-guide"] .guide-page .guide-faq-item summary > :is(.guide-faq-number,.guide-faq-label){align-self:first baseline;}
+/* Remove manual offsets; first-baseline alignment responds to actual font metrics. */
+body[data-page="program-flying"] .fly16 .fly16-visit-row > .fly16-kicker,
+body[data-page="contact"] .ct-main #beforeVisit .ct-visit-item > .ct-num,
+body[data-page="media-rental"] .media-rental-main .mr-use-list > div > span{padding-top:0;margin-top:0;}
+body[data-page="media-rental"] .media-rental-main .mr-use-list > div > span{grid-row:1;}
+body[data-page="media-rental"] .media-rental-main .mr-use-list > div > h3{grid-column:2;grid-row:1;}
+body[data-page="media-rental"] .media-rental-main .mr-use-list > div > p{grid-column:2;grid-row:2;}
+/* True process labels, not section indexes or numbered content lists. */
+body[data-page="program-flying"] .fly16 .fly16-visit-row{grid-template-columns:58px minmax(125px,.45fr) minmax(0,1fr);}
+body[data-page="program-dance"] .dance18 .d-info-row{grid-template-columns:58px minmax(180px,.57fr) minmax(0,1fr);}
+body[data-page="program-flying"] .fly16 .fly16-visit-row > .fly16-kicker,
+body[data-page="program-dance"] .dance18 .d-info-row > span{font:600 10px/1.5 'Montserrat',sans-serif;letter-spacing:.06em;white-space:nowrap;}
+@media(max-width:850px){
+ body[data-page="program-flying"] .fly16 .fly16-visit-row,
+ body[data-page="program-dance"] .dance18 .d-info-row{grid-template-columns:50px minmax(0,1fr);column-gap:10px;}
+ body[data-page="program-flying"] .fly16 .fly16-visit-row > p,
+ body[data-page="program-dance"] .dance18 .d-info-row > p{grid-column:2;}
+ /* Only numbered section label, not the main heading or the centered CTA. */
+ body[data-page="program-flying"] .fly16 .fly16-visit-head > .fly16-kicker{display:block;width:100%;text-align:left;}
+ body[data-page="program-barre"] .bar17 .b-visit-head > div,
+ body[data-page="program-dance"] .dance18 .d-info .d-section-head > div{width:100%;}
+ body[data-page="program-barre"] .bar17 .b-visit-head .b-kicker,
+ body[data-page="program-dance"] .dance18 .d-info .d-section-head .d-kicker{display:block;width:100%;text-align:left;}
+}

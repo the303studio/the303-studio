@@ -1,0 +1,107 @@
+/* THE303 V65 TEST 02 — targeted review corrections, 17 points. */
+/* 01: use the actual photo grid, not the wider heading grid. */
+@media(min-width:851px){
+ body[data-page="about-studio"] .ae-philosophy .ae-philosophy-head{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(36px,6.3vw,91px);}
+ body[data-page="about-studio"] .ae-philosophy .ae-section-heading{text-align:center;justify-self:stretch;}
+}
+/* 02: legible actual address, right-aligned number, unchanged color/decoration. */
+body[data-page="contact"].the303-subpage .ct-main .ct-number-panel .ct-floor{justify-content:flex-end;align-self:flex-end;}
+body[data-page="contact"].the303-subpage .ct-main .ct-number-panel .ct-panel-foot{display:flex;flex-direction:column;align-items:flex-start;justify-content:end;gap:5px;line-height:1.5;font:500 13px/1.5 'Noto Sans KR',sans-serif;letter-spacing:0;color:#674b43;}
+body[data-page="contact"].the303-subpage .ct-main .ct-panel-foot .ct-panel-suite{font-size:14px;font-weight:600;letter-spacing:0;}
+@media(max-width:850px){
+ body[data-page="contact"].the303-subpage .ct-main .ct-number-panel{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 1fr auto;gap:10px;min-height:220px;}
+ body[data-page="contact"].the303-subpage .ct-main .ct-number-panel .ct-panel-head{grid-column:1/-1;grid-row:1;flex-direction:row;justify-content:space-between;gap:8px;}
+ body[data-page="contact"].the303-subpage .ct-main .ct-number-panel .ct-floor{grid-column:2;grid-row:2;align-self:center;}
+ body[data-page="contact"].the303-subpage .ct-main .ct-number-panel .ct-floor strong{font-size:clamp(88px,25vw,140px);}
+ body[data-page="contact"].the303-subpage .ct-main .ct-number-panel .ct-floor em{font-size:clamp(28px,8vw,40px);}
+ body[data-page="contact"].the303-subpage .ct-main .ct-number-panel .ct-panel-foot{grid-column:1/-1;grid-row:3;padding:0;font-size:12px;gap:2px;}
+ body[data-page="contact"].the303-subpage .ct-main .ct-panel-foot .ct-panel-suite{font-size:13px;}
+}
+/* 03/04/06: move the copy relative to the existing photo, not the photo itself. */
+@media(min-width:1025px){
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-content{align-self:start;justify-content:flex-start;padding-top:clamp(48px,5vw,76px);}
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-copy{align-self:start;padding-top:clamp(12px,1.6vw,24px);}
+ body[data-page="program-barre"] .bar17 .b-hero-copy{align-self:start;padding-top:clamp(42px,5vw,76px);}
+ body[data-page="news-notice"] .news-page .nn-hero-grid{padding-bottom:24px;}
+}
+/* 07: restore the original left-aligned editorial text column; no isolated right-shifted title. */
+@media(min-width:851px){body[data-page="media-portfolio"] .media-portfolio-main .mp-manifesto-body h2{text-align:left;}}
+/* 08/09: mobile level labels on right; compact central LEVEL SYSTEM block. */
+@media(max-width:850px){
+ body[data-page="program-flying"] .fly16 .fly16-level-head{justify-content:flex-end;}
+ body[data-page="program-flying"] .fly16 .fly16-art-note{align-items:center;text-align:center;}
+ body[data-page="program-flying"] .fly16 .fly16-art-note .fly16-kicker{text-align:center;}
+}
+/* 10: one component, same heading / related destinations for all three programs. */
+body:is([data-page="program-flying"],[data-page="program-barre"],[data-page="program-dance"]) .v65-related{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:start;margin-top:32px;padding:30px 0 0;border-top:1px solid #c9b9ac;}
+.v65-related .v65-related-head>span{display:block;font:700 11px/1.5 'Montserrat',sans-serif;letter-spacing:.12em;color:#794344;}
+.v65-related .v65-related-head h2{font:600 25px/1.5 'Nanum Myeongjo',serif;letter-spacing:-.045em;margin:9px 0 0;color:#302925;}
+.v65-related .v65-related-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.v65-related .v65-related-links a{display:flex;flex-direction:column;gap:6px;justify-content:center;padding:10px 3px;min-height:66px;border-bottom:1px solid #c9b9ac;color:#302925;}
+.v65-related .v65-related-links a>span{font:700 11px/1.4 'Montserrat',sans-serif;letter-spacing:.08em;color:#794344;}
+.v65-related .v65-related-links a strong{font:600 15px/1.5 'Noto Sans KR',sans-serif;}
+.v65-related .v65-related-links a:hover{color:#794344;}
+@media(max-width:850px){
+ body:is([data-page="program-flying"],[data-page="program-barre"],[data-page="program-dance"]) .v65-related{grid-template-columns:1fr;gap:15px;margin-top:26px;padding-top:22px;}
+ .v65-related .v65-related-head{text-align:center;}
+ .v65-related .v65-related-head h2{font-size:22px;text-align:center;}
+ .v65-related .v65-related-links{gap:10px;}
+}
+/* 11: four anchors, one row; fit 320 without horizontal scroll. */
+@media(max-width:850px){
+ body[data-page="program-guide"] .first-class-index{display:flex;flex-wrap:nowrap;justify-content:center;gap:0;margin-top:10px;padding-bottom:18px;}
+ body[data-page="program-guide"] .first-class-index a{font-size:clamp(10.5px,2.9vw,13px);padding:5px clamp(3px,1.15vw,7px);min-height:44px;white-space:nowrap;}
+ body[data-page="program-guide"] .first-class-index a:nth-child(3)::before{content:'·';}
+}
+/* 12: keep curriculum sequence numbers subordinate to title and label. */
+body[data-page="ttc-cert"] .ttc-main .ttc-step-num{font:500 13px/1.5 'Montserrat',sans-serif;letter-spacing:.02em;color:#9a7462;}
+@media(max-width:850px){body[data-page="ttc-cert"] .ttc-main .ttc-step-num{font-size:12px;}}
+/* 13: right-aligned English labels, Korean content remains on the left. */
+@media(max-width:850px){body[data-page="ttc-workshop"] .workshop-main .ws-experience-id{justify-content:flex-end;text-align:right;width:100%;}}
+/* 14/16: text links — shared optical gap, not identical widths. The full link stays tappable. */
+body[data-page] :is(.ae-text-link,.fly16-secondary,.fly16-cta-secondary,.b-textlink,.d-cta-secondary,.the303-program-links a,.ttc-underline-link,.ttc-cta-link,.ws-text-link,.ws-schedule-link,.ws-invitation-link,.m-text-link,.m-cta-link,.mr-portfolio-link,.mr-eq-inquiry,.news-cta-link,.ng-cross-link,.ct-textlink){line-height:1.45;min-height:44px;box-sizing:border-box;padding-top:12px;padding-bottom:5px;align-items:center;}
+body[data-page] :is(.ae-text-link,.fly16-secondary,.fly16-cta-secondary,.b-textlink,.d-cta-secondary,.the303-program-links a,.ttc-underline-link,.ttc-cta-link,.ws-text-link,.ws-schedule-link,.ws-invitation-link,.m-text-link,.m-cta-link,.mr-portfolio-link,.mr-eq-inquiry,.news-cta-link,.ng-cross-link,.ct-textlink)>span{line-height:1;}
+body[data-page="media-portfolio"] .media-portfolio-main .mp-cta-actions .m-cta-link,
+body[data-page="media-portfolio"] .media-portfolio-main .mp-cta-actions .mp-cta-secondary,
+body[data-page="media-rental"] .media-rental-main .m-cta-link,
+body[data-page="news-notice"] .news-page .news-cta-link {font-size:15px;font-weight:500;line-height:1.45;min-height:44px;padding:12px 0 5px;align-items:center;}
+body[data-page="media-portfolio"] .media-portfolio-main .mp-cta-actions .m-cta-link>span,
+body[data-page="media-rental"] .media-rental-main .m-cta-link>span,
+body[data-page="news-notice"] .news-page .news-cta-link>span{font-size:18px;line-height:1;}
+@media(max-width:850px){
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-cta-actions .m-cta-link,
+ body[data-page="media-rental"] .media-rental-main .m-cta-link,
+ body[data-page="news-notice"] .news-page .news-cta-link{font-size:14px;}
+}
+/* 15: preserve notice title > description >= action. Whole card is clickable. */
+body[data-page="news-notice"] .news-page :is(.nn-entry--schedule,.nn-regular-list,.nn-entry--pinned) .nn-entry-desc,
+body[data-page="news-notice"] .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-desc{font-size:14px;line-height:1.75;}
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-more,
+body[data-page="news-notice"] .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-more,
+body[data-page="news-notice"] .news-page .nn-regular-list .nn-entry-more,
+body[data-page="news-notice"] .news-page .nn-board-bottom a{font-size:13px;line-height:1.5;font-weight:500;padding-bottom:5px;gap:12px;}
+body[data-page="news-notice"] .news-page .nn-entry-more-icon{font-size:16px;line-height:1;}
+/* 17: rental lead must be more prominent than its body, across widths. */
+body[data-page="media-rental"] .media-rental-main .mr-heading-aside>p:first-of-type{font-size:18px;font-weight:600;line-height:1.6;letter-spacing:-.035em;}
+body[data-page="media-rental"] .media-rental-main .mr-heading-aside>p:nth-of-type(2){font-size:16px;font-weight:400;line-height:1.8;margin-top:13px;}
+@media(max-width:850px){
+ body[data-page="media-rental"] .media-rental-main .mr-heading-aside>p:first-of-type{font-size:16px;}
+ body[data-page="media-rental"] .media-rental-main .mr-heading-aside>p:nth-of-type(2){font-size:14px;}
+}
+/* Visual-review follow-up: the level label was centred but the strong line inherited left alignment. */
+@media(max-width:850px){
+ body[data-page="program-flying"] .fly16 .fly16-art-note :is(strong,p){width:100%;text-align:center;}
+ body[data-page="program-guide"] .first-class-index a{font-size:clamp(11px,3.3vw,13px);}
+ body[data-page="ttc-cert"] .ttc-main .ttc-step-num{font-size:11px;}
+}
+/* Real section index/label is a quieter hierarchy; maintain the list row title. */
+body[data-page="ttc-cert"] .ttc-main .ttc-step-num{font-weight:500;}
+/* Match line geometry even when more specific older rules set padding. */
+body[data-page="program-flying"] .fly16 :is(.fly16-secondary,.fly16-cta-secondary,.the303-program-links a),
+body[data-page="program-barre"] .bar17 :is(.b-textlink,.the303-program-links a),
+body[data-page="program-dance"] .dance18 :is(.d-cta-secondary,.the303-program-links a),
+body[data-page="ttc-cert"] .ttc-main :is(.ttc-underline-link,.ttc-cta-link),
+body[data-page="ttc-workshop"] .workshop-main :is(.ws-text-link,.ws-schedule-link,.ws-invitation-link),
+body[data-page="media-portfolio"] .media-portfolio-main .m-text-link,
+body[data-page="media-rental"] .media-rental-main :is(.m-text-link,.mr-portfolio-link,.mr-eq-inquiry),
+body[data-page="about-studio"] .ae-experience .ae-text-link{min-height:44px;line-height:1.45;padding-top:12px;padding-bottom:5px;align-items:center;}

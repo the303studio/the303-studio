@@ -63,7 +63,7 @@
         "philDesc1": "내면을 깊게 바라보고",
         "philKw2": "균형",
         "philEn2": "BALANCE",
-        "philDesc2": "몸의 균형을 정확히 맞추고",
+        "philDesc2": "몸의 중심을 찾아가고",
         "philKw3": "흐름",
         "philEn3": "FLOW",
         "philDesc3": "움직임 속에서 성장합니다.",

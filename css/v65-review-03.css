@@ -1,0 +1,55 @@
+/* THE303 V65 TEST 03 — optical alignment and consistent text actions.
+   Only text links and the three reviewed sections; keep existing colors, images,
+   motion, editor bindings, buttons and structural dividers. */
+:root{--v65-action-size:14px;--v65-action-secondary:13px;--v65-action-primary:15px;--v65-action-arrow:17px;}
+@media(max-width:850px){:root{--v65-action-size:13px;--v65-action-primary:14px;--v65-action-arrow:16px;}}
+/* Guide index: anchor underline sits immediately below centered text, not
+   at the bottom of the 44px hit target. */
+body[data-page="program-guide"] .first-class-index a{
+  --index-pad:13px;display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;line-height:1.5;padding:0 var(--index-pad);box-sizing:border-box;
+}
+body[data-page="program-guide"] .first-class-index a::after{
+  left:var(--index-pad);right:var(--index-pad);top:calc(50% + .75em + 3px);bottom:auto;
+}
+@media(max-width:850px){body[data-page="program-guide"] .first-class-index a{--index-pad:clamp(3px,1.15vw,7px);}}
+/* TTC sequence: identical font metrics give both labels the same baseline. */
+body[data-page="ttc-cert"] .ttc-main .ttc-learning-item :is(.ttc-step-num,.ttc-step-en){
+  font-family:'Montserrat',sans-serif;font-size:11px;line-height:1.5;margin-top:0;padding-top:0;
+}
+body[data-page="ttc-cert"] .ttc-main .ttc-step-num{font-weight:500;letter-spacing:.02em;}
+body[data-page="ttc-cert"] .ttc-main .ttc-step-en{font-weight:600;}
+@media(min-width:1025px){
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-content{padding-top:clamp(18px,2.2vw,36px);}
+ body[data-page="ttc-cert"] .ttc-main .ttc-underline-link{margin-top:clamp(14px,1.6vw,23px);}
+}
+@media(max-width:1024px){body[data-page="ttc-cert"] .ttc-main .ttc-underline-link{margin-top:12px;}}
+/* Workshop: remove only decorative short strokes in the mobile right-aligned labels. */
+@media(max-width:850px){
+ body[data-page="ttc-workshop"] .workshop-main .ws-experience-glyph{display:none;}
+ body[data-page="ttc-workshop"] .workshop-main .ws-experience-id{justify-content:flex-end;text-align:right;}
+}
+/* Ordinary inline actions. Explicit scope avoids nav, filled buttons, image links,
+   list/card dividers and editor controls. The important typography values prevent
+   legacy page-level overrides; no layout-wide font overrides. */
+:is(body[data-page],body.the303-motion-test) main :is(a.ae-text-link,a.fly16-secondary,a.fly16-cta-secondary,a.b-textlink,a.d-cta-secondary,.d-film-note a,.the303-program-links a,a.ttc-underline-link,a.ws-text-link,a.ws-schedule-link,a.m-text-link,a.mr-portfolio-link,a.mr-eq-inquiry,a.ng-cross-link,a.ct-textlink,.v06-program-guide-link a,a.nn-empty-link){
+ font-size:var(--v65-action-size)!important;font-weight:500!important;line-height:1.5!important;
+ min-height:44px;box-sizing:border-box;padding-top:14px!important;padding-bottom:5px!important;align-items:center;
+}
+/* Main editorial link rows retain their own structural rules and row heights. */
+:is(body[data-page],body.the303-motion-test) main :is(.v06-cert-links a,.v06-media-actions a,.v07-journal-links a){font-size:var(--v65-action-size)!important;font-weight:500!important;}
+/* Standalone consultation links — one level above ordinary links; CTA color stays intact. */
+:is(body[data-page],body.the303-motion-test) main :is(a.ttc-cta-link,a.ws-invitation-link,a.m-cta-link,a.news-cta-link,a.guide-faq-contact){
+ font-size:var(--v65-action-primary)!important;font-weight:500!important;line-height:1.5!important;
+ min-height:44px;box-sizing:border-box;padding-top:14px!important;padding-bottom:5px!important;align-items:center;
+}
+/* Arrows are a little larger than their text, without dominating it. */
+:is(body[data-page],body.the303-motion-test) main :is(a.ae-text-link,a.fly16-secondary,a.fly16-cta-secondary,a.b-textlink,a.d-cta-secondary,.d-film-note a,.the303-program-links a,a.ttc-underline-link,a.ttc-cta-link,a.ws-text-link,a.ws-schedule-link,a.ws-invitation-link,a.m-text-link,a.mr-portfolio-link,a.mr-eq-inquiry,a.m-cta-link,a.ng-cross-link,a.ct-textlink,.v06-program-guide-link a,a.nn-empty-link,a.news-cta-link,a.guide-faq-contact) > span[aria-hidden="true"]{
+ font-size:var(--v65-action-arrow)!important;font-weight:400!important;line-height:1!important;
+}
+/* Secondary notice links are part of larger clickable cards: no extra minimum height. */
+body[data-page="news-notice"] .news-page :is(.nn-entry-more,.nn-board-bottom a){font-size:var(--v65-action-secondary)!important;font-weight:500!important;line-height:1.5!important;padding-bottom:4px!important;}
+body[data-page="news-notice"] .news-page .nn-entry-more-icon{font-size:16px!important;line-height:1!important;}
+/* Compact trial/membership links share the quieter scale to protect cutout layout. */
+body[data-page="program-guide"] .guide-page :is(.guide-trial-bottom a,.guide-membership-go){font-size:var(--v65-action-secondary)!important;font-weight:500!important;line-height:1.5!important;}
+body[data-page="program-guide"] .guide-page .guide-trial-bottom a{padding-bottom:4px;}

@@ -1,0 +1,217 @@
+/* THE303 STUDIO · V65 test 1 · editorial typography and spatial rhythm
+   V64 imagery, animations, editor, network and booking preserved.
+   Scoped corrections; deliberately NOT a global font-size multiplier. */
+
+/* 1. Identity: visible but subordinate to the primary logo. */
+.site-header .brand .brand-sub,
+.site-header .brand-sub { font-size:10.5px; font-weight:600; letter-spacing:.12em; opacity:.95; }
+
+/* 2. Mobile footer: remove repetitive navigation dividers without touching text links. */
+@media(max-width:850px){
+  .site-footer .footer-links.footer-primary-links { border-top:0; }
+  .site-footer .footer-primary-links a { border-bottom:0; }
+}
+
+/* 3. Actual copy/action typography on the HOME PAGE, without changing photo frames. */
+@media(min-width:851px){
+ body.the303-index-v06 #program .v06-program-descr { font-size:16px;line-height:1.72;color:#6c6159; }
+ body.the303-index-v06 #program .v06-dance-text p {font-size:16px;line-height:1.72;color:#635a53;}
+ body.the303-index-v06 #ttc .v06-cert-desc {font-size:17px;line-height:1.82;max-width:425px;}
+ body.the303-index-v06 #space .v06-media-description {font-size:17px;line-height:1.8;max-width:435px;}
+ body.the303-index-v06 #space .v06-media-services {font-size:15px;line-height:1.75;}
+ body.the303-index-v06 #news .v06-journal-notice-desc {font-size:15px;line-height:1.75;}
+ /* Tighten the opening rhythm without changing the headings or gallery images. */
+ body.the303-index-v07 #program.v06-program {padding-top:43px;}
+ body.the303-index-v07 #program .v06-program-intro {margin-bottom:48px;}
+ body.the303-index-v07 #space.v06-media {padding-top:43px;}
+ body.the303-index-v07 #news.v06-journal {padding-top:43px;}
+ /* Existing asymmetric AERIAL DANCE scene; keep headline+Korean name+description together. */
+ body.the303-index-v06 #program .v06-dance-text {justify-content:flex-start;}
+ body.the303-index-v06 #program .v06-dance h3 {margin:clamp(35px,4vw,52px) 0 12px;}
+ body.the303-index-v06 #program .v06-dance-ko {display:block;margin-bottom:16px;}
+ body.the303-index-v06 #program .v06-dance-text p {margin-top:0;}
+}
+@media(max-width:850px){
+ body.the303-index-v06 #program .v06-program-descr {font-size:15px;line-height:1.7;}
+ body.the303-index-v06 #program .v06-dance-text {justify-content:flex-start;min-height:0;}
+ body.the303-index-v06 #program .v06-dance h3 {margin:22px 0 10px;}
+ body.the303-index-v06 #program .v06-dance-ko {margin-bottom:11px;}
+ body.the303-index-v06 #program .v06-dance-text p {font-size:15px;line-height:1.75;}
+ body.the303-index-v06 #ttc .v06-cert-desc,
+ body.the303-index-v06 #space .v06-media-description {font-size:15px;line-height:1.77;}
+ body.the303-index-v06 #space .v06-media-services {font-size:14px;line-height:1.7;}
+}
+
+/* 4. About-studio keywords: enlarge only the Korean beside the ENGLISH values.
+      Main-page PHILOSOPHY's three keywords remain untouched. */
+body[data-page="about-studio"] .ae-keyword-main span {font-size:clamp(16px,1.05vw,18px);font-weight:600;color:#4d413b;}
+body[data-page="about-studio"] .ae-keyword p {font-size:15px;line-height:1.7;}
+@media(max-width:850px){
+ body[data-page="about-studio"] .ae-keyword-main span {font-size:16px;}
+ body[data-page="about-studio"] .ae-keyword p {font-size:14px;}
+}
+
+/* 5. Rental: action copy and data tables need to READ rather than act as captions. */
+@media(min-width:851px){
+ body[data-page="media-rental"] .mr-heading-aside>p:nth-of-type(2),
+ body[data-page="media-rental"] .mr-possibility-copy>p,
+ body[data-page="media-rental"] .mr-equipment-copy p,
+ body[data-page="media-rental"] .mr-guide-head p,
+ body[data-page="media-rental"] .mr-details-grid>div:first-child>p {font-size:17px;line-height:1.85;}
+ body[data-page="media-rental"] .mr-use-list p,
+ body[data-page="media-rental"] .mr-steps p {font-size:16px;line-height:1.78;}
+ body[data-page="media-rental"] .mr-use-list h3 {font-size:19px;}
+ body[data-page="media-rental"] .mr-eq-label {font-size:14px;letter-spacing:.04em;}
+ body[data-page="media-rental"] .mr-eq-number {font-size:13px;}
+ body[data-page="media-rental"] .mr-eq-row strong {font-size:17px;}
+ body[data-page="media-rental"] .mr-details-table>div,
+ body[data-page="media-rental"] .mr-details-table strong {font-size:16px;line-height:1.7;}
+ body[data-page="media-rental"] .mr-step-id {font-size:12px;}
+ body[data-page="media-rental"] .mr-cta .m-cta-grid p {font-size:16px;}
+}
+body[data-page="media-rental"] .m-text-link,
+body[data-page="media-rental"] .mr-eq-inquiry {font-size:15px;min-height:44px;padding:8px 0;}
+body[data-page="media-rental"] .m-cta-link {font-size:16px;min-height:44px;padding:8px 0;}
+@media(max-width:850px){
+ body[data-page="media-rental"] .mr-heading-aside>p:nth-of-type(2),
+ body[data-page="media-rental"] .mr-possibility-copy>p,
+ body[data-page="media-rental"] .mr-equipment-copy p,
+ body[data-page="media-rental"] .mr-guide-head p,
+ body[data-page="media-rental"] .mr-details-grid>div:first-child>p {font-size:16px;line-height:1.8;}
+ body[data-page="media-rental"] .mr-use-list p,
+ body[data-page="media-rental"] .mr-steps p {font-size:15px;line-height:1.75;}
+ body[data-page="media-rental"] .mr-use-list h3 {font-size:18px;}
+ body[data-page="media-rental"] .mr-eq-label {font-size:clamp(10px,2.75vw,13px);line-height:1.5;letter-spacing:0;white-space:normal;overflow-wrap:anywhere;}
+ body[data-page="media-rental"] .mr-eq-number {font-size:12px;}
+ body[data-page="media-rental"] .mr-eq-row strong {font-size:clamp(14px,3.6vw,16px);line-height:1.55;}
+ body[data-page="media-rental"] .mr-eq-row {grid-template-columns:22px minmax(88px,.8fr) minmax(0,1.2fr);gap:10px;min-height:78px;}
+ body[data-page="media-rental"] .mr-details-table>div {font-size:15px;}
+ body[data-page="media-rental"] .mr-details-table span,
+ body[data-page="media-rental"] .mr-details-table strong {font-size:15px;}
+ body[data-page="media-rental"] .mr-step-id {font-size:12px;}
+ body[data-page="media-rental"] .mr-cta .m-cta-grid p {font-size:15px;line-height:1.75;}
+}
+@media(max-width:360px){
+ body[data-page="media-rental"] .mr-eq-row {grid-template-columns:21px minmax(78px,.82fr) minmax(0,1.18fr);gap:7px;}
+ body[data-page="media-rental"] .mr-eq-label {font-size:10px;}
+}
+
+/* 6. NOTICE: the blog is the action. Big enough to read and touch. */
+.news-page .nn-entry-more,
+.news-page .nn-entry--pinned .nn-entry-more,
+.news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-more,
+.news-page .nn-regular-list .nn-entry-more {font-size:16px;line-height:1.6;font-weight:600;padding-bottom:5px;gap:14px;}
+.news-page .nn-board-bottom a {font-size:16px;line-height:1.6;padding-bottom:5px;}
+.news-page .nn-link-caption {font-size:14px;line-height:1.7;}
+.news-page .news-cta p {font-size:15px;line-height:1.8;}
+.news-page .news-cta-link {font-size:16px;min-height:44px;padding:8px 0;}
+.news-page .nn-page-button {min-width:44px;height:44px;}
+@media(max-width:620px){
+ .news-page .nn-board-top h2 {text-align:center;}
+ .news-page .nn-entry-more,
+ .news-page .nn-entry--pinned .nn-entry-more,
+ .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-more,
+ .news-page .nn-regular-list .nn-entry-more {font-size:15px;line-height:1.6;padding-bottom:5px;}
+ .news-page .nn-board-bottom a {font-size:15px;}
+ .news-page .nn-link-caption {font-size:15px;}
+ .news-page .nn-quick-head h2 {text-align:center;}
+ .news-page .nn-page-button {min-width:41px;height:44px;}
+}
+
+/* 7. Calm, consistent underline rhythm for text-only calls to action.
+      Do not touch separators or photo-frame rules. */
+:where(.the303-subpage) :is(.the303-program-links a,.b-textlink,.d-cta-secondary,.mr-eq-inquiry,.m-text-link,.m-cta-link,.news-cta-link,.nn-board-bottom a,.ct-text-link,.ct-reserve-cta){text-underline-offset:.18em;}
+:where(.the303-subpage) :is(.the303-program-links a,.b-textlink,.d-cta-secondary,.mr-eq-inquiry,.m-text-link,.m-cta-link,.news-cta-link){min-height:44px;}
+/* Actual border-below links: make the underline visually closer, but protect tap area. */
+body[data-page="news-notice"] .news-cta-link,
+body[data-page="media-rental"] .m-cta-link {padding-top:6px;padding-bottom:8px;}
+
+/* 8. Contact: scroll anchor, mobile key-title alignment and compact duplicate removal. */
+body[data-page="contact"] #location {scroll-margin-top:calc(var(--nav-height,80px) + 24px);}
+body[data-page="contact"] .ct-visit-item p {word-break:keep-all;}
+@media(max-width:850px){
+ body[data-page="contact"] .ct-main #location {scroll-margin-top:calc(var(--nav-height,76px) + 14px);}
+ body[data-page="contact"] .ct-section-head h2 {text-align:center;}
+ body[data-page="contact"] .ct-section-head .ct-index {text-align:left;}
+ body[data-page="contact"] .ct-main .ct-visit-item p {font-size:15px;line-height:1.77;}
+}
+
+/* 9. Rental, program, certificate, workshop and portfolio: repeat a usable type scale. */
+@media(min-width:851px){
+ body[data-page="ttc-workshop"] .ws-hero-desc {font-size:16px;line-height:1.85;}
+ body[data-page="ttc-cert"] .ttc-hero-summary {font-size:16px;line-height:1.85;}
+}
+@media(max-width:850px){
+ body[data-page="ttc-workshop"] .ws-hero-desc {font-size:15px;line-height:1.8;}
+ body[data-page="ttc-cert"] .ttc-hero-summary {font-size:15px;line-height:1.8;}
+}
+
+/* 10. Intentionally selective opening-gaps compression (desktop only). */
+@media(min-width:1025px){
+ body[data-page="ttc-workshop"] .ws-hero-head {padding-top:clamp(38px,5vw,75px);}
+ body[data-page="media-rental"] .mr-heading {padding-top:clamp(42px,4.7vw,73px);}
+ body[data-page="news-notice"] .nn-hero-grid {padding-top:clamp(25px,3vw,43px);}
+ body[data-page="ttc-cert"] .ttc-hero-grid {padding-top:clamp(30px,4vw,62px);}
+}
+
+/* 11. Mobile: section INDEX remains left, substantial Korean headings centre.
+   List row titles, page breadcrumbs, labels, step names remain untouched. */
+@media(max-width:850px){
+ body[data-page="program-flying"] .fly16-section h2.fly16-title,
+ body[data-page="program-barre"] :is(.b-practice,.b-method,.b-exp,.b-visit) h2.b-title,
+ body[data-page="program-dance"] :is(.d-rhythm,.d-photo-story,.d-experience,.d-info) h2.d-heading,
+ body[data-page="media-rental"] :is(.mr-possibility,.mr-equipment,.mr-guide,.mr-details) h2,
+ body[data-page="ttc-cert"] :is(.ttc-statement,.ttc-learning,.ttc-editorial,.ttc-guidance) h2,
+ body[data-page="ttc-workshop"] :is(.ws-introduction,.ws-approach,.ws-photo-story,.ws-schedule) h2,
+ body[data-page="media-portfolio"] :is(.mp-manifesto,.mp-archive) h2,
+ body[data-page="about-studio"] .ae-philosophy .ae-section-heading,
+ body[data-page="about-studio"] .ae-director .ae-director-heading {text-align:center;}
+ /* Small numbered labels always retain their editorial left alignment. */
+ body[data-page="program-flying"] .fly16-kicker,
+ body[data-page="program-barre"] .b-kicker,
+ body[data-page="program-dance"] .d-kicker,
+ body[data-page="media-rental"] :is(.mr-possibility,.mr-equipment,.mr-guide,.mr-details) .m-eyebrow {text-align:left;}
+}
+/* V65 late cascade guard: specific legacy notice styles set 10px again.
+   Match that specificity so all actual rendered rows are readable. */
+body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-more,
+body[data-page="news-notice"] .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-more,
+body[data-page="news-notice"] .news-page .nn-regular-list .nn-entry-more {
+  font-size:16px;line-height:1.55;font-weight:600;padding-bottom:5px;
+}
+@media(max-width:620px){
+ body[data-page="news-notice"] .news-page .nn-entry--schedule .nn-entry-more,
+ body[data-page="news-notice"] .news-page .nn-pinned-list .nn-entry--pinned:not(.nn-entry--schedule) .nn-entry-more,
+ body[data-page="news-notice"] .news-page .nn-regular-list .nn-entry-more {
+   font-size:15px;line-height:1.6;font-weight:600;
+ }
+}
+
+/* Smaller text CTAs across other subpages: keep understated underlines and 44px targets. */
+body[data-page="ttc-cert"] :is(.ttc-underline-link,.ttc-cta-link),
+body[data-page="ttc-workshop"] :is(.ws-text-link,.ws-schedule-link,.ws-invitation-link),
+body[data-page="media-portfolio"] :is(.m-text-link,.m-cta-link) {
+  font-size:15px;min-height:44px;padding-top:8px;padding-bottom:8px;
+}
+@media(min-width:851px){
+ body[data-page="ttc-cert"] :is(.ttc-underline-link,.ttc-cta-link),
+ body[data-page="ttc-workshop"] :is(.ws-text-link,.ws-schedule-link,.ws-invitation-link),
+ body[data-page="media-portfolio"] :is(.m-text-link,.m-cta-link) {font-size:16px;}
+}
+body[data-page="program-flying"] .the303-program-links a,
+body[data-page="program-barre"] .the303-program-links a,
+body[data-page="program-dance"] .the303-program-links a {font-size:15px;min-height:44px;}
+
+
+/* V65 visual trials selected from the review: PC titles centered INSIDE their own
+   editorial column, not centered across the viewport. Numbered indices remain left. */
+@media(min-width:851px){
+ body[data-page="about-studio"] .ae-philosophy .ae-section-heading {text-align:center;}
+ body[data-page="program-flying"] .fly16-experience-copy h2.fly16-title {text-align:center;}
+ body[data-page="media-portfolio"] .mp-manifesto-body h2 {text-align:center;}
+ /* VISIT/THE303: a measured stagger near the end of VISIT; no far-right alignment. */
+ body[data-page="contact"] .ct-hero h1 .ct-em {margin-left:clamp(70px,7vw,130px);}
+}
+@media(max-width:850px){
+ body[data-page="contact"] .ct-hero h1 .ct-em {margin-left:clamp(24px,8vw,58px);}
+}
