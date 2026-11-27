@@ -1,0 +1,130 @@
+
+/* THE303 GALLERY v2.1 — informal small-photo album; gallery-only CSS */
+.ng{--ng-ink:#302b28;--ng-muted:#81736c;--ng-rule:#ddd3ca;--ng-accent:#865654;color:var(--ng-ink)}
+.ng *{box-sizing:border-box}
+.ng h1,.ng h2,.ng h3{word-break:keep-all;overflow-wrap:normal}
+.ng .news-breadcrumb{display:flex;align-items:center;gap:13px;font:500 10px/1.5 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.1em;white-space:nowrap;color:#8a7970}
+.ng .news-breadcrumb strong{font-weight:700;color:#7b4144}
+.ng .news-eyebrow{display:block;color:#955c54;letter-spacing:.15em;font:600 10px/1.45 'Montserrat','Noto Sans KR',sans-serif}
+.ng .news-sign{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--ng-rule);padding-top:13px;font:500 9px/1.4 'Montserrat','Noto Sans KR',sans-serif;color:#a58d81;letter-spacing:.1em}
+.ng .ng-hero{background:#faf8f5;padding:34px 0 0}
+.ng .ng-hero-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,340px);align-items:end;gap:62px;padding:49px 0 44px}
+.ng .ng-hero h1{font:600 clamp(37px,4.1vw,54px)/1.35 'Nanum Myeongjo',serif;letter-spacing:-.073em;margin:19px 0 0}
+.ng .ng-hero-desc{padding-bottom:4px}
+.ng .ng-hero-lead{font-size:16px!important;line-height:1.65!important;font-weight:600;color:#352e2b!important;margin:0 0 8px!important;letter-spacing:-.045em}
+.ng .ng-hero-desc p{font-size:12.5px;line-height:1.85;color:var(--ng-muted);letter-spacing:-.025em;margin:0}
+.ng .ng-archive{background:#f4efe9;padding:58px 0 43px}
+.ng .ng-archive-head{display:flex;align-items:end;justify-content:space-between;gap:36px;margin:0 0 24px}
+.ng .ng-archive h2{font:600 clamp(28px,3.1vw,36px)/1.3 'Nanum Myeongjo',serif;letter-spacing:-.06em;margin:12px 0 0}
+.ng .ng-archive-head>p{color:var(--ng-muted);font:400 12px/1.8 'Noto Sans KR',sans-serif;white-space:normal;overflow-wrap:break-word;word-break:keep-all;margin:0 0 3px}
+.ng .ng-mobile-instruction{display:none}
+.ng .ng-tools{display:flex;justify-content:flex-end;align-items:center;border-bottom:1px solid #ccbdb2;margin-bottom:21px;min-height:34px}
+
+
+
+
+.ng .ng-count{font:500 11px/1.5 'Noto Sans KR',sans-serif;white-space:nowrap;color:#9d8579;padding-bottom:12px}
+.ng .ng-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px 15px;align-items:start}
+.ng .ng-card{margin:0;min-width:0}
+.ng .ng-card.photo-frame{min-height:0;aspect-ratio:auto;overflow:visible;background:transparent;border-radius:0}
+.ng .ng-card.photo-frame img{position:relative;inset:auto;display:block;z-index:1}
+.ng .ng-card[hidden]{display:none!important}
+.ng .ng-picture{display:block;position:relative;width:100%;aspect-ratio:1/1;border:0;background:#dfd1c5;overflow:hidden;padding:0;text-align:left;cursor:zoom-in}
+.ng .ng-card:nth-child(4n+2) .ng-picture{background:#d2c1b6}
+.ng .ng-card:nth-child(4n+3) .ng-picture{background:#bfa99c}
+.ng .ng-card:nth-child(4n+4) .ng-picture{background:#e1d6cd}
+.ng .ng-picture img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .38s ease;position:relative;z-index:1}
+.ng .ng-card.is-missing img{opacity:0}
+.ng .ng-card:not(.is-missing) .ng-placeholder{display:none}
+.ng .ng-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:16px;color:#8d776d;z-index:0;pointer-events:none}
+.ng .ng-placeholder>span{font:700 15px/1.3 'Montserrat',sans-serif;letter-spacing:.08em;opacity:.5}
+.ng .ng-placeholder small{font:500 10px/1.4 'Montserrat',sans-serif;letter-spacing:.13em}
+.ng .ng-zoom{position:absolute;z-index:2;right:9px;bottom:8px;color:white;text-shadow:0 1px 8px #29211d;opacity:0;transition:opacity .25s;font-size:20px;pointer-events:none}
+.ng .ng-picture:disabled{cursor:default}
+.ng .ng-picture:not(:disabled):hover img{transform:scale(1.045)}
+.ng .ng-picture:not(:disabled):hover .ng-zoom,.ng .ng-picture:focus-visible .ng-zoom{opacity:1}
+.ng .ng-picture:focus-visible,.ng button:focus-visible,.ng a:focus-visible{outline:2px solid var(--ng-accent);outline-offset:3px}
+.ng .ng-card figcaption.ng-memo-source{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:-1px;padding:0;border:0}
+
+
+.ng .ng-more-wrap{display:flex;justify-content:center;margin:28px auto 0}
+.ng .ng-more{border:0;border-bottom:1px solid #9a796b;background:none;padding:10px 4px;font:600 12px/1.5 'Noto Sans KR',sans-serif;cursor:pointer;color:#6b4843;display:flex;align-items:center;gap:27px}
+.ng .ng-more[hidden]{display:none}
+.ng .ng-more span{font-size:17px}
+.ng .ng-empty{padding:58px 0 64px;text-align:center;color:#655953}
+.ng .ng-empty[hidden]{display:none}
+.ng .ng-empty p{font-size:14px;font-weight:600;margin:0 0 11px}
+.ng .ng-empty span{font-size:12px;color:#9b887d}
+.ng .ng-preview-note{margin:16px 0 0;font-size:11px;color:#957c6d;text-align:center}
+.ng .ng-preview-note[hidden]{display:none}
+.ng .ng-archive .news-sign{margin-top:34px}
+.ng .ng-cross{background:#faf8f5;padding:49px 0 56px}
+.ng .ng-cross-inner{display:flex;align-items:end;justify-content:space-between;gap:30px}
+.ng .ng-cross h2{font:600 clamp(23px,2.6vw,31px)/1.4 'Nanum Myeongjo',serif;letter-spacing:-.06em;margin:13px 0 7px}
+.ng .ng-cross p{font:400 12px/1.75 'Noto Sans KR',sans-serif;color:var(--ng-muted);margin:0}
+.ng .ng-cross-link{font:600 12px/1.4 'Noto Sans KR',sans-serif;display:flex;justify-content:space-between;gap:27px;min-width:164px;padding:12px 0;border-bottom:1px solid #a78878;white-space:nowrap}
+.ng .ng-cross-link span{font-size:18px}
+.ng-lightbox[hidden]{display:none!important}
+.ng-lightbox{position:fixed;inset:0;z-index:3000;background:#171615;color:#fff;display:flex;flex-direction:column;overflow:hidden;padding:0 max(20px,env(safe-area-inset-right)) 0 max(20px,env(safe-area-inset-left));overscroll-behavior:contain}
+.ng-lightbox-top{height:68px;flex:0 0 68px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;border-bottom:1px solid rgba(255,255,255,.16)}
+.ng-lightbox-mark{font:600 10px/1.5 'Montserrat',sans-serif;letter-spacing:.12em;color:#c2aaa0;white-space:nowrap}
+.ng-lightbox-count{font:500 12px/1.4 'Montserrat',sans-serif;letter-spacing:.12em;color:#e9dfd9;white-space:nowrap}
+.ng-lightbox-close{justify-self:end;background:none;color:#fff;border:0;cursor:pointer;font-size:13px;padding:10px 0 10px 10px;white-space:nowrap}
+.ng-lightbox-close span{font-size:24px;vertical-align:middle;margin-left:5px;font-weight:300}
+.ng-lightbox-content{flex:1;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 0 18px}
+.ng-lightbox-stage{width:100%;min-width:0;position:relative;flex:0 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;touch-action:pan-y;user-select:none}
+.ng-lightbox-image{pointer-events:none;width:auto;height:auto;max-width:calc(100vw - 144px);max-height:calc(100dvh - 192px);object-fit:contain;box-shadow:0 0 45px rgba(0,0,0,.15)}
+.ng-lightbox-stage button{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:42px;height:52px;color:#fff;border:0;background:rgba(255,255,255,.09);cursor:pointer;font-size:35px;line-height:1}
+.ng-lightbox-stage button:focus-visible,.ng-lightbox-close:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.ng-lightbox-prev{left:0}.ng-lightbox-next{right:0}
+.ng-lightbox-bottom{flex:0 0 auto;min-height:0;padding:14px 18px 0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;text-align:center}
+.ng-lightbox-title{font:400 13px/1.7 'Noto Sans KR',sans-serif;letter-spacing:-.025em;color:#efe7e1;max-width:min(84vw,700px);overflow-wrap:break-word;word-break:keep-all;text-wrap:pretty}
+.ng-lightbox-title[hidden]{display:none!important}
+.ng-lightbox-hint{display:none;color:#c4b6af;font-size:10px}
+body.ng-lightbox-open{overflow:hidden!important}
+@media(max-width:1050px){.ng .ng-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:800px){
+ .ng .ng-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:21px 12px}
+ .ng .ng-hero-intro{grid-template-columns:minmax(0,1fr);gap:19px;padding:32px 0 29px}
+ .ng .ng-hero h1{margin-top:13px}
+ .ng .ng-hero-desc{max-width:550px}
+ .ng .ng-archive{padding:42px 0 31px}
+ .ng .ng-archive-head{display:block}
+ .ng .ng-archive-head>p{margin-top:12px}
+}
+@media(max-width:600px){
+ .ng .ng-hero{padding-top:21px}
+ .ng .ng-hero-intro{padding:27px 0 24px;gap:12px}
+ .ng .ng-hero h1{font-size:clamp(30px,8.3vw,38px);line-height:1.42;letter-spacing:-.076em}
+ .ng .ng-hero-lead{font-size:14px!important;margin-bottom:3px!important}
+ .ng .ng-hero-desc p{font-size:11.5px;line-height:1.8}
+ .ng .ng-archive{padding:35px 0 27px}
+ .ng .ng-archive h2{font-size:26px}
+ .ng .ng-archive-head{margin-bottom:20px}
+ .ng .ng-archive-head>p{font-size:11px;margin-top:10px}
+ .ng .ng-mobile-instruction{display:inline}
+ .ng .ng-tools{margin-bottom:16px;min-height:27px}
+ 
+ 
+ .ng .ng-count{display:block;font-size:10px;padding-bottom:9px}
+ .ng .ng-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 10px}
+ .ng .ng-placeholder{padding:11px}
+ .ng .ng-placeholder>span{font-size:12px}
+ .ng .ng-card figcaption.ng-memo-source{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:-1px;padding:0;border:0}
+ 
+ 
+ .ng .ng-cross{padding:34px 0 41px}
+ .ng .ng-cross-inner{display:block}
+ .ng .ng-cross h2{font-size:26px}
+ .ng .ng-cross-link{margin-top:20px;width:164px}
+ .ng .news-sign{font-size:8px;letter-spacing:.04em}
+ .ng-lightbox{padding-left:0;padding-right:0}
+ .ng-lightbox-top{height:61px;flex-basis:61px;padding:0 max(16px,env(safe-area-inset-right)) 0 max(16px,env(safe-area-inset-left))}
+ .ng-lightbox-mark{font-size:9px;letter-spacing:.07em}
+ .ng-lightbox-image{max-width:100vw;max-height:calc(100dvh - 198px)}
+ .ng-lightbox-stage button{width:36px;height:44px;font-size:31px;background:rgba(0,0,0,.2)}
+ .ng-lightbox-prev{left:5px}.ng-lightbox-next{right:5px}
+ .ng-lightbox-bottom{min-height:0;padding:13px 18px max(9px,env(safe-area-inset-bottom))}
+ .ng-lightbox-hint{display:block}
+}
+@media(prefers-reduced-motion:reduce){.ng .ng-picture img{transition:none}}

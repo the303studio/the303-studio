@@ -1,0 +1,60 @@
+/* THE303 STUDIO BARRE / 2026-10-31 - scoped improvements.
+   No shared CSS edits. Keep desktop/phone hero artwork and established section geometry. */
+body[data-page="program-barre"] .bar17 .b-reserve-actions {
+  display:flex;align-items:center;justify-content:flex-end;gap:clamp(18px,2.5vw,30px);flex-wrap:wrap;
+}
+body[data-page="program-barre"] .bar17 .b-reserve-primary {
+  display:inline-flex;align-items:center;justify-content:center;gap:13px;
+  min-height:48px;padding:0 22px;border-radius:100px;
+  border:1px solid #fff;background:#fff;color:#7d4144;
+  font:700 13px/1.4 'Noto Sans KR',sans-serif;white-space:nowrap;
+  text-decoration:none;transition:background .2s,color .2s;
+}
+body[data-page="program-barre"] .bar17 .b-reserve-primary:hover {background:#f4e8e4;}
+body[data-page="program-barre"] .bar17 .b-reserve-primary:focus-visible {outline:2px solid #fff;outline-offset:4px;}
+body[data-page="program-barre"] .bar17 .b-reserve-actions>.b-textlink {flex-shrink:0;}
+
+/* Tablets only: avoid an oversized stacked HERO while retaining the photo's
+   face, outstretched arm, and posture. Full-width/mobile and desktop unchanged. */
+@media (min-width:601px) and (max-width:850px) {
+ body[data-page="program-barre"] .bar17 .b-hero-visual {
+   width:min(100%,660px);margin-inline:auto;
+ }
+ body[data-page="program-barre"] .bar17 .b-hero-image {aspect-ratio:1.38;}
+ body[data-page="program-barre"] .bar17 .b-hero-image img {object-position:center 45%;}
+}
+/* Small phones: keep both hero links on one row without sacrificing tap height. */
+@media (max-width:359px) {
+ body[data-page="program-barre"] .bar17 .b-hero-actions {
+   flex-wrap:nowrap;justify-content:center;gap:9px;
+ }
+ body[data-page="program-barre"] .bar17 .b-hero-actions .b-cta {
+   min-height:46px;padding:0 13px;gap:7px;font-size:12px;
+ }
+ body[data-page="program-barre"] .bar17 .b-hero-actions .b-textlink {
+   min-height:44px;gap:7px;font-size:12px;
+ }
+}
+/* The two long English captions should be two deliberate full lines,
+   not two accidental broken labels on very narrow screens. */
+@media (max-width:375px) {
+ body[data-page="program-barre"] .bar17 .b-panorama-caption {
+   flex-direction:column;align-items:center;justify-content:center;
+   gap:4px;margin-top:12px;text-align:center;
+   font-size:9px;letter-spacing:.12em;
+ }
+ body[data-page="program-barre"] .bar17 .b-panorama-caption span {white-space:nowrap;}
+}
+@media (max-width:850px) {
+ body[data-page="program-barre"] .bar17 .b-reserve-actions {
+   flex-direction:column;align-items:center;justify-content:center;gap:14px;
+   width:100%;
+ }
+ body[data-page="program-barre"] .bar17 .b-reserve-primary {min-width:205px;}
+ body[data-page="program-barre"] .bar17 .b-reserve-actions>.b-textlink {
+   align-self:center;margin-inline:auto;
+ }
+}
+@media (prefers-reduced-motion:reduce) {
+ body[data-page="program-barre"] .bar17 .b-reserve-primary {transition:none;}
+}

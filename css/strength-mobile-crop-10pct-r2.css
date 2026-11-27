@@ -1,0 +1,11 @@
+/* THE303 / 03.TEST / scene 03 STRENGTH ONLY
+   The approved JPG is already 10% wider framed than the previous tight crop.
+   Keep the background mapped at nearly full hero height, centering the ring/back.
+   No effect on desktop, other slides, keywords, zoom or timing. */
+@media (max-width:850px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-bg{
+    background-size:auto 97% !important;
+    background-position:50% 50% !important;
+    background-color:#09090a;
+  }
+}

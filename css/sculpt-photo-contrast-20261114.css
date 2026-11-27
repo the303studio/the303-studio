@@ -1,0 +1,25 @@
+/* THE303 STUDIO | 03.TEST 2026-11-14 | Scene 04 SCULPT only.
+   New charcoal photograph requires light neutral-gray type for accessibility.
+   Preserve Jost typography, size, position, zoom, slide motion and all other scenes. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content h2,
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content .hero-editorial-link {
+  color:#E9E6E2 !important;
+}
+/* Keep the approved minimalist navigation layout, just improve its contrast
+   over the new dark charcoal background when SCULPT is selected. */
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation .hero-dot,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation .hero-position,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation .hero-pause {
+  color:#E9E6E2 !important;
+  text-shadow:none !important;
+}
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation .hero-dot i {
+  background:#E9E6E2 !important;
+  box-shadow:none !important;
+}
+body.the303-index-v111 #home.the303-intro-v05[data-scene="control"] .hero-navigation .hero-pause {
+  border-color:rgba(233,230,226,.55) !important;
+  background:rgba(0,0,0,.13) !important;
+  box-shadow:none !important;
+}

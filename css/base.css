@@ -1,0 +1,60 @@
+/* ==========================================================================
+       1. 프리미엄 웜톤 글로벌 변수 설정
+       ========================================================================== */
+    :root {
+      --rose-brown: #794344;
+      --brick-wine: #8A3F43;
+      --cashmere: #B18B70;
+      --cinnamon: #A66F52;
+      
+      --bg-light: #FAF8F5;
+      --bg-alt: #F0EBE1;
+      --ink: #2D2825;
+      --ink-soft: #5C534C;
+      --line: #E3DDD5;
+      --muted: #726A64; 
+      
+      --max: 1280px; 
+      --section-space: clamp(96px, 8.5vw, 132px); 
+      --nav-height: 90px;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); } 
+    body { min-height: 100vh; background: var(--bg-light); color: var(--ink); font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; overflow-x: hidden; }
+    body.menu-open { overflow: hidden; } 
+    
+    img { display: block; width: 100%; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    
+    .container { width: min(var(--max), calc(100% - 56px)); margin-inline: auto; }
+    
+    .eyebrow { display: inline-flex; align-items: center; gap: 14px; color: var(--brick-wine); font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; font-family: 'Montserrat', sans-serif;}
+    .eyebrow::before { content: ''; width: 32px; height: 1px; background: currentColor; }
+    .section-title { margin: 18px 0 24px; font-family: 'Montserrat', 'Nanum Myeongjo', serif; font-size: clamp(32px, 4vw, 48px); line-height: 1.35; font-weight: 700; letter-spacing: -.02em;}
+    .section-copy { margin: 0; max-width: 620px; color: var(--ink-soft); font-size: 15px; line-height: 1.9; font-weight: 300; }
+    .section { padding-block: var(--section-space); }
+    
+    /* 섹션 스크롤 위치 조정 완벽 적용 */
+    #program .section-head, #space .section-head, #news .section-head { margin-bottom: 0; }
+    #space .media-studio-showcase { margin-top: 42px; }
+    :focus-visible { outline: 2px solid var(--brick-wine); outline-offset: 3px; }
+    
+    .btn { position: relative; min-height: 54px; padding: 0 46px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--brick-wine); background: var(--brick-wine); color: #fff; font-size: 14px; font-weight: 600; letter-spacing: .04em; transition: all .4s ease; border-radius: 30px; }
+    .btn:hover { background: var(--cinnamon); border-color: var(--cinnamon); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(166, 111, 82, 0.3);}
+    .btn-inner { display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .btn-arrow { position: absolute; right: 24px; font-family: sans-serif; font-size: 14px;}
+    
+    .btn-light { border-color: rgba(255,255,255,0.8); background: white; color: var(--ink); }
+    .btn-light:hover { border-color: var(--bg-alt); background: var(--bg-alt); color: var(--brick-wine); }
+    
+    .btn-outline { background: transparent; color: var(--ink); border-color: var(--cashmere); }
+    .btn-outline:hover { color: #fff; background: var(--cashmere); border-color: var(--cashmere); }
+    
+    .btn-outline-dark { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+    .btn-outline-dark:hover { color: var(--cinnamon); background: #fff; border-color: #fff; }
+
+

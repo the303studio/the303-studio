@@ -1,0 +1,72 @@
+/* THE303 STUDIO — INDEX V09 / isolated additions to V08. */
+:root{--the303-ivory:#F4F1EC;--the303-taupe:#625A54;--the303-charcoal:#292827;--the303-wine:#89545A}
+/* PROGRAM's primary title intentionally unchanged. */
+body.the303-index-v09 #program [data-sequence]{
+  position:relative;overflow:hidden;isolation:isolate;contain:paint;
+  background:#d6d4ce;border:0;box-shadow:none;
+}
+body.the303-index-v09 #program [data-sequence]>.v09-film-layer{
+  display:block;position:absolute;inset:0;width:100%;height:100%;overflow:hidden;
+  pointer-events:none;
+}
+body.the303-index-v09 #program [data-sequence] .v09-film-layer>.v07-sequence-frame,
+body.the303-index-v09 #program [data-sequence] .v09-film-layer>.v07-sequence-frame.is-current{
+  position:absolute;inset:0;width:100%;height:100%;display:block;
+  object-fit:cover;object-position:var(--film-origin,50% 50%);
+  transform-origin:var(--film-origin,50% 50%);
+  transform:scale(1);opacity:0;z-index:0;
+  animation:none;transition:opacity 140ms ease-out;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+}
+body.the303-index-v09 #program [data-sequence] .v09-film-layer>.v07-sequence-frame.is-current{
+  opacity:1;z-index:2;
+}
+body.the303-index-v09 #program [data-sequence] .v09-film-layer>.v07-sequence-frame.is-exiting{
+  opacity:1;z-index:1;
+}
+body.the303-index-v09 #program [data-sequence].v09-film-playing .v09-film-layer>.v07-sequence-frame.is-current,
+body.the303-index-v09 #program [data-sequence].v09-film-playing .v09-film-layer>.v07-sequence-frame.is-exiting{
+  animation:the303-v09-film-zoom 700ms cubic-bezier(.22,.25,.3,1) both;
+  will-change:transform;
+}
+@keyframes the303-v09-film-zoom{from{transform:scale(1)}to{transform:scale(var(--film-zoom,1.04))}}
+body.the303-index-v09 #program [data-sequence] .v07-sequence-count{
+  right:16px;bottom:16px;padding:8px 10px;background:rgba(41,40,39,.60);
+  color:#F4F1EC;font-weight:500;letter-spacing:.16em;
+}
+/* Curated warm charcoals and softer display hierarchy; no new decoration. */
+body.the303-index-v09 #program .v06-program-feature h3{
+  font-weight:600;color:var(--the303-charcoal);letter-spacing:-.032em;
+}
+body.the303-index-v09 #program .v06-program-ko{color:#49413B}
+body.the303-index-v09 #program .v06-program-descr{color:#6D625B}
+body.the303-index-v09 #program .v06-dance h3{font-weight:600;color:var(--the303-charcoal);letter-spacing:-.038em}
+body.the303-index-v09 #ttc .v06-cert-english{font-weight:600;color:var(--the303-charcoal);letter-spacing:-.04em}
+body.the303-index-v09 #ttc .v06-cert-title{color:var(--the303-charcoal)}
+body.the303-index-v09 #ttc .v06-cert-desc{color:#625850}
+body.the303-index-v09 #space.v06-media{background:var(--the303-charcoal)}
+body.the303-index-v09 #space .v06-media-heading h2{font-weight:500}
+body.the303-index-v09 #space .v06-media-copy h3{font-weight:500;letter-spacing:-.032em}
+body.the303-index-v09 #news .v06-journal-heading h2{font-weight:600;color:var(--the303-charcoal);letter-spacing:-.032em}
+body.the303-index-v09 #news .v07-journal-statement{font-weight:600;color:var(--the303-charcoal);letter-spacing:-.03em}
+body.the303-index-v09 #news .v07-journal-links a{color:var(--the303-charcoal)}
+/* The photo wall, philosophy typography/photo and the four-cut MEDIA dissolve are unchanged. */
+@media(max-width:850px){
+  body.the303-index-v09 #program .v06-feature-flying .v06-program-photo{
+    height:clamp(470px,132vw,710px);/* static, portrait editorial aperture */
+  }
+  body.the303-index-v09 #program .v06-program-feature h3{letter-spacing:-.028em}
+  body.the303-index-v09 #program .v06-dance h3{letter-spacing:-.03em}
+  body.the303-index-v09 #ttc .v06-cert-english{letter-spacing:-.038em}
+  body.the303-index-v09 #news .v06-journal-heading h2{letter-spacing:-.024em}
+}
+@media(max-width:390px){
+  body.the303-index-v09 #program .v06-feature-flying .v06-program-photo{height:130vw}
+}
+@media(prefers-reduced-motion:reduce){
+  body.the303-index-v09 #program [data-sequence] .v09-film-layer>.v07-sequence-frame{
+    animation:none!important;transition:none!important;transform:none!important;
+  }
+  body.the303-index-v09 #program [data-sequence] .v09-film-layer:not(:first-child)>.v07-sequence-frame{opacity:0!important}
+  body.the303-index-v09 #program [data-sequence] .v09-film-layer:first-child>.v07-sequence-frame{opacity:1!important}
+}

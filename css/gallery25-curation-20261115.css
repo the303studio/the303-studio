@@ -1,0 +1,10 @@
+/* THE303 / GALLERY 25 curated album — mobile closing frame only. */
+/* The 25th photograph is the community finale. Give the otherwise orphaned
+   final tile a full-width place on two-column mobile screens. */
+@media (max-width: 479px) {
+  body[data-page="news-gallery"] .ng .ng-grid > .ng-card:last-child { grid-column: 1 / -1; }
+}
+/* On 3-column small tablets center the closing image rather than left-align it. */
+@media (min-width: 480px) and (max-width: 800px) {
+  body[data-page="news-gallery"] .ng .ng-grid > .ng-card:last-child { grid-column: 2; }
+}

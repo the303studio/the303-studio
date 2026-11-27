@@ -1,0 +1,41 @@
+/* THE303 STUDIO / NOTICE: typographic hierarchy approved 2026-11-01.
+ * Match pinned notice title to latest notice title at each responsive width.
+ * Restrict all overrides to data-page="news-notice". Preserve board categories,
+ * navigation, original post titles, dates, and inactive unpublished URL states.
+ */
+body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-title{
+  font:600 clamp(19px,1.75vw,25px)/1.45 'Nanum Myeongjo',serif;
+  letter-spacing:-.04em;
+  margin:0;
+}
+body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-inner{
+  padding-top:22px;
+  padding-bottom:22px;
+}
+body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-content{
+  gap:6px 20px;
+}
+body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-desc{
+  font-size:12px;
+  line-height:1.75;
+}
+body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-meta{
+  gap:6px;
+}
+body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-kind,
+body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-date{
+  font-size:11px;
+}
+@media(max-width:850px){
+ body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-title{font-size:21px}
+}
+@media(max-width:620px){
+ body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-title{font-size:20px;line-height:1.45}
+ body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-inner{padding-top:19px;padding-bottom:20px}
+ body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-desc{font-size:12px;line-height:1.75}
+ body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-content{gap:5px}
+ body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-meta{gap:8px}
+}
+@media(max-width:340px){
+ body[data-page="news-notice"] .news-page .nn-entry--pinned .nn-entry-title{font-size:19px}
+}

@@ -1,0 +1,41 @@
+/* THE303 INDEX V11 | Selected original photography with editorial placement.
+   V10 choreography/photowall/editor functionality are intentionally preserved. */
+body.the303-index-v11 #home.the303-intro-v05 .hero-slide--line,
+body.the303-index-v11 #home.the303-intro-v05 .hero-slide--flow{background:#d6d5d6;color:#403d3b}
+body.the303-index-v11 #home.the303-intro-v05 .hero-slide--line .hero-content,
+body.the303-index-v11 #home.the303-intro-v05 .hero-slide--flow .hero-content{color:#333130;text-shadow:none}
+body.the303-index-v11 #home.the303-intro-v05 .hero-slide--line .hero-bg,
+body.the303-index-v11 #home.the303-intro-v05 .hero-slide--flow .hero-bg{
+ background-position:50% 50%;filter:none!important;
+}
+/* Photos are naturally high-key; the copy is deliberately charcoal rather than white. */
+@media(min-width:1101px){
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide--line .hero-content{
+   top:auto;bottom:clamp(112px,14vh,155px);left:clamp(50px,5.8vw,110px);
+ }
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide--flow .hero-content{
+   top:clamp(125px,16vh,175px);bottom:auto;right:clamp(55px,5.8vw,110px);
+ }
+}
+/* Fixed aperture preserved: interior images alone may move. */
+body.the303-index-v11 #program .v10-film-stage{background:#e8e4df;border-color:rgba(99,86,76,.16)}
+body.the303-index-v11 #program .v10-film-stage .v06-program-photo{background:#d9d6d2}
+@media(max-width:850px){
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide--line .hero-content,
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide--flow .hero-content{
+   top:clamp(112px,17vh,160px);bottom:auto;left:clamp(22px,5.7vw,32px);right:clamp(22px,5.7vw,32px);
+ }
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide--line .hero-bg,
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide--flow .hero-bg{
+   background-size:cover;background-position:50% 50%;
+ }
+ /* FLOW title is offset from the descending black silk at narrow widths. */
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide--flow .hero-content{
+   left:clamp(66px,19vw,92px);right:18px;
+ }
+ body.the303-index-v11 #program .v10-film-stage{background:#ebe7e1}
+}
+@media(prefers-reduced-motion:reduce){
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide.active .hero-content,
+ body.the303-index-v11 #home.the303-intro-v05 .hero-slide.active.v10-text-ready .hero-content{transition:none!important}
+}

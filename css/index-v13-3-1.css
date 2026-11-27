@@ -1,0 +1,84 @@
+/* THE303 STUDIO / V13.3.1 ONLY / built directly from verified V13.2.
+   This file changes hero keyword size, weight and placement only.
+   Jost, revised keywords, neutral colours and photo-first minimalist copy are retained.
+   No alterations to PROGRAM, PHILOSOPHY, JOURNAL, hero animation or linked pages. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+  font-family:'Jost','Montserrat','Arial',sans-serif !important;
+  font-weight:600 !important;
+  font-size:clamp(60px,8.1vw,125px) !important; /* ~12% smaller than V13.2 desktop */
+  letter-spacing:-.035em !important;
+  line-height:1.02 !important;
+  text-transform:uppercase !important;
+  -webkit-text-stroke:0 transparent !important;
+  text-shadow:none !important;
+  paint-order:normal !important;
+  color:#484440 !important;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--brand .hero-content h2{
+  font-weight:600 !important; /* same weight as other keywords */
+  color:#37322F !important;
+  letter-spacing:-.035em !important;
+}
+/* Remove old captions regardless of stored editor copy. THE303 retains STUDIO above the title. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide:not(.hero-slide--brand) .hero-editorial-index,
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-editorial-caption{
+  display:none !important;
+}
+@media(min-width:1101px){
+  /* RHYTHM is the shared anchor for PRECISION / RHYTHM / SCULPT / THE303. */
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    top:auto !important;
+    bottom:clamp(122px,17vh,192px) !important;
+    left:clamp(44px,5.8vw,110px) !important;
+    right:auto !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content{
+    top:clamp(110px,13.5vh,168px) !important;
+    bottom:auto !important;
+    left:clamp(36px,5.8vw,108px) !important;
+    right:auto !important;
+  }
+}
+@media(min-width:851px) and (max-width:1100px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+    font-size:clamp(55px,7.3vw,90px) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    top:auto !important;
+    bottom:150px !important;
+    left:32px !important;
+    right:auto !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content{
+    top:15vh !important;
+    bottom:auto !important;
+    left:32px !important;
+    right:auto !important;
+  }
+}
+@media(max-width:850px){
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2{
+    font-size:clamp(31px,8.56vw,40px) !important; /* ~8% smaller than V13.2 mobile */
+    line-height:1.06 !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    top:clamp(103px,14vh,145px) !important;
+    bottom:auto !important;
+    left:clamp(24px,6vw,32px) !important;
+    right:16px !important;
+    width:auto !important;
+    max-width:none !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content{
+    top:clamp(105px,14vh,140px) !important;
+    bottom:auto !important;
+    left:16px !important;
+    right:16px !important;
+  }
+  /* Moving SCULPT to the RHYTHM anchor puts it on bright curtains.
+     The previous pale-grey treatment was for the old dark-clothing placement. */
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content h2,
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content .hero-editorial-link{
+    color:#484440 !important;
+  }
+}

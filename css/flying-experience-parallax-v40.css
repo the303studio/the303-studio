@@ -1,0 +1,25 @@
+/* THE303 STUDIO | V41 Flying Yoga / 03 CLASS EXPERIENCE — visible desktop depth.
+   Iteration on V40; only this section is opted in; 18px existing right stagger preserved.
+   No motion for mobile/reduced-motion. Preserve image filenames, crop and editors. */
+@media (min-width: 851px) and (prefers-reduced-motion: no-preference) {
+  body[data-page="program-flying"].the303-fly-experience-parallax .fly16 .fly16-experience-art .photo-frame.left {
+    transform: translate3d(0, var(--fly-exp-frame-y, 0px), 0);
+    will-change: transform;
+  }
+  body[data-page="program-flying"].the303-fly-experience-parallax .fly16 .fly16-experience-art .photo-frame.right {
+    transform: translate3d(0, calc(18px + var(--fly-exp-frame-y, 0px)), 0);
+    will-change: transform;
+  }
+  body[data-page="program-flying"].the303-fly-experience-parallax .fly16 .fly16-experience-art .photo-frame > img {
+    /* Keep enough overscan for +-16px image movement without exposed edges. */
+    transform: translate3d(0, var(--fly-exp-photo-y, 0px), 0);
+    scale: 1.12;
+    transition: scale 1.25s cubic-bezier(.22,.65,.2,1);
+    will-change: transform;
+  }
+  body[data-page="program-flying"].the303-fly-experience-parallax .fly16 .fly16-experience-art .photo-frame:hover > img {
+    scale: 1.142; /* preserve previous approximate 1.018x hover increase */
+  }
+}
+/* The script removes the opt-in class on <=850px or reduced-motion,
+   restoring exactly the original page offsets and photo composition. */

@@ -1,0 +1,12 @@
+/* THE303 STUDIO | V65-05: mobile footer entrance only. Desktop V57 untouched. */
+@media (max-width:850px) and (prefers-reduced-motion:no-preference) {
+  body.the303-footer-v57 .site-footer.v65-mobile-footer-armed .footer-wordmark {
+    transform:translate3d(-36px,0,0) !important;
+    transition:none !important;
+    will-change:transform;
+  }
+  body.the303-footer-v57 .site-footer.v65-mobile-footer-armed.v65-mobile-footer-started .footer-wordmark {
+    transform:translate3d(0,0,0) !important;
+    transition:transform 3.8s cubic-bezier(.23,.62,.18,1) !important;
+  }
+}

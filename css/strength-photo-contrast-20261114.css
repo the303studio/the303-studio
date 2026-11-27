@@ -1,0 +1,18 @@
+/* THE303 STUDIO | 03.TEST | scene 03 STRENGTH image contrast only.
+   Keep existing keywords, typeface, scale, positions and animation unchanged. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content h2,
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--strength .hero-content .hero-editorial-link {
+  color: #e9e6e2 !important;
+}
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation .hero-dot,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation .hero-position,
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation .hero-pause {
+  color: #e9e6e2 !important; text-shadow: none !important;
+}
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation .hero-dot i {
+  background: #e9e6e2 !important; box-shadow: none !important;
+}
+body.the303-index-v111 #home.the303-intro-v05[data-scene="strength"] .hero-navigation .hero-pause {
+  border-color: rgba(233,230,226,.55) !important; background: rgba(0,0,0,.13) !important; box-shadow: none !important;
+}

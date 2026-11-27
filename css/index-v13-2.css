@@ -1,0 +1,44 @@
+/* THE303 STUDIO — INDEX V13.2 / Jost hero typography only
+   Minimal replacement of V13.1's outlined mixed-case headlines.
+   Program, PHILOSOPHY, MEDIA STUDIO, JOURNAL, navigation and editor remain unchanged. */
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2 {
+  font-family: 'Jost', 'Montserrat', 'Arial', sans-serif !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  font-kerning: normal;
+  font-size: clamp(68px, 9.2vw, 142px) !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.02 !important;
+  color: #484440 !important;
+  -webkit-text-stroke: 0 transparent !important;
+  text-stroke: 0 transparent !important;
+  paint-order: normal !important;
+  text-shadow: none !important;
+  white-space: nowrap;
+}
+body.the303-index-v111 #home.the303-intro-v05 .hero-slide--brand .hero-content h2 {
+  font-weight: 700 !important;
+  color: #37322F !important;
+  letter-spacing: -.04em !important;
+}
+@media (min-width: 851px) and (max-width: 1100px) {
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2 {
+    font-size: clamp(63px, 8.3vw, 102px) !important;
+  }
+}
+@media (max-width: 850px) {
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide .hero-content h2 {
+    font-size: clamp(34px, 9.3vw, 43px) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -.035em !important;
+  }
+  /* On mobile the fourth caption sits over dark clothing, unlike its bright PC background. */
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--control .hero-content h2 {
+    color: #F0ECE8 !important;
+  }
+}
+@media (max-width: 390px) {
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-content h2 {
+    font-size: clamp(32px, 8.6vw, 35px) !important;
+  }
+}

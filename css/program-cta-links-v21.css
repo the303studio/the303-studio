@@ -1,0 +1,67 @@
+/* THE303 STUDIO V21 — scoped link/CTA alignment for the three PROGRAM pages only.
+   Preserves each page's original 04 section layout and existing shared footer/editor.
+*/
+:is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links {
+  display:flex;align-items:center;flex-wrap:wrap;gap:8px clamp(20px,3vw,38px);
+  margin:19px 0 12px;
+}
+:is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links a {
+  display:inline-flex;align-items:center;justify-content:flex-start;gap:11px;
+  min-height:44px;padding:8px 0;
+  color:#794344;border-bottom:1px solid #9a776c;
+  font:600 13px/1.55 'Noto Sans KR',sans-serif;
+  letter-spacing:-.02em;text-decoration:none;white-space:nowrap;
+  transition:color .18s,border-color .18s;
+}
+:is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links a span {
+  color:#9d665a;font:400 17px/1 'Noto Sans KR',sans-serif;
+}
+:is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links a:hover {color:#9c5052;border-bottom-color:#9c5052;}
+:is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links a:focus-visible {outline:2px solid #794344;outline-offset:4px;}
+/* Keep the links visually associated with 04, without a large duplicate gap before the cross-program links. */
+body[data-page="program-flying"] .fly16 .fly16-other {margin-top:32px;}
+body[data-page="program-barre"] .bar17 .b-other {margin-top:32px;}
+body[data-page="program-dance"] .dance18 .d-other {margin-top:32px;}
+/* Match Barre / Aerial Dance: white pill plus right-hand text link for Flying Yoga. */
+body[data-page="program-flying"] .fly16 .fly16-cta-actions {
+  display:flex;align-items:center;justify-content:flex-end;
+  flex-wrap:wrap;gap:clamp(16px,2.3vw,28px);
+}
+body[data-page="program-flying"] .fly16 .fly16-cta-primary {
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:48px;padding:0 22px;border:1px solid #fff;
+  border-radius:100px;background:#fff;color:#7d4144;
+  font:700 13px/1.5 'Noto Sans KR',sans-serif;
+  text-decoration:none;white-space:nowrap;
+  transition:background .2s ease;
+}
+body[data-page="program-flying"] .fly16 .fly16-cta-primary:hover {background:#f4e8e4;}
+body[data-page="program-flying"] .fly16 .fly16-cta-secondary {
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:44px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.72);
+  color:#fff;font:700 13px/1.4 'Noto Sans KR',sans-serif;
+  text-decoration:none;white-space:nowrap;
+}
+body[data-page="program-flying"] .fly16 .fly16-cta-primary:focus-visible,
+body[data-page="program-flying"] .fly16 .fly16-cta-secondary:focus-visible {outline:2px solid #fff;outline-offset:4px;}
+@media (max-width:850px) {
+  body[data-page="program-flying"] .fly16 .fly16-cta-actions {
+    width:100%;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-cta-primary {max-width:100%;}
+}
+@media (max-width:600px) {
+  :is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links {
+    gap:6px 16px;margin:16px 0 10px;
+  }
+  :is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links a {
+    gap:6px;font-size:12px;letter-spacing:-.035em;
+  }
+  body[data-page="program-flying"] .fly16 .fly16-other,
+  body[data-page="program-barre"] .bar17 .b-other,
+  body[data-page="program-dance"] .dance18 .d-other {margin-top:25px;}
+}
+@media (prefers-reduced-motion:reduce) {
+  body[data-page="program-flying"] .fly16 .fly16-cta-primary,
+  :is(body[data-page="program-flying"] .fly16, body[data-page="program-barre"] .bar17, body[data-page="program-dance"] .dance18) .the303-program-links a {transition:none;}
+}

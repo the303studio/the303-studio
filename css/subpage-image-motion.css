@@ -1,0 +1,43 @@
+/* THE303 STUDIO | Studio-introduction photo motion for subpages
+   Based exactly on about-editorial.css: scale(1.018), 1.25s cubic-bezier(.22,.65,.2,1).
+   The homepage and the existing studio introduction are intentionally untouched.
+   Gallery zoom applies ONLY to the thumbnail, never to the lightbox image. */
+
+/* Real images inside established photo-frame containers. Preserve framing,
+   aspect-ratio, object-position and editor/fallback behavior. */
+body.the303-subpage:not([data-page="about-studio"]):not([data-page="news-gallery"])
+  .photo-frame > img {
+  transition: transform 1.25s cubic-bezier(.22,.65,.2,1);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body.the303-subpage:not([data-page="about-studio"]):not([data-page="news-gallery"])
+    .photo-frame:hover > img {
+    transform: scale(1.018);
+  }
+}
+
+/* Gallery: keep button, original-image lightbox, swipe and captions intact.
+   Align only the thumbnail's animation with the studio introduction. */
+body[data-page="news-gallery"] .ng .ng-picture img {
+  transition: transform 1.25s cubic-bezier(.22,.65,.2,1);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body[data-page="news-gallery"] .ng .ng-picture:not(:disabled):hover img {
+    transform: scale(1.018);
+  }
+}
+
+/* No motion for accessibility preference; prevent snap-zoom too. */
+@media (prefers-reduced-motion: reduce) {
+  body.the303-subpage:not([data-page="about-studio"]):not([data-page="news-gallery"])
+    .photo-frame > img,
+  body[data-page="news-gallery"] .ng .ng-picture img {
+    transition: none;
+    transform: none;
+  }
+  body[data-page="news-gallery"] .ng .ng-picture:not(:disabled):hover img {
+    transform: none;
+  }
+}

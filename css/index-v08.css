@@ -1,0 +1,14 @@
+/* THE303 STUDIO | INDEX V08 | test build only.
+   Flying-yoga five-cut montage: 700ms hold per cut plus 140ms dissolve.
+   Intro, other sections and V07 color system are intentionally unchanged. */
+body.the303-index-v07 #program [data-sequence="flying"] .v07-sequence-frame,
+body.the303-index-v07 #program [data-sequence="flying"] .v07-sequence-frame.is-current{
+  transform:scale(1.035);
+  transition:opacity 140ms ease-out, transform 0s linear;
+}
+body.the303-index-v07 #program [data-sequence="flying"] .v07-sequence-frame:nth-child(4){object-position:61% 47%}
+body.the303-index-v07 #program [data-sequence="flying"] .v07-sequence-frame:nth-child(5){object-position:51% 48%}
+@media (prefers-reduced-motion:reduce){
+  body.the303-index-v07 #program [data-sequence="flying"] .v07-sequence-frame,
+  body.the303-index-v07 #program [data-sequence="flying"] .v07-sequence-frame.is-current{transition:none!important;transform:none!important}
+}

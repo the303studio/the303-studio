@@ -1,0 +1,298 @@
+/* THE303 STUDIO | Dynamic editorial art direction · release 2026-10-31 D3
+   Intent: unmistakable page identity, photo-led editorial rhythm, mobile-first
+   hierarchy. This file is loaded last on eleven public subpages only.
+   Preserve fixed header, breadcrumb grid, original photos, links, video and editor.
+*/
+:root { --d303-wine:#794344; --d303-ink:#302925; --d303-rule:#d9d0c8; }
+
+/* COURSE identity, not a slogan, becomes the principal headline.
+   Existing editable hero lead and summary remain available beneath the title. */
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-grid {
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  column-gap:clamp(34px,5.8vw,86px);
+  padding-top:clamp(42px,4.8vw,66px);
+  padding-bottom:clamp(31px,4vw,52px);
+}
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-title {
+  font-family:'Nanum Myeongjo','Noto Serif CJK KR',serif;
+  font-size:clamp(60px,6.4vw,96px);
+  line-height:1.12;
+  letter-spacing:-.077em;
+  margin:clamp(21px,2.4vw,31px) 0 0;
+  white-space:normal;
+  text-wrap:balance;
+}
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-tagline {
+  font:600 clamp(19px,1.75vw,25px)/1.65 'Nanum Myeongjo','Noto Serif CJK KR',serif;
+  letter-spacing:-.064em; color:#6b4843; margin:clamp(16px,2vw,24px) 0 clamp(21px,2.4vw,32px);
+  max-width:18em;word-break:keep-all;text-wrap:balance;
+}
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-bottom {padding-top:clamp(17px,2vw,28px);}
+body[data-page="ttc-cert"] .ttc-main .ttc-hero-summary {line-height:1.85;}
+
+/* WORKSHOP: large, legible Korean name; philosophy as secondary campaign copy. */
+body[data-page="ttc-workshop"] .workshop-main .ws-hero-head {
+  grid-template-columns:minmax(0,1.34fr) minmax(225px,.66fr);
+  gap:clamp(32px,5vw,78px);
+  padding-top:clamp(39px,4.9vw,73px);
+  padding-bottom:clamp(35px,4.6vw,63px);
+}
+body[data-page="ttc-workshop"] .workshop-main .ws-hero-title {
+  font:600 clamp(60px,6.4vw,96px)/1.12 'Nanum Myeongjo','Noto Serif CJK KR',serif;
+  letter-spacing:-.077em;margin-top:clamp(14px,2vw,27px);
+  white-space:normal;
+}
+body[data-page="ttc-workshop"] .workshop-main .ws-hero-tagline {
+  font:600 clamp(21px,2.1vw,31px)/1.63 'Nanum Myeongjo','Noto Serif CJK KR',serif;
+  letter-spacing:-.065em;color:#74564d;margin-top:clamp(17px,2.5vw,32px);text-wrap:balance;
+}
+body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro {padding-bottom:4px;}
+
+/* MEDIA pages already use striking imagery; make the service unmistakable in Korean
+   without replacing their original editorial headline. */
+body[data-page^="media-"] .m-hero-page-name {
+  display:table;max-width:100%;margin:17px 0 0;padding-bottom:8px;
+  border-bottom:2px solid var(--d303-wine);
+  color:var(--d303-wine);
+  font:600 clamp(18px,1.55vw,22px)/1.45 'Noto Sans KR',sans-serif;
+  letter-spacing:-.058em;word-break:keep-all;
+}
+body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-copy h1 {margin-top:clamp(16px,2vw,25px);}
+body[data-page="media-rental"] .media-rental-main .mr-heading h1 {margin-top:clamp(16px,2vw,25px);}
+
+/* NEWS: a clear destination word is immediately identifiable; feeling follows. */
+body[data-page^="news-"] .news-hero-page-name {
+  display:table;margin-top:15px;padding-bottom:7px;
+  color:var(--d303-wine);font:700 clamp(17px,1.45vw,21px)/1.5 'Noto Sans KR',sans-serif;
+  letter-spacing:-.055em;border-bottom:2px solid var(--d303-wine);
+}
+body[data-page="news-notice"] .news-page .nn-headline h1,
+body[data-page="news-gallery"] .ng .ng-hero-main h1 {margin-top:clamp(12px,1.6vw,22px);}
+
+/* Keep desktop asymmetry and allow a restrained photographic response to pointer
+   interaction. Accessibility/Reduced Motion: nothing essential depends on animation. */
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  body[data-page^="media-"] .m-hero-page-name,
+  body[data-page^="news-"] .news-hero-page-name {transition:border-color .25s ease;}
+}
+
+/* Tablet: strengthen identity while keeping text/photo balance; no mobile-centered
+   paragraphs at this breakpoint. */
+@media(max-width:900px) and (min-width:601px){
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-grid{grid-template-columns:1fr;gap:35px;padding-top:36px;}
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-title{font-size:clamp(65px,8vw,82px);}
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-head{grid-template-columns:1fr;gap:19px;padding:42px 0 31px;}
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-title{font-size:clamp(65px,8vw,82px);}
+}
+
+/* PHONE: independent composition, not a reduced copy of the PC split-grid.
+   Center only the hero narrative and its photograph; preserve breadcrumbs,
+   course steps, long-form articles and directional information left-aligned. */
+@media(max-width:600px){
+ /* Shared safe measure and visual rhythm for five program/certificate intros. */
+ body[data-page="program-flying"] .fly16 .fly16-hero-grid,
+ body[data-page="program-barre"] .bar17 .b-hero-body,
+ body[data-page="program-dance"] .dance18 .d-hero-head {
+   display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(22px,5vw,33px);
+ }
+ body[data-page="program-flying"] .fly16 .fly16-hero-copy,
+ body[data-page="program-barre"] .bar17 .b-hero-copy,
+ body[data-page="program-dance"] .dance18 .d-hero-head>div:first-child,
+ body[data-page="program-dance"] .dance18 .d-hero-side {
+   min-width:0;width:100%;text-align:center;
+ }
+ body[data-page="program-flying"] .fly16 .fly16-kicker,
+ body[data-page="program-barre"] .bar17 .b-hero-copy .b-kicker,
+ body[data-page="program-dance"] .dance18 .d-hero-head .d-kicker {
+   display:block;text-align:center;letter-spacing:.15em;
+ }
+ /* One typographic system for the three PROGRAM names. All are true section
+    identities, so use the same family, weight, size and tracking; no full stop. */
+ body[data-page="program-flying"] .fly16 .fly16-hero-title,
+ body[data-page="program-barre"] .bar17 .b-hero-title,
+ body[data-page="program-dance"] .dance18 .d-title {
+   font:600 clamp(31px,9.7vw,50px)/1.1 'Montserrat',sans-serif;
+   letter-spacing:-.073em;text-align:center;white-space:nowrap;
+   max-width:100%;word-break:normal;
+ }
+ body[data-page="program-flying"] .fly16 .fly16-hero-title {margin:18px auto 15px;}
+ body[data-page="program-barre"] .bar17 .b-hero-title {margin:17px auto 16px;}
+ body[data-page="program-dance"] .dance18 .d-title {margin:16px auto 0;}
+ body[data-page="program-flying"] .fly16 .fly16-hero-lead,
+ body[data-page="program-barre"] .bar17 .b-hero-lead,
+ body[data-page="program-dance"] .dance18 .d-lead {
+   max-width:19.5em;margin-inline:auto;text-align:center;
+   font-size:clamp(19px,5.35vw,25px);line-height:1.56;
+   letter-spacing:-.055em;text-wrap:balance;
+ }
+ /* Editorial hierarchy: center the name + one-line promise, left-align
+    the reading copy within a centered measure. Prevent paragraph-as-poster. */
+ body[data-page="program-flying"] .fly16 .fly16-hero-description,
+ body[data-page="program-barre"] .bar17 .b-hero-copy .b-copy,
+ body[data-page="program-dance"] .dance18 .d-hero-side .d-copy {
+   margin-left:auto;margin-right:auto;max-width:min(100%,315px);text-align:left;
+   font-size:13px;line-height:1.8;letter-spacing:-.017em;word-break:keep-all;
+ }
+ body[data-page="program-flying"] .fly16 .fly16-chips,
+ body[data-page="program-flying"] .fly16 .fly16-hero-actions,
+ body[data-page="program-barre"] .bar17 .b-hero-actions{
+   justify-content:center;align-items:center;margin-inline:auto;
+ }
+ body[data-page="program-flying"] .fly16 .fly16-hero-actions{gap:12px;}
+ body[data-page="program-barre"] .bar17 .b-hero-actions{gap:13px 18px;}
+ body[data-page="program-dance"] .dance18 .d-hero-side{
+   border:0;padding:0;margin:0 auto;max-width:100%;
+ }
+ body[data-page="program-dance"] .dance18 .d-lead{margin-top:0;}
+ /* Remove the one-off divider: it interrupts the shared PROGRAM hierarchy. */
+ body[data-page="program-dance"] .dance18 .d-hero-head>div:first-child::after {content:none;display:none;}
+ body[data-page="program-dance"] .dance18 .d-hero-head{gap:17px;padding-top:clamp(28px,7vw,42px);padding-bottom:26px;}
+ body[data-page="program-barre"] .bar17 .b-hero-body{padding-top:clamp(27px,7.5vw,41px);}
+ body[data-page="program-flying"] .fly16 .fly16-hero-grid{padding-top:clamp(27px,7vw,40px);}
+
+ /* Teacher training: course name as a clear central masthead, story underneath. */
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-grid{
+   grid-template-columns:minmax(0,1fr);gap:clamp(23px,5.5vw,34px);
+   padding-top:clamp(27px,6.8vw,40px);padding-bottom:28px;
+ }
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-content{
+   width:100%;align-items:center;text-align:center;
+ }
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-content .ttc-label {
+   text-align:center;font-size:9.5px;letter-spacing:.13em;
+ }
+ /* CERTIFICATE identity matches WORKSHOP: a compact Korean masthead.
+    The campaign line stays one line when the available width permits. */
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-title {
+   width:100%;font-size:clamp(49px,13.5vw,68px);line-height:1.17;
+   margin:16px auto 0;text-align:center;white-space:normal;word-break:keep-all;
+ }
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-tagline{
+   font-size:clamp(14px,4.15vw,18px);line-height:1.6;
+   letter-spacing:-.067em;margin:16px auto 19px;text-align:center;
+   max-width:100%;white-space:nowrap;word-break:normal;
+ }
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-bottom{
+   padding-top:17px;margin:0 auto;width:min(100%,315px);max-width:none;
+   border-top:1px solid #d1c3b9;text-align:left;
+ }
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-lead{font-size:14px;line-height:1.68;text-align:left;}
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-summary{
+   max-width:100%;margin:11px 0 0;font-size:12.5px;line-height:1.78;text-align:left;
+ }
+ body[data-page="ttc-cert"] .ttc-main .ttc-underline-link{margin-top:16px;}
+ body[data-page="ttc-cert"] .ttc-main .ttc-hero-figure{margin-inline:auto;max-width:min(100%,460px);}
+
+ /* Workshop: photograph follows a short, energetic centered typographic overture. */
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-head{
+   grid-template-columns:minmax(0,1fr);gap:21px;
+   padding:clamp(27px,6.8vw,42px) 0 28px;text-align:center;
+ }
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-heading,
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro{text-align:center;min-width:0;}
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-title{
+   font-size:clamp(49px,13.5vw,68px);line-height:1.17;
+   margin:16px auto 0;text-align:center;
+ }
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-tagline{
+   font-size:clamp(18px,5vw,23px);line-height:1.56;
+   max-width:22ch;margin:16px auto 0;text-align:center;
+ }
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-intro{
+   display:flex;flex-direction:column;align-items:flex-start;gap:0;
+   width:min(100%,315px);max-width:none;margin:0 auto;padding:0;text-align:left;
+ }
+ body[data-page="ttc-workshop"] .workshop-main .ws-small-rule{
+   width:36px;height:1px;margin:1px 0 16px;
+ }
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-lead{
+   max-width:33ch;font-size:14px;line-height:1.74;text-align:left;
+ }
+ body[data-page="ttc-workshop"] .workshop-main .ws-hero-desc{
+   max-width:100%;font-size:12.5px;line-height:1.8;margin:11px 0 0;text-align:left;
+ }
+ body[data-page="ttc-workshop"] .workshop-main .ws-text-link{margin:17px auto 0;}
+
+ /* Service pages: keep original editorial imagery but balance standalone
+    mobile hero instead of leaving the majority of visual weight at left. */
+ body[data-page^="media-"] .m-hero-page-name{
+   display:table;margin:13px auto 0;font-size:19px;padding-bottom:7px;
+ }
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-layout{
+   padding-top:clamp(26px,7vw,43px);gap:25px;
+ }
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-copy,
+ body[data-page="media-rental"] .media-rental-main .mr-heading>div:first-child {
+   text-align:center;
+ }
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-copy h1,
+ body[data-page="media-rental"] .media-rental-main .mr-heading h1{
+   max-width:18ch;margin:18px auto 0;text-align:center;
+   font-size:clamp(28px,7.7vw,37px);line-height:1.52;
+ }
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-copy .m-eyebrow,
+ body[data-page="media-rental"] .media-rental-main .mr-heading .m-eyebrow {
+   display:block;text-align:center;
+ }
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-lead,
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-desc,
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-specialty{
+   text-align:center;margin-left:auto;margin-right:auto;
+ }
+ body[data-page="media-portfolio"] .media-portfolio-main .mp-hero-copy .m-text-link{
+   display:flex;width:max-content;margin:16px auto 0;
+ }
+ body[data-page="media-rental"] .media-rental-main .mr-heading{
+   padding-top:clamp(28px,7vw,42px);gap:17px;
+ }
+ body[data-page="media-rental"] .media-rental-main .mr-heading-aside{
+   margin:0 auto;text-align:center;width:100%;
+ }
+ body[data-page="media-rental"] .media-rental-main .mr-aside-rule{margin:0 auto 14px;}
+ body[data-page="media-rental"] .media-rental-main .mr-heading-aside :is(p,.m-text-link){
+   margin-left:auto;margin-right:auto;text-align:center;
+ }
+ body[data-page="media-rental"] .media-rental-main .mr-heading-aside .m-text-link{display:flex;width:max-content;}
+
+ /* Small journal mastheads: service identity is distinct from editorial copy. */
+ body[data-page^="news-"] .news-hero-page-name{
+   display:table;margin:12px auto 0;font-size:18px;
+ }
+ body[data-page="news-notice"] .news-page .nn-headline,
+ body[data-page="news-gallery"] .ng .ng-hero-main{text-align:center;}
+ body[data-page="news-notice"] .news-page .nn-headline h1,
+ body[data-page="news-gallery"] .ng .ng-hero-main h1{text-align:center;margin:15px auto 0;max-width:19ch;}
+ body[data-page="news-notice"] .news-page .nn-hero-grid,
+ body[data-page="news-gallery"] .ng .ng-hero-intro{gap:19px;}
+ body[data-page="news-notice"] .news-page .nn-hero-side,
+ body[data-page="news-gallery"] .ng .ng-hero-desc {
+   text-align:center;margin:0 auto;max-width:35ch;
+ }
+ body[data-page="news-notice"] .news-page .nn-hero-side :is(h2,p),
+ body[data-page="news-gallery"] .ng .ng-hero-desc :is(p){text-align:center;margin-left:auto;margin-right:auto;}
+}
+
+@media(max-width:360px){
+ /* Only editorial labels scale at very narrow widths; shared title styles
+    above remain matched at 320px as well. */
+ body[data-page^="media-"] .m-hero-page-name{font-size:17px;}
+}
+@media(prefers-reduced-motion:reduce){
+ body.the303-subpage .photo-frame img {transition:none!important;}
+}
+
+/* Motion as polish, not spectacle: no carousel, parallax or forced page jumps.
+   Tiny fade/settle of the opening copy introduces movement without distracting
+   from the actual photographs and subjects. */
+@media(prefers-reduced-motion:no-preference){
+ @keyframes d303-arrive {from {opacity:.85;transform:translate3d(0,9px,0)} to {opacity:1;transform:translate3d(0,0,0)}}
+ :is(body[data-page="ttc-cert"] .ttc-hero-content,
+     body[data-page="ttc-workshop"] .ws-hero-heading,
+     body[data-page="program-flying"] .fly16-hero-copy,
+     body[data-page="program-barre"] .b-hero-copy,
+     body[data-page="program-dance"] .d-hero-head,
+     body[data-page="media-portfolio"] .mp-hero-copy,
+     body[data-page="media-rental"] .mr-heading>div:first-child){
+    animation:d303-arrive .72s cubic-bezier(.2,.75,.25,1) both;
+ }
+}

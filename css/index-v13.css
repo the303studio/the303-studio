@@ -1,0 +1,73 @@
+/* THE303 INDEX V13 · interactive motion gallery | PC hover, dedicated mobile play. */
+/* Link semantics remain intact: the motion button is a sibling, never a child of an anchor. */
+body.the303-index-v10 #program .v13-film-shell{position:relative;min-width:0;isolation:isolate}
+body.the303-index-v10 #program .v13-film-link,
+body.the303-index-v10 #program .v13-program-copy{display:block;color:inherit;text-decoration:none}
+body.the303-index-v10 #program .v13-film-link{cursor:pointer}
+body.the303-index-v10 #program .v13-program-copy{max-width:100%}
+body.the303-index-v10 #program .v13-film-link:focus-visible,
+body.the303-index-v10 #program .v13-program-copy:focus-visible{
+  outline:2px solid #8A6153;outline-offset:3px;
+}
+/* BARRE's mineralized brown-taupe mat echoes THE303 warm consultation accent, not a saturated border. */
+body.the303-index-v10 #program .v06-feature-barre .v10-film-stage{
+  background:#CCB5A5;
+  border:1px solid rgba(109,72,56,.34);
+  box-shadow:0 10px 26px rgba(85,58,45,.075)
+}
+body.the303-index-v10 #program .v06-feature-barre .v10-film-rail{color:#715649}
+/* Same physical framing, separate gentle material accents. */
+body.the303-index-v10 #program .v13-motion-control{
+  position:absolute;z-index:11;right:clamp(24px,2.45vw,35px);bottom:51px;
+  display:inline-flex;align-items:center;justify-content:flex-start;gap:10px;
+  min-height:39px;padding:5px 12px 5px 7px;
+  border:1px solid rgba(255,255,255,.64);border-radius:2px;
+  background:rgba(244,241,236,.91);color:#4F423B;
+  -webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px);
+  box-shadow:0 2px 14px rgba(32,25,23,.14);
+  cursor:pointer;letter-spacing:.1em;text-align:left;
+  transition:background .22s ease,transform .22s ease,box-shadow .22s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+body.the303-index-v10 #program .v13-motion-control:hover,
+body.the303-index-v10 #program .v13-motion-control:focus-visible{
+  background:rgba(251,249,246,.98);box-shadow:0 3px 19px rgba(32,25,23,.18)
+}
+body.the303-index-v10 #program .v13-motion-control:focus-visible{outline:2px solid #89545A;outline-offset:3px}
+body.the303-index-v10 #program .v13-motion-glyph{
+  width:27px;height:27px;flex:0 0 27px;display:grid;place-items:center;
+  border:1px solid rgba(108,87,76,.47);border-radius:50%;
+}
+body.the303-index-v10 #program .v13-motion-glyph svg{width:15px;height:15px}
+body.the303-index-v10 #program .v13-motion-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+body.the303-index-v10 #program .v13-motion-primary{font:600 9px/1.1 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.16em;white-space:nowrap}
+body.the303-index-v10 #program .v13-motion-secondary{font:500 7px/1.1 'Montserrat',sans-serif;letter-spacing:.16em;opacity:.65;white-space:nowrap}
+body.the303-index-v10 #program .v13-motion-control[data-playing="true"] .v13-motion-glyph{animation:v13-motion-ring 1.2s ease-in-out 2;border-color:#8c6657}
+@keyframes v13-motion-ring{0%,100%{box-shadow:0 0 0 0 rgba(145,107,84,.0)}50%{box-shadow:0 0 0 3px rgba(145,107,84,.18)}}
+/* No accidental hover-triggered stretching. Still frames remain entirely motionless. */
+body.the303-index-v10 #program .v13-film-link:hover .v09-film-layer img,
+body.the303-index-v10 #program .v13-film-shell:hover .v09-film-layer img{animation:none}
+body.the303-index-v10 #program .v07-sequence.v09-film-playing .v09-film-layer>.v07-sequence-frame.is-current,
+body.the303-index-v10 #program .v07-sequence.v09-film-playing .v09-film-layer>.v07-sequence-frame.is-exiting{
+  animation:the303-v09-film-zoom 700ms cubic-bezier(.22,.25,.3,1) both;
+}
+body.the303-index-v10 #program .v13-program-copy:hover .v06-mini-arrow{transform:translate(4px,-4px)}
+@media(max-width:850px){
+ body.the303-index-v10 #program .v13-motion-control{
+   right:clamp(28px,7.3vw,40px);bottom:43px;
+   min-height:41px;padding:5px 10px 5px 6px;gap:8px;
+ }
+ body.the303-index-v10 #program .v13-motion-primary{font-size:8px}
+ body.the303-index-v10 #program .v13-motion-secondary{font-size:7px}
+ body.the303-index-v10 #program .v13-motion-glyph{width:28px;height:28px;flex-basis:28px}
+ /* Cards become independent links, matching the original typographic inset. */
+ body.the303-index-v10 #program .v13-program-copy{padding:0 clamp(23px,6.5vw,36px)}
+ body.the303-index-v10 #program .v13-program-copy > :is(.v06-program-meta,h3,.v06-program-ko,.v06-program-descr){margin-left:0;margin-right:0}
+}
+@media (hover:none) and (pointer:coarse){
+ body.the303-index-v10 #program .v13-motion-control{min-width:44px;min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.the303-index-v10 #program .v13-motion-control{display:none!important}
+ body.the303-index-v10 #program .v13-motion-glyph{animation:none!important}
+}

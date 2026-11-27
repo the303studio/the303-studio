@@ -1,0 +1,130 @@
+/* THE303 MEDIA STUDIO | page-local shared design tokens, never loaded on other pages */
+:where(.media-portfolio-main,.media-rental-main){--media-ink:#302a27;--media-soft:#72645d;--media-wine:#794344;--media-line:#d9cdc3;--media-cream:#faf8f5;background:#faf8f5;color:var(--media-ink)}
+:where(.media-portfolio-main,.media-rental-main) *{min-width:0}
+:where(.media-portfolio-main,.media-rental-main) h1,:where(.media-portfolio-main,.media-rental-main) h2,:where(.media-portfolio-main,.media-rental-main) h3{color:inherit;word-break:keep-all}
+:where(.media-portfolio-main,.media-rental-main) p{word-break:keep-all}
+:where(.media-portfolio-main,.media-rental-main) .m-eyebrow{display:block;font:600 10px/1.7 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.19em;color:#996057}
+:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 0 28px;border-bottom:1px solid #e1d7cf}
+:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb{display:flex;align-items:center;gap:13px;white-space:nowrap;font:500 10px/1.5 'Montserrat','Noto Sans KR',sans-serif;letter-spacing:.055em;color:#857971}
+:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb strong{color:#894649;font-weight:800}
+:where(.media-portfolio-main,.media-rental-main) .m-topnote{font:500 9px/1.4 'Montserrat',sans-serif;letter-spacing:.13em;color:#a18a7c;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-signature{display:flex;align-items:center;justify-content:space-between;gap:15px;border-top:1px solid #ddcfc3;padding:17px 0 0;color:#9b897d;font:500 9px/1.35 'Montserrat',sans-serif;letter-spacing:.17em;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;padding:11px 0;border-bottom:1px solid #a17b6b;color:#854747;font-size:12px;font-weight:600;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-text-link span{font-size:18px;font-weight:300}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-top{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #b88b87;padding-bottom:20px;color:#f2c6bd;font:500 10px/1.5 'Montserrat',sans-serif;letter-spacing:.15em}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:38px;padding-top:48px}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-grid h2{font:600 clamp(32px,3.45vw,49px)/1.53 'Nanum Myeongjo',serif;letter-spacing:-.069em;max-width:920px;text-wrap:balance}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-grid p{margin-top:17px;color:#f0d3cd;font-size:13px;line-height:1.85;text-wrap:pretty}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-link{min-width:195px;display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:15px 0;border-bottom:1px solid #e4c4bb;font-size:13px;font-weight:500;white-space:nowrap}
+:where(.media-portfolio-main,.media-rental-main) .m-cta-link span{font-size:22px;font-weight:300}
+:where(.media-portfolio-main,.media-rental-main) .photo-frame{border-radius:0;min-height:0;overflow:hidden}
+:where(.media-portfolio-main,.media-rental-main) .photo-frame img{object-fit:cover}
+:where(.media-portfolio-main,.media-rental-main) .photo-fallback{background:linear-gradient(142deg,#ac9c90,#d0c2b7 47%,#ad968b)}
+:where(.media-portfolio-main,.media-rental-main) .m-fallback-outline{position:absolute;left:7%;top:-50%;width:100%;aspect-ratio:1;border:1px solid rgba(255,255,255,.3);border-radius:50%}
+:where(.media-portfolio-main,.media-rental-main) .m-fallback-label{position:absolute;left:7%;bottom:7%;font:600 clamp(8px,.95vw,12px)/1.5 'Montserrat',sans-serif;letter-spacing:.14em;color:rgba(255,255,255,.55)}
+:where(.media-portfolio-main,.media-rental-main) .m-frame-marker{position:absolute;right:6%;top:6%;z-index:3;color:rgba(255,255,255,.56);font:500 clamp(11px,1.3vw,18px)/1.3 'Montserrat',sans-serif;letter-spacing:.12em}
+:where(.media-portfolio-main,.media-rental-main) a:focus-visible{outline:2px solid #974b51;outline-offset:4px}
+@media(max-width:850px){:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb-row{padding-bottom:21px}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid{grid-template-columns:1fr;gap:23px;padding-top:32px}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid h2{font-size:clamp(31px,5.2vw,43px)}:where(.media-portfolio-main,.media-rental-main) .m-cta-link{width:max-content;min-width:194px}:where(.media-portfolio-main,.media-rental-main) .m-signature{font-size:8px;letter-spacing:.1em;padding-top:14px}}
+@media(max-width:600px){:where(.media-portfolio-main,.media-rental-main) .m-breadcrumb{gap:7px;font-size:9px;letter-spacing:0}:where(.media-portfolio-main,.media-rental-main) .m-topnote{font-size:8px;letter-spacing:.03em}:where(.media-portfolio-main,.media-rental-main) .m-cta-top{font-size:9px;letter-spacing:.055em}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid h2{font-size:clamp(31px,8.2vw,38px);line-height:1.58}:where(.media-portfolio-main,.media-rental-main) .m-cta-grid p{font-size:12px}:where(.media-portfolio-main,.media-rental-main) .m-signature{font-size:7px;letter-spacing:.045em}}
+@media(max-width:360px){:where(.media-portfolio-main,.media-rental-main) .m-topnote{display:none}:where(.media-portfolio-main,.media-rental-main) .m-cta-top{font-size:8px}:where(.media-portfolio-main,.media-rental-main) .m-signature{font-size:7px;letter-spacing:0}}
+/* PHOTO JOURNAL: purposeful asymmetry, editorial rather than modular cards */
+.media-portfolio-main .mp-hero{padding-top:clamp(28px,3vw,45px);background:#faf8f5}
+.mp-hero-layout{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(45px,7vw,105px);align-items:center;padding:clamp(50px,7vw,104px) 0 clamp(36px,4vw,58px)}
+.mp-hero-copy{padding-bottom:20px}
+.mp-hero-copy h1{font:600 clamp(40px,4.25vw,62px)/1.54 'Nanum Myeongjo',serif;letter-spacing:-.071em;white-space:pre-line;margin:23px 0 32px}
+.mp-hero-lead{font-size:17px;line-height:1.9;font-weight:500;letter-spacing:-.045em}
+.mp-hero-desc{max-width:450px;margin-top:19px;font-size:14px;line-height:2;color:#746962;text-wrap:pretty}
+.mp-hero-copy .m-text-link{margin-top:29px}
+.mp-hero-figure{margin:0;min-width:0}
+.media-portfolio-main .mp-hero-photo{aspect-ratio:1.17/1;background:#a89d94}
+.media-portfolio-main .mp-hero-photo .photo-fallback{background:linear-gradient(126deg,#a7958c,#d8c5b5 61%,#9f887d)}
+.mp-hero-figure figcaption{display:flex;justify-content:space-between;gap:15px;padding:15px 0 0;font:500 9px/1.4 'Montserrat',sans-serif;letter-spacing:.15em;color:#9d877a}
+.mp-hero .m-signature{margin-bottom:0}
+.mp-manifesto{padding:clamp(67px,6.7vw,96px) 0 0;background:#efe9e2}
+.mp-manifesto-grid,.mp-outro-grid{display:grid;grid-template-columns:minmax(160px,.38fr) minmax(0,1fr);gap:clamp(40px,7vw,98px);align-items:start;padding-bottom:clamp(58px,5.9vw,85px)}
+.mp-manifesto-index,.mp-outro-index{display:flex;flex-direction:column;gap:17px;padding-top:13px}
+.mp-manifesto-index>span:last-child,.mp-outro-index>span:last-child{font:500 9px/1.5 'Montserrat',sans-serif;color:#ad9482;letter-spacing:.1em}
+.mp-manifesto h2,.mp-outro h2{font:600 clamp(36px,4vw,58px)/1.55 'Nanum Myeongjo',serif;letter-spacing:-.078em;white-space:pre-line}
+.mp-manifesto-body p,.mp-outro-grid p{color:#746962;font-size:14px;line-height:2;max-width:520px;margin-top:28px;text-wrap:pretty}
+.mp-manifesto .m-signature{padding-bottom:20px}
+.mp-archive{background:#302e2c;color:#f4eee9;padding:clamp(82px,9.3vw,143px) 0 0}
+.mp-archive-head{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:clamp(41px,5.2vw,76px)}
+.mp-archive .m-eyebrow{color:#d5a99a}
+.mp-archive h2{font:600 clamp(37px,4.45vw,65px)/1.4 'Nanum Myeongjo',serif;letter-spacing:-.08em;margin-top:17px}
+.mp-archive-head p{font-size:13px;line-height:1.9;color:#c5b5ac;max-width:320px;text-wrap:pretty}
+.mp-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(38px,4.8vw,75px) clamp(18px,3.2vw,48px)}
+.mp-item{margin:0;min-width:0;align-self:start}
+.mp-item-a{grid-column:span 7}.mp-item-b{grid-column:span 5;padding-top:clamp(35px,6vw,85px)}
+.mp-item-c{grid-column:span 4;padding-top:clamp(60px,9vw,137px)}.mp-item-d{grid-column:span 8}
+.mp-item-e{grid-column:span 6}.mp-item-f{grid-column:span 6;padding-top:clamp(50px,8vw,124px)}
+.media-portfolio-main .mp-gallery-photo{min-height:0;aspect-ratio:1.15/1}
+.media-portfolio-main .mp-item-b .mp-gallery-photo{aspect-ratio:.79/1}
+.media-portfolio-main .mp-item-c .mp-gallery-photo{aspect-ratio:.88/1}
+.media-portfolio-main .mp-item-d .mp-gallery-photo{aspect-ratio:1.62/1}
+.media-portfolio-main .mp-item-e .mp-gallery-photo{aspect-ratio:1.12/1}
+.media-portfolio-main .mp-item-f .mp-gallery-photo{aspect-ratio:1.16/1}
+.media-portfolio-main .mp-item-b .photo-fallback,.media-portfolio-main .mp-item-f .photo-fallback{background:linear-gradient(125deg,#796c65,#b7a69a,#e1d3c8)}
+.media-portfolio-main .mp-item-c .photo-fallback,.media-portfolio-main .mp-item-e .photo-fallback{background:linear-gradient(110deg,#b7a094,#9f8c82,#d5bfb0)}
+.mp-item figcaption{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:18px;font-size:11px;color:#cabdb4}
+.mp-item figcaption span{font:500 9px/1.5 'Montserrat',sans-serif;letter-spacing:.11em;color:#aa9d93}
+.mp-item figcaption strong{font-size:13px;font-weight:500;color:#eee4db;white-space:nowrap}
+.mp-gallery-note{margin:57px 0 70px;color:#b2a29a;font-size:11px;line-height:1.8}
+.mp-archive .m-signature{color:#b3a59b;border-color:#655e58;padding-bottom:20px}
+.mp-outro{background:#f1ede7;padding:clamp(67px,6.7vw,97px) 0 0}
+.mp-outro .m-signature{padding-bottom:23px}
+.mp-cta{background:#794344;color:#fff8f0;padding:clamp(67px,6vw,87px) 0 clamp(70px,7vw,100px)}
+@media(max-width:1024px){.mp-hero-layout{gap:40px}.mp-hero-copy h1{font-size:clamp(38px,4.3vw,52px)}.mp-manifesto-grid,.mp-outro-grid{grid-template-columns:minmax(110px,.25fr) minmax(0,1fr);gap:50px}}
+@media(max-width:850px){.mp-hero-layout{grid-template-columns:1fr;gap:29px;padding:55px 0 39px}.mp-hero-copy{padding-bottom:0}.mp-hero-copy h1{font-size:clamp(42px,6.4vw,61px);margin:20px 0 23px}.mp-hero-desc{max-width:570px}.media-portfolio-main .mp-hero-photo{aspect-ratio:1.65/1}.mp-manifesto-grid,.mp-outro-grid{grid-template-columns:1fr;gap:30px}.mp-manifesto-index,.mp-outro-index{flex-direction:row;justify-content:space-between;padding-top:0}.mp-archive-head{align-items:start}.mp-manifesto h2,.mp-outro h2{font-size:clamp(35px,5.5vw,47px)}}
+@media(max-width:600px){.media-portfolio-main .mp-hero{padding-top:22px}.mp-hero-layout{padding:48px 0 28px;gap:29px}.mp-hero-copy h1{font-size:clamp(33px,8.3vw,41px);line-height:1.62;letter-spacing:-.075em;margin:14px 0 22px}.mp-hero-lead{font-size:14px;line-height:1.85}.mp-decorative-break{display:none}.mp-hero-desc{font-size:13px;line-height:1.93;margin-top:12px}.mp-hero-copy .m-text-link{margin-top:17px}.media-portfolio-main .mp-hero-photo{aspect-ratio:1.1/1}.mp-hero-figure figcaption{font-size:8px;letter-spacing:.04em;padding-top:12px}.mp-manifesto{padding-top:57px}.mp-manifesto-grid,.mp-outro-grid{gap:22px;padding-bottom:52px}.mp-manifesto-index,.mp-outro-index{gap:12px}.mp-manifesto-index>span:last-child,.mp-outro-index>span:last-child{font-size:8px}.mp-manifesto h2,.mp-outro h2{font-size:clamp(28px,7.6vw,36px);line-height:1.7}.mp-manifesto-body p,.mp-outro-grid p{font-size:13px;line-height:1.95;margin-top:18px}.mp-archive{padding-top:80px}.mp-archive-head{display:block;margin-bottom:29px}.mp-archive h2{font-size:36px;margin-top:12px}.mp-archive-head p{font-size:12px;margin-top:15px;max-width:330px}.mp-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:35px 13px}.mp-item-a,.mp-item-b,.mp-item-c,.mp-item-d,.mp-item-e,.mp-item-f{grid-column:span 1;padding-top:0}.mp-item-a,.mp-item-d{grid-column:span 2}.media-portfolio-main .mp-item-a .mp-gallery-photo{aspect-ratio:1.35/1}.media-portfolio-main .mp-item-b .mp-gallery-photo{aspect-ratio:.86/1}.media-portfolio-main .mp-item-c .mp-gallery-photo{aspect-ratio:.86/1}.media-portfolio-main .mp-item-d .mp-gallery-photo{aspect-ratio:1.48/1}.media-portfolio-main .mp-item-e .mp-gallery-photo,.media-portfolio-main .mp-item-f .mp-gallery-photo{aspect-ratio:.85/1}.mp-item figcaption{align-items:start;flex-direction:column;gap:5px;margin-top:11px}.mp-item figcaption span{font-size:8px}.mp-item figcaption strong{font-size:12px}.mp-gallery-note{font-size:11px;margin:38px 0 63px}.mp-outro{padding-top:57px}.mp-cta{padding:64px 0 75px}}
+@media(max-width:360px){.mp-hero-copy h1{font-size:32px}.mp-manifesto h2,.mp-outro h2{font-size:27px}.mp-item figcaption strong{font-size:11px}}
+
+/* Final copy-fit and compact CTA balance */
+@media(max-width:600px){.mp-hero-lead{white-space:pre-line}.mp-cta{padding:51px 0 58px} .m-cta-grid{padding-top:26px}}
+
+.mp-hero-lead{white-space:pre-line}
+
+@media(max-width:600px){.m-cta-grid h2{white-space:pre-line}}
+
+/* v2.0 professional photography positioning, validated responsive typography */
+.media-portfolio-main .mp-hero-copy h1{font-size:clamp(36px,3.25vw,46px);line-height:1.57;letter-spacing:-.073em;overflow-wrap:normal}
+.media-portfolio-main .mp-specialty{font:600 9px/1.7 'Montserrat',sans-serif;letter-spacing:.105em;color:#94675c;margin:15px 0 0;white-space:normal}
+.media-portfolio-main .mp-hero-lead{font-size:16px;line-height:1.75;white-space:normal;text-wrap:pretty}
+.media-portfolio-main .mp-hero-desc{line-height:1.88;max-width:500px;margin-top:12px}
+.media-portfolio-main .mp-manifesto h2,.media-portfolio-main .mp-outro h2{font-size:clamp(34px,3.55vw,51px);line-height:1.53}
+.media-portfolio-main .mp-cta-actions{display:flex;flex-direction:column;align-items:flex-end;gap:11px;min-width:212px}
+.media-portfolio-main .mp-cta-actions .m-cta-link{width:100%;min-width:0}
+.media-portfolio-main .mp-cta-actions .mp-cta-secondary{color:#eacac3;border-bottom-color:rgba(234,202,195,.55);font-size:12px}
+@media(max-width:1024px){.media-portfolio-main .mp-hero-copy h1{font-size:clamp(32px,3.5vw,41px)}}
+@media(max-width:850px){.media-portfolio-main .mp-hero-copy h1{font-size:clamp(38px,5.1vw,45px)}.media-portfolio-main .mp-cta-actions{align-items:flex-start;width:max-content}}
+@media(max-width:600px){.media-portfolio-main .mp-hero-copy h1{font-size:clamp(27px,7.7vw,35px);line-height:1.62;margin:16px 0 18px}.media-portfolio-main .mp-hero-lead{font-size:14px;line-height:1.78}.media-portfolio-main .mp-specialty{font-size:8px;letter-spacing:.035em;margin-top:13px}.media-portfolio-main .mp-hero-desc{font-size:12.5px;line-height:1.82;margin-top:11px}.media-portfolio-main .mp-manifesto h2,.media-portfolio-main .mp-outro h2{font-size:clamp(26px,7.1vw,34px);line-height:1.62}.media-portfolio-main .mp-gallery-note{line-height:1.7}.media-portfolio-main .mp-cta-actions{gap:6px}.media-portfolio-main .mp-cta-actions .m-cta-link{min-width:200px}}
+@media(max-width:360px){.media-portfolio-main .mp-hero-copy h1{font-size:26px}.media-portfolio-main .mp-manifesto h2,.media-portfolio-main .mp-outro h2{font-size:25px}}
+
+/* v2.0 copy-refinement: tight CTA and clearly separated service choices */
+@media(max-width:600px){.media-portfolio-main .mp-cta{padding:42px 0 47px}.media-portfolio-main .mp-cta .m-cta-grid{padding-top:21px}.media-portfolio-main .mp-cta .m-cta-link{padding:11px 0}.media-portfolio-main .mp-cta-actions{gap:3px}}
+
+/* MEDIA PORTFOLIO selected works captions — 2026-10-30. Page-local only. */
+.media-portfolio-main .mp-hero-artnote{margin:10px 0 0;font:400 11px/1.7 'Noto Sans KR',sans-serif;letter-spacing:-.015em;color:#88776d;word-break:keep-all;text-wrap:pretty}
+.media-portfolio-main .mp-item figcaption{flex-wrap:wrap;align-content:start}
+.media-portfolio-main .mp-item figcaption strong{white-space:normal;word-break:keep-all;text-wrap:pretty;text-align:right}
+.media-portfolio-main .mp-item figcaption .mp-caption-desc{display:block;flex:0 0 100%;width:100%;margin-top:2px;font:400 11px/1.75 'Noto Sans KR',sans-serif;letter-spacing:-.02em;color:#b9aea6;word-break:keep-all;text-wrap:pretty}
+.media-portfolio-main .mp-archive .m-signature{margin-top:clamp(46px,5.5vw,75px)}
+@media(max-width:600px){
+  .media-portfolio-main .mp-hero-artnote{font-size:10.5px;line-height:1.7}
+  .media-portfolio-main .mp-item figcaption strong{text-align:left}
+  .media-portfolio-main .mp-item figcaption .mp-caption-desc{font-size:10px;line-height:1.7;margin-top:0}
+}
+
+/* Final review: preserve imagery-first pacing with modestly shorter transitions. */
+@media(min-width:851px){
+ .media-portfolio-main .mp-archive{padding-top:clamp(77px,8.1vw,126px)}
+ .media-portfolio-main .mp-archive-head{margin-bottom:clamp(38px,4.7vw,67px)}
+ .media-portfolio-main .mp-gallery{row-gap:clamp(33px,4.25vw,66px)}
+ .media-portfolio-main .mp-outro{padding-top:clamp(63px,6vw,88px)}
+}
+@media(max-width:600px){
+ .media-portfolio-main .mp-archive{padding-top:70px}
+ .media-portfolio-main .mp-specialty{font-size:10.5px}
+ .media-portfolio-main .mp-hero-figure figcaption,.media-portfolio-main .mp-manifesto-index>span:last-child,.media-portfolio-main .mp-outro-index>span:last-child{font-size:10px}
+ .media-portfolio-main .mp-item figcaption span{font-size:10px}
+ .media-portfolio-main .mp-item figcaption .mp-caption-desc{font-size:11.5px;color:#d0c4ba}
+}

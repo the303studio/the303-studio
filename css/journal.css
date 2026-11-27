@@ -1,0 +1,136 @@
+/* THE303 JOURNAL / v5 — category-based editorial navigation */
+/* Existing colors, typography, layout widths and shared navigation remain unchanged. */
+#news .journal-heading { display:block; }
+#news .journal-heading .section-title {margin:18px 0 0;}
+#news .journal-cards {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(18px,2.4vw,32px);
+  margin-top:clamp(24px,3.3vw,42px);
+}
+#news .journal-card {
+  display:block;
+  min-width:0;
+  color:var(--ink);
+  text-decoration:none;
+  border-radius:2px;
+}
+#news .journal-visual {
+  position:relative;
+  width:100%;
+  aspect-ratio:1.52/1;
+  overflow:hidden;
+  border-radius:2px;
+}
+#news .journal-visual--notice {
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding:clamp(23px,3.3vw,49px);
+  color:var(--bg-light);
+  background:linear-gradient(135deg,#865152 0%,var(--rose-brown) 58%,#65393C 100%);
+}
+#news .journal-visual--notice::before {
+  content:'';
+  position:absolute;
+  inset:17px;
+  border:1px solid rgba(255,255,255,.15);
+  pointer-events:none;
+}
+#news .journal-notice-overline {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  max-width:100%;
+  font:600 clamp(9px,.85vw,11px)/1.4 'Montserrat',sans-serif;
+  letter-spacing:.14em;
+  white-space:nowrap;
+  opacity:.82;
+}
+#news .journal-notice-rule {width:clamp(10px,2.5vw,34px);height:1px;background:rgba(255,255,255,.65);}
+#news .journal-notice-type {
+  display:block;
+  position:relative;
+  z-index:1;
+  font:500 clamp(42px,6vw,94px)/1 'Montserrat',sans-serif;
+  letter-spacing:-.065em;
+  white-space:nowrap;
+}
+#news .journal-notice-index {
+  align-self:flex-end;
+  font:500 11px/1.4 'Montserrat',sans-serif;
+  letter-spacing:.16em;
+  opacity:.65;
+}
+#news .journal-visual--gallery {background:#DED4CA;}
+#news .journal-gallery-fallback {
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  grid-template-rows:1fr 1fr;
+  gap:7px;
+  padding:7px;
+  background:#F1E9E1;
+}
+#news .journal-gallery-fallback span:nth-child(1) {background:linear-gradient(135deg,#c5ae9c,#8f7770);}
+#news .journal-gallery-fallback span:nth-child(2) {background:linear-gradient(150deg,#d7c5b2,#b58e80);}
+#news .journal-gallery-fallback span:nth-child(3) {background:linear-gradient(160deg,#7b655b,#cbb4a2);}
+#news .journal-gallery-fallback span:nth-child(4) {background:linear-gradient(130deg,#9c7a6c,#e7d4bc);}
+#news .journal-gallery-cover {
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .65s cubic-bezier(.2,.7,.2,1);
+}
+#news .journal-visual--gallery.image-unavailable .journal-gallery-cover {display:none;}
+#news .journal-card-caption {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:19px 1px 14px;
+  border-bottom:1px solid var(--line);
+}
+#news .journal-card-caption-text {display:flex;align-items:baseline;gap:12px;min-width:0;}
+#news .journal-card-label {
+  font:600 clamp(14px,1.4vw,18px)/1.5 'Montserrat',sans-serif;
+  letter-spacing:.055em;
+  white-space:nowrap;
+}
+#news .journal-card-ko {font:400 13px/1.5 'Noto Sans KR',sans-serif;color:var(--ink-soft);white-space:nowrap;}
+#news .journal-card-arrow {
+  display:grid;place-items:center;
+  width:34px;height:34px;
+  flex:0 0 auto;
+  font-size:21px;font-weight:300;
+  color:var(--brick-wine);
+  transition:transform .25s ease;
+}
+@media(hover:hover){
+  #news .journal-card:hover .journal-gallery-cover {transform:scale(1.045);}
+  #news .journal-card:hover .journal-card-arrow {transform:translate(3px,-3px);}
+  #news .journal-card:hover .journal-card-caption {border-color:var(--brick-wine);}
+}
+#news .journal-card:focus-visible {outline:2px solid var(--brick-wine);outline-offset:5px;}
+@media(max-width:850px){
+  #news .journal-heading .section-title {margin:15px 0 0;}
+  #news .journal-cards {grid-template-columns:1fr;gap:25px;margin-top:25px;}
+  #news .journal-visual {aspect-ratio:1.55/1;}
+  #news .journal-visual--notice {padding:clamp(23px,6.6vw,36px);}
+  #news .journal-notice-type {font-size:clamp(42px,13.2vw,72px);}
+  #news .journal-card-caption {padding:10px 0 10px;}
+  #news .journal-card-label {font-size:16px;}
+  #news .journal-card-arrow {width:30px;height:30px;}
+}
+@media(max-width:350px){
+  #news .journal-visual {aspect-ratio:1.45/1;}
+  #news .journal-notice-type {font-size:40px;}
+  #news .journal-notice-overline {font-size:8px;gap:6px;}
+}
+@media(prefers-reduced-motion:reduce){
+  #news .journal-gallery-cover,#news .journal-card-arrow {transition:none!important;}
+}

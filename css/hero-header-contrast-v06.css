@@ -1,0 +1,45 @@
+/* THE303 STUDIO | V06 | Scene-aware hero header contrast | 2026-11-17
+   Only index.html imports this CSS. Nothing changes on subpages.
+   Existing five slide images, slide motion, editing and V05 dropdown remain unchanged.
+   Dark photographs: warm ivory header; bright photographs: existing charcoal header.
+   Scroll uses original .site-header.scrolled CSS. No photographic overlays. */
+
+/* Five-scene hero palette. The original hero.js keeps #home[data-scene] in sync. */
+body.the303-index-v111:has(#home.the303-intro-v05:is([data-scene="control"],[data-scene="strength"]))
+  .site-header:not(.scrolled):not(.menu-expanded) {
+  color: #f4f0e9;
+}
+body.the303-index-v111:has(#home.the303-intro-v05:is([data-scene="flow"],[data-scene="line"],[data-scene="brand"]))
+  .site-header:not(.scrolled):not(.menu-expanded) {
+  color: #292522;
+}
+
+/* Keep the photographic header expressive; these rules do not modify panel styles. */
+@media (min-width: 1025px) {
+  body.the303-index-v111:has(#home.the303-intro-v05:is([data-scene="control"],[data-scene="strength"]))
+    .site-header:not(.scrolled):not(.menu-expanded) .nav-link::after {
+    background: #f0e9df;
+  }
+  body.the303-index-v111:has(#home.the303-intro-v05:is([data-scene="control"],[data-scene="strength"]))
+    .site-header:not(.scrolled):not(.menu-expanded) .nav-social {
+    opacity: .94;
+  }
+  body.the303-index-v111:has(#home.the303-intro-v05:is([data-scene="control"],[data-scene="strength"]))
+    .site-header:not(.scrolled):not(.menu-expanded) .nav-cta:hover {
+    background: #f4f0e9;
+    border-color: #f4f0e9;
+    color: #292522;
+  }
+}
+/* Existing drawer is intentionally unchanged. Preserve dark hamburger glyph
+   on its established light circle while adjusting only the brand wordmark. */
+@media (max-width: 1024px) {
+  body.the303-index-v111:has(#home.the303-intro-v05:is([data-scene="control"],[data-scene="strength"]))
+    .site-header:not(.scrolled):not(.menu-expanded) .brand {
+    color: #f4f0e9 !important;
+  }
+  body.the303-index-v111:has(#home.the303-intro-v05:is([data-scene="flow"],[data-scene="line"],[data-scene="brand"]))
+    .site-header:not(.scrolled):not(.menu-expanded) .brand {
+    color: #292522 !important;
+  }
+}

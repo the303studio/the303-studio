@@ -1,0 +1,126 @@
+/* THE303 STUDIO / INDEX V07 / 03.테스트 ONLY
+   Editorial hierarchy, tighter anchor landing, two deliberate motion zones and a nine-shot photo wall.
+   V05/V06 intro, original PHILOSOPHY photograph and all subpages remain intact. */
+body.the303-index-v07 #philosophy,
+body.the303-index-v07 #program,
+body.the303-index-v07 #ttc,
+body.the303-index-v07 #space,
+body.the303-index-v07 #news{scroll-margin-top:0}
+/* A clicked menu should reveal the section label and part of its content right away. */
+body.the303-index-v07 #program.v06-program{padding-top:57px;padding-bottom:92px}
+body.the303-index-v07 #program .v06-program-display{font-size:clamp(42px,6vw,82px);line-height:1.08;letter-spacing:-.042em;margin:34px 0 22px;max-width:910px}
+body.the303-index-v07 #program .v06-program-intro{margin-bottom:64px}
+body.the303-index-v07 #program .v06-feature-barre{padding-top:105px}
+body.the303-index-v07 #program .v06-program-feature h3{font-size:clamp(34px,4.25vw,57px);letter-spacing:-.032em}
+body.the303-index-v07 #program .v06-dance{margin-top:92px}
+body.the303-index-v07 #program .v06-dance h3{font-size:clamp(30px,3.5vw,48px);letter-spacing:-.035em}
+body.the303-index-v07 #ttc .v06-cert-english{font-size:clamp(36px,4.3vw,64px);letter-spacing:-.045em;line-height:1.05}
+body.the303-index-v07 #ttc .v06-chapter-label{margin-bottom:48px}
+body.the303-index-v07 #ttc .v06-cert-copy{padding-block:76px}
+body.the303-index-v07 #space.v06-media{padding-top:57px;padding-bottom:100px}
+body.the303-index-v07 #space .v06-media-pretitle{margin-top:45px}
+body.the303-index-v07 #space .v06-media-heading h2{font-size:clamp(32px,4.4vw,60px);letter-spacing:-.04em;line-height:1.22;margin-bottom:62px}
+body.the303-index-v07 #space .v06-media-copy h3{font-size:clamp(27px,3vw,43px);letter-spacing:-.035em}
+body.the303-index-v07 #news.v06-journal{padding-top:57px;padding-bottom:110px}
+body.the303-index-v07 #news .v06-journal-heading{padding-bottom:35px}
+body.the303-index-v07 #news .v06-journal-heading>span{margin-bottom:18px}
+body.the303-index-v07 #news .v06-journal-heading h2{font-size:clamp(43px,5.2vw,70px);line-height:1.12;letter-spacing:-.04em;margin-bottom:13px}
+body.the303-index-v07 #news .v06-journal-heading>p{font-size:13px}
+/* Restrained photo sequences: crossfades only while their section is in the viewport.
+   No picture-in-picture video, no heavy gradient overlay, no extra animation in JOURNAL. */
+body.the303-index-v07 .v07-sequence{position:relative;isolation:isolate;overflow:hidden;background:#d4d0cb}
+body.the303-index-v07 #program .v07-sequence.v06-program-photo{position:relative}
+body.the303-index-v07 .v07-sequence .v07-sequence-frame,
+body.the303-index-v07 #program .v07-sequence .v07-sequence-frame,
+body.the303-index-v07 #space .v07-sequence .v07-sequence-frame{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:50% 45%;opacity:0;transform:scale(1.015);transition:opacity .8s ease,transform 5.2s ease;pointer-events:none}
+body.the303-index-v07 .v07-sequence .v07-sequence-frame.is-current,
+body.the303-index-v07 #program .v07-sequence .v07-sequence-frame.is-current,
+body.the303-index-v07 #space .v07-sequence .v07-sequence-frame.is-current{opacity:1;transform:scale(1.075);z-index:1}
+body.the303-index-v07 .v07-sequence .v07-sequence-frame:first-child{object-position:52% 46%}
+body.the303-index-v07 #program .v07-sequence .v07-sequence-frame:nth-child(2){object-position:50% 50%}
+body.the303-index-v07 #program .v07-sequence .v07-sequence-frame:nth-child(3){object-position:51% 42%}
+body.the303-index-v07 .v07-sequence .v07-sequence-count{position:absolute;z-index:3;right:17px;bottom:18px;color:white;background:rgba(18,17,16,.65);padding:9px 11px;font:600 10px/1 'Montserrat',sans-serif;letter-spacing:.15em;pointer-events:none}
+body.the303-index-v07 #space .v06-media-photo{aspect-ratio:.91;overflow:hidden}
+body.the303-index-v07 #space .v07-media-sequence{width:100%;height:100%;aspect-ratio:inherit;min-height:0}
+body.the303-index-v07 #space .v07-media-sequence .v07-sequence-frame{aspect-ratio:auto;object-position:center center}
+body.the303-index-v07 #space .v07-media-sequence .v07-sequence-frame:nth-child(2){object-position:50% 38%}
+body.the303-index-v07 #space .v07-media-sequence .v07-sequence-frame:nth-child(3){object-position:50% 42%}
+body.the303-index-v07 #space .v07-media-sequence .v07-sequence-frame:nth-child(4){object-position:50% 49%}
+body.the303-index-v07 #space .v06-photo-caption{z-index:4}
+body.the303-index-v07 #program .v06-feature-barre .v06-program-photo img{transition:transform 1.3s ease}
+body.the303-index-v07 #program .v06-feature-barre:hover .v06-program-photo img{transform:scale(1.04)}
+/* 9 photographs form one editorial frame, not nine separate cards. */
+body.the303-index-v07 #news .v07-journal-layout{max-width:1200px;display:grid;grid-template-columns:minmax(0,.74fr) minmax(0,1.26fr);gap:clamp(32px,5vw,76px);margin:0 auto;padding-top:48px;align-items:center}
+body.the303-index-v07 #news .v07-journal-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-width:0}
+body.the303-index-v07 #news .v07-chapter-index{font:600 10px 'Montserrat',sans-serif;letter-spacing:.16em;color:#8c8177}
+body.the303-index-v07 #news .v07-journal-statement{font:700 clamp(32px,3.35vw,47px)/1.12 'Montserrat',sans-serif;letter-spacing:-.037em;margin:38px 0 15px;color:#24211f}
+body.the303-index-v07 #news .v07-journal-deck{font-size:13px;color:#72685f;line-height:1.7;margin:0 0 50px}
+body.the303-index-v07 #news .v07-journal-links{display:flex;flex-direction:column;width:100%;max-width:320px}
+body.the303-index-v07 #news .v07-journal-links a{border-top:1px solid #bcb4a8;color:#332d29;min-height:58px;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:500}
+body.the303-index-v07 #news .v07-journal-links a:last-child{border-bottom:1px solid #bcb4a8}
+body.the303-index-v07 #news .v07-journal-links a span:last-child{font-size:21px}
+body.the303-index-v07 #news .v07-gallery-frame{min-width:0;width:100%;background:#e9e5df;padding:4px 4px 0;box-shadow:0 18px 42px rgba(45,38,34,.065)}
+body.the303-index-v07 #news .v07-gallery-grid{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+body.the303-index-v07 #news .v07-gallery-tile{position:relative;display:block;aspect-ratio:1;overflow:hidden;border:0;padding:0;border-radius:0;background:#d5cdc4;cursor:zoom-in;min-width:0;min-height:0}
+body.the303-index-v07 #news .v07-gallery-tile img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .55s cubic-bezier(.2,.7,.25,1),filter .45s ease}
+body.the303-index-v07 #news .v07-gallery-tile:hover img{transform:scale(1.065);filter:contrast(1.03)}
+body.the303-index-v07 #news .v07-gallery-tile:focus-visible{outline:3px solid #9b6864;outline-offset:-3px;z-index:2}
+body.the303-index-v07 #news .v07-tile-number{position:absolute;left:10px;bottom:8px;color:#fff;font:600 9px 'Montserrat',sans-serif;text-shadow:0 1px 9px rgba(0,0,0,.75);letter-spacing:.1em}
+body.the303-index-v07 #news .v07-gallery-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 5px 9px;font:600 9px 'Montserrat',sans-serif;letter-spacing:.15em;color:#78716a}
+/* Photo wall viewer */
+body.the303-index-v07.v07-lightbox-open{overflow:hidden}
+body.the303-index-v07 .v07-lightbox[hidden]{display:none!important}
+body.the303-index-v07 .v07-lightbox{position:fixed;inset:0;z-index:11000;background:rgba(17,16,15,.96);color:#f4f1ec;display:grid;grid-template-columns:60px minmax(0,1fr) 60px;align-items:center;justify-items:center;padding:54px 14px 22px}
+body.the303-index-v07 .v07-lightbox-figure{min-width:0;max-width:min(82vw,1080px);margin:0;display:flex;flex-direction:column;align-items:center;gap:17px}
+body.the303-index-v07 .v07-lightbox-image{display:block;max-width:100%;max-height:calc(100dvh - 146px);width:auto;height:auto;object-fit:contain}
+body.the303-index-v07 .v07-lightbox-figure figcaption{display:flex;justify-content:space-between;align-items:center;gap:30px;width:100%;color:rgba(255,255,255,.8);font-size:12px;line-height:1.5}
+body.the303-index-v07 .v07-lightbox-number{white-space:nowrap;font:500 11px 'Montserrat',sans-serif;letter-spacing:.12em}
+body.the303-index-v07 .v07-lightbox :is(.v07-lightbox-prev,.v07-lightbox-next,.v07-lightbox-close){border:1px solid rgba(255,255,255,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.065);color:white;cursor:pointer;width:42px;height:42px;font-size:27px;line-height:1}
+body.the303-index-v07 .v07-lightbox :is(.v07-lightbox-prev,.v07-lightbox-next,.v07-lightbox-close):focus-visible{outline:2px solid #fff;outline-offset:4px}
+body.the303-index-v07 .v07-lightbox .v07-lightbox-close{position:absolute;top:21px;right:25px;font-size:29px}
+@media(max-width:850px){
+ body.the303-index-v07 #philosophy,body.the303-index-v07 #program,body.the303-index-v07 #ttc,body.the303-index-v07 #space,body.the303-index-v07 #news{scroll-margin-top:0}
+ body.the303-index-v07 #philosophy .phil-content{padding:72px 18px}
+ body.the303-index-v07 #program.v06-program{padding:58px 0 74px}
+ body.the303-index-v07 #program .v06-program-display{font-size:clamp(37px,8.1vw,60px);letter-spacing:-.04em;margin:26px 0 15px}
+ body.the303-index-v07 #program .v06-program-intro{margin-bottom:45px}
+ body.the303-index-v07 #program .v06-program-images{gap:56px}
+ body.the303-index-v07 #program .v06-feature-barre{padding-top:0}
+ body.the303-index-v07 #program .v06-program-feature h3{font-size:clamp(32px,8.5vw,53px)}
+ body.the303-index-v07 #program .v06-dance{margin-top:65px}
+ body.the303-index-v07 #program .v06-dance h3{font-size:clamp(29px,7.5vw,46px)}
+ body.the303-index-v07 #ttc .v06-cert-english{font-size:clamp(40px,9.5vw,62px);margin-bottom:20px}
+ body.the303-index-v07 #ttc .v06-cert-copy{padding:55px 24px 60px}
+ body.the303-index-v07 #ttc .v06-chapter-label{margin-bottom:30px}
+ body.the303-index-v07 #space.v06-media{padding:58px 0 78px}
+ body.the303-index-v07 #space .v06-media-pretitle{margin-top:36px}
+ body.the303-index-v07 #space .v06-media-heading h2{font-size:clamp(30px,7.7vw,47px);margin-bottom:41px}
+ body.the303-index-v07 #space .v06-media-photo{aspect-ratio:1.12;height:auto}
+ body.the303-index-v07 #space .v07-media-sequence{aspect-ratio:1.12}
+ body.the303-index-v07 #space .v06-media-copy h3{font-size:clamp(26px,6.8vw,38px)}
+ body.the303-index-v07 #news.v06-journal{padding:58px 0 76px}
+ body.the303-index-v07 #news .v06-journal-heading{padding-bottom:26px}
+ body.the303-index-v07 #news .v06-journal-heading h2{font-size:clamp(38px,8.9vw,61px)}
+ body.the303-index-v07 #news .v07-journal-layout{display:flex;flex-direction:column;align-items:stretch;gap:33px;padding-top:28px}
+ body.the303-index-v07 #news .v07-journal-statement{font-size:clamp(31px,7.6vw,43px);margin:16px 0 10px}
+ body.the303-index-v07 #news .v07-journal-deck{margin-bottom:20px;font-size:12px}
+ body.the303-index-v07 #news .v07-journal-links{max-width:none}
+ body.the303-index-v07 #news .v07-journal-links a{min-height:50px}
+ body.the303-index-v07 #news .v07-gallery-frame{padding:3px 3px 0}
+ body.the303-index-v07 #news .v07-gallery-grid{gap:3px}
+ body.the303-index-v07 .v07-lightbox{grid-template-columns:32px minmax(0,1fr) 32px;padding:70px 6px 75px}
+ body.the303-index-v07 .v07-lightbox-figure{max-width:100%}
+ body.the303-index-v07 .v07-lightbox-image{max-height:calc(100dvh - 195px)}
+ body.the303-index-v07 .v07-lightbox :is(.v07-lightbox-prev,.v07-lightbox-next){width:32px;height:38px;font-size:24px;border:0;background:transparent}
+ body.the303-index-v07 .v07-lightbox .v07-lightbox-close{right:19px}
+ body.the303-index-v07 .v07-lightbox-figure figcaption{font-size:11px}
+}
+@media(max-width:385px){
+ body.the303-index-v07 #program .v06-program-display{font-size:36px}
+ body.the303-index-v07 #news .v06-journal-heading h2{font-size:36px;letter-spacing:-.045em}
+ body.the303-index-v07 #news .v07-journal-statement{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.the303-index-v07 .v07-sequence-frame{transition:none!important;transform:none!important}
+ body.the303-index-v07 #news .v07-gallery-tile img{transition:none!important}
+}

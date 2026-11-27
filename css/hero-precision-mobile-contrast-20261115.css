@@ -1,0 +1,52 @@
+/* THE303 STUDIO / Mobile 04 PRECISION only / 2026-11-15
+   The current on-screen order is SCULPT > RHYTHM > STRENGTH > PRECISION > THE303.
+   Keep every source image and crop untouched. No changes to the first, second,
+   third or fifth slide or to desktop rendering. */
+@media (max-width:850px) {
+  /* Transparent-to-soft-charcoal scrim, confined to the text/navigation region.
+     Applied to the image background layer, never to the photograph itself. */
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-bg::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(180deg,
+      rgba(17,16,16,0) 0%,
+      rgba(17,16,16,0) 49%,
+      rgba(17,16,16,.08) 62%,
+      rgba(17,16,16,.25) 78%,
+      rgba(17,16,16,.47) 100%);
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-content h2 {
+    color:#F5F1EC !important;
+    -webkit-text-stroke:0 transparent !important;
+    text-shadow:0 2px 9px rgba(17,16,16,.38) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-editorial-link,
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-editorial-link span {
+    color:#E7DDD3 !important;
+    text-shadow:0 1px 5px rgba(17,16,16,.48) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05 .hero-slide--line .hero-editorial-link {
+    border-color:rgba(231,221,211,.70) !important;
+  }
+  /* Navigation is outside the slide. Scope its palette to the active scene. */
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="line"] .hero-navigation .hero-dot,
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="line"] .hero-navigation .hero-position,
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="line"] .hero-navigation .hero-pause {
+    color:#F5F1EC !important;
+    text-shadow:0 1px 5px rgba(17,16,16,.6) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="line"] .hero-navigation .hero-dot i {
+    background:#F5F1EC !important;
+    box-shadow:0 1px 3px rgba(17,16,16,.45) !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="line"] .hero-navigation .hero-dot:not([aria-pressed="true"]) {
+    opacity:.78 !important;
+  }
+  body.the303-index-v111 #home.the303-intro-v05[data-scene="line"] .hero-navigation .hero-pause {
+    border-color:rgba(245,241,236,.73) !important;
+    background:rgba(25,23,22,.16) !important;
+    box-shadow:0 1px 5px rgba(17,16,16,.28) !important;
+  }
+}

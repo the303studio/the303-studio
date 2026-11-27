@@ -1,0 +1,116 @@
+/* THE303 / INDEX V10 — restrained editorial finishing pass.
+   This file is scoped to the homepage: no master, subpage or editor style changes. */
+:root{--v10-ink:#514943;--v10-warm:#625A54;--v10-deep:#292827;--v10-ivory:#F4F1EC;--v10-mat:#E5DFD6}
+
+/* HERO · The image comes first. Text enters only after the horizontal slide settles.
+   The previous V06 rule triggered text as soon as .active was set. */
+body.the303-index-v10 #home.the303-intro-v05 .hero-content,
+body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active .hero-content{
+  opacity:1!important;transform:none!important;transition:none!important;
+}
+body.the303-index-v10 #home.the303-intro-v05 .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions),
+body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions){
+  opacity:0!important;transform:translate3d(0,17px,0)!important;
+  transition-property:opacity,transform!important;
+  transition-duration:.52s,.76s!important;
+  transition-timing-function:cubic-bezier(.2,.68,.22,1)!important;
+  transition-delay:0s!important;
+}
+body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active.v10-text-ready .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions){
+  opacity:1!important;transform:translate3d(0,0,0)!important;
+}
+body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active.v10-text-ready .hero-editorial-index{transition-delay:.02s!important}
+body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active.v10-text-ready .hero-content h2{transition-delay:.16s!important}
+body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active.v10-text-ready .hero-editorial-caption{transition-delay:.36s!important}
+body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active.v10-text-ready .hero-actions{transition-delay:.49s!important}
+/* Lettering over photographs stays photo-aware; do not recolor the hero titles. */
+
+/* FLYING YOGA · One fixed cinema aperture, narrow gallery mat and independent still motion.
+   Only the interior image changes; image rail and outside frame remain motionless. */
+body.the303-index-v10 #program .v10-film-stage{
+  position:relative;isolation:isolate;min-width:0;
+  padding:clamp(11px,1.25vw,18px) clamp(11px,1.25vw,18px) 0;
+  background:var(--v10-mat);border:1px solid rgba(111,95,83,.15);
+  box-shadow:0 9px 27px rgba(55,45,38,.045);
+}
+body.the303-index-v10 #program .v10-film-stage .v06-program-photo{
+  width:100%;margin:0;height:clamp(470px,51vw,720px);
+  border:0;box-shadow:none;background:#d6d0c9;
+}
+body.the303-index-v10 #program .v10-film-rail{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:35px;padding:0 3px;color:#81756B;
+  font:500 9px/1.2 'Montserrat',sans-serif;letter-spacing:.13em;
+}
+body.the303-index-v10 #program [data-sequence] .v07-sequence-count{
+  right:13px;bottom:13px;padding:7px 9px;
+  background:rgba(37,34,31,.48);color:#faf8f4;
+  font-size:9px;font-weight:500;letter-spacing:.13em;
+  border:1px solid rgba(255,255,255,.2);
+}
+/* Prevent the generic program-hover zoom from affecting the fixed cinematic aperture. */
+body.the303-index-v10 #program .v06-feature-flying:hover .v09-film-layer img{transition:opacity 140ms ease-out}
+
+/* Typography: THE ART OF MOVEMENT deliberately NOT modified. */
+body.the303-index-v10 #program .v06-program-feature h3{
+  color:#514942;font-weight:500;letter-spacing:-.035em;
+}
+body.the303-index-v10 #program .v06-dance h3{
+  color:#514942;font-weight:500;letter-spacing:-.032em;
+}
+body.the303-index-v10 #program .v06-program-ko,
+body.the303-index-v10 #program .v06-dance-ko{color:#5b5049}
+body.the303-index-v10 #program .v06-program-meta{color:#7b6e65}
+body.the303-index-v10 #ttc .v06-cert-english{
+  color:#514943;font-weight:500;letter-spacing:-.032em;line-height:1.09;
+}
+body.the303-index-v10 #ttc .v06-cert-title{color:#514943;font-weight:500}
+body.the303-index-v10 #ttc .v06-cert-desc{color:#655a53}
+body.the303-index-v10 #space.v06-media{background:#292827}
+body.the303-index-v10 #space .v06-media-heading h2{font-weight:500;color:#f0e9e2}
+body.the303-index-v10 #space .v06-media-copy h3{font-weight:450;color:#f0e9e2;letter-spacing:-.027em}
+body.the303-index-v10 #news .v06-journal-heading h2{
+  font-weight:500;color:#514943;letter-spacing:-.032em;
+}
+body.the303-index-v10 #news .v07-journal-statement{
+  font-weight:500;color:#514943;letter-spacing:-.029em;
+}
+body.the303-index-v10 #news .v07-journal-links a{color:#514943}
+body.the303-index-v10 #news .v07-journal-deck{color:#786d64}
+/* Preserve all natural photographic colors and photograph-first philosophy. */
+
+@media(max-width:850px){
+  /* The frame is inset from the mobile edges. It reads as a composed screen rather than a full-bleed tile. */
+  body.the303-index-v10 #program .v06-feature-flying{padding-inline:0}
+  body.the303-index-v10 #program .v06-feature-flying .v10-film-stage{
+    margin:0 clamp(17px,5.3vw,29px);
+    padding:9px 9px 0;
+    box-shadow:0 8px 25px rgba(55,45,38,.05);
+  }
+  body.the303-index-v10 #program .v06-feature-flying .v10-film-stage .v06-program-photo{
+    height:clamp(365px,108vw,590px);width:100%;margin:0;
+  }
+  body.the303-index-v10 #program .v10-film-rail{min-height:31px;font-size:8px;letter-spacing:.09em}
+  body.the303-index-v10 #program .v06-feature-flying > :is(.v06-program-meta,h3,.v06-program-ko,.v06-program-descr){
+    margin-left:clamp(23px,6.5vw,36px);margin-right:clamp(23px,6.5vw,36px);
+  }
+  body.the303-index-v10 #program .v06-feature-flying .v06-program-meta{margin-top:17px;margin-bottom:13px}
+  body.the303-index-v10 #program .v06-program-feature h3{font-weight:500;letter-spacing:-.025em}
+  body.the303-index-v10 #ttc .v06-cert-english{font-weight:500}
+  body.the303-index-v10 #news .v06-journal-heading h2{font-weight:500}
+  body.the303-index-v10 #home.the303-intro-v05 .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions),
+  body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions){transform:translate3d(0,11px,0)!important}
+  body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active.v10-text-ready .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions){transform:translate3d(0,0,0)!important}
+}
+@media(max-width:370px){
+  body.the303-index-v10 #program .v06-feature-flying .v10-film-stage{margin-inline:16px}
+  body.the303-index-v10 #program .v06-feature-flying .v10-film-stage .v06-program-photo{height:108vw}
+  body.the303-index-v10 #program .v10-film-rail{font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){
+  body.the303-index-v10 #home.the303-intro-v05 .hero-slide.active .hero-content > :is(.hero-editorial-index,h2,.hero-editorial-caption,.hero-actions){
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+  body.the303-index-v10 #home.the303-intro-v05 .hero-slider{transition:none!important}
+  body.the303-index-v10 #program .v10-film-stage .v09-film-layer img{animation:none!important;transition:none!important}
+}
