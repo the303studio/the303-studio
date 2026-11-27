@@ -46,3 +46,57 @@
     .the303-meta-consent{background:rgba(255,249,242,.88)}
   }
 }
+
+/* V66-04: compact mobile consent panel. Desktop V66-03 and consent logic unchanged.
+   Concise mobile copy preserves the meaning, link and equally weighted choices; no auto-dismiss. */
+.the303-meta-copy-mobile{display:none}
+@media(max-width:850px){
+  .the303-meta-copy-full{display:none}
+  .the303-meta-copy-mobile{display:inline}
+}
+@media(max-width:850px){
+  .the303-meta-consent{
+    left:10px;right:10px;margin-inline:auto;width:min(440px,calc(100% - 20px));
+    bottom:calc(66px + env(safe-area-inset-bottom,0px));
+    display:grid;grid-template-columns:minmax(0,1fr) auto;
+    column-gap:8px;row-gap:3px;align-items:center;
+    padding:7px 10px 6px;
+    background:rgba(255,249,242,.55);color:#130f0c;
+    -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+    border:1px solid rgba(255,249,242,.38);border-radius:4px;
+    box-shadow:0 3px 12px rgba(48,32,25,.08);
+  }
+  .the303-meta-consent-copy{display:contents}
+  .the303-meta-consent-copy strong{grid-column:1/-1;font-size:12px;line-height:1.4;color:#130f0c}
+  .the303-meta-consent-copy p{grid-column:1/-1;font-size:12px;line-height:1.45;margin:0;color:#130f0c;word-break:keep-all;overflow-wrap:anywhere}
+  .the303-meta-consent-copy a{grid-column:1;justify-self:start;display:inline-flex;align-items:center;min-height:44px;font-size:12px;color:#130f0c;border:0;padding:0;text-decoration:underline;text-underline-offset:3px}
+  .the303-meta-consent-actions{grid-column:2;gap:6px;justify-content:flex-end}
+  .the303-meta-consent-actions button{min-width:60px;min-height:44px;padding:5px 10px;font-size:12px;border:1px solid #49372f;border-radius:2px;background:rgba(255,249,242,.32);color:#130f0c}
+  .the303-meta-consent button:focus-visible,.the303-meta-consent a:focus-visible{outline:2px solid #130f0c;outline-offset:2px}
+  @supports not ((backdrop-filter:blur(16px)) or (-webkit-backdrop-filter:blur(16px))){
+    .the303-meta-consent{background:rgba(255,249,242,.88)}
+  }
+  @media(max-width:350px){.the303-meta-consent{padding-inline:8px}.the303-meta-consent-actions button{min-width:56px}}
+  /* While the notice is open, keep hero navigation and lower titles above it.
+     No change to imagery, slide motion, or the original layout after a choice. */
+  body:has(> .the303-meta-consent){--the303-consent-clearance:calc(var(--the303-consent-height,134px) + 9px)}
+  body.the303-index-v111:has(> .the303-meta-consent) #home.the303-intro-v05 .hero-navigation{
+    bottom:calc(72px + var(--the303-consent-clearance) + env(safe-area-inset-bottom,0px)) !important;
+  }
+  body.the303-index-v111:has(> .the303-meta-consent) #home.the303-intro-v05 .hero-slide:is(.hero-slide--line,.hero-slide--flow,.hero-slide--control,.hero-slide--brand) .hero-content{
+    bottom:calc(128px + var(--the303-consent-clearance) + env(safe-area-inset-bottom,0px)) !important;
+  }
+  body:has(> .the303-meta-consent) .to-top.show{
+    bottom:calc(72px + var(--the303-consent-clearance) + env(safe-area-inset-bottom,0px));
+  }
+  @media(max-width:350px){body:has(> .the303-meta-consent){--the303-consent-clearance:calc(var(--the303-consent-height,153px) + 9px)}}
+}
+/* Temporary optical contrast at the raised title positions only. */
+@media(max-width:850px){
+  body.the303-index-v111:has(> .the303-meta-consent) #home.the303-intro-v05 .hero-slide--flow .hero-content :is(h2,.hero-editorial-link){
+    text-shadow:0 0 2px rgba(255,249,242,.92),0 1px 5px rgba(255,249,242,.7)!important;
+  }
+  body.the303-index-v111:has(> .the303-meta-consent) #home.the303-intro-v05 .hero-slide--brand .hero-content h2{
+    text-shadow:0 1px 3px rgba(23,22,22,.8),0 0 6px rgba(23,22,22,.4)!important;
+  }
+}

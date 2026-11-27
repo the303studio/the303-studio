@@ -8,7 +8,7 @@
   const STORE_KEY='the303-meta-ads-consent-v1';
   const LIVE_HOSTS=new Set(['the303studio.kr','www.the303studio.kr']);
   const isLive=LIVE_HOSTS.has(location.hostname.toLowerCase());
-  let choice=null, loaded=false;
+  let choice=null, loaded=false, bannerSizeObserver=null;
   try {const saved=localStorage.getItem(STORE_KEY);if(saved==='granted'||saved==='denied')choice=saved;}catch(e){}
   const save=(value)=>{choice=value;try{localStorage.setItem(STORE_KEY,value)}catch(e){}};
   function loadMeta(){
@@ -30,7 +30,11 @@
       });
     });
   }
-  function closeBanner(){document.getElementById('the303-meta-consent')?.remove();}
+  function closeBanner(){
+    bannerSizeObserver?.disconnect();bannerSizeObserver=null;
+    document.getElementById('the303-meta-consent')?.remove();
+    document.body.style.removeProperty('--the303-consent-height');
+  }
   function setChoice(value){
     const wasActive=loaded;
     save(value);
@@ -50,13 +54,22 @@
     dialog.setAttribute('role','region'); dialog.setAttribute('aria-label','광고 측정 쿠키 선택');
     const content=document.createElement('div');content.className='the303-meta-consent-copy';
     const title=document.createElement('strong');title.textContent='광고·쿠키 사용 안내';
-    const body=document.createElement('p');body.textContent='THE303 STUDIO는 선택적으로 Meta 픽셀을 이용해 방문 및 카카오톡 상담 버튼 클릭을 측정합니다. 동의하지 않아도 홈페이지를 이용할 수 있습니다.';
+    const body=document.createElement('p');
+    const fullCopy=document.createElement('span');fullCopy.className='the303-meta-copy-full';fullCopy.textContent='THE303 STUDIO는 선택적으로 Meta 픽셀을 이용해 방문 및 카카오톡 상담 버튼 클릭을 측정합니다. 동의하지 않아도 홈페이지를 이용할 수 있습니다.';
+    const mobileCopy=document.createElement('span');mobileCopy.className='the303-meta-copy-mobile';mobileCopy.hidden=true;mobileCopy.textContent='동의 시 Meta 픽셀로 방문·카카오톡 상담 클릭을 측정합니다. 거부해도 이용할 수 있습니다.';
+    body.append(fullCopy,mobileCopy);
     const link=document.createElement('a');link.href='./privacy.html';link.textContent='자세히 보기';
     content.append(title,body,link);
     const actions=document.createElement('div');actions.className='the303-meta-consent-actions';
     const decline=document.createElement('button');decline.type='button';decline.className='the303-meta-reject';decline.textContent='거부';decline.addEventListener('click',()=>setChoice('denied'));
     const accept=document.createElement('button');accept.type='button';accept.className='the303-meta-accept';accept.textContent='동의';accept.addEventListener('click',()=>setChoice('granted'));
     actions.append(decline,accept);dialog.append(content,actions);document.body.appendChild(dialog);
+    // Layout only: reserve the actual notice height, including font/viewport changes.
+    const syncBannerSize=()=>document.body.style.setProperty('--the303-consent-height',Math.ceil(dialog.getBoundingClientRect().height)+'px');
+    syncBannerSize();
+    if(typeof ResizeObserver==='function'){
+      bannerSizeObserver=new ResizeObserver(syncBannerSize);bannerSizeObserver.observe(dialog);
+    }
   }
   function addFooterControls(){
     const bottom=document.querySelector('.site-footer .footer-bottom');
