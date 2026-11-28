@@ -17,7 +17,7 @@
         "navSub2_3": "에어리얼댄스",
         "nav3": "CERTIFICATE",
         "navSub3_1": "자격증과정",
-        "navSub3_2": "워크샵",
+        "navSub3_2": "강사 워크샵",
         "nav4": "MEDIA STUDIO",
         "navSub4_1": "포트폴리오", 
         "navSub4_2": "촬영 및 대관 안내", 
@@ -82,9 +82,9 @@
 
         "ttcLabel": "CERTIFICATE",
         "ttcTitle": "배움에서 지도까지\n움직임을 전하는 힘", 
-        "ttcDesc": "플라잉요가 지도자 과정과 워크샵을 통해 현장에서 필요한 지도 역량을 키웁니다.",
+        "ttcDesc": "플라잉요가 지도자 과정과 강사 워크샵을 통해 현장에서 필요한 지도 역량을 키웁니다.",
         "ttcBtn1": "자격증 과정 안내",
-        "ttcBtn2": "워크샵",
+        "ttcBtn2": "강사 워크샵",
 
         "spaceLabel": "MEDIA STUDIO",
         "spaceTitle": "움직임이 예술이 되는 순간",
@@ -115,10 +115,10 @@
     },
     "link": {
         "booking": "https://pf.kakao.com/_xdERxlxj",
-        "socialFb": "https://www.facebook.com/share/1DtPRn45tn/",
+        "socialFb": "https://www.facebook.com/the303flyingyogastudio",
         "socialIg": "https://www.instagram.com/the303_flyingyoga_barre",
         "socialBlog": "https://blog.naver.com/flyingthe303",
-        "socialYt": ""
+        "socialYt": "https://www.youtube.com/@%EB%8D%94303%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4"
     },
     "images": {
         "philBgPc": "./images/main/philosophy-pc.jpg",
@@ -386,7 +386,13 @@
     if (draft.text.mssList2 === '지도자과정 수료생 프로필·포트폴리오 촬영 지원') {
       draft.text.mssList2 = defaults.text.mssList2;
     }
+    // GEO01: upgrade only prior factory defaults; preserve custom edits and storage keys.
+    if (draft.text.navSub3_2 === '워크샵') draft.text.navSub3_2 = defaults.text.navSub3_2;
+    if (draft.text.ttcBtn2 === '워크샵') draft.text.ttcBtn2 = defaults.text.ttcBtn2;
+    if (draft.text.ttcDesc === "플라잉요가 지도자 과정과 워크샵을 통해 현장에서 필요한 지도 역량을 키웁니다.") draft.text.ttcDesc = defaults.text.ttcDesc;
     draft.link = { ...defaults.link, ...(draft.link || {}) };
+    if (draft.link.socialFb === 'https://www.facebook.com/share/1DtPRn45tn/') draft.link.socialFb = defaults.link.socialFb;
+    if (draft.link.socialYt === '') draft.link.socialYt = defaults.link.socialYt;
     if (typeof draft.link.booking === 'string' &&
         /^http:\/\/pf\.kakao\.com\/_xdERxlxj\/?(?=[?#]|$)/i.test(draft.link.booking.trim())) {
       draft.link.booking = draft.link.booking.trim().replace(/^http:/i, 'https:');
