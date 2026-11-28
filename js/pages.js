@@ -17,7 +17,7 @@
  // Do not migrate or overwrite existing user data. The newest valid snapshot wins.
  const home=homeStores.map(read).find(data=>data && typeof data.text==='object' && data.text!==null)||{};
  const OFFICIAL_BOOKING='https://pf.kakao.com/_xdERxlxj';
- const defaultLinks={booking:OFFICIAL_BOOKING,socialFb:'https://www.facebook.com/share/1DtPRn45tn/',socialIg:'https://www.instagram.com/the303_flyingyoga_barre',socialBlog:'https://blog.naver.com/flyingthe303',socialYt:''};
+ const defaultLinks={booking:OFFICIAL_BOOKING,socialFb:"https://www.facebook.com/the303flyingyogastudio",socialIg:'https://www.instagram.com/the303_flyingyoga_barre',socialBlog:'https://blog.naver.com/flyingthe303',socialYt:"https://www.youtube.com/@%EB%8D%94303%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4"};
  // Upgrade only the old official HTTP address. Retain an intentionally customized URL.
  function bookingHref(value){
    const raw=typeof value==='string'?value.trim():'';
@@ -30,12 +30,15 @@
    return OFFICIAL_BOOKING;
  }
  const links={...defaultLinks,...(home.link||{})};
+ if (links.socialFb === 'https://www.facebook.com/share/1DtPRn45tn/') links.socialFb=defaultLinks.socialFb;
+ if (links.socialYt === '') links.socialYt=defaultLinks.socialYt;
  links.booking=bookingHref(links.booking);
  const baseText={brandEn:'THE303 STUDIO',brandSub:'FLYING YOGA & BARRE',address:'대구광역시 달서구 달구벌대로 1525 J타워 3층 301호',phone:'053-568-3303'};
  // Header/footer branding reflects homepage local editor settings on the same origin.
  $$('[data-text]').forEach(el=>{
    const key=el.dataset.text;
-   if(typeof home.text?.[key]==='string')el.textContent=home.text[key];
+   if(key==='navSub3_2' && home.text?.[key]==='워크샵')el.textContent='강사 워크샵';
+   else if(typeof home.text?.[key]==='string')el.textContent=home.text[key];
    else if(typeof baseText[key]==='string')el.textContent=baseText[key];
  });
  $$('[data-link]').forEach(a=>{
@@ -63,6 +66,12 @@
    ...Object.fromEntries(mobileNodes.map(el=>[el.dataset.editImageMobile,el.dataset.imageMobile]))
  };
  const saved=read(pageStore)||{};
+ if(slug==='ttc-workshop' && saved.texts){
+   const oldCopy={"워크샵": "강사 워크샵", "다음 워크샵 안내": "다음 강사 워크샵 안내", "다음 워크샵을 준비하고 있습니다.": "다음 강사 워크샵을 준비하고 있습니다.", "워크샵 일정 및 참여 문의는 카카오톡으로 편하게 남겨 주세요.": "강사 워크샵 일정 및 참여 문의는 카카오톡으로 편하게 남겨 주세요.", "익숙한 동작도 함께 살펴보면 새로운 질문이 생깁니다. THE303의 워크샵은 하나의 주제를 서로 다른 관점에서 바라보고, 함께 배우며 교류하는 시간입니다.": "익숙한 동작도 함께 살펴보면 새로운 질문이 생깁니다. THE303의 강사 워크샵은 하나의 주제를 서로 다른 관점에서 바라보고, 함께 배우며 교류하는 시간입니다."};
+   for(const key of ['hero_identity','schedule_title','schedule_status','cta_desc','intro_beyondtheclass']){
+     if(Object.prototype.hasOwnProperty.call(oldCopy,saved.texts[key])) saved.texts[key]=oldCopy[saved.texts[key]];
+   }
+ }
  // V03: TTC title legacy factory default -> current title, without changing user edits.
  if(slug==='ttc-cert' && saved.texts?.hero_identity==='지도자과정'){
    saved.texts.hero_identity='자격증 과정';
@@ -295,7 +304,7 @@
         });
         cardsByParent.forEach((siblings, parent) => {
           const columns = groupColumns(parent, siblings.length);
-          siblings.forEach((card, i) => enroll(card, (i % columns) * 140, true));
+          siblings.forEach((card, i) => enroll(card, faqItemSet.has(card) ? 0 : (i % columns) * 140, true));
         });
         const outsideCard = el => !el.closest(cardSelector) && !el.closest('details') &&
           !el.closest('.site-footer') && !Array.from(cardSet).some(card => card.contains(el));
@@ -308,29 +317,46 @@
     scan();
     body.classList.add('the303-reveal-active');
 
-    // FAQ: show the four questions in their existing 140ms cascade when the
-    // list enters view; rearm only after the entire FAQ section leaves view.
-    // This never changes details.open, so expanded answers stay untouched.
+    // Q&A: reveal every row when it actually reaches the viewport. Stagger
+    // each visible batch in document order; rearm only after the whole section
+    // leaves view. Never change details.open or the accordion animation.
     let faqEnterObserver = null;
     let faqExitObserver = null;
     if (faqRegion && faqQuestions && faqItems.length) {
-      let canReplay = true;
+      let started = false;
       faqRegion.classList.add('is-faq-offscreen');
       faqEnterObserver = new IntersectionObserver(entries => {
-        if (!canReplay || !entries.some(entry => entry.isIntersecting)) return;
-        canReplay = false;
-        faqRegion.classList.remove('is-faq-offscreen');
-        // Commit the hidden state before re-adding is-visible, even on rapid return.
-        void faqQuestions.offsetWidth;
-        faqItems.forEach(item => item.classList.add('is-visible'));
-      }, { threshold: .01, rootMargin: '0px 0px -14% 0px' });
+        const visibleRows = entries.filter(entry => entry.isIntersecting)
+          .map(entry => entry.target)
+          .sort((a, b) => faqItems.indexOf(a) - faqItems.indexOf(b));
+        if (!visibleRows.length) return;
+        if (!started) {
+          started = true;
+          faqRegion.classList.remove('is-faq-offscreen');
+          void faqQuestions.offsetWidth;
+        }
+        let order = 0;
+        visibleRows.forEach(item => {
+          if (!item.classList.contains('is-visible')) {
+            item.style.setProperty('--the303-reveal-delay', `${order++ * 140}ms`);
+            item.classList.add('is-visible');
+          }
+          faqEnterObserver.unobserve(item);
+        });
+      }, { threshold: .08, rootMargin: '0px 0px -5% 0px' });
       faqExitObserver = new IntersectionObserver(entries => {
-        if (canReplay || entries.some(entry => entry.isIntersecting)) return;
+        if (!started || entries.some(entry => entry.isIntersecting)) return;
+        started = false;
         faqRegion.classList.add('is-faq-offscreen');
-        faqItems.forEach(item => item.classList.remove('is-visible'));
-        canReplay = true;
+        faqEnterObserver.disconnect();
+        faqItems.forEach(item => {
+          item.classList.remove('is-visible');
+          item.style.setProperty('--the303-reveal-delay', '0ms');
+        });
+        void faqQuestions.offsetWidth;
+        faqItems.forEach(item => faqEnterObserver.observe(item));
       }, { threshold: 0 });
-      faqEnterObserver.observe(faqQuestions);
+      faqItems.forEach(item => faqEnterObserver.observe(item));
       faqExitObserver.observe(faqRegion);
     }
     // Public notices may be rendered asynchronously by a separate page script.
