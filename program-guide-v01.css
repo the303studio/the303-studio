@@ -1,0 +1,601 @@
+
+/* THE303 STUDIO — CLASS GUIDE V01 (prototype) */
+body[data-page="program-guide"]{background:#faf8f5;color:#2d2825}
+body[data-page="program-guide"] .guide-page{--paper:#faf8f5;--cream:#f2ede6;--line:#ded5ca;--wine:#784344;--deep:#403434;--muted:#776e66;overflow:hidden;padding-top:var(--nav-height,76px);background:var(--paper);font-family:'Noto Sans KR',sans-serif}
+body[data-page="program-guide"] .guide-page *,body[data-page="program-guide"] .guide-page *::before,body[data-page="program-guide"] .guide-page *::after{box-sizing:border-box}
+body[data-page="program-guide"] .guide-page a{color:inherit;text-decoration:none}
+body[data-page="program-guide"] .guide-page img{display:block;max-width:100%}
+body[data-page="program-guide"] .guide-page h1,body[data-page="program-guide"] .guide-page h2,body[data-page="program-guide"] .guide-page h3,body[data-page="program-guide"] .guide-page p,body[data-page="program-guide"] .guide-page figure{margin:0}
+body[data-page="program-guide"] .guide-container{max-width:1160px;width:calc(100% - 72px);margin:0 auto}
+body[data-page="program-guide"] .guide-eyebrow{display:block;color:var(--wine);font:700 10px/1.7 'Montserrat',sans-serif;letter-spacing:.22em}
+body[data-page="program-guide"] .guide-breadcrumb{border-bottom:1px solid var(--line);padding:19px 0 13px;display:flex;gap:11px;align-items:center;color:#a79a8f;font:600 10px/1.6 'Montserrat',sans-serif;letter-spacing:.1em}
+body[data-page="program-guide"] .guide-breadcrumb strong{color:var(--wine)}
+body[data-page="program-guide"] .guide-hero{background:#faf8f5}
+body[data-page="program-guide"] .guide-hero-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(35px,5vw,84px);align-items:center;padding:46px 0 60px}
+body[data-page="program-guide"] .guide-hero-copy{padding-left:clamp(0px,1.5vw,19px)}
+body[data-page="program-guide"] .guide-sep{margin:0 8px;color:#b49e92}
+body[data-page="program-guide"] .guide-hero h1{font:600 clamp(49px,5.1vw,78px)/1.13 'Nanum Myeongjo',serif;letter-spacing:-.075em;margin:20px 0 27px;color:#322b28;word-break:keep-all}
+body[data-page="program-guide"] .guide-hero h2{font:600 clamp(20px,1.9vw,27px)/1.65 'Nanum Myeongjo',serif;letter-spacing:-.04em;color:#51413f;word-break:keep-all;white-space:pre-line}
+body[data-page="program-guide"] .guide-hero-sub{font-size:13px;line-height:1.86;color:var(--muted);margin-top:17px;word-break:keep-all;white-space:pre-line}
+body[data-page="program-guide"] .guide-text-link{display:inline-flex;align-items:center;gap:24px;margin-top:29px;border-bottom:1px solid #a48479;padding:0 2px 9px;font-size:12px;font-weight:650;color:#543d3a!important;transition:color .2s}
+body[data-page="program-guide"] .guide-text-link:hover{color:#b2625c!important}
+body[data-page="program-guide"] .guide-hero-images{height:clamp(360px,33vw,452px);display:grid;grid-template-columns:.85fr 1.15fr;gap:11px;min-width:0}
+body[data-page="program-guide"] .guide-hero-photo{height:100%;position:relative;overflow:hidden;background:#e5d8cc}
+body[data-page="program-guide"] .guide-hero-photo img{width:100%;height:100%;object-fit:cover}
+body[data-page="program-guide"] .guide-photo-flying img{object-position:50% 48%}
+body[data-page="program-guide"] .guide-photo-barre img{object-position:68% 50%}
+body[data-page="program-guide"] .guide-hero-photo figcaption{position:absolute;left:14px;bottom:14px;padding:9px 11px;background:rgba(250,248,245,.9);color:#54403b;font:700 9px/1 'Montserrat',sans-serif;letter-spacing:.12em}
+body[data-page="program-guide"] .guide-section{padding:83px 0}
+body[data-page="program-guide"] .guide-section-heading{margin-bottom:29px}
+body[data-page="program-guide"] .guide-section-heading h2,body[data-page="program-guide"] .guide-schedule h2,body[data-page="program-guide"] .guide-faq h2{font:600 clamp(30px,2.7vw,41px)/1.3 'Nanum Myeongjo',serif;letter-spacing:-.062em;color:#302b28;margin:10px 0 13px}
+body[data-page="program-guide"] .guide-section-heading p,body[data-page="program-guide"] .guide-schedule-copy p,body[data-page="program-guide"] .guide-faq-heading p{font-size:13px;line-height:1.8;color:var(--muted);word-break:keep-all}
+body[data-page="program-guide"] .guide-heading-inline{display:flex;justify-content:space-between;align-items:end;gap:25px}
+body[data-page="program-guide"] .guide-heading-inline>p{text-align:right;padding-bottom:2px}
+body[data-page="program-guide"] .guide-trial{background:#eee6dd}
+body[data-page="program-guide"] .guide-trial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body[data-page="program-guide"] .guide-trial-card{background:#fffdfa;border:1px solid #d7c8ba;padding:26px clamp(23px,2.7vw,37px) 25px;min-width:0;transition:transform .24s,box-shadow .24s}
+body[data-page="program-guide"] .guide-trial-card:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(60,46,40,.06)}
+body[data-page="program-guide"] .guide-trial-top{display:flex;justify-content:space-between;border-bottom:1px solid #e1d7cc;padding-bottom:14px;color:#a38778;font:700 10px/1.3 'Montserrat',sans-serif;letter-spacing:.18em}
+body[data-page="program-guide"] .guide-trial-card h3{margin:28px 0 14px;font:600 23px/1.4 'Nanum Myeongjo',serif;letter-spacing:-.045em}
+body[data-page="program-guide"] .guide-price{display:flex;align-items:baseline;gap:8px;color:#654145;white-space:nowrap}
+body[data-page="program-guide"] .guide-price strong{font:500 clamp(43px,4vw,59px)/1.25 'Montserrat',sans-serif;letter-spacing:-.065em}
+body[data-page="program-guide"] .guide-price span{font-size:14px;font-weight:650}
+body[data-page="program-guide"] .guide-price i{font-size:11px;font-weight:400;color:#98897f;font-style:normal}
+body[data-page="program-guide"] .guide-trial-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:31px;padding-top:15px;border-top:1px solid #e1d7cc}
+body[data-page="program-guide"] .guide-trial-bottom>span{color:#aa9286;font:600 10px/1.5 'Montserrat',sans-serif;letter-spacing:.13em}
+body[data-page="program-guide"] .guide-trial-bottom a{font-size:12px;color:#5a4841;font-weight:600;border-bottom:1px solid #b9a99f;padding-bottom:3px}
+body[data-page="program-guide"] .guide-trial-action{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:24px}
+body[data-page="program-guide"] .guide-trial-action p{font-size:12px;line-height:1.7;color:#6a5f59}
+body[data-page="program-guide"] .guide-button{display:inline-flex;align-items:center;justify-content:center;gap:29px;white-space:nowrap;border:1px solid transparent;border-radius:0;padding:15px 24px;font-size:13px;font-weight:650;min-height:47px;transition:transform .2s,background .2s}
+body[data-page="program-guide"] .guide-button:hover{transform:translateY(-2px)}
+body[data-page="program-guide"] .guide-button-dark{background:#744244;color:white!important}
+body[data-page="program-guide"] .guide-button-dark:hover{background:#583336}
+body[data-page="program-guide"] .guide-membership{background:#faf8f5}
+body[data-page="program-guide"] .guide-membership-list{border-top:1px solid var(--line)}
+body[data-page="program-guide"] .guide-membership-row{display:grid;grid-template-columns:52px minmax(0,1fr) minmax(0,.8fr) auto;align-items:center;gap:15px;min-height:76px;border-bottom:1px solid var(--line);transition:background .2s;padding:5px 12px 5px 0}
+body[data-page="program-guide"] a.guide-membership-row:hover{background:#f4efea}
+body[data-page="program-guide"] .guide-membership-num{font:600 10px/1.4 'Montserrat',sans-serif;color:#b59d90;letter-spacing:.06em}
+body[data-page="program-guide"] .guide-membership-row strong{font:600 20px/1.5 'Nanum Myeongjo',serif;color:#382f2c}
+body[data-page="program-guide"] .guide-membership-en{font:650 10px/1.5 'Montserrat',sans-serif;letter-spacing:.1em;color:#aa9388}
+body[data-page="program-guide"] .guide-membership-go{font-size:12px;color:#69524a!important;font-weight:650;white-space:nowrap}
+body[data-page="program-guide"] .guide-membership-row-static>a:hover{text-decoration:underline}
+body[data-page="program-guide"] .guide-membership-note{font-size:12px;color:#83746c;margin-top:16px;line-height:1.8}
+body[data-page="program-guide"] .guide-schedule{background:#f3eee8;padding:66px 0}
+body[data-page="program-guide"] .guide-schedule-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}
+body[data-page="program-guide"] .guide-schedule-link{display:flex;justify-content:space-between;align-items:center;gap:15px;border:1px solid #d6c6b8;padding:23px 24px;background:#fffbf7;transition:background .2s}
+body[data-page="program-guide"] .guide-schedule-link:hover{background:white}
+body[data-page="program-guide"] .guide-schedule-link small{font:650 9px/1.7 'Montserrat',sans-serif;letter-spacing:.16em;color:#987e73}
+body[data-page="program-guide"] .guide-schedule-link strong{display:block;font-size:15px;font-weight:600;margin-top:8px;color:#4b3b36}
+body[data-page="program-guide"] .guide-schedule-arrow{font-size:28px;color:#86554d;line-height:1}
+body[data-page="program-guide"] .guide-faq{background:#faf8f5;padding:78px 0 84px}
+body[data-page="program-guide"] .guide-faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,100px)}
+body[data-page="program-guide"] .guide-faq-questions{border-top:1px solid var(--line)}
+body[data-page="program-guide"] .guide-faq-item{border-bottom:1px solid var(--line)}
+body[data-page="program-guide"] .guide-faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:65px;cursor:pointer;padding:17px 4px;list-style:none;font-size:14px;font-weight:600;color:#3a302d;word-break:keep-all}
+body[data-page="program-guide"] .guide-faq-item summary::-webkit-details-marker{display:none}
+body[data-page="program-guide"] .guide-faq-item summary:focus-visible{outline:2px solid #865254;outline-offset:-3px}
+body[data-page="program-guide"] .guide-plus{width:18px;height:18px;position:relative;flex:none}
+body[data-page="program-guide"] .guide-plus:before,body[data-page="program-guide"] .guide-plus:after{content:'';position:absolute;background:#8b6057;top:8px;left:3px;width:12px;height:1px}
+body[data-page="program-guide"] .guide-plus:after{transform:rotate(90deg);transition:transform .2s}
+body[data-page="program-guide"] .guide-faq-item[open] .guide-plus:after{transform:rotate(0)}
+body[data-page="program-guide"] .guide-faq-item p{font-size:13px;line-height:1.88;color:var(--muted);padding:0 28px 23px 4px;word-break:keep-all}
+body[data-page="program-guide"] .guide-final{background:#403433;padding:66px 0}
+body[data-page="program-guide"] .guide-final-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}
+body[data-page="program-guide"] .guide-final .guide-eyebrow{color:#d6b5a8}
+body[data-page="program-guide"] .guide-final h2{font:600 clamp(26px,2.8vw,37px)/1.45 'Nanum Myeongjo',serif;color:white;letter-spacing:-.06em;margin:16px 0}
+body[data-page="program-guide"] .guide-final p{font-size:13px;color:#d4c8c2;line-height:1.7}
+body[data-page="program-guide"] .guide-button-light{background:#f7f0e9;color:#4f3934!important}
+body[data-page="program-guide"] .guide-page-bottom-nav{border-bottom:1px solid #ddd2ca}
+body[data-page="program-guide"] .guide-page-bottom-nav .guide-container{display:flex;justify-content:space-between;gap:30px;padding:20px 0}
+body[data-page="program-guide"] .guide-page-bottom-nav a{display:flex;flex-direction:column;gap:7px}
+body[data-page="program-guide"] .guide-page-bottom-nav a:last-child{text-align:right}
+body[data-page="program-guide"] .guide-page-bottom-nav span{font:700 9px/1.4 'Montserrat',sans-serif;letter-spacing:.15em;color:#a18f83}
+body[data-page="program-guide"] .guide-page-bottom-nav strong{font-size:13px;color:#5b443f}
+@media(max-width:900px){
+body[data-page="program-guide"] .guide-container{width:calc(100% - 48px)}
+body[data-page="program-guide"] .guide-hero-grid{gap:25px}
+body[data-page="program-guide"] .guide-hero h1{font-size:56px}
+body[data-page="program-guide"] .guide-hero-images{height:350px}
+body[data-page="program-guide"] .guide-faq-grid{gap:36px}
+}
+@media(max-width:720px){
+body[data-page="program-guide"] .guide-container{width:calc(100% - 38px)}
+body[data-page="program-guide"] .guide-breadcrumb{padding:15px 0 11px;font-size:9px}
+body[data-page="program-guide"] .guide-hero-grid{display:flex;flex-direction:column;gap:26px;padding:34px 0 49px}
+body[data-page="program-guide"] .guide-hero-copy{padding-left:0;text-align:center;width:100%}
+body[data-page="program-guide"] .guide-eyebrow{font-size:9px}
+body[data-page="program-guide"] .guide-hero h1{font-size:clamp(44px,10vw,61px);margin:14px 0 18px}
+body[data-page="program-guide"] .guide-hero h2{font-size:21px;line-height:1.55}
+body[data-page="program-guide"] .guide-hero-sub{font-size:12px;margin-top:12px}
+body[data-page="program-guide"] .guide-text-link{margin-top:19px}
+body[data-page="program-guide"] .guide-hero-images{height:275px;width:100%;grid-template-columns:.92fr 1.08fr;gap:8px}
+body[data-page="program-guide"] .guide-photo-barre img{object-position:66% 50%}
+body[data-page="program-guide"] .guide-hero-photo figcaption{font-size:8px;left:8px;bottom:8px;padding:8px}
+body[data-page="program-guide"] .guide-section{padding:57px 0}
+body[data-page="program-guide"] .guide-section-heading{margin-bottom:20px}
+body[data-page="program-guide"] .guide-heading-inline{display:block;text-align:center}
+body[data-page="program-guide"] .guide-heading-inline>p{text-align:center;margin-top:6px;padding:0}
+body[data-page="program-guide"] .guide-section-heading h2,body[data-page="program-guide"] .guide-schedule h2,body[data-page="program-guide"] .guide-faq h2{font-size:30px;margin:9px 0 10px}
+body[data-page="program-guide"] .guide-trial-grid{grid-template-columns:1fr;gap:12px}
+body[data-page="program-guide"] .guide-trial-card{padding:20px 22px 20px}
+body[data-page="program-guide"] .guide-trial-top{padding-bottom:9px}
+body[data-page="program-guide"] .guide-trial-card h3{font-size:20px;margin:17px 0 8px}
+body[data-page="program-guide"] .guide-price strong{font-size:45px}
+body[data-page="program-guide"] .guide-trial-bottom{margin-top:16px;padding-top:12px}
+body[data-page="program-guide"] .guide-trial-action{flex-direction:column;align-items:stretch;gap:14px;margin-top:20px}
+body[data-page="program-guide"] .guide-trial-action p{text-align:center;font-size:12px}
+body[data-page="program-guide"] .guide-button{width:100%;justify-content:center}
+body[data-page="program-guide"] .guide-membership .guide-section-heading{text-align:center}
+body[data-page="program-guide"] .guide-membership-row{grid-template-columns:27px minmax(0,1fr) auto;min-height:68px;gap:9px;padding:8px 0}
+body[data-page="program-guide"] .guide-membership-row strong{font-size:18px}
+body[data-page="program-guide"] .guide-membership-en{display:none}
+body[data-page="program-guide"] .guide-membership-go{font-size:11px}
+body[data-page="program-guide"] .guide-membership-note{text-align:center;font-size:11px}
+body[data-page="program-guide"] .guide-schedule{padding:53px 0}
+body[data-page="program-guide"] .guide-schedule-grid{grid-template-columns:1fr;gap:22px}
+body[data-page="program-guide"] .guide-schedule-copy{text-align:center}
+body[data-page="program-guide"] .guide-schedule-link{padding:17px 18px}
+body[data-page="program-guide"] .guide-faq{padding:58px 0}
+body[data-page="program-guide"] .guide-faq-grid{grid-template-columns:1fr;gap:24px}
+body[data-page="program-guide"] .guide-faq-heading{text-align:center}
+body[data-page="program-guide"] .guide-faq-item summary{font-size:13px;min-height:60px;padding:14px 2px}
+body[data-page="program-guide"] .guide-faq-item p{font-size:12px;padding-right:12px}
+body[data-page="program-guide"] .guide-final{padding:57px 0}
+body[data-page="program-guide"] .guide-final-grid{flex-direction:column;text-align:center;gap:24px}
+body[data-page="program-guide"] .guide-final h2{font-size:29px;margin:12px 0}
+body[data-page="program-guide"] .guide-page-bottom-nav .guide-container{padding:18px 0}
+}
+@media(max-width:360px){body[data-page="program-guide"] .guide-container{width:calc(100% - 30px)}body[data-page="program-guide"] .guide-price strong{font-size:39px}body[data-page="program-guide"] .guide-hero-images{height:240px}}
+@media(prefers-reduced-motion:reduce){body[data-page="program-guide"] .guide-page *{transition:none!important;scroll-behavior:auto!important}}
+
+
+/* V07 — compact consultation section / four complete FAQ answers (2026-11-17)
+   Scope intentionally limited to the CLASS GUIDE page. */
+body[data-page="program-guide"] .guide-faq{padding:56px 0 48px}
+body[data-page="program-guide"] .guide-faq-item summary{min-height:56px;padding:13px 4px}
+body[data-page="program-guide"] .guide-faq-answer{padding:0 24px 19px 4px;color:var(--muted)}
+body[data-page="program-guide"] .guide-faq-answer p{padding:0;margin:0;font-size:13px;line-height:1.78;word-break:keep-all}
+body[data-page="program-guide"] .guide-faq-answer p+p{margin-top:11px}
+body[data-page="program-guide"] .guide-faq-answer strong{font-weight:700;color:#4b3832;margin-right:7px}
+body[data-page="program-guide"] .guide-faq-contact{display:inline-flex;align-items:center;gap:12px;margin-top:13px;padding:0 0 5px;border-bottom:1px solid #9f7770;color:#5d3e3a!important;font-size:12px;font-weight:650;line-height:1.6;transition:color .2s,border-color .2s}
+body[data-page="program-guide"] .guide-faq-contact:hover{color:#9c6059!important;border-color:#9c6059}
+body[data-page="program-guide"] .guide-faq-contact:focus-visible{outline:2px solid #865254;outline-offset:4px}
+body[data-page="program-guide"] .guide-final{padding:36px 0}
+body[data-page="program-guide"] .guide-final-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}
+body[data-page="program-guide"] .guide-final h2{font-size:clamp(25px,2.35vw,31px);line-height:1.34;letter-spacing:-.03em;margin:8px 0 9px;white-space:nowrap}
+body[data-page="program-guide"] .guide-final p{font-size:12px;line-height:1.65;white-space:nowrap}
+body[data-page="program-guide"] .guide-final .guide-button{padding:13px 20px;min-height:43px}
+@media(max-width:720px){
+ body[data-page="program-guide"] .guide-faq{padding:44px 0 40px}
+ body[data-page="program-guide"] .guide-faq-item summary{min-height:54px;padding:12px 2px}
+ body[data-page="program-guide"] .guide-faq-answer{padding:0 8px 16px 2px}
+ body[data-page="program-guide"] .guide-faq-answer p{font-size:12px;line-height:1.8}
+ body[data-page="program-guide"] .guide-faq-answer p+p{margin-top:10px}
+ body[data-page="program-guide"] .guide-final{padding:37px 0 39px}
+ body[data-page="program-guide"] .guide-final-grid{display:flex;flex-direction:column;gap:16px;text-align:center}
+ body[data-page="program-guide"] .guide-final h2{font-size:clamp(21px,5.8vw,27px);margin:8px 0;white-space:normal;word-break:keep-all}
+ body[data-page="program-guide"] .guide-final p{font-size:12px;white-space:normal}
+ body[data-page="program-guide"] .guide-final .guide-button{width:100%;max-width:330px}
+}
+
+
+/* V08: FOR YOUR FIRST CLASS / single-column editorial FAQ
+   Scoped only to program-guide; all other sections and pages unchanged. */
+body[data-page="program-guide"] .guide-faq{
+  background:#f0e7e2;
+  padding:59px 0 55px;
+}
+body[data-page="program-guide"] .guide-faq-grid{
+  display:flex;
+  flex-direction:column;
+  gap:27px;
+  max-width:960px;
+}
+body[data-page="program-guide"] .guide-faq-heading{
+  text-align:center;
+}
+body[data-page="program-guide"] .guide-faq-heading .guide-eyebrow{
+  margin-bottom:10px;
+  font-size:10px;
+  letter-spacing:.19em;
+  color:#a36e64;
+}
+body[data-page="program-guide"] .guide-faq-heading h2{
+  font:600 clamp(31px,3.5vw,46px)/1.15 'Montserrat',sans-serif;
+  letter-spacing:-.054em;
+  color:#4b2b2c;
+  margin:0;
+  white-space:nowrap;
+}
+body[data-page="program-guide"] .guide-faq-questions{
+  border-top:1px solid #cdbdb5;
+}
+body[data-page="program-guide"] .guide-faq-item{
+  border-bottom:1px solid #cdbdb5;
+}
+body[data-page="program-guide"] .guide-faq-item summary{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) 18px;
+  gap:22px;
+  align-items:center;
+  min-height:71px;
+  padding:15px 4px;
+  list-style:none;
+  cursor:pointer;
+  color:#4b2929;
+}
+body[data-page="program-guide"] .guide-faq-item summary::marker{content:''}
+body[data-page="program-guide"] .guide-faq-item summary::-webkit-details-marker{display:none}
+body[data-page="program-guide"] .guide-faq-number{
+  color:#aa7569;
+  font:600 13px/1.5 'Montserrat',sans-serif;
+  font-variant-numeric:tabular-nums;
+}
+body[data-page="program-guide"] .guide-faq-label{
+  font:600 16px/1.6 'Noto Sans KR',sans-serif;
+  letter-spacing:-.035em;
+  word-break:keep-all;
+  transition:color .2s;
+}
+body[data-page="program-guide"] .guide-faq-item summary:hover .guide-faq-label{color:#98685d}
+body[data-page="program-guide"] .guide-faq-chevron{
+  width:10px;height:10px;
+  border-right:1.4px solid #ac7669;
+  border-bottom:1.4px solid #ac7669;
+  transform:rotate(45deg);
+  transition:transform .23s ease;
+  justify-self:end;
+  margin-top:-5px;
+}
+body[data-page="program-guide"] .guide-faq-item[open] .guide-faq-chevron{
+  transform:rotate(225deg);
+  margin-top:5px;
+}
+body[data-page="program-guide"] .guide-faq-answer{
+  padding:0 43px 21px 70px;
+  color:#78675f;
+  animation:the303-faq-reveal .22s ease-out both;
+}
+body[data-page="program-guide"] .guide-faq-answer p{
+  margin:0;
+  padding:0;
+  font:400 13px/1.8 'Noto Sans KR',sans-serif;
+  color:#77645c;
+  word-break:keep-all;
+}
+body[data-page="program-guide"] .guide-faq-answer p+p{margin-top:10px}
+body[data-page="program-guide"] .guide-faq-answer strong{color:#4b3430;font-weight:650;margin-right:7px}
+@keyframes the303-faq-reveal{
+  from{opacity:.25;transform:translateY(-5px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:720px){
+ body[data-page="program-guide"] .guide-faq{padding:45px 0 43px}
+ body[data-page="program-guide"] .guide-faq-grid{gap:20px}
+ body[data-page="program-guide"] .guide-faq-heading .guide-eyebrow{font-size:9px;margin-bottom:9px}
+ body[data-page="program-guide"] .guide-faq-heading h2{font-size:clamp(26px,5.45vw,35px);white-space:normal;letter-spacing:-.06em}
+ body[data-page="program-guide"] .guide-faq-item summary{grid-template-columns:26px minmax(0,1fr) 13px;gap:12px;min-height:59px;padding:13px 2px}
+ body[data-page="program-guide"] .guide-faq-number{font-size:11px}
+ body[data-page="program-guide"] .guide-faq-label{font-size:13.5px;line-height:1.55;font-weight:600}
+ body[data-page="program-guide"] .guide-faq-chevron{width:8px;height:8px}
+ body[data-page="program-guide"] .guide-faq-answer{padding:0 8px 18px 40px}
+ body[data-page="program-guide"] .guide-faq-answer p{font-size:12px;line-height:1.82}
+}
+@media(max-width:360px){
+ body[data-page="program-guide"] .guide-faq-heading h2{font-size:26px}
+ body[data-page="program-guide"] .guide-faq-item summary{gap:9px}
+ body[data-page="program-guide"] .guide-faq-label{font-size:13px}
+ body[data-page="program-guide"] .guide-faq-answer{padding-left:35px}
+}
+@media(prefers-reduced-motion:reduce){
+ body[data-page="program-guide"] .guide-faq-answer{animation:none}
+ body[data-page="program-guide"] .guide-faq-chevron{transition:none}
+}
+
+
+/* V09 / MEMBERSHIP: Korean + English inline, signature-only accent;
+   One concise description and a direct Kakao inquiry per offering. */
+body[data-page="program-guide"] .guide-membership-row{
+  display:grid;grid-template-columns:36px minmax(0,1fr) auto;
+  gap:22px;align-items:center;padding:21px 2px;min-height:112px;
+}
+body[data-page="program-guide"] .guide-membership-copy{min-width:0}
+body[data-page="program-guide"] .guide-membership-name{
+  display:flex;flex-wrap:wrap;gap:5px 17px;align-items:baseline;
+}
+body[data-page="program-guide"] .guide-membership-name strong{
+  font:600 clamp(20px,1.75vw,23px)/1.45 'Nanum Myeongjo',serif;
+  letter-spacing:-.045em;color:#382f2c;
+}
+body[data-page="program-guide"] .guide-membership-name .guide-membership-en{
+  display:inline!important;font:600 clamp(14px,1.2vw,16px)/1.4 'Montserrat',sans-serif;
+  letter-spacing:.015em;color:#59443e;
+}
+body[data-page="program-guide"] .guide-membership-signature .guide-membership-en{
+  color:#ac7366;
+}
+body[data-page="program-guide"] .guide-membership-desc{
+  margin-top:7px!important;font-size:13px;line-height:1.75;
+  color:#776e66;word-break:keep-all;
+}
+body[data-page="program-guide"] .guide-membership-go{
+  display:inline-flex;gap:8px;align-items:center;justify-content:flex-end;
+  padding:8px 0 8px 8px;font-size:12px;line-height:1.5;
+  text-decoration:none;
+}
+body[data-page="program-guide"] .guide-membership-go:hover{color:#a2685e!important}
+body[data-page="program-guide"] .guide-membership-go:focus-visible{outline:2px solid #865254;outline-offset:3px}
+body[data-page="program-guide"] .guide-membership-note{
+  margin-top:14px;font-size:12px;line-height:1.7;color:#83746c;
+}
+@media(max-width:720px){
+ body[data-page="program-guide"] .guide-membership-row{
+   grid-template-columns:24px minmax(0,1fr);gap:4px 12px;
+   padding:16px 1px;min-height:auto;
+ }
+ body[data-page="program-guide"] .guide-membership-name{gap:3px 9px}
+ body[data-page="program-guide"] .guide-membership-name strong{font-size:19px}
+ body[data-page="program-guide"] .guide-membership-name .guide-membership-en{font-size:13px}
+ body[data-page="program-guide"] .guide-membership-desc{font-size:12px;line-height:1.7;margin-top:6px!important}
+ body[data-page="program-guide"] .guide-membership-go{
+   grid-column:2;justify-content:flex-end;padding:6px 0 0;
+   font-size:11.5px;
+ }
+ body[data-page="program-guide"] .guide-membership-note{text-align:left;font-size:11px}
+ body[data-page="program-guide"] .guide-schedule-copy p{max-width:520px;margin:0 auto}
+}
+@media(max-width:360px){
+ body[data-page="program-guide"] .guide-membership-name strong{font-size:17px}
+ body[data-page="program-guide"] .guide-membership-name .guide-membership-en{font-size:12px}
+}
+
+
+/* V10 — FIRST CLASS GUIDE / TRIAL CLASS information density.
+   Existing imagery, photos, motion and membership layouts are untouched. */
+body[data-page="program-guide"] .guide-trial-card{
+  display:flex;flex-direction:column;
+}
+body[data-page="program-guide"] .guide-trial-card h3{
+  margin:19px 0 0;
+}
+body[data-page="program-guide"] .guide-trial-description{
+  display:flex;flex-direction:column;gap:5px;
+  margin:12px 0 21px!important;
+  color:#6d5b53;line-height:1.7;word-break:keep-all;
+}
+body[data-page="program-guide"] .guide-trial-description strong{
+  font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:600;color:#59423d;
+}
+body[data-page="program-guide"] .guide-trial-description span{
+  font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;color:#82736c;
+}
+body[data-page="program-guide"] .guide-trial-bottom{
+  margin-top:auto;
+}
+body[data-page="program-guide"] .guide-price{
+  margin-bottom:25px;
+}
+@media(max-width:720px){
+ body[data-page="program-guide"] .guide-trial-card h3{margin-top:15px}
+ body[data-page="program-guide"] .guide-trial-description{gap:3px;margin:8px 0 15px!important}
+ body[data-page="program-guide"] .guide-trial-description strong{font-size:13px}
+ body[data-page="program-guide"] .guide-trial-description span{font-size:11.5px}
+ body[data-page="program-guide"] .guide-price{margin-bottom:18px}
+}
+
+/* V13 — SUBJECT CUTOUT / THE303 TRIAL PASS
+   Restore coupon format, leave the price clearly readable, and show the actual
+   original-photo figure large on the right. Transparent PNG is the only change
+   to assets; no synthetic face or pose is used. V12 photo overlays removed. */
+body[data-page="program-guide"] .guide-trial-card{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:flex;flex-direction:column;
+  height:346px;min-height:346px;
+  padding:25px clamp(23px,2.7vw,37px) 23px;
+  background:#fffdfa;color:#322b28;
+}
+body[data-page="program-guide"] .guide-trial-card:after{display:none!important;content:none!important}
+body[data-page="program-guide"] .guide-trial-card>:not(.guide-trial-photo){position:relative;z-index:3;}
+body[data-page="program-guide"] .guide-trial-top{
+  width:62%;max-width:62%;justify-content:flex-start;
+  color:#a38778;border-bottom:1px solid #e1d7cc;
+  padding-bottom:14px;
+}
+body[data-page="program-guide"] .guide-trial-top small{
+  font:inherit;letter-spacing:.14em;margin-left:6px;
+}
+body[data-page="program-guide"] .guide-trial-card h3,
+body[data-page="program-guide"] .guide-trial-description,
+body[data-page="program-guide"] .guide-price,
+body[data-page="program-guide"] .guide-trial-bottom{width:66%;max-width:66%;}
+body[data-page="program-guide"] .guide-trial-card h3{
+  color:#322b28;margin:17px 0 0;font-size:23px;
+}
+body[data-page="program-guide"] .guide-trial-description{
+  gap:4px;margin:8px 0 15px!important;color:#6d5b53;
+}
+body[data-page="program-guide"] .guide-trial-description strong{color:#59423d;font-size:13px}
+body[data-page="program-guide"] .guide-trial-description span{color:#82736c;font-size:11.5px}
+body[data-page="program-guide"] .guide-price{
+  position:relative;z-index:4;align-items:baseline;
+  gap:6px;margin:0 0 9px;color:#654145;
+}
+body[data-page="program-guide"] .guide-price strong{
+  color:#654145;font-size:clamp(38px,3.7vw,52px);
+}
+body[data-page="program-guide"] .guide-price span{color:#654145;font-size:12px}
+body[data-page="program-guide"] .guide-price i{color:#98897f}
+body[data-page="program-guide"] .guide-trial-bottom{
+  justify-content:flex-start;margin-top:auto;padding-top:12px;
+  border-top:1px solid #e1d7cc;
+}
+body[data-page="program-guide"] .guide-trial-bottom a{
+  color:#5a4841!important;font-size:12px;border-bottom:1px solid #ad978c;
+  padding-bottom:4px;
+}
+body[data-page="program-guide"] .guide-trial-photo{
+  display:block!important;position:absolute!important;z-index:1!important;
+  inset:0 0 0 auto!important;width:50%!important;height:100%!important;
+  max-height:none!important;margin:0!important;
+  background:none!important;overflow:visible!important;pointer-events:none;
+}
+body[data-page="program-guide"] .guide-trial-photo:after{display:none!important;content:none!important}
+body[data-page="program-guide"] .guide-trial-photo img{
+  position:absolute;display:block;max-width:none!important;
+  width:auto!important;height:auto!important;object-fit:contain!important;
+}
+/* Larger than the former thumbnail; let the original silk extend outside the card. */
+body[data-page="program-guide"] .guide-trial-photo-flying img{
+  height:580px!important;right:-112px;top:-160px;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.8) 28%,black 49%);
+  mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.8) 28%,black 49%);
+}
+
+body[data-page="program-guide"] .guide-trial-action{display:block;margin-top:10px}
+body[data-page="program-guide"] .guide-trial-action p{font-size:12px;line-height:1.65;text-align:left;color:#6a5b54}
+@media (min-width:721px) and (max-width:1080px){
+ body[data-page="program-guide"] .guide-trial-card{height:330px;min-height:330px;padding:22px 22px 20px}
+ body[data-page="program-guide"] .guide-trial-card h3,
+ body[data-page="program-guide"] .guide-trial-description,
+ body[data-page="program-guide"] .guide-price,
+ body[data-page="program-guide"] .guide-trial-bottom{width:68%;max-width:68%}
+ body[data-page="program-guide"] .guide-trial-card h3{font-size:20px}
+ body[data-page="program-guide"] .guide-price strong{font-size:clamp(33px,3.9vw,43px)}
+ body[data-page="program-guide"] .guide-trial-description strong{font-size:12px}
+ body[data-page="program-guide"] .guide-trial-description span{font-size:11px}
+ body[data-page="program-guide"] .guide-trial-photo-flying img{height:505px!important;right:-105px;top:-125px}
+ 
+}
+@media (max-width:720px){
+ body[data-page="program-guide"] .guide-trial-card{
+  background:#fffdfa;color:#322b28;height:auto;min-height:255px;
+  padding:19px 19px 18px!important;
+ }
+ body[data-page="program-guide"] .guide-trial-top{
+  width:60%;max-width:60%;color:#a38778;border-color:#e1d7cc;
+  padding-bottom:10px;
+ }
+ body[data-page="program-guide"] .guide-trial-card h3,
+ body[data-page="program-guide"] .guide-trial-description,
+ body[data-page="program-guide"] .guide-price,
+ body[data-page="program-guide"] .guide-trial-bottom{width:67%;max-width:67%}
+ body[data-page="program-guide"] .guide-trial-card h3{
+  color:#322b28;font-size:21px;margin:18px 0 0;
+ }
+ body[data-page="program-guide"] .guide-trial-description{margin:8px 0 12px!important;gap:3px}
+ body[data-page="program-guide"] .guide-trial-description strong{color:#59423d;font-size:12.5px}
+ body[data-page="program-guide"] .guide-trial-description span{color:#82736c;font-size:11px;line-height:1.6}
+ body[data-page="program-guide"] .guide-price{margin:2px 0 9px;color:#654145}
+ body[data-page="program-guide"] .guide-price strong{font-size:clamp(35px,10vw,43px);color:#654145}
+ body[data-page="program-guide"] .guide-price span{font-size:11px;color:#654145}
+ body[data-page="program-guide"] .guide-price i{color:#98897f}
+ body[data-page="program-guide"] .guide-trial-bottom{
+  margin-top:auto;border-color:#e1d7cc;padding-top:10px;
+ }
+ body[data-page="program-guide"] .guide-trial-bottom a{font-size:11.5px;color:#5a4841!important;border-color:#ad978c}
+ body[data-page="program-guide"] .guide-trial-photo{
+  width:56%!important;inset:0 0 0 auto!important;height:100%!important;
+ }
+ body[data-page="program-guide"] .guide-trial-photo-flying img{height:385px!important;right:-78px;top:-89px}
+ 
+ body[data-page="program-guide"] .guide-trial-action{margin-top:11px}
+ body[data-page="program-guide"] .guide-trial-action p{text-align:left;color:#6a5b54}
+}
+@media (max-width:360px){
+ body[data-page="program-guide"] .guide-trial-card{height:auto;min-height:255px;padding:18px 16px!important}
+ body[data-page="program-guide"] .guide-trial-card h3,
+ body[data-page="program-guide"] .guide-trial-description,
+ body[data-page="program-guide"] .guide-price,
+ body[data-page="program-guide"] .guide-trial-bottom{width:70%;max-width:70%}
+ body[data-page="program-guide"] .guide-trial-description strong{font-size:11.5px}
+ body[data-page="program-guide"] .guide-trial-description span{font-size:10.5px}
+ body[data-page="program-guide"] .guide-price strong{font-size:35px}
+ body[data-page="program-guide"] .guide-trial-photo-flying img{height:365px!important;right:-87px;top:-76px}
+ 
+}
+@media(prefers-reduced-motion:reduce){body[data-page="program-guide"] .guide-trial-card{transition:none!important}}
+
+body[data-page="program-guide"] .guide-trial-photo-barre {
+  width: 83% !important;
+}
+body[data-page="program-guide"] .guide-trial-photo-barre img {
+  width: 100% !important;
+  height: 117% !important;
+  top: -4%;
+  right: -16%;
+  object-fit: contain !important;
+  object-position: right top;
+  mask-image: none;
+}
+@media (max-width:1080px) {
+  body[data-page="program-guide"] .guide-trial-photo-barre {
+    width: 77% !important;
+  }
+}
+.first-class-heading { text-align:center; padding:clamp(32px,4vw,56px) 0 0; color:#372d28; }
+.first-class-heading #guide-title { margin:0; font:600 clamp(38px,4.5vw,64px)/1.04 'Montserrat',sans-serif; letter-spacing:-.045em; }
+.first-class-subtitle { margin:11px 0 0; font-size:16px; color:#73665d; }
+.first-class-intro { margin-top:20px; word-break:keep-all; }
+.first-class-intro p { margin:0; }
+.first-class-intro p:first-child { font:600 clamp(17px,1.45vw,21px)/1.5 'Nanum Myeongjo',serif; }
+.first-class-intro p + p { margin-top:5px; font-size:14px; line-height:1.55; color:#73665d; }
+.first-class-index { display:flex; justify-content:center; align-items:center; margin:15px auto 0; padding-bottom:26px; }
+.first-class-index a { position:relative; padding:8px 13px; font-size:14px; font-weight:400; color:#51433c; white-space:nowrap; }
+.first-class-index a + a::before { content:'·'; position:absolute; left:0; transform:translateX(-50%); color:#897a70; }
+.first-class-index a { transition:color .2s ease; }
+.first-class-index a::after {
+  content:""; position:absolute; left:13px; right:13px; bottom:5px;
+  height:1px; background:currentColor; transform:scaleX(0);
+  transform-origin:left; transition:transform .2s ease;
+}
+@media(hover:hover) {
+  .first-class-index a:hover { color:#8b523b; }
+  .first-class-index a:hover::after { transform:scaleX(1); }
+}
+.first-class-index a:active,.first-class-index a:focus-visible { color:#8b523b; }
+.first-class-index a:focus-visible { outline:1px solid currentColor; outline-offset:1px; }
+.first-class-index a:focus-visible::after,.first-class-index a:active::after { transform:scaleX(1); }
+@media(pointer:coarse) {
+  .first-class-index a { min-height:44px; display:grid; align-items:center; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .first-class-index a,.first-class-index a::after { transition:none; }
+}
+.guide-page :is(#trial,#membership-title,#schedule-title,#faq-title) { scroll-margin-top:100px; }
+@media(max-width:720px) {
+  .first-class-heading { padding-top:28px; }
+  .first-class-heading #guide-title { font-size:clamp(32px,9vw,46px); }
+  .first-class-heading #guide-title .guide-title-break { display:block; }
+  .first-class-subtitle { font-size:15px; }
+  .first-class-intro { margin-top:16px; }
+  .first-class-intro p + p { font-size:13px; }
+  .first-class-index { display:grid; grid-template-columns:repeat(2,max-content); text-align:center; margin-top:10px; padding-bottom:18px; }
+  .first-class-index a:nth-child(3)::before { content:none; }
+  body[data-page="program-guide"] #trial .guide-heading-inline,
+  body[data-page="program-guide"] #trial .guide-heading-inline > p { text-align:center; }
+  body[data-page="program-guide"] #menuToggle { box-shadow:none !important; border:1px solid #cfc5bc !important; }
+}
+
+/* V30 · FAQ accordion enhancement; preserves native <details> as fallback. */
+body[data-page="program-guide"] .the303-faq-motion .guide-faq-answer {
+  animation: none; /* replace V08 pop-in with height + opacity animation */
+}
+body[data-page="program-guide"] .the303-faq-motion .guide-faq-item {
+  overflow: visible; /* JS clips only while expanding/collapsing */
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-page="program-guide"] .the303-faq-motion .guide-faq-answer {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* V37 · Two-title FIRST accent, preserving existing type scale and line breaks. */
+body[data-page="program-guide"] :is(#guide-title, #faq-title) .guide-first-accent {
+  color: #A56D61;
+}
+/* The FAQ can rearm only after its entire section has left the viewport. */
+body[data-page="program-guide"].the303-reveal-active .guide-faq.is-faq-offscreen .guide-faq-item.the303-reveal-item {
+  transition: none;
+}
